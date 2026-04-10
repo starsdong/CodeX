@@ -375,6 +375,18 @@ void DrawAndWriteGraph(TGraphErrors *g, const char *name, const char *title,
   c.SaveAs(outPdf);
 }
 
+TGraphErrors *ConvertGraphYToMeV(const TGraphErrors *gIn, const char *name) {
+  auto *gOut = new TGraphErrors();
+  gOut->SetName(name);
+  for (int i = 0; i < gIn->GetN(); ++i) {
+    double x = 0.0, y = 0.0;
+    gIn->GetPoint(i, x, y);
+    gOut->SetPoint(i, x, 1000.0 * y);
+    gOut->SetPointError(i, gIn->GetErrorX(i), 1000.0 * gIn->GetErrorY(i));
+  }
+  return gOut;
+}
+
 void analyze_decay_study(const char *inFile = "decay_study.root",
                          const char *plotPrefix = "decay_mass_offset") {
   gStyle->SetOptStat(0);
@@ -399,39 +411,43 @@ void analyze_decay_study(const char *inFile = "decay_study.root",
   BuildOffsetGraphFromGaussian(h2, gGaus, false);
   BuildOffsetGraphFromGaussian(h2, gGausCR, true);
 
+  auto *gModeMeV = ConvertGraphYToMeV(gMode, "gOffsetMode");
+  auto *gGausMeV = ConvertGraphYToMeV(gGaus, "gOffsetGaus");
+  auto *gGausCRMeV = ConvertGraphYToMeV(gGausCR, "gOffsetGausConstrained");
+
   const std::string p1 = std::string(plotPrefix) + "_mode.pdf";
   const std::string p2 = std::string(plotPrefix) + "_gaus.pdf";
   const std::string p3 = std::string(plotPrefix) + "_gaus_constrained.pdf";
 
-  DrawAndWriteGraph(gMode, "gOffsetMode",
-                    "Mass offset vs p_{T} (peak/bin mode);p_{T}^{truth} [GeV];Offset #DeltaM [GeV]",
+  DrawAndWriteGraph(gModeMeV, "gOffsetMode",
+                    "Mass offset vs p_{T} (peak/bin mode);p_{T}^{truth} [GeV];Offset #DeltaM [MeV]",
                     kBlue + 1, p1.c_str());
 
-  DrawAndWriteGraph(gGaus, "gOffsetGaus",
-                    "Mass offset vs p_{T} (Gaussian fit);p_{T}^{truth} [GeV];Offset #DeltaM [GeV]",
+  DrawAndWriteGraph(gGausMeV, "gOffsetGaus",
+                    "Mass offset vs p_{T} (Gaussian fit);p_{T}^{truth} [GeV];Offset #DeltaM [MeV]",
                     kRed + 1, p2.c_str());
 
-  DrawAndWriteGraph(gGausCR, "gOffsetGausConstrained",
-                    "Mass offset vs p_{T} (constrained Gaussian fit);p_{T}^{truth} [GeV];Offset #DeltaM [GeV]",
+  DrawAndWriteGraph(gGausCRMeV, "gOffsetGausConstrained",
+                    "Mass offset vs p_{T} (constrained Gaussian fit);p_{T}^{truth} [GeV];Offset #DeltaM [MeV]",
                     kGreen + 2, p3.c_str());
 
   TCanvas cCmp("cOffsetCompare", "cOffsetCompare", 1000, 750);
   cCmp.SetGrid();
-  gMode->SetTitle("Mass offset comparison vs p_{T};p_{T}^{truth} [GeV];Offset #DeltaM [GeV]");
-  gMode->Draw("APL");
-  gGaus->SetLineColor(kRed + 1);
-  gGaus->SetMarkerColor(kRed + 1);
-  gGaus->SetMarkerStyle(21);
-  gGaus->Draw("PL SAME");
-  gGausCR->SetLineColor(kGreen + 2);
-  gGausCR->SetMarkerColor(kGreen + 2);
-  gGausCR->SetMarkerStyle(22);
-  gGausCR->Draw("PL SAME");
+  gModeMeV->SetTitle("Mass offset comparison vs p_{T};p_{T}^{truth} [GeV];Offset #DeltaM [MeV]");
+  gModeMeV->Draw("APL");
+  gGausMeV->SetLineColor(kRed + 1);
+  gGausMeV->SetMarkerColor(kRed + 1);
+  gGausMeV->SetMarkerStyle(21);
+  gGausMeV->Draw("PL SAME");
+  gGausCRMeV->SetLineColor(kGreen + 2);
+  gGausCRMeV->SetMarkerColor(kGreen + 2);
+  gGausCRMeV->SetMarkerStyle(22);
+  gGausCRMeV->Draw("PL SAME");
 
   TLegend leg(0.14, 0.72, 0.50, 0.89);
-  leg.AddEntry(gMode, "Peak/bin mode", "lp");
-  leg.AddEntry(gGaus, "Gaussian fit", "lp");
-  leg.AddEntry(gGausCR, "Constrained Gaussian fit", "lp");
+  leg.AddEntry(gModeMeV, "Peak/bin mode", "lp");
+  leg.AddEntry(gGausMeV, "Gaussian fit", "lp");
+  leg.AddEntry(gGausCRMeV, "Constrained Gaussian fit", "lp");
   leg.Draw();
 
   const std::string p4 = std::string(plotPrefix) + "_compare.pdf";
@@ -440,9 +456,9 @@ void analyze_decay_study(const char *inFile = "decay_study.root",
   fin.Close();
 
   TFile fout(inFile, "UPDATE");
-  gMode->Write("gOffsetMode", TObject::kOverwrite);
-  gGaus->Write("gOffsetGaus", TObject::kOverwrite);
-  gGausCR->Write("gOffsetGausConstrained", TObject::kOverwrite);
+  gModeMeV->Write("gOffsetMode", TObject::kOverwrite);
+  gGausMeV->Write("gOffsetGaus", TObject::kOverwrite);
+  gGausCRMeV->Write("gOffsetGausConstrained", TObject::kOverwrite);
   fout.Close();
 
   std::cout << "Analysis plots written: " << p1 << ", " << p2
