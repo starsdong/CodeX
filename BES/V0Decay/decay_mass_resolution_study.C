@@ -320,7 +320,7 @@ void BuildOffsetGraphFromGaussian(TH2D *h2, TGraphErrors *g, bool constrainedRan
     double fitSigma = std::fabs(gfit.GetParameter(2));
 
     if (constrainedRange) {
-      const double halfRange = std::max(4.0 * yBin, 1.2 * std::max(1e-12, fitSigma));
+      const double halfRange = 2.0 * std::max(1e-12, fitSigma);
       TF1 gfit2("gfit2", "gaus", fitMean - halfRange, fitMean + halfRange);
       gfit2.SetParameters(gfit.GetParameter(0), fitMean, fitSigma);
       TFitResultPtr r1 = proj->Fit(&gfit2, "QSN0");
@@ -335,6 +335,99 @@ void BuildOffsetGraphFromGaussian(TH2D *h2, TGraphErrors *g, bool constrainedRan
     const double ey = std::max(yBin / std::sqrt(12.0), fitSigma / std::sqrt(std::max(1.0, proj->GetEntries())));
 
     g->SetPoint(p, x, fitMean);
+    g->SetPointError(p, ex, ey);
+    ++p;
+    delete proj;
+  }
+}
+
+void BuildOffsetGraphFromModeSeededGaussian(TH2D *h2, TGraphErrors *g) {
+  const int nBinsX = h2->GetNbinsX();
+  int p = 0;
+
+  for (int ib = 1; ib <= nBinsX; ++ib) {
+    TH1D *proj = h2->ProjectionY(Form("hModeSeed_proj_%d", ib), ib, ib, "e");
+    if (proj->GetEntries() < 40) {
+      delete proj;
+      continue;
+    }
+
+    const double yBin = proj->GetXaxis()->GetBinWidth(1);
+    const double mode0 = proj->GetXaxis()->GetBinCenter(proj->GetMaximumBin());
+    const double rms0 = std::max(2.0 * yBin, proj->GetRMS());
+
+    TF1 gfit(Form("gfit_modeSeed_%d", ib), "gaus", mode0 - 2.5 * rms0, mode0 + 2.5 * rms0);
+    gfit.SetParameters(std::max(1.0, proj->GetMaximum()), mode0, rms0);
+    TFitResultPtr r = proj->Fit(&gfit, "QSN0");
+    if (int(r) != 0) {
+      delete proj;
+      continue;
+    }
+
+    const double fitMean = gfit.GetParameter(1);
+    const double fitSigma = std::fabs(gfit.GetParameter(2));
+    const double x = h2->GetXaxis()->GetBinCenter(ib);
+    const double ex = 0.5 * h2->GetXaxis()->GetBinWidth(ib);
+    const double ey = std::max(yBin / std::sqrt(12.0), fitSigma / std::sqrt(std::max(1.0, proj->GetEntries())));
+
+    g->SetPoint(p, x, fitMean);
+    g->SetPointError(p, ex, ey);
+    ++p;
+    delete proj;
+  }
+}
+
+void BuildOffsetGraphFromDoubleGaussian(TH2D *h2, TGraphErrors *g) {
+  const int nBinsX = h2->GetNbinsX();
+  int p = 0;
+
+  for (int ib = 1; ib <= nBinsX; ++ib) {
+    TH1D *proj = h2->ProjectionY(Form("hDouble_proj_%d", ib), ib, ib, "e");
+    if (proj->GetEntries() < 60) {
+      delete proj;
+      continue;
+    }
+
+    const double yBin = proj->GetXaxis()->GetBinWidth(1);
+    const double mean0 = proj->GetMean();
+    const double rms0 = std::max(2.0 * yBin, proj->GetRMS());
+
+    TF1 gseed(Form("gseed_%d", ib), "gaus", mean0 - 2.5 * rms0, mean0 + 2.5 * rms0);
+    gseed.SetParameters(std::max(1.0, proj->GetMaximum()), mean0, rms0);
+    TFitResultPtr r0 = proj->Fit(&gseed, "QSN0");
+    if (int(r0) != 0) {
+      delete proj;
+      continue;
+    }
+
+    const double muSeed = gseed.GetParameter(1);
+    const double sSeed = std::max(yBin, std::fabs(gseed.GetParameter(2)));
+    TF1 dfit(Form("dfit_%d", ib),
+             "[0]*exp(-0.5*((x-[1])/[2])^2)+[3]*exp(-0.5*((x-[1])/[4])^2)",
+             muSeed - 3.0 * sSeed, muSeed + 3.0 * sSeed);
+    dfit.SetParameters(std::max(1.0, 0.7 * proj->GetMaximum()), muSeed, sSeed,
+                       std::max(1.0, 0.3 * proj->GetMaximum()), 2.0 * sSeed);
+    dfit.SetParLimits(2, 0.5 * yBin, 20.0 * rms0);
+    dfit.SetParLimits(4, 0.5 * yBin, 40.0 * rms0);
+    TFitResultPtr r1 = proj->Fit(&dfit, "QSN0");
+    if (int(r1) != 0) {
+      delete proj;
+      continue;
+    }
+
+    const double mu = dfit.GetParameter(1);
+    const double a1 = std::fabs(dfit.GetParameter(0));
+    const double s1 = std::fabs(dfit.GetParameter(2));
+    const double a2 = std::fabs(dfit.GetParameter(3));
+    const double s2 = std::fabs(dfit.GetParameter(4));
+    const double denom = std::max(1e-12, a1 + a2);
+    const double sigmaEff = std::sqrt((a1 * s1 * s1 + a2 * s2 * s2) / denom);
+
+    const double x = h2->GetXaxis()->GetBinCenter(ib);
+    const double ex = 0.5 * h2->GetXaxis()->GetBinWidth(ib);
+    const double ey = std::max(yBin / std::sqrt(12.0), sigmaEff / std::sqrt(std::max(1.0, proj->GetEntries())));
+
+    g->SetPoint(p, x, mu);
     g->SetPointError(p, ex, ey);
     ++p;
     delete proj;
@@ -406,30 +499,20 @@ void analyze_decay_study(const char *inFile = "decay_study.root",
   auto *gMode = new TGraphErrors();
   auto *gGaus = new TGraphErrors();
   auto *gGausCR = new TGraphErrors();
+  auto *gModeSeed = new TGraphErrors();
+  auto *gDouble = new TGraphErrors();
 
   BuildOffsetGraphFromMode(h2, gMode);
   BuildOffsetGraphFromGaussian(h2, gGaus, false);
   BuildOffsetGraphFromGaussian(h2, gGausCR, true);
+  BuildOffsetGraphFromModeSeededGaussian(h2, gModeSeed);
+  BuildOffsetGraphFromDoubleGaussian(h2, gDouble);
 
   auto *gModeMeV = ConvertGraphYToMeV(gMode, "gOffsetMode");
   auto *gGausMeV = ConvertGraphYToMeV(gGaus, "gOffsetGaus");
   auto *gGausCRMeV = ConvertGraphYToMeV(gGausCR, "gOffsetGausConstrained");
-
-  const std::string p1 = std::string(plotPrefix) + "_mode.pdf";
-  const std::string p2 = std::string(plotPrefix) + "_gaus.pdf";
-  const std::string p3 = std::string(plotPrefix) + "_gaus_constrained.pdf";
-
-  DrawAndWriteGraph(gModeMeV, "gOffsetMode",
-                    "Mass offset vs p_{T} (peak/bin mode);p_{T}^{truth} [GeV];Offset #DeltaM [MeV]",
-                    kBlue + 1, p1.c_str());
-
-  DrawAndWriteGraph(gGausMeV, "gOffsetGaus",
-                    "Mass offset vs p_{T} (Gaussian fit);p_{T}^{truth} [GeV];Offset #DeltaM [MeV]",
-                    kRed + 1, p2.c_str());
-
-  DrawAndWriteGraph(gGausCRMeV, "gOffsetGausConstrained",
-                    "Mass offset vs p_{T} (constrained Gaussian fit);p_{T}^{truth} [GeV];Offset #DeltaM [MeV]",
-                    kGreen + 2, p3.c_str());
+  auto *gModeSeedMeV = ConvertGraphYToMeV(gModeSeed, "gOffsetModeSeeded");
+  auto *gDoubleMeV = ConvertGraphYToMeV(gDouble, "gOffsetDoubleGaus");
 
   TCanvas cCmp("cOffsetCompare", "cOffsetCompare", 1000, 750);
   cCmp.SetGrid();
@@ -443,11 +526,21 @@ void analyze_decay_study(const char *inFile = "decay_study.root",
   gGausCRMeV->SetMarkerColor(kGreen + 2);
   gGausCRMeV->SetMarkerStyle(22);
   gGausCRMeV->Draw("PL SAME");
+  gModeSeedMeV->SetLineColor(kOrange + 1);
+  gModeSeedMeV->SetMarkerColor(kOrange + 1);
+  gModeSeedMeV->SetMarkerStyle(33);
+  gModeSeedMeV->Draw("PL SAME");
+  gDoubleMeV->SetLineColor(kMagenta + 2);
+  gDoubleMeV->SetMarkerColor(kMagenta + 2);
+  gDoubleMeV->SetMarkerStyle(34);
+  gDoubleMeV->Draw("PL SAME");
 
-  TLegend leg(0.14, 0.72, 0.50, 0.89);
+  TLegend leg(0.14, 0.66, 0.58, 0.89);
   leg.AddEntry(gModeMeV, "Peak/bin mode", "lp");
   leg.AddEntry(gGausMeV, "Gaussian fit", "lp");
   leg.AddEntry(gGausCRMeV, "Constrained Gaussian fit", "lp");
+  leg.AddEntry(gModeSeedMeV, "Mode-seeded Gaussian", "lp");
+  leg.AddEntry(gDoubleMeV, "Double-Gaussian", "lp");
   leg.Draw();
 
   const std::string p4 = std::string(plotPrefix) + "_compare.pdf";
@@ -459,15 +552,18 @@ void analyze_decay_study(const char *inFile = "decay_study.root",
   gModeMeV->Write("gOffsetMode", TObject::kOverwrite);
   gGausMeV->Write("gOffsetGaus", TObject::kOverwrite);
   gGausCRMeV->Write("gOffsetGausConstrained", TObject::kOverwrite);
+  gModeSeedMeV->Write("gOffsetModeSeeded", TObject::kOverwrite);
+  gDoubleMeV->Write("gOffsetDoubleGaus", TObject::kOverwrite);
   fout.Close();
 
-  std::cout << "Analysis plots written: " << p1 << ", " << p2
-            << ", " << p3 << ", " << p4 << std::endl;
+  std::cout << "Analysis plot written: " << p4 << std::endl;
   std::cout << "Graphs saved into ROOT file: " << inFile << std::endl;
 
   PrintGraphInKeV(gMode, "Mode");
   PrintGraphInKeV(gGaus, "Gaussian");
   PrintGraphInKeV(gGausCR, "Constrained Gaussian");
+  PrintGraphInKeV(gModeSeed, "Mode-seeded Gaussian");
+  PrintGraphInKeV(gDouble, "Double Gaussian");
 }
 
 void plot_mass_diff_fits_per_ptbin(const char *inFile = "decay_study.root",
@@ -526,7 +622,7 @@ void plot_mass_diff_fits_per_ptbin(const char *inFile = "decay_study.root",
       sigmaStd = rms0;
     }
 
-    const double halfRange = std::max(4.0 * yBin, 1.2 * std::max(1e-12, sigmaStd));
+    const double halfRange = 2.0 * std::max(1e-12, sigmaStd);
     TF1 fCR(Form("fCR_%d", ib), "gaus", meanStd - halfRange, meanStd + halfRange);
     fCR.SetParameters(std::max(1.0, proj->GetMaximum()), meanStd, sigmaStd);
     const int fitStatusCR = int(proj->Fit(&fCR, "QSN0"));
