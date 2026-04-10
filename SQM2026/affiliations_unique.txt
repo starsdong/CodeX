@@ -1,0 +1,166 @@
+17	University of Houston
+13	Fudan University
+10	UCLA
+7	Tsinghua University
+6	Central China Normal University
+5	CERN
+5	Los Alamos National Laboratory
+5	South China Normal University
+5	Stony Brook University
+4	
+4	Heidelberg University
+4	Pusan National University (KR)
+4	University of Illinois Urbana-Champaign
+4	University of Science and  Technology of China (CN)
+3	Austrian Academy of Sciences (AT)
+3	Kent State University
+3	Polish Academy of Sciences (PL)
+3	RIKEN
+3	University of Chinese Academy of Sciences
+3	University of Illinois Chicago
+3	University of Science and Technology of China
+2	Academia Sinica
+2	Aligarh Muslim University (IN)
+2	BNL
+2	Brookhaven National Laboratory
+2	CCNU
+2	Columbia University
+2	Czech Technical University in Prague
+2	Duke University
+2	Heidelberg University (DE)
+2	IIT- Indian Institute of Technology (IN)
+2	Indiana University
+2	INFN Torino (Italy)
+2	LANL
+2	Lawrence Berkeley National Laboratory
+2	Lehigh University
+2	Niels Bohr Institute - University of Copenhagen
+2	Ohio State University
+2	University of California, Davis
+2	University of Tsukuba
+1	AAMU
+1	AIMON COMMUNITY DEVELOPMENT FOUNDATION
+1	Argonne National Laboratoy
+1	Austrian Academy of Sciences
+1	Bose Institute
+1	Brookhaven National Lab
+1	CCNU/IMP
+1	Central China Normal University & GSI Helmholtzzentrum für Schwerionenforschung GmbH
+1	Central China Normal University (CCNU)
+1	Columbia University (US)
+1	CTU in Prague (CZ)
+1	Department of Physics and Astronomy, UCLA
+1	Dr. Hari Singh Gour Vishwavidyalaya, Sagar - 470003 (INDIA)
+1	Duke
+1	Duke university
+1	East Carolina University
+1	Egyptian Center for Theoretical Physics (ECTP)
+1	Eotvos Lorand University
+1	Facility for Rare Isotope Beams
+1	Faculty of Physics, University of Warsaw
+1	FAIR, GSI
+1	Federal urdu University of Arts, Science and Technology, Islamabad Campus
+1	FNSPE CTU in Prague
+1	Frankfurt Institute for Advanced Studies
+1	Fudan university
+1	Goethe University
+1	GSI Helmholtzzentrum für Schwerionenforschung GmbH (GSI)
+1	GSI Helmholtzzentrum für Schwerionenforschung GmbH(GSI)
+1	GSI, Darmstadt & Frankfurt Univ.
+1	GSI/CERN
+1	Hiroshima University
+1	HUN-REN Wigner RCP
+1	HUN-REN Wigner RCP, Eötvös Loránd University
+1	IISER Tirupati
+1	Indian Institute of Science
+1	Indian Institute of Science Education and Research (IISER) Berhampur
+1	Indian Institute of Technology  Indore (IN)
+1	Indian Institute of Technology Indore
+1	Indian Institute of Technology Madras (IN)
+1	Indiana University (US)
+1	INFN - LNF
+1	INFN - Padova (Italy)
+1	INFN Padova
+1	INFN Torino
+1	INFN Torino (IT)
+1	INFN, Cagliari (IT) and CERN, Geneva, Switzerland
+1	Institue of Particle Physics, Central China Normal University
+1	Institute for Nuclear Research, Kyiv
+1	Institute of Modern Physics Chinese Academy of Sciences
+1	Institute of physics of 2 infinities of Lyon, UCBL (FR); CCNU (CN)
+1	IPHC CNRS / Université de Strasbourg (FR)
+1	Jazan University
+1	Kangwon National University
+1	Kavli Institute for Theoretical Physics, University of California Santa Barbara
+1	Kent State University / University of Houston
+1	Korea University
+1	Lawrence Berkeley National Lab. (US)
+1	Lawrence Livermore National Laboratory
+1	LBL
+1	LBNL
+1	Lund University (SE)
+1	Massachusetts Institute of Technology
+1	MRPD Government College Talwara
+1	National Institute of Science  Education and Research (NISER) (IN)
+1	National Institute of Science Education and Research (NISER)
+1	National Institute of Science Education and Research, India
+1	Niels Bohr Institute
+1	Niels Bohr Institute (DK)
+1	Peking University
+1	Prairie View A & M University
+1	Project 100
+1	Purdue University (US)
+1	Purdue University, USA
+1	Pusan National University (KR), on behalf of the ALICE collaboration
+1	RIKEN iTHEMS / LBNL / UC Berkeley
+1	Root Hydrocarbons Limited
+1	Shandong University
+1	Stony Brook University (US)
+1	SUBATECH
+1	SUBATECH CNRS-IN2P3
+1	Sungkyunkwan university
+1	Sungkyunkwan University (SKKU)
+1	Technical University of Munich
+1	Texas Southern University
+1	The university of agriculture Peshawar
+1	The University of Kansas (US)
+1	Turin Polytechnic University
+1	UC Berkeley
+1	UIC
+1	Undergraduate Researcher - UCLA Huang Nuclear Physics Group
+1	Unesp Sao Paulo Brazil
+1	Universidad Mayor
+1	Universidade de Sao Paulo (USP) (BR)
+1	Universidade Federal Fluminense (UFF), Rio de Janeiro, Brazil
+1	Universita e INFN Trieste (IT)
+1	Universita e INFN, Bologna (IT)
+1	Universita e INFN, Padova (IT)
+1	Universita e INFN, Salerno (IT)
+1	University and INFN Turin
+1	University e INFN, Torino (IT)
+1	University of Bonn (DE)
+1	University of California Berkeley/LBNL
+1	University of California Los Angeles
+1	University of California, Los Angeles
+1	University of Catania, LNS-INFN
+1	University of Colorado Boulder
+1	University of ESwatini & BNL
+1	University of Houston (US)
+1	University of Illinois at Chicago
+1	University of Jammu
+1	University of Jammu (IN)
+1	University of Jyväskylä
+1	University of Ljubljana
+1	University of Science and Technology of China (USTC)
+1	University of Texas at Austin
+1	University of Tokyo (JP)
+1	Università and INFN Torino (IT)
+1	Università di Cagliari e INFN
+1	Università di Catania - LNS (INFN)
+1	Université Paris-Saclay (FR)
+1	Vanderbilt University (US)
+1	Warsaw University of Technology (PL)
+1	Wayne State University (US)
+1	Yale University
+1	Yonsei University
+1	中国科学院大学
