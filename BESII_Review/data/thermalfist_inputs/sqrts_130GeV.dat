@@ -1,0 +1,10 @@
+# Auto-generated from BESII_Review data
+#     is_fitted           pdg1           pdg2      feeddown1      feeddown2          value          error
+              1          -3312              0              3              0           1.81     0.19789138
+              1          -2212              0              3              0             20            2.2
+              1           -321              0              3              0           42.7            2.8
+              1           -211              0              3              0            280             20
+              1            211              0              3              0            278             20
+              1            321              0              3              0           46.3              3
+              1           2212              0              3              0           28.2            3.1
+              1           3312              0              3              0           2.16          0.234

@@ -1,0 +1,75 @@
+energy_GeV,particle,data_yield_used_in_fit,data_error_used_in_fit,model_yield_fit,centrality_label
+7.7,K+,20.800710,1.688349,21.005771,max Npart row (most central)
+7.7,K-,7.692720,0.625101,7.955338,max Npart row (most central)
+7.7,Lambda,15.300000,0.827345,14.900565,max Npart row (most central)
+7.7,Lambda_bar,0.193000,0.019925,0.212550,max Npart row (most central)
+7.7,Xi,1.190000,0.114018,1.209784,max Npart row (most central)
+7.7,Xi_bar,0.065700,0.008099,0.059043,max Npart row (most central)
+7.7,p,45.185760,6.079735,51.576860,max Npart row (most central)
+7.7,pbar,0.274805,0.053159,0.217694,max Npart row (most central)
+7.7,pi+,93.459800,8.436687,88.006939,max Npart row (most central)
+7.7,pi-,100.039100,9.116046,98.139649,max Npart row (most central)
+11.5,K+,24.992980,2.520101,25.980205,max Npart row (most central)
+11.5,K-,12.344300,1.234893,13.079700,max Npart row (most central)
+11.5,Lambda,14.170000,0.784092,13.910070,max Npart row (most central)
+11.5,Lambda_bar,0.659000,0.047854,0.697081,max Npart row (most central)
+11.5,Xi,1.350000,0.111803,1.349967,max Npart row (most central)
+11.5,Xi_bar,0.169000,0.014560,0.158877,max Npart row (most central)
+11.5,p,34.945190,5.316734,40.413848,max Npart row (most central)
+11.5,pbar,1.033159,0.189264,0.872144,max Npart row (most central)
+11.5,pi+,123.781200,12.514543,113.607534,max Npart row (most central)
+11.5,pi-,129.699700,13.021798,122.772283,max Npart row (most central)
+19.6,K+,29.558100,2.974592,31.415645,max Npart row (most central)
+19.6,K-,18.826600,1.893102,20.648418,max Npart row (most central)
+19.6,Lambda,12.580000,0.461736,12.667658,max Npart row (most central)
+19.6,Lambda_bar,1.858000,0.099408,1.921046,max Npart row (most central)
+19.6,Xi,1.620000,0.101980,1.570862,max Npart row (most central)
+19.6,Xi_bar,0.421000,0.030414,0.400193,max Npart row (most central)
+19.6,p,26.183880,4.471377,28.880613,max Npart row (most central)
+19.6,pbar,2.970138,0.544780,2.617428,max Npart row (most central)
+19.6,pi+,161.395000,17.914797,138.300263,max Npart row (most central)
+19.6,pi-,165.789000,18.252782,144.834585,max Npart row (most central)
+27,K+,31.068650,2.815112,33.494810,max Npart row (most central)
+27,K-,22.623470,2.059871,23.626686,max Npart row (most central)
+27,Lambda,11.670000,0.511566,11.763281,max Npart row (most central)
+27,Lambda_bar,2.750000,0.140357,2.842189,max Npart row (most central)
+27,Xi,1.570000,0.110454,1.534080,max Npart row (most central)
+27,Xi_bar,0.598000,0.038471,0.568781,max Npart row (most central)
+27,p,24.280955,3.824664,25.475083,max Npart row (most central)
+27,pbar,4.250500,0.726690,4.029612,max Npart row (most central)
+27,pi+,172.971710,19.104838,149.912009,max Npart row (most central)
+27,pi-,177.056980,19.551123,156.196006,max Npart row (most central)
+39,K+,31.966035,2.904500,33.294126,max Npart row (most central)
+39,K-,25.012440,2.272369,26.758341,max Npart row (most central)
+39,Lambda,11.020000,0.860523,10.783591,max Npart row (most central)
+39,Lambda_bar,3.820000,0.360139,3.940706,max Npart row (most central)
+39,Xi,1.540000,0.190263,1.482292,max Npart row (most central)
+39,Xi_bar,0.780000,0.110454,0.712272,max Npart row (most central)
+39,p,19.457055,2.972881,22.202345,max Npart row (most central)
+39,pbar,6.050265,1.048969,6.182174,max Npart row (most central)
+39,pi+,182.279870,20.143331,162.213794,max Npart row (most central)
+39,pi-,185.765200,20.519199,165.974164,max Npart row (most central)
+62.4,K+,37.600000,2.700000,37.590325,0-5%
+62.4,K-,32.400000,2.300000,32.401048,0-5%
+62.4,p,29.000000,3.800000,28.993903,0-5%
+62.4,pbar,13.600000,1.700000,13.600017,0-5%
+62.4,pi+,233.000000,17.000000,233.015296,0-5%
+62.4,pi-,237.000000,17.000000,237.049904,0-5%
+130,K+,46.300000,3.000000,47.315237,0-6%
+130,K-,42.700000,2.800000,43.987750,0-6%
+130,Xi,2.160000,0.234000,2.080072,0-10%
+130,Xi_bar,1.810000,0.197891,1.762326,0-10%
+130,p,28.200000,3.100000,29.523759,0-6%
+130,pbar,20.000000,2.200000,20.681240,0-6%
+130,pi+,278.000000,20.000000,267.192742,0-6%
+130,pi-,280.000000,20.000000,269.409314,0-6%
+200,K+,51.300000,6.500000,55.617643,0-5%
+200,K-,49.500000,6.200000,52.972844,0-5%
+200,Lambda,16.700000,1.118034,15.586704,0-5%
+200,Lambda_bar,12.700000,0.921954,12.139764,0-5%
+200,Xi,2.170000,0.199249,2.255449,0-5%
+200,Xi_bar,1.830000,0.206155,1.873652,0-5%
+200,p,24.028700,4.457623,30.488007,0-5%
+200,pbar,18.584700,3.450663,22.266150,0-5%
+200,pi+,322.000000,25.000000,311.639906,0-5%
+200,pi-,327.000000,25.000000,312.974114,0-5%

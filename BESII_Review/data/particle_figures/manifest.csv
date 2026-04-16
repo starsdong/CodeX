@@ -1,0 +1,17 @@
+particle,file,n_points,n_series
+K+,data/particle_figures/dn_dy_vs_energy_kplus.png,8,2
+K-,data/particle_figures/dn_dy_vs_energy_kminus.png,8,2
+Lambda,data/particle_figures/dn_dy_vs_energy_lambda.png,7,3
+Lambda_bar,data/particle_figures/dn_dy_vs_energy_lambda_bar.png,6,2
+Omega,data/particle_figures/dn_dy_vs_energy_omega.png,5,1
+Omega_bar,data/particle_figures/dn_dy_vs_energy_omega_bar.png,5,1
+Omega_sum,data/particle_figures/dn_dy_vs_energy_omega_sum.png,7,3
+Xi,data/particle_figures/dn_dy_vs_energy_xi.png,7,3
+Xi_bar,data/particle_figures/dn_dy_vs_energy_xi_bar.png,7,3
+d,data/particle_figures/dn_dy_vs_energy_d.png,8,1
+p,data/particle_figures/dn_dy_vs_energy_p.png,9,3
+pbar,data/particle_figures/dn_dy_vs_energy_pbar.png,8,2
+phi,data/particle_figures/dn_dy_vs_energy_phi.png,7,3
+pi+,data/particle_figures/dn_dy_vs_energy_piplus.png,8,2
+pi-,data/particle_figures/dn_dy_vs_energy_piminus.png,8,2
+t,data/particle_figures/dn_dy_vs_energy_t.png,9,1
