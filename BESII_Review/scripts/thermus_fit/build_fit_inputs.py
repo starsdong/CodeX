@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build per-energy ThermalFIST fit inputs from BESII_Review CSV data."""
+"""Build per-energy THERMUS fit inputs from BESII data."""
 
 from __future__ import annotations
 
@@ -20,11 +20,6 @@ PARTICLE_TO_PDG = {
     "Lambda_bar": -3122,
     "Xi": 3312,
     "Xi_bar": -3312,
-    "Omega": 3334,
-    "Omega_bar": -3334,
-    "phi": 333,
-    "d": 1000010020,
-    "t": 1000010030,
 }
 
 
@@ -51,8 +46,7 @@ def combined_error(stat_err: float | None, sys_err: float | None) -> float | Non
 
 
 def energy_tag(energy_gev: float) -> str:
-    text = f"{energy_gev:g}"
-    return text.replace(".", "p")
+    return f"{energy_gev:g}".replace(".", "p")
 
 
 def parse_exclusions(spec: str) -> dict[float, set[str]]:
@@ -76,17 +70,12 @@ def parse_exclusions(spec: str) -> dict[float, set[str]]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Prepare ThermalFIST per-energy fit input files from CSV data.")
-    parser.add_argument("--input", default="data/first_group_dn_dy_vs_energy.csv", help="Input CSV with experimental yields")
-    parser.add_argument("--outdir", default="data/thermalfist_inputs", help="Output directory for *.dat files")
-    parser.add_argument("--manifest", default="data/thermalfist_inputs/manifest.csv", help="Output manifest CSV")
-    parser.add_argument("--min-points", type=int, default=4, help="Minimum number of points required per energy")
-    parser.add_argument(
-        "--lambda-to-p-br",
-        type=float,
-        default=0.639,
-        help="Branching ratio used for Lambda->p+pi and anti-Lambda->anti-p+pi feeddown subtraction",
-    )
+    parser = argparse.ArgumentParser(description="Prepare THERMUS per-energy fit input files from CSV data.")
+    parser.add_argument("--input", default="data/first_group_dn_dy_vs_energy.csv")
+    parser.add_argument("--outdir", default="data/thermus_inputs")
+    parser.add_argument("--manifest", default="data/thermus_inputs/manifest.csv")
+    parser.add_argument("--min-points", type=int, default=4)
+    parser.add_argument("--lambda-to-p-br", type=float, default=0.639)
     parser.add_argument(
         "--fit-particles",
         default="pi+,pi-,K+,K-,p,pbar,Lambda,Lambda_bar,Xi,Xi_bar",
@@ -102,20 +91,18 @@ def main() -> None:
     input_path = Path(args.input)
     outdir = Path(args.outdir)
     manifest_path = Path(args.manifest)
-
     outdir.mkdir(parents=True, exist_ok=True)
+
     fit_particles = {p.strip() for p in args.fit_particles.split(",") if p.strip()}
     exclusions = parse_exclusions(args.exclude_energy_particles)
-
-    by_energy: dict[float, list[tuple[int, float, float]]] = defaultdict(list)
-    by_energy_particle: dict[float, dict[str, list[tuple[float, float]]]] = defaultdict(lambda: defaultdict(list))
+    by_energy_rows: dict[float, list[tuple[int, str, float, float]]] = defaultdict(list)
+    by_energy_particle: dict[float, dict[str, tuple[float, float]]] = defaultdict(dict)
     skipped = 0
 
     with input_path.open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            obs = (row.get("observable") or "").lower()
-            if "dn/dy" not in obs:
+            if "dn/dy" not in (row.get("observable") or "").lower():
                 continue
 
             particle = (row.get("particle") or "").strip()
@@ -129,65 +116,54 @@ def main() -> None:
             stat = to_float(row.get("stat_err"))
             sys = to_float(row.get("sys_err"))
             err = combined_error(stat, sys)
-
             if energy is None or value is None or err is None or err <= 0.0:
                 skipped += 1
                 continue
 
-            by_energy_particle[energy][particle].append((value, err))
+            by_energy_particle[energy][particle] = (value, err)
             excluded_here = particle in exclusions.get(energy, set())
             if particle in fit_particles and not excluded_here:
-                by_energy[energy].append((pdg, value, err))
+                by_energy_rows[energy].append((pdg, particle, value, err))
 
-    # Proton feeddown correction from (anti-)Lambda decays:
-    # p_corr = p_raw - BR * Lambda
-    # pbar_corr = pbar_raw - BR * Lambda_bar
-    # Error propagated in quadrature.
     corrected_rows = 0
-    for energy, rows in by_energy.items():
+    for energy, rows in by_energy_rows.items():
         species = by_energy_particle.get(energy, {})
-        lambda_pts = species.get("Lambda", [])
-        lambda_bar_pts = species.get("Lambda_bar", [])
 
-        if lambda_pts:
-            lambda_val = sum(v for v, _ in lambda_pts) / len(lambda_pts)
-            lambda_err = (sum(e * e for _, e in lambda_pts) / len(lambda_pts)) ** 0.5
-            for i, (pdg, value, err) in enumerate(rows):
+        lmb = species.get("Lambda")
+        if lmb is not None:
+            lmb_val, lmb_err = lmb
+            for i, (pdg, particle, value, err) in enumerate(rows):
                 if pdg == 2212:
-                    new_value = value - args.lambda_to_p_br * lambda_val
-                    new_err = math.hypot(err, args.lambda_to_p_br * lambda_err)
-                    rows[i] = (pdg, new_value, new_err)
+                    rows[i] = (pdg, particle, value - args.lambda_to_p_br * lmb_val, math.hypot(err, args.lambda_to_p_br * lmb_err))
                     corrected_rows += 1
 
-        if lambda_bar_pts:
-            lambda_bar_val = sum(v for v, _ in lambda_bar_pts) / len(lambda_bar_pts)
-            lambda_bar_err = (sum(e * e for _, e in lambda_bar_pts) / len(lambda_bar_pts)) ** 0.5
-            for i, (pdg, value, err) in enumerate(rows):
+        almb = species.get("Lambda_bar")
+        if almb is not None:
+            almb_val, almb_err = almb
+            for i, (pdg, particle, value, err) in enumerate(rows):
                 if pdg == -2212:
-                    new_value = value - args.lambda_to_p_br * lambda_bar_val
-                    new_err = math.hypot(err, args.lambda_to_p_br * lambda_bar_err)
-                    rows[i] = (pdg, new_value, new_err)
+                    rows[i] = (pdg, particle, value - args.lambda_to_p_br * almb_val, math.hypot(err, args.lambda_to_p_br * almb_err))
                     corrected_rows += 1
 
     manifest_rows = []
-
-    for energy in sorted(by_energy):
-        rows = by_energy[energy]
+    for energy in sorted(by_energy_rows):
+        rows = by_energy_rows[energy]
         if len(rows) < args.min_points:
             continue
 
-        outfile = outdir / f"sqrts_{energy_tag(energy)}GeV.dat"
+        outfile = outdir / f"sqrts_{energy_tag(energy)}GeV.txt"
         with outfile.open("w", encoding="utf-8") as out:
-            out.write("# Auto-generated from BESII_Review data\n")
-            out.write("#     is_fitted           pdg1           pdg2      feeddown1      feeddown2          value          error\n")
-            for pdg, value, err in sorted(rows, key=lambda x: x[0]):
-                out.write(f"{1:15d}{pdg:15d}{0:15d}{3:15d}{0:15d}{value:15.8g}{err:15.8g}\n")
+            out.write("# id<TAB>descriptor<TAB>value<TAB>error\n")
+            for pdg, particle, value, err in sorted(rows, key=lambda x: x[0]):
+                out.write(f"{pdg}\t{particle}\t{value:.10g}\t{err:.10g}\n")
 
-        manifest_rows.append({
-            "energy_GeV": f"{energy:g}",
-            "fit_file": str(outfile),
-            "n_points": str(len(rows)),
-        })
+        manifest_rows.append(
+            {
+                "energy_GeV": f"{energy:g}",
+                "fit_file": str(outfile),
+                "n_points": str(len(rows)),
+            }
+        )
 
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     with manifest_path.open("w", newline="", encoding="utf-8") as f:

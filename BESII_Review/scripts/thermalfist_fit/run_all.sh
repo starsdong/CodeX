@@ -15,7 +15,8 @@ python3 scripts/thermalfist_fit/build_fit_inputs.py \
   --input data/first_group_dn_dy_vs_energy.csv \
   --outdir data/thermalfist_inputs \
   --manifest data/thermalfist_inputs/manifest.csv \
-  --fit-particles "pi+,pi-,K+,K-,p,pbar,Lambda,Lambda_bar,Xi,Xi_bar"
+  --fit-particles "pi+,pi-,K+,K-,p,pbar,Lambda,Lambda_bar,Xi,Xi_bar" \
+  --exclude-energy-particles "62.4:Xi,Xi_bar"
 
 g++ -std=c++17 -O2 scripts/thermalfist_fit/fit_by_energy.cpp \
   -I"$THERMALFIST_DIR/include" \

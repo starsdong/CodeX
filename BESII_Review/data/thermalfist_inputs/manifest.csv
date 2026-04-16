@@ -4,6 +4,6 @@ energy_GeV,fit_file,n_points
 19.6,data/thermalfist_inputs/sqrts_19p6GeV.dat,10
 27,data/thermalfist_inputs/sqrts_27GeV.dat,10
 39,data/thermalfist_inputs/sqrts_39GeV.dat,10
-62.4,data/thermalfist_inputs/sqrts_62p4GeV.dat,6
+62.4,data/thermalfist_inputs/sqrts_62p4GeV.dat,8
 130,data/thermalfist_inputs/sqrts_130GeV.dat,8
 200,data/thermalfist_inputs/sqrts_200GeV.dat,10

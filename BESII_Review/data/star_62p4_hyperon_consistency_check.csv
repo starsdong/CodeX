@@ -1,0 +1,5 @@
+energy_GeV,particle,centrality_used,derived_value,derived_total_err,fig6_reference_value,relative_diff_percent,comment
+62.4,Lambda,0-5% (ratio-derived),15.576031,2.306688,14.8,5.2435,Fig.6 top-panel STAR points are quoted as 0-5%.
+62.4,Lambda_bar,0-5% (ratio-derived),7.2522,1.0400425,7.8,-7.0231,Fig.6 top-panel STAR points are quoted as 0-5%.
+62.4,Xi,0-5% (ratio-derived),1.7397156,0.30642213,1.63,6.7310,Fig.6 Xi values are 0-20% in caption; use with care for 0-5% fits.
+62.4,Xi_bar,0-5% (ratio-derived),1.1376,0.18488204,1.03,10.4466,Fig.6 Xi values are 0-20% in caption; use with care for 0-5% fits.
