@@ -28,13 +28,11 @@ def load_fit_summary(path: Path):
         reader = csv.DictReader(f)
         for r in reader:
             e = round(float(r["energy_GeV"]), 6)
-            by_energy[e] = {
+            info = {
                 "T_MeV": float(r["T_MeV"]),
                 "T_err_MeV": float(r["T_err_MeV"]),
                 "muB_MeV": float(r["muB_MeV"]),
                 "muB_err_MeV": float(r["muB_err_MeV"]),
-                "muS_MeV": float(r["muS_MeV"]),
-                "muS_err_MeV": float(r["muS_err_MeV"]),
                 "gammaS": float(r["gammaS"]),
                 "gammaS_err": float(r["gammaS_err"]),
                 "R_fm": float(r["R_fm"]),
@@ -45,6 +43,10 @@ def load_fit_summary(path: Path):
                 "ndf": int(float(r["ndf"])),
                 "chi2_ndf": float(r["chi2_ndf"]),
             }
+            for key in ("muS_MeV", "muS_err_MeV", "muQ_MeV", "muQ_err_MeV", "Rc_fm", "Rc_err_fm"):
+                if r.get(key, "").strip():
+                    info[key] = float(r[key])
+            by_energy[e] = info
     return by_energy
 
 
@@ -82,17 +84,25 @@ def make_plot(rows, out_png: Path, fit_info: dict | None = None):
     ax.legend()
 
     if fit_info is not None:
-        txt = (
-            rf"$T={fit_info['T_MeV']:.2f}\pm{fit_info['T_err_MeV']:.2f}\ \mathrm{{MeV}}$" + "\n"
-            rf"$\mu_B={fit_info['muB_MeV']:.2f}\pm{fit_info['muB_err_MeV']:.2f}\ \mathrm{{MeV}}$" + "\n"
-            rf"$\mu_S={fit_info['muS_MeV']:.2f}\pm{fit_info['muS_err_MeV']:.2f}\ \mathrm{{MeV}}$" + "\n"
-            rf"$\gamma_S={fit_info['gammaS']:.3f}\pm{fit_info['gammaS_err']:.3f}$" + "\n"
-            rf"$R={fit_info['R_fm']:.3f}\pm{fit_info['R_err_fm']:.3f}\ \mathrm{{fm}}$" + "\n"
-            rf"$dV/dy={fit_info['dVdy_fm3']:.1f}\pm{fit_info['dVdy_err_fm3']:.1f}\ \mathrm{{fm^3}}$" + "\n"
-            rf"$\chi^2={fit_info['chi2']:.2f}$" + "\n"
-            rf"$\mathrm{{ndf}}={fit_info['ndf']}$" + "\n"
-            rf"$\chi^2/\mathrm{{ndf}}={fit_info['chi2_ndf']:.2f}$"
-        )
+        lines = [
+            rf"$T={fit_info['T_MeV']:.2f}\pm{fit_info['T_err_MeV']:.2f}\ \mathrm{{MeV}}$",
+            rf"$\mu_B={fit_info['muB_MeV']:.2f}\pm{fit_info['muB_err_MeV']:.2f}\ \mathrm{{MeV}}$",
+        ]
+        if "muS_MeV" in fit_info:
+            lines.append(rf"$\mu_S={fit_info['muS_MeV']:.2f}\pm{fit_info['muS_err_MeV']:.2f}\ \mathrm{{MeV}}$")
+        if "muQ_MeV" in fit_info:
+            lines.append(rf"$\mu_Q={fit_info['muQ_MeV']:.2f}\pm{fit_info['muQ_err_MeV']:.2f}\ \mathrm{{MeV}}$")
+        lines.append(rf"$\gamma_S={fit_info['gammaS']:.3f}\pm{fit_info['gammaS_err']:.3f}$")
+        if "Rc_fm" in fit_info:
+            lines.append(rf"$R_c={fit_info['Rc_fm']:.3f}\pm{fit_info['Rc_err_fm']:.3f}\ \mathrm{{fm}}$")
+        lines.append(rf"$R={fit_info['R_fm']:.3f}\pm{fit_info['R_err_fm']:.3f}\ \mathrm{{fm}}$")
+        lines.extend([
+            rf"$dV/dy={fit_info['dVdy_fm3']:.1f}\pm{fit_info['dVdy_err_fm3']:.1f}\ \mathrm{{fm^3}}$",
+            rf"$\chi^2={fit_info['chi2']:.2f}$",
+            rf"$\mathrm{{ndf}}={fit_info['ndf']}$",
+            rf"$\chi^2/\mathrm{{ndf}}={fit_info['chi2_ndf']:.2f}$",
+        ])
+        txt = "\n".join(lines)
         ax.text(
             0.015,
             0.98,
@@ -115,6 +125,7 @@ def make_plot(rows, out_png: Path, fit_info: dict | None = None):
     axr.set_xticklabels(labels, rotation=50, ha="right")
 
     fig.savefig(out_png, dpi=220)
+    fig.savefig(out_png.with_suffix(".pdf"))
     plt.close(fig)
 
 

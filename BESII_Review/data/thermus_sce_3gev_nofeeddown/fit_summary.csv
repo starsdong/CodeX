@@ -1,0 +1,2 @@
+energy_GeV,n_points,T_MeV,T_err_MeV,muB_MeV,muB_err_MeV,muQ_MeV,muQ_err_MeV,gammaS,gammaS_err,Rc_fm,Rc_err_fm,R_fm,R_err_fm,dVdy_fm3,dVdy_err_fm3,chi2,ndf,chi2_ndf,input_file,ensemble,muQ_constraint_B2Q
+3.000000,6,81.812609,4.409494,751.717044,17.201908,-22.982067,0.000000,1.000000,0.000000,3.627917,0.826301,8.094422,1.074882,2221.498737,884.997977,11.728128,2,5.864064,data/thermus_sce_3gev_nofeeddown/input/sqrts_3GeV.txt,SCanonical,1.246835

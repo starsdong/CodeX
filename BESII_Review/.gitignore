@@ -14,3 +14,7 @@ FreezeOut/*.pcm
 
 scripts/thermalfist_fit/fit_by_energy
 scripts/thermus_fit/fit_by_energy
+scripts/thermus_fit/fit_3gev_sce
+
+data/thermus_sce_3gev*/fit.log
+data/thermus_sce_3gev*/fit_points.csv

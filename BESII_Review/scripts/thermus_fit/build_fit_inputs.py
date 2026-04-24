@@ -14,6 +14,8 @@ PARTICLE_TO_PDG = {
     "pi-": -211,
     "K+": 321,
     "K-": -321,
+    "Ks0": 310,
+    "phi": 333,
     "p": 2212,
     "pbar": -2212,
     "Lambda": 3122,
@@ -69,6 +71,22 @@ def parse_exclusions(spec: str) -> dict[float, set[str]]:
     return mapping
 
 
+def parse_energies(spec: str) -> set[float] | None:
+    text = (spec or "").strip()
+    if not text:
+        return None
+    energies: set[float] = set()
+    for item in text.split(","):
+        token = item.strip()
+        if not token:
+            continue
+        try:
+            energies.add(float(token))
+        except ValueError:
+            continue
+    return energies or None
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Prepare THERMUS per-energy fit input files from CSV data.")
     parser.add_argument("--input", default="data/first_group_dn_dy_vs_energy.csv")
@@ -86,6 +104,11 @@ def main() -> None:
         default="",
         help="Semicolon list like '62.4:Xi,Xi_bar;200:Omega' to exclude species only at selected energies",
     )
+    parser.add_argument(
+        "--energies",
+        default="",
+        help="Optional comma-separated energy list to keep, e.g. '3.0,7.7'",
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input)
@@ -95,6 +118,7 @@ def main() -> None:
 
     fit_particles = {p.strip() for p in args.fit_particles.split(",") if p.strip()}
     exclusions = parse_exclusions(args.exclude_energy_particles)
+    energy_filter = parse_energies(args.energies)
     by_energy_rows: dict[float, list[tuple[int, str, float, float]]] = defaultdict(list)
     by_energy_particle: dict[float, dict[str, tuple[float, float]]] = defaultdict(dict)
     skipped = 0
@@ -118,6 +142,8 @@ def main() -> None:
             err = combined_error(stat, sys)
             if energy is None or value is None or err is None or err <= 0.0:
                 skipped += 1
+                continue
+            if energy_filter is not None and energy not in energy_filter:
                 continue
 
             by_energy_particle[energy][particle] = (value, err)

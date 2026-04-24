@@ -5,7 +5,7 @@ import math
 import re
 import time
 from pathlib import Path
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 
 import matplotlib.pyplot as plt
@@ -18,7 +18,11 @@ def fetch_json(url: str):
     last_err = None
     for i in range(6):
         try:
-            with urlopen(url, timeout=40) as r:
+            req = Request(url, headers={
+                'User-Agent': 'Mozilla/5.0 (compatible; BESII_Review/1.0)',
+                'Accept': 'application/json,text/plain,*/*',
+            })
+            with urlopen(req, timeout=40) as r:
                 return json.load(r)
         except HTTPError as e:
             last_err = e
@@ -269,6 +273,34 @@ for tnum in [88, 89, 90, 91, 92, 93, 94, 95]:
     })
 
 # ID 310: phi dN/dy at y closest to 0, central 0-10 (group 0)
+q310_kaon = fetch_json('https://www.hepdata.net/download/table/ins1897327/Data%20from%20Figure%203(a)/json')
+best = None
+for r in q310_kaon.get('values', []):
+    x = to_float((r.get('x') or [{}])[0].get('value'))
+    if x is None:
+        continue
+    yis = [yi for yi in r.get('y', []) if int(yi.get('group', -1)) == 0]
+    if not yis:
+        continue
+    yi = yis[0]
+    score = abs(x)
+    if best is None or score < best[0]:
+        best = (score, yi, x)
+_, yi, xnear = best
+rows.append({
+    'paper_id': '310',
+    'particle': 'K-',
+    'observable': 'dN/dy at y~0',
+    'energy_GeV': 3.0,
+    'value': to_float(yi.get('value')),
+    'stat_err': parse_errors(yi)[0],
+    'sys_err': parse_errors(yi)[1],
+    'centrality': '0-10%',
+    'source': 'ins1897327/Figure3(a)',
+    'note': f'point at y={xnear}',
+})
+
+# ID 310: phi dN/dy at y closest to 0, central 0-10 (group 0)
 q310 = fetch_json('https://www.hepdata.net/download/table/ins1897327/Data%20from%20Figure%203(b)/json')
 best = None
 for r in q310.get('values', []):
@@ -294,6 +326,65 @@ rows.append({
     'centrality': '0-10%',
     'source': 'ins1897327/Figure3(b)',
     'note': f'point at y={xnear}',
+})
+
+# ID 310: Xi- dN/dy at y closest to 0, central 0-10 (group 0)
+q310_xi = fetch_json('https://www.hepdata.net/download/table/ins1897327/Data%20from%20Figure%203(c)/json')
+best = None
+for r in q310_xi.get('values', []):
+    x = to_float((r.get('x') or [{}])[0].get('value'))
+    if x is None:
+        continue
+    yis = [yi for yi in r.get('y', []) if int(yi.get('group', -1)) == 0]
+    if not yis:
+        continue
+    yi = yis[0]
+    score = abs(x)
+    if best is None or score < best[0]:
+        best = (score, yi, x)
+_, yi, xnear = best
+rows.append({
+    'paper_id': '310',
+    'particle': 'Xi',
+    'observable': 'dN/dy at y~0',
+    'energy_GeV': 3.0,
+    'value': to_float(yi.get('value')),
+    'stat_err': parse_errors(yi)[0],
+    'sys_err': parse_errors(yi)[1],
+    'centrality': '0-10%',
+    'source': 'ins1897327/Figure3(c)',
+    'note': f'point at y={xnear}',
+})
+
+# ID 352: inclusive proton dN/dy at y closest to 0, central 0-10
+q352 = fetch_json('https://www.hepdata.net/download/table/ins2724476/Table%20V(inclusive%20proton)/json')
+best = None
+for r in q352.get('values', []):
+    xitem = (r.get('x') or [{}])[0]
+    low = to_float(xitem.get('low'))
+    high = to_float(xitem.get('high'))
+    if low is None or high is None:
+        continue
+    x = 0.5 * (low + high)
+    yis = [yi for yi in r.get('y', []) if int(yi.get('group', -1)) == 0]
+    if not yis:
+        continue
+    yi = yis[0]
+    score = abs(x)
+    if best is None or score < best[0]:
+        best = (score, yi, x, low, high)
+_, yi, xnear, xlow, xhigh = best
+rows.append({
+    'paper_id': '352',
+    'particle': 'p',
+    'observable': 'dN/dy at y~0',
+    'energy_GeV': 3.0,
+    'value': to_float(yi.get('value')),
+    'stat_err': parse_errors(yi)[0],
+    'sys_err': parse_errors(yi)[1],
+    'centrality': '0-10%',
+    'source': 'ins2724476/Table V(inclusive proton)',
+    'note': f'rapidity bin [{xlow}, {xhigh}] centered at y={xnear}',
 })
 
 # ID 330: triton integral dN/dy, central 0-10 group
@@ -325,6 +416,34 @@ for r in q330.get('values', []):
         'source': 'ins2152917/Figure1 triton integral dN/dy',
         'note': '',
     })
+
+# ID 353: Ks0 dN/dy at y closest to 0, central 0-10 (group 0)
+q353_ks = fetch_json('https://www.hepdata.net/download/table/ins2807679/Table%202/json')
+best = None
+for r in q353_ks.get('values', []):
+    x = to_float((r.get('x') or [{}])[0].get('value'))
+    if x is None:
+        continue
+    yis = [yi for yi in r.get('y', []) if int(yi.get('group', -1)) == 0]
+    if not yis:
+        continue
+    yi = yis[0]
+    score = abs(x)
+    if best is None or score < best[0]:
+        best = (score, yi, x)
+_, yi, xnear = best
+rows.append({
+    'paper_id': '353',
+    'particle': 'Ks0',
+    'observable': 'dN/dy at y~0',
+    'energy_GeV': 3.0,
+    'value': to_float(yi.get('value')),
+    'stat_err': parse_errors(yi)[0],
+    'sys_err': parse_errors(yi)[1],
+    'centrality': '0-10%',
+    'source': 'ins2807679/Table2',
+    'note': f'point at y={xnear}',
+})
 
 # ID 353: Lambda dN/dy at y closest to 0, central 0-10 (group 0)
 q353 = fetch_json('https://www.hepdata.net/download/table/ins2807679/Table%201/json')
