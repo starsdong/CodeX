@@ -7,6 +7,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+RAW_SRC = Path("data/first_group_dn_dy_vs_energy.csv")
 SRC = Path("data/strange_hadron_yields_vs_energy.csv")
 OUT_PNG = Path("data/strange_hadron_yields_vs_energy.png")
 
@@ -36,8 +37,30 @@ def combined_error(row):
     return math.hypot(stat, sys) if (stat or sys) else 0.0
 
 
+def rebuild_table():
+    rows = []
+    with RAW_SRC.open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if row["particle"] not in PARTICLE_ORDER:
+                continue
+            if "dn/dy" not in (row.get("observable") or "").lower():
+                continue
+            rows.append(row)
+
+    rows.sort(key=lambda r: (to_float(r["energy_GeV"]) or 0.0, PARTICLE_ORDER.index(r["particle"])))
+
+    with SRC.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["paper_id", "particle", "observable", "energy_GeV", "value", "stat_err", "sys_err", "centrality", "source", "note"],
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+    return rows
+
+
 def main():
-    rows = list(csv.DictReader(SRC.open(encoding="utf-8")))
+    rows = rebuild_table()
     fig, ax = plt.subplots(figsize=(9.2, 6.0))
 
     for particle in PARTICLE_ORDER:
@@ -69,6 +92,7 @@ def main():
     ax.grid(True, which="both", ls="--", alpha=0.35)
     ax.legend(fontsize=9, ncol=2, loc="best")
     fig.tight_layout()
+    print(f"wrote {SRC}")
     fig.savefig(OUT_PNG, dpi=240)
     plt.close(fig)
     print(f"wrote {OUT_PNG}")
