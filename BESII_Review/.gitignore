@@ -1,5 +1,6 @@
 .DS_Store
 .mplconfig/
+THERMUS/
 
 __pycache__/
 *.pyc
@@ -10,14 +11,6 @@ data/*.log
 FreezeOut/*.d
 FreezeOut/*.so
 FreezeOut/*.pcm
-
-THERMUS/source/build/
-THERMUS/source/.git
-THERMUS/source/
-THERMUS/**/*.o
-THERMUS/**/*.d
-THERMUS/**/*.so
-THERMUS/**/*.pcm
 
 scripts/thermalfist_fit/fit_by_energy
 scripts/thermus_fit/fit_by_energy
