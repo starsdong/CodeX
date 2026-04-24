@@ -1,0 +1,239 @@
+
+#####################################################################################
+Output to compare to that of Section 3.3.2
+
+
+
+         ********* LISTING FOR PARTICLE Delta(1600)0 *********
+
+
+                 ID = 32114
+
+                 Deg. = 4
+
+                 STAT = 1
+
+                 Mass           =    1.6 GeV
+                 Width          =   0.35 GeV
+                 Threshold      = 1.07454 GeV
+
+                 Hard sphere radius = 0
+
+                 B = 1
+                 S = 0          |S| = 0
+                 Q = 0
+                 Charm = 0              |C| = 0
+                 Beauty = 0
+                 Top = 0
+
+                 UNSTABLE
+
+                 Decay Channels:
+                 BRatio: 0.108558               Daughters:      2112    111
+                 BRatio: 0.0542326              Daughters:      2212    -211
+                 BRatio: 0.272837               Daughters:      2214    -211
+                 BRatio: 0.0341395              Daughters:      2114    111
+                 BRatio: 0.204651               Daughters:      1114    211
+                 BRatio: 0.0774884              Daughters:      2112    113
+                 BRatio: 0.0387907              Daughters:      2212    -213
+                 BRatio: 0.139535               Daughters:      12112   111
+                 BRatio: 0.0697674              Daughters:      12212   -211
+
+
+                 Summary of Decays:
+                2112            60.6774%
+                111             62.5704%
+                2212            39.3226%
+                -211            83.9999%
+                211             44.6773%
+         **********************************************
+
+#####################################################################################
+
+#####################################################################################
+Output to compare to that of Section 3.5.4
+
+  ***************************** Thermal Parameters ****************************
+
+                 Strangeness inside Canonical Volume = 0
+
+       T         =          0.16                                (to be FITTED)
+                                                                 start: 0.16
+                                                                 range: 0.05 -- 0.18
+                                                                 step:  0.001
+
+     muB         =           0.2                                (to be FITTED)
+                                                                 start: 0.2
+                                                                 range: 0 -- 0.5
+                                                                 step:  0.001
+
+     muQ         =         -0.01                                (to be CONSTRAINED)
+
+                                                                 B/2Q: 1.2683
+
+  gammas         =           0.8                                (FIXED)
+
+Can. radius      =             6                                (FIXED)
+
+  radius         =             6                                (FIXED)
+
+                         Parameters unconstrained
+
+  ******************************************************************************
+
+
+#####################################################################################
+
+#####################################################################################
+Output to compare to that of Section 3.6.4
+
+n_Boltz (No Width) = 0.000815073
+e_Boltzmann (Width) = 0.00229185
+
+#####################################################################################
+
+#####################################################################################
+Output to compare to that of Section 3.7.9
+
+  ***************************** Thermal Parameters ****************************
+
+                 Strangeness inside Canonical Volume = 0
+
+       T         =          0.16                                (to be FITTED)
+                                                                 start: 0.16
+                                                                 range: 0.05 -- 0.18
+                                                                 step:  0.001
+
+     muB         =           0.2                                (to be FITTED)
+                                                                 start: 0.2
+                                                                 range: 0 -- 0.5
+                                                                 step:  0.001
+
+     muQ         =       -0.00636409                            (*CONSTRAINED*)
+
+                                                                 B/2Q: 1.2683
+
+  gammas         =           0.8                                (FIXED)
+
+Can. radius      =             6                                (FIXED)
+
+  radius         =             6                                (FIXED)
+
+                         B/2Q Successfully Constrained
+
+  ******************************************************************************
+
+
+  **** Densities for Particle 32114 ****
+         n_prim = 0.00138306
+         n_decay = 0
+         e_prim = 0.0022912
+         s_prim = 0.0139745
+         p_prim = 0.000221328
+
+
+  **** Densities for Particle 211 ****
+         n_prim = 0.0488139
+         n_decay = 0.119683
+         e_prim = 0.0247039
+         s_prim = 0.20276
+         p_prim = 0.00742708
+
+
+#####################################################################################
+
+#####################################################################################
+Output to compare to that of Section 3.9.5
+
+********************************
+
+  anti-pi+/pi+ Exp_A:
+                        FIT YIELD
+                        Experiment:     0.99     +-    0.1
+                        Model:      0.999914     +-      0
+                        Std.Dev.: 0.0991409  Quad.Dev.: 0.00991494
+
+  anti-pi+/pi+ Exp_B:
+                        FIT YIELD
+                        Experiment:     0.96     +-  0.177
+                        Model:      0.999914     +-      0
+                        Std.Dev.: 0.225503  Quad.Dev.: 0.0399175
+
+  anti-pi+/pi+ Exp_D:
+                        FIT YIELD
+                        Experiment:        1     +-  0.022
+                        Model:      0.999914     +-      0
+                        Std.Dev.: -0.00390501  Quad.Dev.: -8.59175e-05
+
+    K+/anti-K+ Exp_B:
+                        FIT YIELD
+                        Experiment:    1.152     +-  0.239
+                        Model:      0.979833     +-      0
+                        Std.Dev.: -0.720365  Quad.Dev.: -0.175711
+
+    K+/anti-K+ Exp_D:
+                        FIT YIELD
+                        Experiment:    1.098     +-  0.111
+                        Model:      0.979833     +-      0
+                        Std.Dev.: -1.06457  Quad.Dev.: -0.120599
+
+    K+/anti-K+ Exp_C:
+                        FIT YIELD
+                        Experiment:    1.108     +-  0.022
+                        Model:      0.979833     +-      0
+                        Std.Dev.: -5.82578  Quad.Dev.: -0.130805
+
+      anti-p/p Exp_A:
+                        FIT YIELD
+                        Experiment:     0.65     +-  0.092
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -1.24716  Quad.Dev.: -0.21436
+
+      anti-p/p Exp_B:
+                        FIT YIELD
+                        Experiment:    0.679     +-  0.148
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -0.971207  Quad.Dev.: -0.268539
+
+      anti-p/p Exp_D:
+                        FIT YIELD
+                        Experiment:      0.6     +-  0.072
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -0.899147  Quad.Dev.: -0.120948
+
+      anti-p/p Exp_C:
+                        FIT YIELD
+                        Experiment:    0.714     +-   0.05
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -3.57477  Quad.Dev.: -0.333928
+
+anti-Lambda/Lambda Exp_B:
+                        FIT YIELD
+                        Experiment:    0.734     +-   0.21
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -0.946374  Quad.Dev.: -0.371293
+
+anti-Lambda/Lambda Exp_C:
+                        FIT YIELD
+                        Experiment:     0.72     +-  0.024
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -7.69744  Quad.Dev.: -0.345137
+
+anti-Ksi-/Ksi- Exp_C:
+                        FIT YIELD
+                        Experiment:    0.878     +-  0.054
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -6.34701  Quad.Dev.: -0.64032
+
+anti-Omega/Omega Exp_C:
+                        FIT YIELD
+                        Experiment:    1.062     +-   0.41
+                        Model:      0.535261     +-      0
+                        Std.Dev.: -1.28473  Quad.Dev.: -0.984077
+
+  ******************************************************************************
+
+
+#####################################################################################
+
+

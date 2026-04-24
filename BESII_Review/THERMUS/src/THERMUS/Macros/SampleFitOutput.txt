@@ -1,0 +1,59 @@
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=3.54326 FROM MIGRAD    STATUS=CONVERGED     128 CALLS         129 TOTAL
+                     EDM=6.43919e-06    STRATEGY= 1      ERROR MATRIX ACCURATE
+  EXT PARAMETER                                   STEP         FIRST
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE
+   1  T            1.62878e-01   1.10211e-01   2.32021e-04  -7.98809e-03
+   2  muB          3.58908e-02   1.91364e-02   1.68543e-05   4.05740e-03
+   3  muS          1.06828e-02   8.13945e-03   1.80744e-05   1.25485e-01
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  3    ERR DEF=1
+  4.593e-03  1.289e-03  5.418e-04
+  1.289e-03  3.689e-04  1.548e-04
+  5.418e-04  1.548e-04  6.653e-05
+ PARAMETER  CORRELATION COEFFICIENTS
+       NO.  GLOBAL      1      2      3
+        1  0.99017   1.000  0.990  0.980
+        2  0.99410   0.990  1.000  0.988
+        3  0.98814   0.980  0.988  1.000
+ FCN=3.54326 FROM MIGRAD    STATUS=CONVERGED     128 CALLS         129 TOTAL
+                     EDM=6.43919e-06    STRATEGY= 1      ERROR MATRIX ACCURATE
+  EXT PARAMETER                                  PHYSICAL LIMITS
+  NO.   NAME      VALUE            ERROR       NEGATIVE      POSITIVE
+   1  T            1.62878e-01   1.10211e-01   5.00000e-02   1.80000e-01
+   2  muB          3.58908e-02   1.91364e-02   0.00000e+00   5.00000e-01
+   3  muS          1.06828e-02   8.13945e-03   0.00000e+00   5.00000e-01
+  ***************************** Thermal Parameters ****************************
+
+       T         =       0.162878        +-       0.110211      (FITTED!)
+                                                                 start: 0.16
+                                                                 range: 0.05 -- 0.18
+                                                                 step:  0.001
+
+     muB         =       0.0358908       +-      0.0191364      (FITTED!)
+                                                                 start: 0.05
+                                                                 range: 0 -- 0.5
+                                                                 step:  0.001
+
+     muS         =       0.0106828       +-     0.00813945      (FITTED!)
+                                                                 start: 0
+                                                                 range: 0 -- 0.5
+                                                                 step:  0.001
+
+     muQ         =             0                                (FIXED)
+
+  gammas         =             1                                (FIXED)
+
+  radius         =             0                                (FIXED)
+
+     muC         =             0                                (FIXED)
+
+  gammac         =             1                                (FIXED)
+
+                         Parameters unconstrained
+
+  ******************************************************************************
+
+
+#####################################################################################
+
+
