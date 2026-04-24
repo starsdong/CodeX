@@ -16,7 +16,8 @@ python3 scripts/thermus_fit/build_fit_inputs.py \
   --input data/first_group_dn_dy_vs_energy.csv \
   --outdir data/thermus_inputs \
   --manifest data/thermus_inputs/manifest.csv \
-  --fit-particles "pi+,pi-,K+,K-,p,pbar,Lambda,Lambda_bar,Xi,Xi_bar" \
+  --fit-particles "pi+,pi-,K+,K-,p,pbar,Lambda,Lambda_bar,Xi,Xi_bar,phi" \
+  --energies "7.7,11.5,19.6,27,39,62.4,130,200" \
   --exclude-energy-particles "62.4:Xi,Xi_bar"
 
 g++ -std=c++17 -O2 scripts/thermus_fit/fit_by_energy.cpp \

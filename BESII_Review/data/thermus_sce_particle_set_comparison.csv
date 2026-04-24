@@ -1,141 +1,149 @@
 energy_GeV,particle,data_yield,data_err,data_source,gc_effective_yield,sce_blended_yield,note
-3,pi+,,,,14.930807,14.809677,model-only point
-3,pi-,,,,26.907054,26.740885,model-only point
-3,K+,,,,3.025388,1.311328,model-only point
-3,K-,0.0673,0.00718912206,ins1897327/Figure3(a),0.110042,0.071110,point at y=-0.05
-3,p,84.2269,6.529703235,ins2724476/Table V(inclusive proton),81.240852,81.232880,"rapidity bin [-0.1, 0] centered at y=-0.05"
+3,pi+,,,,14.925197,14.809677,model-only point
+3,pi-,,,,26.896908,26.740885,model-only point
+3,K+,,,,3.282074,1.311328,model-only point
+3,K-,0.0673,0.00718912206,ins1897327/Figure3(a),0.101593,0.071110,point at y=-0.05
+3,p,84.2269,6.529703235,ins2724476/Table V(inclusive proton),81.239119,81.232880,"rapidity bin [-0.1, 0] centered at y=-0.05"
 3,pbar,,,,0.000002,0.000001,model-only point
-3,Ks0,0.742,0.08030566605,ins2807679/Table2,1.938192,0.848647,point at y=-0.05
-3,Lambda,2.258,0.2705346558,ins2807679/Table1,2.886195,1.849417,point at y=-0.05
+3,Ks0,0.742,0.08030566605,ins2807679/Table2,2.095870,0.848647,point at y=-0.05
+3,Lambda,2.258,0.2705346558,ins2807679/Table1,2.660862,1.849417,point at y=-0.05
 3,Lambda_bar,,,,0.000002,0.000001,model-only point
-3,Xi,0.0141,0.003564505576,ins1897327/Figure3(c),0.032137,0.007302,point at y=-0.1
+3,Xi,0.0141,0.003564505576,ins1897327/Figure3(c),0.027294,0.007302,point at y=-0.1
 3,Xi_bar,,,,0.000001,0.000000,model-only point
 3,phi,0.0157,0.005223112099,ins1897327/Figure3(b),0.005778,0.005778,point at y=-0.1
-3.2,pi+,,,,18.098983,19.078760,model-only point
-3.2,pi-,,,,30.382718,32.093597,model-only point
-3.2,K+,,,,3.904970,1.929781,model-only point
-3.2,K-,,,,0.201275,0.143767,model-only point
-3.2,p,,,,74.250946,75.603929,model-only point
-3.2,pbar,,,,0.000008,0.000006,model-only point
-3.2,Ks0,,,,2.458511,1.271121,model-only point
-3.2,Lambda,,,,3.645884,2.505932,model-only point
-3.2,Lambda_bar,,,,0.000010,0.000006,model-only point
-3.2,Xi,,,,0.054851,0.015285,model-only point
-3.2,Xi_bar,,,,0.000004,0.000000,model-only point
-3.2,phi,,,,0.012847,0.012868,model-only point
-3.5,pi+,,,,23.248470,25.954039,model-only point
-3.5,pi-,,,,35.781291,40.058774,model-only point
-3.5,K+,,,,5.356956,3.085885,model-only point
-3.5,K-,,,,0.423868,0.338158,model-only point
-3.5,p,,,,67.091223,69.287003,model-only point
-3.5,pbar,,,,0.000060,0.000056,model-only point
-3.5,Ks0,,,,3.324183,2.076681,model-only point
-3.5,Lambda,,,,4.872067,3.624674,model-only point
-3.5,Lambda_bar,,,,0.000072,0.000052,model-only point
-3.5,Xi,,,,0.105506,0.037503,model-only point
-3.5,Xi_bar,,,,0.000028,0.000000,model-only point
-3.5,phi,,,,0.033942,0.034040,model-only point
-3.9,pi+,,,,30.724973,35.446907,model-only point
-3.9,pi-,,,,43.283449,50.143530,model-only point
-3.9,K+,,,,7.445123,4.964471,model-only point
-3.9,K-,,,,0.915963,0.804185,model-only point
-3.9,p,,,,61.180440,63.426676,model-only point
-3.9,pbar,,,,0.000489,0.000528,model-only point
-3.9,Ks0,,,,4.609700,3.414237,model-only point
-3.9,Lambda,,,,6.576541,5.267805,model-only point
-3.9,Lambda_bar,,,,0.000558,0.000470,model-only point
-3.9,Xi,,,,0.205730,0.093085,model-only point
-3.9,Xi_bar,,,,0.000197,0.000000,model-only point
-3.9,phi,,,,0.090888,0.091182,model-only point
-4.5,pi+,,,,42.742408,49.083836,model-only point
-4.5,pi-,,,,54.912572,63.393506,model-only point
-4.5,K+,,,,10.640155,8.156395,model-only point
-4.5,K-,,,,2.097859,1.987151,model-only point
-4.5,p,,,,56.273066,57.835542,model-only point
-4.5,pbar,,,,0.004681,0.005475,model-only point
-4.5,Ks0,,,,6.723159,5.738080,model-only point
-4.5,Lambda,,,,9.039377,7.783424,model-only point
-4.5,Lambda_bar,,,,0.004983,0.004669,model-only point
-4.5,Xi,,,,0.415122,0.240522,model-only point
-4.5,Xi_bar,,,,0.001596,0.000024,model-only point
-4.5,phi,,,,0.254500,0.255126,model-only point
-5.2,pi+,,,,56.720801,62.553407,model-only point
-5.2,pi-,,,,68.131119,75.493126,model-only point
-5.2,K+,,,,14.055619,11.806951,model-only point
-5.2,K-,,,,3.978873,3.898702,model-only point
-5.2,p,,,,53.269928,53.993016,model-only point
-5.2,pbar,,,,0.027068,0.031256,model-only point
-5.2,Ks0,,,,9.235260,8.447779,model-only point
-5.2,Lambda,,,,11.451693,10.410647,model-only point
-5.2,Lambda_bar,,,,0.026788,0.025811,model-only point
-5.2,Xi,,,,0.701036,0.487860,model-only point
-5.2,Xi_bar,,,,0.007858,0.000740,model-only point
-5.2,phi,,,,0.548435,0.549099,model-only point
-7.7,pi+,93.4598,8.436686831,"ins1510593/dN/dy, 7.7 GeV",89.356705,83.017970,derived from dN/dy/(0.5*Npart) using Npart
-7.7,pi-,100.03909999999999,9.116046007,"ins1510593/dN/dy, 7.7 GeV",89.229050,92.566659,derived from dN/dy/(0.5*Npart) using Npart
-7.7,K+,20.80071,1.688349061,"ins1510593/dN/dy, 7.7 GeV",21.182620,18.181798,derived from dN/dy/(0.5*Npart) using Npart
-7.7,K-,7.69272,0.6251012268,"ins1510593/dN/dy, 7.7 GeV",8.231162,8.561467,derived from dN/dy/(0.5*Npart) using Npart
-7.7,p,54.96245999999999,6.056705921,"ins1510593/dN/dy, 7.7 GeV",54.170774,49.829681,derived from dN/dy/(0.5*Npart) using Npart
-7.7,pbar,0.398132,0.05161227552,"ins1510593/dN/dy, 7.7 GeV",0.221620,0.238769,derived from dN/dy/(0.5*Npart) using Npart
-7.7,Ks0,,,,14.190080,13.267979,model-only point
-7.7,Lambda,15.3,0.8273451517,ins1738953/Lambda dN/dy 7.7 GeV,14.793853,14.618534,
-7.7,Lambda_bar,0.193,0.01992485885,ins1738953/AntiLambda dN/dy 7.7 GeV,0.212519,0.189891,
-7.7,Xi,1.19,0.1140175425,ins1738953/Xi- dN/dy 7.7 GeV,1.194271,1.113760,
-7.7,Xi_bar,0.0657,0.008099382693,ins1738953/AntiXi+ dN/dy 7.7 GeV,0.058436,0.040889,
-7.7,phi,1.21,0.2184032967,ins1738953/Phi dN/dy 7.7 GeV,1.343407,1.343407,
-11.5,pi+,123.7812,12.51454252,"ins1510593/dN/dy, 11.5 GeV",113.092187,,derived from dN/dy/(0.5*Npart) using Npart
-11.5,pi-,129.6997,13.02179801,"ins1510593/dN/dy, 11.5 GeV",112.972000,,derived from dN/dy/(0.5*Npart) using Npart
-11.5,K+,24.992979999999996,2.520100653,"ins1510593/dN/dy, 11.5 GeV",26.701622,,derived from dN/dy/(0.5*Npart) using Npart
-11.5,K-,12.344299999999999,1.234893201,"ins1510593/dN/dy, 11.5 GeV",13.538052,,derived from dN/dy/(0.5*Npart) using Npart
-11.5,p,43.99982,5.293073109,"ins1510593/dN/dy, 11.5 GeV",40.941538,,derived from dN/dy/(0.5*Npart) using Npart
-11.5,pbar,1.4542599999999999,0.1867770548,"ins1510593/dN/dy, 11.5 GeV",0.850990,,derived from dN/dy/(0.5*Npart) using Npart
-11.5,Lambda,14.17,0.7840918314,ins1738953/Lambda dN/dy 11.5 GeV,13.754252,,
-11.5,Lambda_bar,0.659,0.04785394446,ins1738953/AntiLambda dN/dy 11.5 GeV,0.689161,,
-11.5,Xi,1.35,0.1118033989,ins1738953/Xi- dN/dy 11.5 GeV,1.371727,,
-11.5,Xi_bar,0.169,0.01456021978,ins1738953/AntiXi+ dN/dy 11.5 GeV,0.161873,,
-11.5,phi,1.72,0.2630589288,ins1738953/Phi dN/dy 11.5 GeV,,,
+3.2,pi+,,,,20.765948,22.655937,model-only point
+3.2,pi-,,,,33.204823,36.315742,model-only point
+3.2,K+,,,,4.985294,2.509628,model-only point
+3.2,K-,,,,0.285530,0.232088,model-only point
+3.2,p,,,,70.062005,71.997587,model-only point
+3.2,pbar,,,,0.000024,0.000021,model-only point
+3.2,Ks0,,,,3.093459,1.672807,model-only point
+3.2,Lambda,,,,4.004722,3.082302,model-only point
+3.2,Lambda_bar,,,,0.000032,0.000020,model-only point
+3.2,Xi,,,,0.069009,0.025284,model-only point
+3.2,Xi_bar,,,,0.000014,0.000000,model-only point
+3.2,phi,,,,0.022148,0.022202,model-only point
+3.5,pi+,,,,29.557363,33.975117,model-only point
+3.5,pi-,,,,42.123871,48.616260,model-only point
+3.5,K+,,,,7.526211,4.658962,model-only point
+3.5,K-,,,,0.784026,0.716616,model-only point
+3.5,p,,,,61.878158,64.174382,model-only point
+3.5,pbar,,,,0.000370,0.000394,model-only point
+3.5,Ks0,,,,4.619680,3.194077,model-only point
+3.5,Lambda,,,,5.982017,5.015493,model-only point
+3.5,Lambda_bar,,,,0.000450,0.000353,model-only point
+3.5,Xi,,,,0.168652,0.082595,model-only point
+3.5,Xi_bar,,,,0.000170,0.000000,model-only point
+3.5,phi,,,,0.079833,0.080094,model-only point
+3.9,pi+,,,,40.652585,46.774641,model-only point
+3.9,pi-,,,,52.907592,61.198226,model-only point
+3.9,K+,,,,10.558419,7.590684,model-only point
+3.9,K-,,,,1.783883,1.744270,model-only point
+3.9,p,,,,56.886018,58.606477,model-only point
+3.9,pbar,,,,0.003383,0.003936,model-only point
+3.9,Ks0,,,,6.570148,5.320821,model-only point
+3.9,Lambda,,,,8.261852,7.364463,model-only point
+3.9,Lambda_bar,,,,0.003810,0.003383,model-only point
+3.9,Xi,,,,0.343431,0.210181,model-only point
+3.9,Xi_bar,,,,0.001294,0.000013,model-only point
+3.9,phi,,,,0.219828,0.220416,model-only point
+4.5,pi+,,,,54.883051,60.772363,model-only point
+4.5,pi-,,,,66.398145,73.890387,model-only point
+4.5,K+,,,,14.110076,11.320572,model-only point
+4.5,K-,,,,3.582774,3.613717,model-only point
+4.5,p,,,,53.557829,54.408921,model-only point
+4.5,pbar,,,,0.022298,0.025909,model-only point
+4.5,Ks0,,,,9.106534,8.080922,model-only point
+4.5,Lambda,,,,10.768121,10.086633,model-only point
+4.5,Lambda_bar,,,,0.023080,0.021514,model-only point
+4.5,Xi,,,,0.616144,0.451592,model-only point
+4.5,Xi_bar,,,,0.007077,0.000516,model-only point
+4.5,phi,,,,0.504227,0.504940,model-only point
+5.2,pi+,,,,67.303349,71.152714,model-only point
+5.2,pi-,,,,78.026749,82.773308,model-only point
+5.2,K+,,,,16.926849,14.402237,model-only point
+5.2,K-,,,,5.534369,5.604074,model-only point
+5.2,p,,,,51.717104,52.026995,model-only point
+5.2,pbar,,,,0.073027,0.080612,model-only point
+5.2,Ks0,,,,11.351579,10.393888,model-only point
+5.2,Lambda,,,,12.593193,12.190774,model-only point
+5.2,Lambda_bar,,,,0.070820,0.065562,model-only point
+5.2,Xi,,,,0.875371,0.715849,model-only point
+5.2,Xi_bar,,,,0.020229,0.004849,model-only point
+5.2,phi,,,,0.831484,0.831929,model-only point
+7.7,pi+,93.4598,8.436686831,"ins1510593/dN/dy, 7.7 GeV",89.007654,82.663193,derived from dN/dy/(0.5*Npart) using Npart
+7.7,pi-,100.03909999999999,9.116046007,"ins1510593/dN/dy, 7.7 GeV",88.880077,92.208400,derived from dN/dy/(0.5*Npart) using Npart
+7.7,K+,20.80071,1.688349061,"ins1510593/dN/dy, 7.7 GeV",21.086832,18.107334,derived from dN/dy/(0.5*Npart) using Npart
+7.7,K-,7.69272,0.6251012268,"ins1510593/dN/dy, 7.7 GeV",8.184638,8.505348,derived from dN/dy/(0.5*Npart) using Npart
+7.7,p,54.96245999999999,6.056705921,"ins1510593/dN/dy, 7.7 GeV",54.221901,49.858880,derived from dN/dy/(0.5*Npart) using Npart
+7.7,pbar,0.398132,0.05161227552,"ins1510593/dN/dy, 7.7 GeV",0.220099,0.237208,derived from dN/dy/(0.5*Npart) using Npart
+7.7,Ks0,,,,14.295987,13.204575,model-only point
+7.7,Lambda,15.3,0.8273451517,ins1738953/Lambda dN/dy 7.7 GeV,14.788867,14.597339,
+7.7,Lambda_bar,0.193,0.01992485885,ins1738953/AntiLambda dN/dy 7.7 GeV,0.211565,0.189152,
+7.7,Xi,1.19,0.1140175425,ins1738953/Xi- dN/dy 7.7 GeV,1.192411,1.109346,
+7.7,Xi_bar,0.0657,0.008099382693,ins1738953/AntiXi+ dN/dy 7.7 GeV,0.058305,0.040827,
+7.7,phi,1.21,0.2184032967,ins1738953/Phi dN/dy 7.7 GeV,1.337456,1.337456,
+11.5,pi+,123.7812,12.51454252,"ins1510593/dN/dy, 11.5 GeV",110.637459,,derived from dN/dy/(0.5*Npart) using Npart
+11.5,pi-,129.6997,13.02179801,"ins1510593/dN/dy, 11.5 GeV",110.517940,,derived from dN/dy/(0.5*Npart) using Npart
+11.5,K+,24.992979999999996,2.520100653,"ins1510593/dN/dy, 11.5 GeV",26.117138,,derived from dN/dy/(0.5*Npart) using Npart
+11.5,K-,12.344299999999999,1.234893201,"ins1510593/dN/dy, 11.5 GeV",13.198141,,derived from dN/dy/(0.5*Npart) using Npart
+11.5,p,43.99982,5.293073109,"ins1510593/dN/dy, 11.5 GeV",40.936957,,derived from dN/dy/(0.5*Npart) using Npart
+11.5,pbar,1.4542599999999999,0.1867770548,"ins1510593/dN/dy, 11.5 GeV",0.835988,,derived from dN/dy/(0.5*Npart) using Npart
+11.5,Ks0,,,,19.176429,,model-only point
+11.5,Lambda,14.17,0.7840918314,ins1738953/Lambda dN/dy 11.5 GeV,13.714797,,
+11.5,Lambda_bar,0.659,0.04785394446,ins1738953/AntiLambda dN/dy 11.5 GeV,0.682425,,
+11.5,Xi,1.35,0.1118033989,ins1738953/Xi- dN/dy 11.5 GeV,1.364904,,
+11.5,Xi_bar,0.169,0.01456021978,ins1738953/AntiXi+ dN/dy 11.5 GeV,0.161563,,
+11.5,phi,1.72,0.2630589288,ins1738953/Phi dN/dy 11.5 GeV,2.137703,,
 14.5,p,39.0,4.700122977,ins1748776/dNdy_vs_Npart(p),,,
-19.6,pi+,161.39499999999998,17.91479715,"ins1510593/dN/dy, 19.6 GeV",140.022673,,derived from dN/dy/(0.5*Npart) using Npart
-19.6,pi-,165.789,18.25278239,"ins1510593/dN/dy, 19.6 GeV",139.927236,,derived from dN/dy/(0.5*Npart) using Npart
-19.6,K+,29.5581,2.974592039,"ins1510593/dN/dy, 19.6 GeV",30.939527,,derived from dN/dy/(0.5*Npart) using Npart
-19.6,K-,18.8266,1.893101762,"ins1510593/dN/dy, 19.6 GeV",20.848704,,derived from dN/dy/(0.5*Npart) using Npart
-19.6,p,34.222500000000004,4.461632007,"ins1510593/dN/dy, 19.6 GeV",30.964459,,derived from dN/dy/(0.5*Npart) using Npart
-19.6,pbar,4.1574,0.5410639981,"ins1510593/dN/dy, 19.6 GeV",2.803010,,derived from dN/dy/(0.5*Npart) using Npart
-19.6,Lambda,12.58,0.4617358552,ins1738953/Lambda dN/dy 19.6 GeV,12.676956,,
-19.6,Lambda_bar,1.858,0.09940824915,ins1738953/AntiLambda dN/dy 19.6 GeV,1.934246,,
-19.6,Xi,1.62,0.1019803903,ins1738953/Xi- dN/dy 19.6 GeV,1.548143,,
-19.6,Xi_bar,0.421,0.03041381265,ins1738953/AntiXi+ dN/dy 19.6 GeV,0.391982,,
-19.6,phi,2.57,0.3522782991,ins1738953/Phi dN/dy 19.6 GeV,,,
-27,pi+,172.97170500000001,19.10483778,"ins1510593/dN/dy, 27 GeV",151.657569,,derived from dN/dy/(0.5*Npart) using Npart
-27,pi-,177.05697500000002,19.55112338,"ins1510593/dN/dy, 27 GeV",151.575131,,derived from dN/dy/(0.5*Npart) using Npart
-27,K+,31.06865,2.815112332,"ins1510593/dN/dy, 27 GeV",33.160246,,derived from dN/dy/(0.5*Npart) using Npart
-27,K-,22.62347,2.05987152,"ins1510593/dN/dy, 27 GeV",23.732895,,derived from dN/dy/(0.5*Npart) using Npart
-27,p,31.738085,3.81066866,"ins1510593/dN/dy, 27 GeV",27.409155,,derived from dN/dy/(0.5*Npart) using Npart
-27,pbar,6.007750000000001,0.7211343163,"ins1510593/dN/dy, 27 GeV",4.295041,,derived from dN/dy/(0.5*Npart) using Npart
-27,Lambda,11.67,0.5115662225,ins1738953/Lambda dN/dy 27 GeV,11.766578,,
-27,Lambda_bar,2.75,0.1403566885,ins1738953/AntiLambda dN/dy 27 GeV,2.856048,,
-27,Xi,1.57,0.1104536102,ins1738953/Xi- dN/dy 27 GeV,1.509410,,
-27,Xi_bar,0.598,0.03847076812,ins1738953/AntiXi+ dN/dy 27 GeV,0.559793,,
-27,phi,3.01,0.4517742799,ins1738953/Phi dN/dy 27 GeV,,,
-39,pi+,182.279865,20.14333093,"ins1510593/dN/dy, 39 GeV",160.337424,,derived from dN/dy/(0.5*Npart) using Npart
-39,pi-,185.76520499999998,20.5191988,"ins1510593/dN/dy, 39 GeV",160.278364,,derived from dN/dy/(0.5*Npart) using Npart
-39,K+,31.966034999999998,2.90450025,"ins1510593/dN/dy, 39 GeV",33.427435,,derived from dN/dy/(0.5*Npart) using Npart
-39,K-,25.012439999999998,2.272369228,"ins1510593/dN/dy, 39 GeV",27.130105,,derived from dN/dy/(0.5*Npart) using Npart
-39,p,26.498834999999996,2.921584956,"ins1510593/dN/dy, 39 GeV",22.838687,,derived from dN/dy/(0.5*Npart) using Npart
-39,pbar,8.491245,1.023414318,"ins1510593/dN/dy, 39 GeV",6.346986,,derived from dN/dy/(0.5*Npart) using Npart
-39,Lambda,11.02,0.8605230967,ins1738953/Lambda dN/dy 39 GeV,10.646883,,
-39,Lambda_bar,3.82,0.3601388621,ins1738953/AntiLambda dN/dy 39 GeV,3.908284,,
-39,Xi,1.54,0.1902629759,ins1738953/Xi- dN/dy 39 GeV,1.482998,,
-39,Xi_bar,0.78,0.1104536102,ins1738953/AntiXi+ dN/dy 39 GeV,0.712695,,
-39,phi,3.38,0.4809365863,ins1738953/Phi dN/dy 39 GeV,,,
-62.4,pi+,233.0,17,arXiv:0808.2041/Table VIII,203.021177,,table gives total uncertainty (stat+sys)
-62.4,pi-,237.0,17,arXiv:0808.2041/Table VIII,202.969875,,table gives total uncertainty (stat+sys)
-62.4,K+,37.6,2.7,arXiv:0808.2041/Table VIII,41.262638,,table gives total uncertainty (stat+sys)
-62.4,K-,32.4,2.3,arXiv:0808.2041/Table VIII,35.813746,,table gives total uncertainty (stat+sys)
-62.4,p,29.0,3.8,arXiv:0808.2041/Table VIII,24.957305,,table gives total uncertainty (stat+sys)
-62.4,pbar,13.6,1.7,arXiv:0808.2041/Table VIII,10.653639,,table gives total uncertainty (stat+sys)
-62.4,Lambda,15.576031,2.306688,data/thermus_fit_points/sqrts_62p4GeV_points.csv,12.216119,,measured yield carried from THERMUS fit-point table
-62.4,Lambda_bar,7.252200,1.040042,data/thermus_fit_points/sqrts_62p4GeV_points.csv,6.317052,,measured yield carried from THERMUS fit-point table
+19.6,pi+,161.39499999999998,17.91479715,"ins1510593/dN/dy, 19.6 GeV",136.103011,,derived from dN/dy/(0.5*Npart) using Npart
+19.6,pi-,165.789,18.25278239,"ins1510593/dN/dy, 19.6 GeV",136.008382,,derived from dN/dy/(0.5*Npart) using Npart
+19.6,K+,29.5581,2.974592039,"ins1510593/dN/dy, 19.6 GeV",30.057298,,derived from dN/dy/(0.5*Npart) using Npart
+19.6,K-,18.8266,1.893101762,"ins1510593/dN/dy, 19.6 GeV",20.251429,,derived from dN/dy/(0.5*Npart) using Npart
+19.6,p,34.222500000000004,4.461632007,"ins1510593/dN/dy, 19.6 GeV",30.903802,,derived from dN/dy/(0.5*Npart) using Npart
+19.6,pbar,4.1574,0.5410639981,"ins1510593/dN/dy, 19.6 GeV",2.769494,,derived from dN/dy/(0.5*Npart) using Npart
+19.6,Ks0,,,,24.515640,,model-only point
+19.6,Lambda,12.58,0.4617358552,ins1738953/Lambda dN/dy 19.6 GeV,12.650006,,
+19.6,Lambda_bar,1.858,0.09940824915,ins1738953/AntiLambda dN/dy 19.6 GeV,1.922168,,
+19.6,Xi,1.62,0.1019803903,ins1738953/Xi- dN/dy 19.6 GeV,1.546534,,
+19.6,Xi_bar,0.421,0.03041381265,ins1738953/AntiXi+ dN/dy 19.6 GeV,0.392055,,
+19.6,phi,2.57,0.3522782991,ins1738953/Phi dN/dy 19.6 GeV,3.136364,,
+27,pi+,172.97170500000001,19.10483778,"ins1510593/dN/dy, 27 GeV",148.995513,,derived from dN/dy/(0.5*Npart) using Npart
+27,pi-,177.05697500000002,19.55112338,"ins1510593/dN/dy, 27 GeV",148.913540,,derived from dN/dy/(0.5*Npart) using Npart
+27,K+,31.06865,2.815112332,"ins1510593/dN/dy, 27 GeV",32.591795,,derived from dN/dy/(0.5*Npart) using Npart
+27,K-,22.62347,2.05987152,"ins1510593/dN/dy, 27 GeV",23.297385,,derived from dN/dy/(0.5*Npart) using Npart
+27,p,31.738085,3.81066866,"ins1510593/dN/dy, 27 GeV",27.367325,,derived from dN/dy/(0.5*Npart) using Npart
+27,pbar,6.007750000000001,0.7211343163,"ins1510593/dN/dy, 27 GeV",4.263064,,derived from dN/dy/(0.5*Npart) using Npart
+27,Ks0,,,,27.230013,,model-only point
+27,Lambda,11.67,0.5115662225,ins1738953/Lambda dN/dy 27 GeV,11.742554,,
+27,Lambda_bar,2.75,0.1403566885,ins1738953/AntiLambda dN/dy 27 GeV,2.845002,,
+27,Xi,1.57,0.1104536102,ins1738953/Xi- dN/dy 27 GeV,1.506783,,
+27,Xi_bar,0.598,0.03847076812,ins1738953/AntiXi+ dN/dy 27 GeV,0.559908,,
+27,phi,3.01,0.4517742799,ins1738953/Phi dN/dy 27 GeV,3.588193,,
+39,pi+,182.279865,20.14333093,"ins1510593/dN/dy, 39 GeV",157.790804,,derived from dN/dy/(0.5*Npart) using Npart
+39,pi-,185.76520499999998,20.5191988,"ins1510593/dN/dy, 39 GeV",157.732125,,derived from dN/dy/(0.5*Npart) using Npart
+39,K+,31.966034999999998,2.90450025,"ins1510593/dN/dy, 39 GeV",32.899571,,derived from dN/dy/(0.5*Npart) using Npart
+39,K-,25.012439999999998,2.272369228,"ins1510593/dN/dy, 39 GeV",26.694407,,derived from dN/dy/(0.5*Npart) using Npart
+39,p,26.498834999999996,2.921584956,"ins1510593/dN/dy, 39 GeV",22.722374,,derived from dN/dy/(0.5*Npart) using Npart
+39,pbar,8.491245,1.023414318,"ins1510593/dN/dy, 39 GeV",6.280364,,derived from dN/dy/(0.5*Npart) using Npart
+39,Ks0,,,,29.027997,,model-only point
+39,Lambda,11.02,0.8605230967,ins1738953/Lambda dN/dy 39 GeV,10.593718,,
+39,Lambda_bar,3.82,0.3601388621,ins1738953/AntiLambda dN/dy 39 GeV,3.873721,,
+39,Xi,1.54,0.1902629759,ins1738953/Xi- dN/dy 39 GeV,1.476480,,
+39,Xi_bar,0.78,0.1104536102,ins1738953/AntiXi+ dN/dy 39 GeV,0.707833,,
+39,phi,3.38,0.4809365863,ins1738953/Phi dN/dy 39 GeV,3.922773,,
+62.4,pi+,233.0,17,arXiv:0808.2041/Table VIII,203.506763,,table gives total uncertainty (stat+sys)
+62.4,pi-,237.0,17,arXiv:0808.2041/Table VIII,203.451778,,table gives total uncertainty (stat+sys)
+62.4,K+,37.6,2.7,arXiv:0808.2041/Table VIII,41.263929,,table gives total uncertainty (stat+sys)
+62.4,K-,32.4,2.3,arXiv:0808.2041/Table VIII,35.474782,,table gives total uncertainty (stat+sys)
+62.4,p,29.0,3.8,arXiv:0808.2041/Table VIII,30.109538,,table gives total uncertainty (stat+sys)
+62.4,pbar,13.6,1.7,arXiv:0808.2041/Table VIII,13.750662,,table gives total uncertainty (stat+sys)
+62.4,Ks0,,,,37.413562,,model-only point
+62.4,Lambda,15.576031,2.306688,ins871561/Figure9 (ratio-derived absolute yield),14.716615,,Derived via STAR Fig.9 ratios Lambda_bar/Pi- and Lambda_bar/Lambda (0-5%) with local pi- (0-5%); uncertainty propagated.
+62.4,Lambda_bar,7.2522,1.0400425,ins871561/Figure9 (ratio-derived absolute yield),8.394464,,Derived from STAR Fig.9 ratio Lambda_bar/Pi- (0-5%) and local pi- (0-5%); uncertainty propagated in quadrature.
+62.4,Xi,1.7397156,0.30642213,ins871561/Figure9 (ratio-derived absolute yield),2.194037,,Derived via STAR Fig.9 ratios Xi+/Pi- and Xi+/Xi- (0-5%) with local pi- (0-5%); uncertainty propagated.
+62.4,Xi_bar,1.1376,0.18488204,ins871561/Figure9 (ratio-derived absolute yield),1.547765,,Derived from STAR Fig.9 ratio Xi+/Pi- (0-5%) and local pi- (0-5%); uncertainty propagated in quadrature.
+62.4,phi,,,,5.473013,,model-only point
 130,pi+,278.0,20,arXiv:0808.2041/Table VIII,,,table gives total uncertainty (stat+sys)
 130,pi-,280.0,20,arXiv:0808.2041/Table VIII,,,table gives total uncertainty (stat+sys)
 130,K+,46.3,3,arXiv:0808.2041/Table VIII,,,table gives total uncertainty (stat+sys)
@@ -144,14 +152,15 @@ energy_GeV,particle,data_yield,data_err,data_source,gc_effective_yield,sce_blend
 130,pbar,20.0,2.2,arXiv:0808.2041/Table VIII,,,table gives total uncertainty (stat+sys)
 130,Xi,2.16,0.234,arXiv:nucl-ex/0307024/Table I,,,includes 10% pT-independent systematic per paper
 130,Xi_bar,1.81,0.1978913844,arXiv:nucl-ex/0307024/Table I,,,includes 10% pT-independent systematic per paper
-200,pi+,322.0,25,arXiv:0808.2041/Table VIII,303.958891,,table gives total uncertainty (stat+sys)
-200,pi-,327.0,25,arXiv:0808.2041/Table VIII,303.930059,,table gives total uncertainty (stat+sys)
-200,K+,51.3,6.5,arXiv:0808.2041/Table VIII,59.474607,,table gives total uncertainty (stat+sys)
-200,K-,49.5,6.2,arXiv:0808.2041/Table VIII,56.308964,,table gives total uncertainty (stat+sys)
-200,p,34.7,4.4,arXiv:0808.2041/Table VIII,29.136224,,table gives total uncertainty (stat+sys)
-200,pbar,26.7,3.4,arXiv:0808.2041/Table VIII,21.147516,,table gives total uncertainty (stat+sys)
-200,Lambda,16.7,1.118033989,arXiv:nucl-ex/0606014/Table I,15.140155,,
-200,Lambda_bar,12.7,0.9219544457,arXiv:nucl-ex/0606014/Table I,11.829267,,
-200,Xi,2.17,0.1992485885,arXiv:nucl-ex/0606014/Table I,2.353180,,
-200,Xi_bar,1.83,0.2061552813,arXiv:nucl-ex/0606014/Table I,1.974187,,
-200,phi,7.7,0.9013878189,ins651461/Table 1,,,
+200,pi+,322.0,25,arXiv:0808.2041/Table VIII,303.204871,,table gives total uncertainty (stat+sys)
+200,pi-,327.0,25,arXiv:0808.2041/Table VIII,303.176095,,table gives total uncertainty (stat+sys)
+200,K+,51.3,6.5,arXiv:0808.2041/Table VIII,59.322455,,table gives total uncertainty (stat+sys)
+200,K-,49.5,6.2,arXiv:0808.2041/Table VIII,56.174097,,table gives total uncertainty (stat+sys)
+200,p,34.7,4.4,arXiv:0808.2041/Table VIII,29.106062,,table gives total uncertainty (stat+sys)
+200,pbar,26.7,3.4,arXiv:0808.2041/Table VIII,21.124229,,table gives total uncertainty (stat+sys)
+200,Ks0,,,,56.254083,,model-only point
+200,Lambda,16.7,1.118033989,arXiv:nucl-ex/0606014/Table I,15.127377,,
+200,Lambda_bar,12.7,0.9219544457,arXiv:nucl-ex/0606014/Table I,11.816983,,
+200,Xi,2.17,0.1992485885,arXiv:nucl-ex/0606014/Table I,2.351846,,
+200,Xi_bar,1.83,0.2061552813,arXiv:nucl-ex/0606014/Table I,1.972430,,
+200,phi,7.7,0.9013878189,ins651461/Table 1,7.855488,,

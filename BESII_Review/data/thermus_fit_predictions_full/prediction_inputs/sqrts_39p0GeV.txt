@@ -1,0 +1,13 @@
+# id<TAB>descriptor<TAB>value<TAB>error
+211	pi+	0.0	0.0
+-211	pi-	0.0	0.0
+2212	p	0.0	0.0
+-2212	pbar	0.0	0.0
+321	K+	0.0	0.0
+-321	K-	0.0	0.0
+310	Ks0	0.0	0.0
+3122	Lambda	0.0	0.0
+-3122	Lambda_bar	0.0	0.0
+3312	Xi	0.0	0.0
+-3312	Xi_bar	0.0	0.0
+333	phi	0.0	0.0

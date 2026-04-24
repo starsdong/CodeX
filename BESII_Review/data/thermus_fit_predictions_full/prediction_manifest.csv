@@ -1,0 +1,8 @@
+energy_GeV,prediction_file,T_MeV,muB_MeV,muS_MeV,muQ_MeV,gammaS,R_fm,interpolation_note
+7.7,data/thermus_fit_predictions_full/prediction_inputs/sqrts_7p7GeV.txt,146.065652,407.065927,93.367409,0.000000,1.000000,5.713493,GC prediction using exact fitted high-energy THERMUS parameters
+11.5,data/thermus_fit_predictions_full/prediction_inputs/sqrts_11p5GeV.txt,152.182440,300.100209,68.899207,0.000000,1.000000,5.941006,GC prediction using exact fitted high-energy THERMUS parameters
+19.6,data/thermus_fit_predictions_full/prediction_inputs/sqrts_19p6GeV.txt,159.658201,195.406582,42.952528,0.000000,1.000000,5.913123,GC prediction using exact fitted high-energy THERMUS parameters
+27,data/thermus_fit_predictions_full/prediction_inputs/sqrts_27p0GeV.txt,161.626821,152.746900,36.396133,0.000000,1.000000,5.983160,GC prediction using exact fitted high-energy THERMUS parameters
+39,data/thermus_fit_predictions_full/prediction_inputs/sqrts_39p0GeV.txt,162.800439,106.286830,23.235870,0.000000,1.000000,6.045263,GC prediction using exact fitted high-energy THERMUS parameters
+62.4,data/thermus_fit_predictions_full/prediction_inputs/sqrts_62p4GeV.txt,165.613887,71.667223,16.209286,0.000000,1.000000,6.344302,GC prediction using exact fitted high-energy THERMUS parameters
+200,data/thermus_fit_predictions_full/prediction_inputs/sqrts_200p0GeV.txt,166.206361,27.093513,6.240906,0.000000,1.000000,7.212640,GC prediction using exact fitted high-energy THERMUS parameters

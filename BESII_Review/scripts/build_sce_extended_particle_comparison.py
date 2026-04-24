@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plot measured yields with the retained low-energy THERMUS SCE prediction set."""
+"""Plot all-particle measured yields with the retained GC and SCE THERMUS curves."""
 
 from __future__ import annotations
 
@@ -16,12 +16,14 @@ from matplotlib.lines import Line2D
 RAW_CSV = Path("data/first_group_dn_dy_vs_energy.csv")
 STRANGE_MERGED_CSV = Path("data/strange_hadron_yields_with_thermus.csv")
 GC_LOW_DIR = Path("data/thermus_gc_from_sce_effective/prediction_points")
-GC_FIT_DIR = Path("data/thermus_fit_points")
+GC_FIT_DIR = Path("data/thermus_fit_predictions_full/prediction_points")
 SCE_BLEND_DIR = Path("data/thermus_sce_blended/prediction_points")
 
 OUT_CSV = Path("data/thermus_sce_particle_set_comparison.csv")
 OUT_PNG = Path("data/thermus_sce_particle_set_comparison.png")
 OUT_PDF = Path("data/thermus_sce_particle_set_comparison.pdf")
+ALL_OUT_PNG = Path("data/all_particle_yields_with_thermus.png")
+ALL_OUT_PDF = Path("data/all_particle_yields_with_thermus.pdf")
 
 PARTICLE_ORDER = [
     "pi+",
@@ -51,6 +53,17 @@ STYLE = {
     "Xi": {"marker": "h", "color": "tab:gray"},
     "Xi_bar": {"marker": "8", "color": "tab:gray"},
     "phi": {"marker": "*", "color": "black"},
+}
+MODEL_CURVE_MIN_ENERGY = {
+    "gc_effective_yield": {"pbar": 7.7, "Lambda_bar": 7.7, "Xi_bar": 7.7},
+    "sce_blended_yield": {
+        "pi+": 7.7,
+        "pi-": 7.7,
+        "p": 7.7,
+        "pbar": 7.7,
+        "Lambda_bar": 7.7,
+        "Xi_bar": 7.7,
+    },
 }
 
 
@@ -159,7 +172,9 @@ def write_csv(rows: list[dict[str, str]]) -> None:
         writer.writerows(rows)
 
 
-def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], model_field: str, title: str, line_style: str) -> None:
+def make_plot(rows: list[dict[str, str]]) -> tuple[plt.Figure, plt.Axes]:
+    fig, ax = plt.subplots(figsize=(10.6, 6.6))
+
     for particle in PARTICLE_ORDER:
         pts = [r for r in rows if r["particle"] == particle]
         if not pts:
@@ -172,9 +187,9 @@ def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], model_field: str, title
             ax.errorbar(
                 [float(r["energy_GeV"]) for r in data_pts],
                 [float(r["data_yield"]) for r in data_pts],
-                yerr=[float(r["data_err"]) for r in data_pts if r["data_err"]],
+                yerr=[float(r["data_err"]) if r["data_err"] else 0.0 for r in data_pts],
                 marker=style["marker"],
-                ms=4.2,
+                ms=4.3,
                 lw=0.0,
                 capsize=2,
                 linestyle="none",
@@ -182,34 +197,41 @@ def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], model_field: str, title
                 alpha=0.95,
             )
 
-        model_pts = [r for r in pts if r[model_field]]
-        if len(model_pts) >= 2:
-            ax.plot(
-                [float(r["energy_GeV"]) for r in model_pts],
-                [float(r[model_field]) for r in model_pts],
-                line_style,
-                lw=1.7,
-                color=style["color"],
-                alpha=0.95,
-            )
-        elif len(model_pts) == 1:
-            ax.plot(
-                [float(model_pts[0]["energy_GeV"])],
-                [float(model_pts[0][model_field])],
-                marker="_",
-                ms=10,
-                mew=1.7,
-                linestyle="none",
-                color=style["color"],
-            )
+        for model_field, line_style in (
+            ("gc_effective_yield", "-"),
+            ("sce_blended_yield", "-."),
+        ):
+            min_energy = MODEL_CURVE_MIN_ENERGY.get(model_field, {}).get(particle, 0.0)
+            model_pts = [r for r in pts if r[model_field] and float(r["energy_GeV"]) >= min_energy]
+            if len(model_pts) >= 2:
+                ax.plot(
+                    [float(r["energy_GeV"]) for r in model_pts],
+                    [float(r[model_field]) for r in model_pts],
+                    line_style,
+                    lw=1.7,
+                    color=style["color"],
+                    alpha=0.95,
+                )
+            elif len(model_pts) == 1:
+                ax.plot(
+                    [float(model_pts[0]["energy_GeV"])],
+                    [float(model_pts[0][model_field])],
+                    marker="_",
+                    ms=10,
+                    mew=1.7,
+                    linestyle="none",
+                    color=style["color"],
+                )
 
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel(r"$\sqrt{s_{NN}}$ (GeV)")
-    ax.set_title(title, fontsize=11)
+    ax.set_ylabel(r"$dN/dy$")
+    ax.set_title("All Identified-Particle Yields vs Energy with THERMUS", fontsize=12)
     ax.grid(True, which="both", ls="--", alpha=0.28)
     ax.set_xlim(2.5, 300.0)
-    ax.set_ylim(5.0e-7, 1.0e3)
+    ax.set_ylim(3.0e-3, 1.0e3)
+    return fig, ax
 
 
 def main() -> None:
@@ -224,22 +246,7 @@ def main() -> None:
     )
     write_csv(rows)
 
-    fig, axes = plt.subplots(1, 2, figsize=(11.4, 5.9), sharey=True)
-    draw_panel(
-        axes[0],
-        rows,
-        "gc_effective_yield",
-        "Measured + THERMUS GC\n(using effective SCE trace)",
-        "-",
-    )
-    draw_panel(
-        axes[1],
-        rows,
-        "sce_blended_yield",
-        "Measured + THERMUS SCE\n(endpoint-interpolated 3.0 to 7.7 GeV)",
-        "-.",
-    )
-    axes[0].set_ylabel(r"$dN/dy$")
+    fig, ax = make_plot(rows)
 
     particle_handles = [
         Line2D([0], [0], marker=STYLE[p]["marker"], color=STYLE[p]["color"], lw=0, markersize=6, label=p)
@@ -257,17 +264,17 @@ def main() -> None:
         ),
     ]
 
-    leg_particles = axes[0].legend(
+    leg_particles = ax.legend(
         handles=particle_handles,
         loc="upper left",
         fontsize=8,
-        ncol=2,
+        ncol=3,
         frameon=False,
         title="Particle",
         title_fontsize=9,
     )
-    axes[0].add_artist(leg_particles)
-    axes[1].legend(
+    ax.add_artist(leg_particles)
+    ax.legend(
         handles=model_handles,
         loc="lower right",
         fontsize=8,
@@ -279,11 +286,15 @@ def main() -> None:
     fig.tight_layout()
     fig.savefig(OUT_PNG, dpi=240)
     fig.savefig(OUT_PDF)
+    fig.savefig(ALL_OUT_PNG, dpi=240)
+    fig.savefig(ALL_OUT_PDF)
     plt.close(fig)
 
     print(f"wrote {OUT_CSV}")
     print(f"wrote {OUT_PNG}")
     print(f"wrote {OUT_PDF}")
+    print(f"wrote {ALL_OUT_PNG}")
+    print(f"wrote {ALL_OUT_PDF}")
 
 
 if __name__ == "__main__":

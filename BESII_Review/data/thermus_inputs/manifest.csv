@@ -1,9 +1,9 @@
 energy_GeV,fit_file,n_points
-7.7,data/thermus_inputs/sqrts_7p7GeV.txt,10
-11.5,data/thermus_inputs/sqrts_11p5GeV.txt,10
-19.6,data/thermus_inputs/sqrts_19p6GeV.txt,10
-27,data/thermus_inputs/sqrts_27GeV.txt,10
-39,data/thermus_inputs/sqrts_39GeV.txt,10
+7.7,data/thermus_inputs/sqrts_7p7GeV.txt,11
+11.5,data/thermus_inputs/sqrts_11p5GeV.txt,11
+19.6,data/thermus_inputs/sqrts_19p6GeV.txt,11
+27,data/thermus_inputs/sqrts_27GeV.txt,11
+39,data/thermus_inputs/sqrts_39GeV.txt,11
 62.4,data/thermus_inputs/sqrts_62p4GeV.txt,8
 130,data/thermus_inputs/sqrts_130GeV.txt,8
-200,data/thermus_inputs/sqrts_200GeV.txt,10
+200,data/thermus_inputs/sqrts_200GeV.txt,11

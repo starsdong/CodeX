@@ -16,7 +16,7 @@ from matplotlib.lines import Line2D
 RAW_CSV = Path("data/first_group_dn_dy_vs_energy.csv")
 STRANGE_MERGED_CSV = Path("data/strange_hadron_yields_with_thermus.csv")
 GC_LOW_DIR = Path("data/thermus_gc_from_sce_effective/prediction_points")
-GC_FIT_DIR = Path("data/thermus_fit_points")
+GC_FIT_DIR = Path("data/thermus_fit_predictions_full/prediction_points")
 SCE_BLEND_DIR = Path("data/thermus_sce_blended/prediction_points")
 
 OUT_PNG = Path("data/strange_hadron_model_comparison_triptych.png")
@@ -51,6 +51,7 @@ STYLE = {
     "Xi_bar": {"marker": "8", "color": "dimgray"},
     "phi": {"marker": "*", "color": "black"},
 }
+CURVE_MIN_ENERGY = {"pbar": 7.7, "Lambda_bar": 7.7, "Xi_bar": 7.7}
 
 
 def to_float(text: str | None) -> float | None:
@@ -188,7 +189,8 @@ def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], title: str, model_field
                 alpha=0.95,
             )
 
-        model_pts = [r for r in pts if r[model_field]]
+        min_energy = CURVE_MIN_ENERGY.get(particle, 0.0)
+        model_pts = [r for r in pts if r[model_field] and float(r["energy_GeV"]) >= min_energy]
         if len(model_pts) >= 2:
             ax.plot(
                 [float(r["energy_GeV"]) for r in model_pts],
@@ -214,7 +216,7 @@ def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], title: str, model_field
     ax.set_title(title, fontsize=11)
     ax.grid(True, which="both", ls="--", alpha=0.28)
     ax.set_xlim(2.5, 300.0)
-    ax.set_ylim(5.0e-7, 1.0e3)
+    ax.set_ylim(3.0e-3, 1.0e3)
     ax.set_xlabel(r"$\sqrt{s_{NN}}$ (GeV)")
 
 

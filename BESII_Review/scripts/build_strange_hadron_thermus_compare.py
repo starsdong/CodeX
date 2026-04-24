@@ -9,8 +9,10 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 MEASURED_CSV = Path("data/strange_hadron_yields_vs_energy.csv")
+CANONICAL_MEASURED_CSV = Path("data/first_group_dn_dy_vs_energy.csv")
 THERMUS_DIR = Path("data/thermus_fit_points")
 THERMUS_GC_EFFECTIVE_DIR = Path("data/thermus_gc_from_sce_effective/prediction_points")
+THERMUS_GC_FIT_DIR = Path("data/thermus_fit_predictions_full/prediction_points")
 THERMUS_SCE_BLEND_CSV = Path("data/thermus_sce_blended/strange_hadron_yields_with_sce.csv")
 OUT_CSV = Path("data/strange_hadron_yields_with_thermus.csv")
 OUT_PNG = Path("data/strange_hadron_yields_with_thermus.png")
@@ -28,6 +30,7 @@ STYLE = {
     "phi": {"marker": "*", "color": "tab:brown"},
 }
 THERMUS_PARTICLES = {"K+", "K-", "Ks0", "Lambda", "Lambda_bar", "Xi", "Xi_bar", "phi"}
+CURVE_MIN_ENERGY = {"Lambda_bar": 7.7, "Xi_bar": 7.7}
 
 
 def to_float(text):
@@ -57,14 +60,18 @@ def combined_error(stat, sys):
     return math.hypot(stat_val, sys_val) if (stat_val or sys_val) else 0.0
 
 
-def load_measured_rows():
-    merged = {}
-    with MEASURED_CSV.open(encoding="utf-8") as f:
+def merge_measured_csv(merged, path, overwrite=False):
+    with path.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            key = (float(row["energy_GeV"]), row["particle"])
+            particle = row["particle"]
+            if particle not in THERMUS_PARTICLES:
+                continue
+            key = (float(row["energy_GeV"]), particle)
+            if key in merged and not overwrite:
+                continue
             merged[key] = {
                 "energy_GeV": f"{float(row['energy_GeV']):g}",
-                "particle": row["particle"],
+                "particle": particle,
                 "data_yield": row["value"],
                 "data_err": f"{combined_error(row.get('stat_err'), row.get('sys_err')):.10g}",
                 "gc_effective_model_yield": "",
@@ -73,6 +80,12 @@ def load_measured_rows():
                 "model_source": "",
                 "note": row.get("note", ""),
             }
+
+
+def load_measured_rows():
+    merged = {}
+    merge_measured_csv(merged, CANONICAL_MEASURED_CSV, overwrite=True)
+    merge_measured_csv(merged, MEASURED_CSV, overwrite=False)
     return merged
 
 
@@ -88,8 +101,8 @@ def attach_thermus_fit_points(merged, path, column, model_source):
                 merged[key] = {
                     "energy_GeV": f"{energy:g}",
                     "particle": particle,
-                    "data_yield": row["data_yield"],
-                    "data_err": row["data_err"],
+                    "data_yield": row.get("data_yield", ""),
+                    "data_err": row.get("data_err", ""),
                     "gc_effective_model_yield": "",
                     "sce_blended_model_yield": "",
                     "data_source": f"{path}",
@@ -197,7 +210,8 @@ def make_plot(rows):
             ("sce_blended_model_yield", "-."),
         ]
         for field, linestyle in model_specs:
-            model_pts = [r for r in pts if r[field]]
+            min_energy = CURVE_MIN_ENERGY.get(particle, 0.0)
+            model_pts = [r for r in pts if r[field] and float(r["energy_GeV"]) >= min_energy]
             if len(model_pts) >= 2:
                 ax.plot(
                     [float(r["energy_GeV"]) for r in model_pts],
@@ -225,6 +239,8 @@ def make_plot(rows):
     ax.set_ylabel(r"$dN/dy$")
     ax.set_title("Strange-Hadron Yields vs Energy with THERMUS")
     ax.grid(True, which="both", ls="--", alpha=0.35)
+    _, ymax = ax.get_ylim()
+    ax.set_ylim(3.0e-3, ymax)
 
     particle_handles = [
         Line2D([0], [0], marker=STYLE[p]["marker"], color=STYLE[p]["color"], lw=0, markersize=6, label=p)
@@ -236,9 +252,9 @@ def make_plot(rows):
         Line2D([0], [0], color="black", lw=1.6, ls="-", label="THERMUS GC (effective trace)"),
         Line2D([0], [0], color="black", lw=1.6, ls="-.", label="THERMUS SCE (endpoint-interpolated)"),
     ]
-    leg1 = ax.legend(handles=particle_handles, fontsize=9, ncol=2, loc="upper left", title="Particle")
+    leg1 = ax.legend(handles=particle_handles, fontsize=9, ncol=2, loc="lower right", title="Particle")
     ax.add_artist(leg1)
-    ax.legend(handles=style_handles, fontsize=9, loc="lower right")
+    ax.legend(handles=style_handles, fontsize=9, loc="upper left")
 
     fig.tight_layout()
     fig.savefig(OUT_PNG, dpi=240)
@@ -250,7 +266,7 @@ def main():
     merged = load_measured_rows()
     for path in sorted(THERMUS_GC_EFFECTIVE_DIR.glob("sqrts_*GeV_points.csv")):
         attach_thermus_prediction_points(merged, path, "gc_effective_model_yield", "THERMUS GC effective trace")
-    for path in sorted(THERMUS_DIR.glob("sqrts_*GeV_points.csv")):
+    for path in sorted(THERMUS_GC_FIT_DIR.glob("sqrts_*GeV_points.csv")):
         attach_thermus_fit_points(merged, path, "gc_effective_model_yield", "THERMUS GC fit")
     attach_sce_csv(merged, THERMUS_SCE_BLEND_CSV, "sce_blended_model_yield", "THERMUS SCE endpoint-interpolated")
 

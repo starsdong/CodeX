@@ -96,7 +96,7 @@ def main() -> None:
     parser.add_argument("--lambda-to-p-br", type=float, default=0.639)
     parser.add_argument(
         "--fit-particles",
-        default="pi+,pi-,K+,K-,p,pbar,Lambda,Lambda_bar,Xi,Xi_bar",
+        default="pi+,pi-,K+,K-,p,pbar,Lambda,Lambda_bar,Xi,Xi_bar,phi",
         help="Comma-separated particle names to include in fit files",
     )
     parser.add_argument(

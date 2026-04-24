@@ -1,95 +1,109 @@
 energy_GeV,particle,data_yield,data_err,gc_effective_model_yield,sce_blended_model_yield,data_source,model_source,note
-3,K+,,,3.025388,1.311328,,THERMUS SCE endpoint-interpolated,model-only point
-3,K-,0.0673,0.00718912206,0.110042,0.071110,ins1897327/Figure3(a),THERMUS SCE endpoint-interpolated,point at y=-0.05
-3,Ks0,0.742,0.08030566605,1.938192,0.848647,ins2807679/Table2,THERMUS SCE endpoint-interpolated,point at y=-0.05
-3,Lambda,2.258,0.2705346558,2.886195,1.849417,ins2807679/Table1,THERMUS SCE endpoint-interpolated,point at y=-0.05
+3,K+,,,3.282074,1.311328,,THERMUS SCE endpoint-interpolated,model-only point
+3,K-,0.0673,0.00718912206,0.101593,0.071110,ins1897327/Figure3(a),THERMUS SCE endpoint-interpolated,point at y=-0.05
+3,Ks0,0.742,0.08030566605,2.095870,0.848647,ins2807679/Table2,THERMUS SCE endpoint-interpolated,point at y=-0.05
+3,Lambda,2.258,0.2705346558,2.660862,1.849417,ins2807679/Table1,THERMUS SCE endpoint-interpolated,point at y=-0.05
 3,Lambda_bar,,,0.000002,0.000001,,THERMUS SCE endpoint-interpolated,model-only point
-3,Xi,0.0141,0.003564505576,0.032137,0.007302,ins1897327/Figure3(c),THERMUS SCE endpoint-interpolated,point at y=-0.1
+3,Xi,0.0141,0.003564505576,0.027294,0.007302,ins1897327/Figure3(c),THERMUS SCE endpoint-interpolated,point at y=-0.1
 3,Xi_bar,,,0.000001,0.000000,,THERMUS SCE endpoint-interpolated,model-only point
 3,phi,0.0157,0.005223112099,0.005778,0.005778,ins1897327/Figure3(b),THERMUS SCE endpoint-interpolated,point at y=-0.1
-3.2,K+,,,3.904970,1.929781,,THERMUS SCE endpoint-interpolated,model-only point
-3.2,K-,,,0.201275,0.143767,,THERMUS SCE endpoint-interpolated,model-only point
-3.2,Ks0,,,2.458511,1.271121,,THERMUS SCE endpoint-interpolated,model-only point
-3.2,Lambda,,,3.645884,2.505932,,THERMUS SCE endpoint-interpolated,model-only point
-3.2,Lambda_bar,,,0.000010,0.000006,,THERMUS SCE endpoint-interpolated,model-only point
-3.2,Xi,,,0.054851,0.015285,,THERMUS SCE endpoint-interpolated,model-only point
-3.2,Xi_bar,,,0.000004,0.000000,,THERMUS SCE endpoint-interpolated,model-only point
-3.2,phi,,,0.012847,0.012868,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,K+,,,5.356956,3.085885,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,K-,,,0.423868,0.338158,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,Ks0,,,3.324183,2.076681,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,Lambda,,,4.872067,3.624674,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,Lambda_bar,,,0.000072,0.000052,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,Xi,,,0.105506,0.037503,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,Xi_bar,,,0.000028,0.000000,,THERMUS SCE endpoint-interpolated,model-only point
-3.5,phi,,,0.033942,0.034040,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,K+,,,7.445123,4.964471,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,K-,,,0.915963,0.804185,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,Ks0,,,4.609700,3.414237,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,Lambda,,,6.576541,5.267805,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,Lambda_bar,,,0.000558,0.000470,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,Xi,,,0.205730,0.093085,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,Xi_bar,,,0.000197,0.000000,,THERMUS SCE endpoint-interpolated,model-only point
-3.9,phi,,,0.090888,0.091182,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,K+,,,10.640155,8.156395,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,K-,,,2.097859,1.987151,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,Ks0,,,6.723159,5.738080,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,Lambda,,,9.039377,7.783424,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,Lambda_bar,,,0.004983,0.004669,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,Xi,,,0.415122,0.240522,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,Xi_bar,,,0.001596,0.000024,,THERMUS SCE endpoint-interpolated,model-only point
-4.5,phi,,,0.254500,0.255126,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,K+,,,14.055619,11.806951,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,K-,,,3.978873,3.898702,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,Ks0,,,9.235260,8.447779,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,Lambda,,,11.451693,10.410647,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,Lambda_bar,,,0.026788,0.025811,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,Xi,,,0.701036,0.487860,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,Xi_bar,,,0.007858,0.000740,,THERMUS SCE endpoint-interpolated,model-only point
-5.2,phi,,,0.548435,0.549099,,THERMUS SCE endpoint-interpolated,model-only point
-7.7,K+,20.80071,1.688349061,21.182620,18.181798,"ins1510593/dN/dy, 7.7 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-7.7,K-,7.69272,0.6251012268,8.231162,8.561467,"ins1510593/dN/dy, 7.7 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-7.7,Ks0,,,14.190080,13.267979,,THERMUS SCE endpoint-interpolated,model-only point
-7.7,Lambda,15.3,0.8273451517,14.793853,14.618534,ins1738953/Lambda dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
-7.7,Lambda_bar,0.193,0.01992485885,0.212519,0.189891,ins1738953/AntiLambda dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
-7.7,Xi,1.19,0.1140175425,1.194271,1.113760,ins1738953/Xi- dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
-7.7,Xi_bar,0.0657,0.008099382693,0.058436,0.040889,ins1738953/AntiXi+ dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
-7.7,phi,1.21,0.2184032967,1.343407,1.343407,ins1738953/Phi dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
-11.5,K+,24.992979999999996,2.520100653,26.701622,,"ins1510593/dN/dy, 11.5 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-11.5,K-,12.344299999999999,1.234893201,13.538052,,"ins1510593/dN/dy, 11.5 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-11.5,Lambda,14.17,0.7840918314,13.754252,,ins1738953/Lambda dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
-11.5,Lambda_bar,0.659,0.04785394446,0.689161,,ins1738953/AntiLambda dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
-11.5,Xi,1.35,0.1118033989,1.371727,,ins1738953/Xi- dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
-11.5,Xi_bar,0.169,0.01456021978,0.161873,,ins1738953/AntiXi+ dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
-11.5,phi,1.72,0.2630589288,,,ins1738953/Phi dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
-19.6,K+,29.5581,2.974592039,30.939527,,"ins1510593/dN/dy, 19.6 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-19.6,K-,18.8266,1.893101762,20.848704,,"ins1510593/dN/dy, 19.6 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-19.6,Lambda,12.58,0.4617358552,12.676956,,ins1738953/Lambda dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
-19.6,Lambda_bar,1.858,0.09940824915,1.934246,,ins1738953/AntiLambda dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
-19.6,Xi,1.62,0.1019803903,1.548143,,ins1738953/Xi- dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
-19.6,Xi_bar,0.421,0.03041381265,0.391982,,ins1738953/AntiXi+ dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
-19.6,phi,2.57,0.3522782991,,,ins1738953/Phi dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
-27,K+,31.06865,2.815112332,33.160246,,"ins1510593/dN/dy, 27 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-27,K-,22.62347,2.05987152,23.732895,,"ins1510593/dN/dy, 27 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-27,Lambda,11.67,0.5115662225,11.766578,,ins1738953/Lambda dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
-27,Lambda_bar,2.75,0.1403566885,2.856048,,ins1738953/AntiLambda dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
-27,Xi,1.57,0.1104536102,1.509410,,ins1738953/Xi- dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
-27,Xi_bar,0.598,0.03847076812,0.559793,,ins1738953/AntiXi+ dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
-27,phi,3.01,0.4517742799,,,ins1738953/Phi dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
-39,K+,31.966034999999998,2.90450025,33.427435,,"ins1510593/dN/dy, 39 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-39,K-,25.012439999999998,2.272369228,27.130105,,"ins1510593/dN/dy, 39 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
-39,Lambda,11.02,0.8605230967,10.646883,,ins1738953/Lambda dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
-39,Lambda_bar,3.82,0.3601388621,3.908284,,ins1738953/AntiLambda dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
-39,Xi,1.54,0.1902629759,1.482998,,ins1738953/Xi- dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
-39,Xi_bar,0.78,0.1104536102,0.712695,,ins1738953/AntiXi+ dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
-39,phi,3.38,0.4809365863,,,ins1738953/Phi dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
-62.4,K+,37.600000,2.700000,41.262638,,data/thermus_fit_points/sqrts_62p4GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-62.4,K-,32.400000,2.300000,35.813746,,data/thermus_fit_points/sqrts_62p4GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-62.4,Lambda,15.576031,2.306688,12.216119,,data/thermus_fit_points/sqrts_62p4GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-62.4,Lambda_bar,7.252200,1.040042,6.317052,,data/thermus_fit_points/sqrts_62p4GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-200,K+,51.300000,6.500000,59.474607,,data/thermus_fit_points/sqrts_200p0GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-200,K-,49.500000,6.200000,56.308964,,data/thermus_fit_points/sqrts_200p0GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-200,Lambda,16.700000,1.118034,15.140155,,data/thermus_fit_points/sqrts_200p0GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-200,Lambda_bar,12.700000,0.921954,11.829267,,data/thermus_fit_points/sqrts_200p0GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-200,Xi,2.170000,0.199249,2.353180,,data/thermus_fit_points/sqrts_200p0GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
-200,Xi_bar,1.830000,0.206155,1.974187,,data/thermus_fit_points/sqrts_200p0GeV_points.csv,THERMUS SCE endpoint-interpolated,measured yield carried from THERMUS fit-point table
+3.2,K+,,,4.985294,2.509628,,THERMUS SCE endpoint-interpolated,model-only point
+3.2,K-,,,0.285530,0.232088,,THERMUS SCE endpoint-interpolated,model-only point
+3.2,Ks0,,,3.093459,1.672807,,THERMUS SCE endpoint-interpolated,model-only point
+3.2,Lambda,,,4.004722,3.082302,,THERMUS SCE endpoint-interpolated,model-only point
+3.2,Lambda_bar,,,0.000032,0.000020,,THERMUS SCE endpoint-interpolated,model-only point
+3.2,Xi,,,0.069009,0.025284,,THERMUS SCE endpoint-interpolated,model-only point
+3.2,Xi_bar,,,0.000014,0.000000,,THERMUS SCE endpoint-interpolated,model-only point
+3.2,phi,,,0.022148,0.022202,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,K+,,,7.526211,4.658962,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,K-,,,0.784026,0.716616,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,Ks0,,,4.619680,3.194077,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,Lambda,,,5.982017,5.015493,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,Lambda_bar,,,0.000450,0.000353,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,Xi,,,0.168652,0.082595,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,Xi_bar,,,0.000170,0.000000,,THERMUS SCE endpoint-interpolated,model-only point
+3.5,phi,,,0.079833,0.080094,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,K+,,,10.558419,7.590684,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,K-,,,1.783883,1.744270,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,Ks0,,,6.570148,5.320821,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,Lambda,,,8.261852,7.364463,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,Lambda_bar,,,0.003810,0.003383,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,Xi,,,0.343431,0.210181,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,Xi_bar,,,0.001294,0.000013,,THERMUS SCE endpoint-interpolated,model-only point
+3.9,phi,,,0.219828,0.220416,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,K+,,,14.110076,11.320572,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,K-,,,3.582774,3.613717,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,Ks0,,,9.106534,8.080922,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,Lambda,,,10.768121,10.086633,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,Lambda_bar,,,0.023080,0.021514,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,Xi,,,0.616144,0.451592,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,Xi_bar,,,0.007077,0.000516,,THERMUS SCE endpoint-interpolated,model-only point
+4.5,phi,,,0.504227,0.504940,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,K+,,,16.926849,14.402237,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,K-,,,5.534369,5.604074,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,Ks0,,,11.351579,10.393888,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,Lambda,,,12.593193,12.190774,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,Lambda_bar,,,0.070820,0.065562,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,Xi,,,0.875371,0.715849,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,Xi_bar,,,0.020229,0.004849,,THERMUS SCE endpoint-interpolated,model-only point
+5.2,phi,,,0.831484,0.831929,,THERMUS SCE endpoint-interpolated,model-only point
+7.7,K+,20.80071,1.688349061,21.086832,18.107334,"ins1510593/dN/dy, 7.7 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+7.7,K-,7.69272,0.6251012268,8.184638,8.505348,"ins1510593/dN/dy, 7.7 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+7.7,Ks0,,,14.295987,13.204575,,THERMUS SCE endpoint-interpolated,model-only point
+7.7,Lambda,15.3,0.8273451517,14.788867,14.597339,ins1738953/Lambda dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
+7.7,Lambda_bar,0.193,0.01992485885,0.211565,0.189152,ins1738953/AntiLambda dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
+7.7,Xi,1.19,0.1140175425,1.192411,1.109346,ins1738953/Xi- dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
+7.7,Xi_bar,0.0657,0.008099382693,0.058305,0.040827,ins1738953/AntiXi+ dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
+7.7,phi,1.21,0.2184032967,1.337456,1.337456,ins1738953/Phi dN/dy 7.7 GeV,THERMUS SCE endpoint-interpolated,
+11.5,K+,24.992979999999996,2.520100653,26.117138,,"ins1510593/dN/dy, 11.5 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+11.5,K-,12.344299999999999,1.234893201,13.198141,,"ins1510593/dN/dy, 11.5 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+11.5,Ks0,,,19.176429,,data/thermus_fit_predictions_full/prediction_points/sqrts_11p5GeV_points.csv,THERMUS GC fit,measured yield carried from THERMUS fit-point table
+11.5,Lambda,14.17,0.7840918314,13.714797,,ins1738953/Lambda dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
+11.5,Lambda_bar,0.659,0.04785394446,0.682425,,ins1738953/AntiLambda dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
+11.5,Xi,1.35,0.1118033989,1.364904,,ins1738953/Xi- dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
+11.5,Xi_bar,0.169,0.01456021978,0.161563,,ins1738953/AntiXi+ dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
+11.5,phi,1.72,0.2630589288,2.137703,,ins1738953/Phi dN/dy 11.5 GeV,THERMUS SCE endpoint-interpolated,
+19.6,K+,29.5581,2.974592039,30.057298,,"ins1510593/dN/dy, 19.6 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+19.6,K-,18.8266,1.893101762,20.251429,,"ins1510593/dN/dy, 19.6 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+19.6,Ks0,,,24.515640,,data/thermus_fit_predictions_full/prediction_points/sqrts_19p6GeV_points.csv,THERMUS GC fit,measured yield carried from THERMUS fit-point table
+19.6,Lambda,12.58,0.4617358552,12.650006,,ins1738953/Lambda dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
+19.6,Lambda_bar,1.858,0.09940824915,1.922168,,ins1738953/AntiLambda dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
+19.6,Xi,1.62,0.1019803903,1.546534,,ins1738953/Xi- dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
+19.6,Xi_bar,0.421,0.03041381265,0.392055,,ins1738953/AntiXi+ dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
+19.6,phi,2.57,0.3522782991,3.136364,,ins1738953/Phi dN/dy 19.6 GeV,THERMUS SCE endpoint-interpolated,
+27,K+,31.06865,2.815112332,32.591795,,"ins1510593/dN/dy, 27 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+27,K-,22.62347,2.05987152,23.297385,,"ins1510593/dN/dy, 27 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+27,Ks0,,,27.230013,,data/thermus_fit_predictions_full/prediction_points/sqrts_27p0GeV_points.csv,THERMUS GC fit,measured yield carried from THERMUS fit-point table
+27,Lambda,11.67,0.5115662225,11.742554,,ins1738953/Lambda dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
+27,Lambda_bar,2.75,0.1403566885,2.845002,,ins1738953/AntiLambda dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
+27,Xi,1.57,0.1104536102,1.506783,,ins1738953/Xi- dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
+27,Xi_bar,0.598,0.03847076812,0.559908,,ins1738953/AntiXi+ dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
+27,phi,3.01,0.4517742799,3.588193,,ins1738953/Phi dN/dy 27 GeV,THERMUS SCE endpoint-interpolated,
+39,K+,31.966034999999998,2.90450025,32.899571,,"ins1510593/dN/dy, 39 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+39,K-,25.012439999999998,2.272369228,26.694407,,"ins1510593/dN/dy, 39 GeV",THERMUS SCE endpoint-interpolated,derived from dN/dy/(0.5*Npart) using Npart
+39,Ks0,,,29.027997,,data/thermus_fit_predictions_full/prediction_points/sqrts_39p0GeV_points.csv,THERMUS GC fit,measured yield carried from THERMUS fit-point table
+39,Lambda,11.02,0.8605230967,10.593718,,ins1738953/Lambda dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
+39,Lambda_bar,3.82,0.3601388621,3.873721,,ins1738953/AntiLambda dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
+39,Xi,1.54,0.1902629759,1.476480,,ins1738953/Xi- dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
+39,Xi_bar,0.78,0.1104536102,0.707833,,ins1738953/AntiXi+ dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
+39,phi,3.38,0.4809365863,3.922773,,ins1738953/Phi dN/dy 39 GeV,THERMUS SCE endpoint-interpolated,
+62.4,K+,37.6,2.7,41.263929,,arXiv:0808.2041/Table VIII,THERMUS SCE endpoint-interpolated,table gives total uncertainty (stat+sys)
+62.4,K-,32.4,2.3,35.474782,,arXiv:0808.2041/Table VIII,THERMUS SCE endpoint-interpolated,table gives total uncertainty (stat+sys)
+62.4,Ks0,,,37.413562,,data/thermus_fit_predictions_full/prediction_points/sqrts_62p4GeV_points.csv,THERMUS GC fit,measured yield carried from THERMUS fit-point table
+62.4,Lambda,15.576031,2.306688,14.716615,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS SCE endpoint-interpolated,Derived via STAR Fig.9 ratios Lambda_bar/Pi- and Lambda_bar/Lambda (0-5%) with local pi- (0-5%); uncertainty propagated.
+62.4,Lambda_bar,7.2522,1.0400425,8.394464,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS SCE endpoint-interpolated,Derived from STAR Fig.9 ratio Lambda_bar/Pi- (0-5%) and local pi- (0-5%); uncertainty propagated in quadrature.
+62.4,Xi,1.7397156,0.30642213,2.194037,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS GC fit,Derived via STAR Fig.9 ratios Xi+/Pi- and Xi+/Xi- (0-5%) with local pi- (0-5%); uncertainty propagated.
+62.4,Xi_bar,1.1376,0.18488204,1.547765,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS GC fit,Derived from STAR Fig.9 ratio Xi+/Pi- (0-5%) and local pi- (0-5%); uncertainty propagated in quadrature.
+62.4,phi,,,5.473013,,data/thermus_fit_predictions_full/prediction_points/sqrts_62p4GeV_points.csv,THERMUS GC fit,measured yield carried from THERMUS fit-point table
+130,K+,46.3,3,,,arXiv:0808.2041/Table VIII,,table gives total uncertainty (stat+sys)
+130,K-,42.7,2.8,,,arXiv:0808.2041/Table VIII,,table gives total uncertainty (stat+sys)
+130,Xi,2.16,0.234,,,arXiv:nucl-ex/0307024/Table I,,includes 10% pT-independent systematic per paper
+130,Xi_bar,1.81,0.1978913844,,,arXiv:nucl-ex/0307024/Table I,,includes 10% pT-independent systematic per paper
+200,K+,51.3,6.5,59.322455,,arXiv:0808.2041/Table VIII,THERMUS SCE endpoint-interpolated,table gives total uncertainty (stat+sys)
+200,K-,49.5,6.2,56.174097,,arXiv:0808.2041/Table VIII,THERMUS SCE endpoint-interpolated,table gives total uncertainty (stat+sys)
+200,Ks0,,,56.254083,,data/thermus_fit_predictions_full/prediction_points/sqrts_200p0GeV_points.csv,THERMUS GC fit,measured yield carried from THERMUS fit-point table
+200,Lambda,16.7,1.118033989,15.127377,,arXiv:nucl-ex/0606014/Table I,THERMUS SCE endpoint-interpolated,
+200,Lambda_bar,12.7,0.9219544457,11.816983,,arXiv:nucl-ex/0606014/Table I,THERMUS SCE endpoint-interpolated,
+200,Xi,2.17,0.1992485885,2.351846,,arXiv:nucl-ex/0606014/Table I,THERMUS SCE endpoint-interpolated,
+200,Xi_bar,1.83,0.2061552813,1.972430,,arXiv:nucl-ex/0606014/Table I,THERMUS SCE endpoint-interpolated,
+200,phi,7.7,0.9013878189,7.855488,,ins651461/Table 1,THERMUS GC fit,

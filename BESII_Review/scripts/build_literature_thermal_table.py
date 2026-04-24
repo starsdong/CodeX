@@ -18,6 +18,13 @@ def fetch_csv_lines(url: str) -> list[str]:
     return text.splitlines()
 
 
+def load_existing_rows(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
 def parse_sections(lines: list[str], xname: str) -> dict[str, list[tuple[float, float, float, float]]]:
     sections: dict[str, list[tuple[float, float, float, float]]] = {}
     i = 0
@@ -61,40 +68,46 @@ def main() -> None:
     fig11_up = "https://www.hepdata.net/download/table/ins871561/Figure 11 up/csv"
     fig11_down = "https://www.hepdata.net/download/table/ins871561/Figure 11 down/csv"
 
-    up = parse_sections(fetch_csv_lines(fig11_up), "Temp [GeV]")
-    dn = parse_sections(fetch_csv_lines(fig11_down), "mu_B [GeV]")
-
     rows: list[dict[str, str]] = []
+    try:
+        up = parse_sections(fetch_csv_lines(fig11_up), "Temp [GeV]")
+        dn = parse_sections(fetch_csv_lines(fig11_down), "mu_B [GeV]")
 
-    # Keep low-energy external points and STAR original-paper points from the same compilation;
-    # exclude the generic "RHIC" section.
-    for dataset in ["SIS", "AGS", "SPS", "this work"]:
-        trows = up.get(dataset, [])
-        mrows = dn.get(dataset, [])
-        for idx, (tr, mr) in enumerate(zip(trows, mrows), start=1):
-            et, tgev, te_plus, te_minus = tr
-            em, mbgev, mb_plus, mb_minus = mr
-            if abs(et - em) > 1e-9:
+        # Keep low-energy external points and STAR original-paper points from the same compilation;
+        # exclude the generic "RHIC" section.
+        for dataset in ["SIS", "AGS", "SPS", "this work"]:
+            trows = up.get(dataset, [])
+            mrows = dn.get(dataset, [])
+            for tr, mr in zip(trows, mrows):
+                et, tgev, te_plus, te_minus = tr
+                em, mbgev, mb_plus, mb_minus = mr
+                if abs(et - em) > 1e-9:
+                    continue
+                exp_group = "STAR (orig paper)" if dataset == "this work" else dataset
+                rows.append(
+                    {
+                        "experiment_group": exp_group,
+                        "collision_system": "A+A",
+                        "energy_GeV": f"{et:g}",
+                        "centrality": "central (see source refs)",
+                        "fit_variant": "compiled point",
+                        "T_MeV": f"{1000.0 * tgev:.6g}",
+                        "T_err_plus_MeV": f"{1000.0 * te_plus:.6g}",
+                        "T_err_minus_MeV": f"{1000.0 * te_minus:.6g}",
+                        "muB_MeV": f"{1000.0 * mbgev:.6g}",
+                        "muB_err_plus_MeV": f"{1000.0 * mb_plus:.6g}",
+                        "muB_err_minus_MeV": f"{1000.0 * mb_minus:.6g}",
+                        "muB_note": "",
+                        "source": "STAR PRC83 Fig.11 literature compilation (Ref.[22])",
+                        "source_doi_or_url": "10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561",
+                    }
+                )
+    except Exception as exc:
+        print(f"warning: falling back to existing {OUT} for external rows: {exc}")
+        for row in load_existing_rows(OUT):
+            if row["experiment_group"] in {"STAR (this work fit)", "ALICE"}:
                 continue
-            exp_group = "STAR (orig paper)" if dataset == "this work" else dataset
-            rows.append(
-                {
-                    "experiment_group": exp_group,
-                    "collision_system": "A+A",
-                    "energy_GeV": f"{et:g}",
-                    "centrality": "central (see source refs)",
-                    "fit_variant": "compiled point",
-                    "T_MeV": f"{1000.0 * tgev:.6g}",
-                    "T_err_plus_MeV": f"{1000.0 * te_plus:.6g}",
-                    "T_err_minus_MeV": f"{1000.0 * te_minus:.6g}",
-                    "muB_MeV": f"{1000.0 * mbgev:.6g}",
-                    "muB_err_plus_MeV": f"{1000.0 * mb_plus:.6g}",
-                    "muB_err_minus_MeV": f"{1000.0 * mb_minus:.6g}",
-                    "muB_note": "",
-                    "source": "STAR PRC83 Fig.11 literature compilation (Ref.[22])",
-                    "source_doi_or_url": "10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561",
-                }
-            )
+            rows.append(row)
 
     # Add ALICE point from Andronic et al. Nature 561 (2018).
     rows.append(

@@ -12,25 +12,20 @@ SPS,A+A,6.27,central (see source refs),compiled point,131,5,5,467,13,13,,STAR PR
 SPS,A+A,7.62,central (see source refs),compiled point,144,5,5,406,19,19,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 SPS,A+A,7.62,central (see source refs),compiled point,140,3,3,414,16,16,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 STAR (orig PRC96),Au+Au,7.7,0-5%,GCEY (Table VIII),143.8,2.7,2.7,399.8,13.3,13.3,systematic uncertainties from Table VIII,"STAR, Phys. Rev. C 96 (2017) 044904, Table VIII",10.1103/PhysRevC.96.044904
-STAR (this work fit),Au+Au,7.7,0-5% (fit input),THERMUS fit,145.927461,2.758287,2.758287,406.077367,13.617797,13.617797,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
 SPS,A+A,8.77,central (see source refs),compiled point,148,5,5,367,14,14,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 SPS,A+A,8.77,central (see source refs),compiled point,143,3,3,381,9,9,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 SPS,A+A,8.77,central (see source refs),compiled point,146,3,3,382,9,9,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 STAR (orig PRC96),Au+Au,11.5,0-5%,GCEY (Table VIII),150.6,3.2,3.2,292.5,12.6,12.6,systematic uncertainties from Table VIII,"STAR, Phys. Rev. C 96 (2017) 044904, Table VIII",10.1103/PhysRevC.96.044904
-STAR (this work fit),Au+Au,11.5,0-5% (fit input),THERMUS fit,151.348356,2.753178,2.753178,296.997188,12.538256,12.538256,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
 SPS,A+A,12.3,central (see source refs),compiled point,155,5,5,284,15,15,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 SPS,A+A,12.3,central (see source refs),compiled point,150,5,5,294,11,11,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 SPS,A+A,12.3,central (see source refs),compiled point,154,4,4,298,10,10,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 SPS,A+A,17.3,central (see source refs),compiled point,155,3,3,246,10,10,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 SPS,A+A,17.3,central (see source refs),compiled point,158,2,2,249,8,8,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 STAR (orig PRC96),Au+Au,19.6,0-5%,GCEY (Table VIII),157.5,3.1,3.1,195.6,9.7,9.7,systematic uncertainties from Table VIII,"STAR, Phys. Rev. C 96 (2017) 044904, Table VIII",10.1103/PhysRevC.96.044904
-STAR (this work fit),Au+Au,19.6,0-5% (fit input),THERMUS fit,158.384037,2.908508,2.908508,192.952237,10.173849,10.173849,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
 STAR (orig PRC96),Au+Au,27,0-5%,GCEY (Table VIII),159.8,3,3,151.9,9.3,9.3,systematic uncertainties from Table VIII,"STAR, Phys. Rev. C 96 (2017) 044904, Table VIII",10.1103/PhysRevC.96.044904
-STAR (this work fit),Au+Au,27,0-5% (fit input),THERMUS fit,160.837842,2.866927,2.866927,151.465579,9.975291,9.975291,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
 STAR (orig PRC96),Au+Au,39,0-5%,GCEY (Table VIII),159.9,3.5,3.5,104.7,11.2,11.2,systematic uncertainties from Table VIII,"STAR, Phys. Rev. C 96 (2017) 044904, Table VIII",10.1103/PhysRevC.96.044904
-STAR (this work fit),Au+Au,39,0-5% (fit input),THERMUS fit,162.312563,3.595295,3.595295,105.503755,11.556227,11.556227,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
 STAR (orig paper),A+A,62.4,central (see source refs),compiled point,162,6,6,69,7,7,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
 STAR (this work fit),Au+Au,62.4,0-5% (fit input),THERMUS fit,165.613887,5.831952,5.831952,71.667223,15.457484,15.457484,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
 STAR (orig paper),A+A,200,central (see source refs),compiled point,165,6,6,26,7,7,,STAR PRC83 Fig.11 literature compilation (Ref.[22]),"10.17182/hepdata.96847.v2/t19,t20; https://www.hepdata.net/record/ins871561"
-STAR (this work fit),Au+Au,200,0-5% (fit input),THERMUS fit,166.119322,3.321406,3.321406,27.073995,12.395215,12.395215,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
+STAR (this work fit),Au+Au,200,0-5% (fit input),THERMUS fit,166.206361,3.299592,3.299592,27.093513,12.436335,12.436335,,Local THERMUS fit in this repository,data/thermus_fit_results.csv
 ALICE,Pb+Pb,2760,central (see source refs),SHM point from Nature 2018,156.5,1.5,1.5,0.7,3.8,3.8,,"Andronic et al., Nature 561 (2018) 321-330",10.1038/s41586-018-0491-6; https://arxiv.org/abs/1710.09425

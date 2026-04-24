@@ -15,7 +15,7 @@ from matplotlib.lines import Line2D
 
 RAW_CSV = Path("data/first_group_dn_dy_vs_energy.csv")
 GC_LOW_DIR = Path("data/thermus_gc_from_sce_effective/prediction_points")
-GC_FIT_DIR = Path("data/thermus_fit_points")
+GC_FIT_DIR = Path("data/thermus_fit_predictions_full/prediction_points")
 SCE_BLEND_DIR = Path("data/thermus_sce_blended/prediction_points")
 
 OUT_DIR = Path("data/gc_sce_particle_figures")
@@ -34,6 +34,7 @@ STYLE = {
     "Xi_bar": {"marker": "X", "color": "tab:pink"},
     "phi": {"marker": "*", "color": "tab:brown"},
 }
+CURVE_MIN_ENERGY = {"Lambda_bar": 7.7, "Xi_bar": 7.7}
 
 XMIN = 2.0
 XMAX = 10.0
@@ -184,7 +185,8 @@ def build_particle_figure(rows: list[dict[str, str]], particle: str) -> tuple[Pa
     ]
     y_values: list[float] = [float(r["data_yield"]) for r in data_pts if r["data_yield"]]
     for field, linestyle, label in model_specs:
-        model_pts = [r for r in pts if r[field]]
+        min_energy = CURVE_MIN_ENERGY.get(particle, 0.0)
+        model_pts = [r for r in pts if r[field] and float(r["energy_GeV"]) >= min_energy]
         if len(model_pts) >= 2:
             xs = [float(r["energy_GeV"]) for r in model_pts]
             ys = [float(r[field]) for r in model_pts]
@@ -207,7 +209,7 @@ def build_particle_figure(rows: list[dict[str, str]], particle: str) -> tuple[Pa
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlim(XMIN, XMAX)
-    ax.set_ylim(ymin, ymax)
+    ax.set_ylim(max(3.0e-3, ymin), ymax)
     ax.set_xlabel(r"$\sqrt{s_{NN}}$ (GeV)")
     ax.set_ylabel(r"$dN/dy$")
     ax.set_title(f"{particle} yield vs energy")
