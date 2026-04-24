@@ -1,0 +1,41 @@
+paper_id,particle,observable,energy_GeV,value,stat_err,sys_err,centrality,source,note
+310,K-,dN/dy at y~0,3.0,0.0673,0.000524,0.00717,0-10%,ins1897327/Figure3(a),point at y=-0.05
+353,Ks0,dN/dy at y~0,3.0,0.742,0.007,0.08,0-10%,ins2807679/Table2,point at y=-0.05
+353,Lambda,dN/dy at y~0,3.0,2.258,0.017,0.27,0-10%,ins2807679/Table1,point at y=-0.05
+310,Xi,dN/dy at y~0,3.0,0.0141,0.00119,0.00336,0-10%,ins1897327/Figure3(c),point at y=-0.1
+310,phi,dN/dy at y~0,3.0,0.0157,0.0026,0.00453,0-10%,ins1897327/Figure3(b),point at y=-0.1
+207,K+,dN/dy,7.7,20.80071,0.06748,1.6869999999999998,max Npart row (most central),"ins1510593/dN/dy, 7.7 GeV",derived from dN/dy/(0.5*Npart) using Npart
+207,K-,dN/dy,7.7,7.69272,0.03374,0.62419,max Npart row (most central),"ins1510593/dN/dy, 7.7 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Lambda,dN/dy,7.7,15.3,0.11,0.82,max Npart row (most central),ins1738953/Lambda dN/dy 7.7 GeV,
+237,Lambda_bar,dN/dy,7.7,0.193,0.006,0.019,max Npart row (most central),ins1738953/AntiLambda dN/dy 7.7 GeV,
+237,Xi,dN/dy,7.7,1.19,0.03,0.11,max Npart row (most central),ins1738953/Xi- dN/dy 7.7 GeV,
+237,Xi_bar,dN/dy,7.7,0.0657,0.0044,0.0068,max Npart row (most central),ins1738953/AntiXi+ dN/dy 7.7 GeV,
+237,phi,dN/dy,7.7,1.21,0.06,0.21,max Npart row (most central),ins1738953/Phi dN/dy 7.7 GeV,
+207,K+,dN/dy,11.5,24.992979999999996,0.05073,2.51959,max Npart row (most central),"ins1510593/dN/dy, 11.5 GeV",derived from dN/dy/(0.5*Npart) using Npart
+207,K-,dN/dy,11.5,12.344299999999999,0.03382,1.23443,max Npart row (most central),"ins1510593/dN/dy, 11.5 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Lambda,dN/dy,11.5,14.17,0.08,0.78,max Npart row (most central),ins1738953/Lambda dN/dy 11.5 GeV,
+237,Lambda_bar,dN/dy,11.5,0.659,0.009,0.047,max Npart row (most central),ins1738953/AntiLambda dN/dy 11.5 GeV,
+237,Xi,dN/dy,11.5,1.35,0.02,0.11,max Npart row (most central),ins1738953/Xi- dN/dy 11.5 GeV,
+237,Xi_bar,dN/dy,11.5,0.169,0.004,0.014,max Npart row (most central),ins1738953/AntiXi+ dN/dy 11.5 GeV,
+237,phi,dN/dy,11.5,1.72,0.04,0.26,max Npart row (most central),ins1738953/Phi dN/dy 11.5 GeV,
+207,K+,dN/dy,19.6,29.5581,0.033800000000000004,2.9744,max Npart row (most central),"ins1510593/dN/dy, 19.6 GeV",derived from dN/dy/(0.5*Npart) using Npart
+207,K-,dN/dy,19.6,18.8266,0.033800000000000004,1.8928,max Npart row (most central),"ins1510593/dN/dy, 19.6 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Lambda,dN/dy,19.6,12.58,0.04,0.46,max Npart row (most central),ins1738953/Lambda dN/dy 19.6 GeV,
+237,Lambda_bar,dN/dy,19.6,1.858,0.009,0.099,max Npart row (most central),ins1738953/AntiLambda dN/dy 19.6 GeV,
+237,Xi,dN/dy,19.6,1.62,0.02,0.1,max Npart row (most central),ins1738953/Xi- dN/dy 19.6 GeV,
+237,Xi_bar,dN/dy,19.6,0.421,0.005,0.03,max Npart row (most central),ins1738953/AntiXi+ dN/dy 19.6 GeV,
+237,phi,dN/dy,19.6,2.57,0.04,0.35,max Npart row (most central),ins1738953/Phi dN/dy 19.6 GeV,
+207,K+,dN/dy,27.0,31.06865,0.017165,2.8150600000000003,max Npart row (most central),"ins1510593/dN/dy, 27 GeV",derived from dN/dy/(0.5*Npart) using Npart
+207,K-,dN/dy,27.0,22.62347,0.017165,2.0598,max Npart row (most central),"ins1510593/dN/dy, 27 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Lambda,dN/dy,27.0,11.67,0.04,0.51,max Npart row (most central),ins1738953/Lambda dN/dy 27 GeV,
+237,Lambda_bar,dN/dy,27.0,2.75,0.01,0.14,max Npart row (most central),ins1738953/AntiLambda dN/dy 27 GeV,
+237,Xi,dN/dy,27.0,1.57,0.01,0.11,max Npart row (most central),ins1738953/Xi- dN/dy 27 GeV,
+237,Xi_bar,dN/dy,27.0,0.598,0.006,0.038,max Npart row (most central),ins1738953/AntiXi+ dN/dy 27 GeV,
+237,phi,dN/dy,27.0,3.01,0.04,0.45,max Npart row (most central),ins1738953/Phi dN/dy 27 GeV,
+207,K+,dN/dy,39.0,31.966034999999998,0.017085,2.90445,max Npart row (most central),"ins1510593/dN/dy, 39 GeV",derived from dN/dy/(0.5*Npart) using Npart
+207,K-,dN/dy,39.0,25.012439999999998,0.017085,2.272305,max Npart row (most central),"ins1510593/dN/dy, 39 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Lambda,dN/dy,39.0,11.02,0.03,0.86,max Npart row (most central),ins1738953/Lambda dN/dy 39 GeV,
+237,Lambda_bar,dN/dy,39.0,3.82,0.01,0.36,max Npart row (most central),ins1738953/AntiLambda dN/dy 39 GeV,
+237,Xi,dN/dy,39.0,1.54,0.01,0.19,max Npart row (most central),ins1738953/Xi- dN/dy 39 GeV,
+237,Xi_bar,dN/dy,39.0,0.78,0.01,0.11,max Npart row (most central),ins1738953/AntiXi+ dN/dy 39 GeV,
+237,phi,dN/dy,39.0,3.38,0.03,0.48,max Npart row (most central),ins1738953/Phi dN/dy 39 GeV,
