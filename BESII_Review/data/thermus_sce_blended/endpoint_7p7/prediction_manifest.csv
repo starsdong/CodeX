@@ -1,0 +1,2 @@
+energy_GeV,prediction_file,T_MeV,muB_MeV,Rc_fm,R_fm,gammaS,muQ_constraint_B2Q,interpolation_note
+7.7,data/thermus_sce_blended/endpoint_7p7/prediction_inputs/sqrts_7p7GeV.txt,145.927461,406.077367,2.620211,5.737712,1.000000,1.246835,7.7 GeV endpoint for blended SCE interpolation: T and muB from the 7.7 GeV GC THERMUS fit; R from the exact 7.7 GeV GC fit; Rc/R fixed to the 3 GeV SCE fit ratio

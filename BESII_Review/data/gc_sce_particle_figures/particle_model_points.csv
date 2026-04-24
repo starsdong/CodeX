@@ -1,0 +1,115 @@
+energy_GeV,particle,data_yield,data_err,gc_model_yield,sce_blended_yield,data_source,note
+3,p,84.2269,6.529703235,81.240852,81.232880,ins2724476/Table V(inclusive proton),"rapidity bin [-0.1, 0] centered at y=-0.05"
+3.2,p,,,74.250946,75.603929,,
+3.5,p,,,67.091223,69.287003,,
+3.9,p,,,61.180440,63.426676,,
+4.5,p,,,56.273066,57.835542,,
+5.2,p,,,53.269928,53.993016,,
+7.7,p,54.96245999999999,6.056705921,54.170774,49.829681,"ins1510593/dN/dy, 7.7 GeV",derived from dN/dy/(0.5*Npart) using Npart
+11.5,p,43.99982,5.293073109,40.941538,,"ins1510593/dN/dy, 11.5 GeV",derived from dN/dy/(0.5*Npart) using Npart
+14.5,p,39.0,4.700122977,,,ins1748776/dNdy_vs_Npart(p),
+19.6,p,34.222500000000004,4.461632007,30.964459,,"ins1510593/dN/dy, 19.6 GeV",derived from dN/dy/(0.5*Npart) using Npart
+27,p,31.738085,3.81066866,27.409155,,"ins1510593/dN/dy, 27 GeV",derived from dN/dy/(0.5*Npart) using Npart
+39,p,26.498834999999996,2.921584956,22.838687,,"ins1510593/dN/dy, 39 GeV",derived from dN/dy/(0.5*Npart) using Npart
+62.4,p,29.0,3.8,24.957305,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+130,p,28.2,3.1,,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+200,p,34.7,4.4,29.136224,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+3,K+,,,3.025388,1.311328,,
+3.2,K+,,,3.904970,1.929781,,
+3.5,K+,,,5.356956,3.085885,,
+3.9,K+,,,7.445123,4.964471,,
+4.5,K+,,,10.640155,8.156395,,
+5.2,K+,,,14.055619,11.806951,,
+7.7,K+,20.80071,1.688349061,21.182620,18.181798,"ins1510593/dN/dy, 7.7 GeV",derived from dN/dy/(0.5*Npart) using Npart
+11.5,K+,24.992979999999996,2.520100653,26.701622,,"ins1510593/dN/dy, 11.5 GeV",derived from dN/dy/(0.5*Npart) using Npart
+19.6,K+,29.5581,2.974592039,30.939527,,"ins1510593/dN/dy, 19.6 GeV",derived from dN/dy/(0.5*Npart) using Npart
+27,K+,31.06865,2.815112332,33.160246,,"ins1510593/dN/dy, 27 GeV",derived from dN/dy/(0.5*Npart) using Npart
+39,K+,31.966034999999998,2.90450025,33.427435,,"ins1510593/dN/dy, 39 GeV",derived from dN/dy/(0.5*Npart) using Npart
+62.4,K+,37.6,2.7,41.262638,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+130,K+,46.3,3,,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+200,K+,51.3,6.5,59.474607,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+3,K-,0.0673,0.00718912206,0.110042,0.071110,ins1897327/Figure3(a),point at y=-0.05
+3.2,K-,,,0.201275,0.143767,,
+3.5,K-,,,0.423868,0.338158,,
+3.9,K-,,,0.915963,0.804185,,
+4.5,K-,,,2.097859,1.987151,,
+5.2,K-,,,3.978873,3.898702,,
+7.7,K-,7.69272,0.6251012268,8.231162,8.561467,"ins1510593/dN/dy, 7.7 GeV",derived from dN/dy/(0.5*Npart) using Npart
+11.5,K-,12.344299999999999,1.234893201,13.538052,,"ins1510593/dN/dy, 11.5 GeV",derived from dN/dy/(0.5*Npart) using Npart
+19.6,K-,18.8266,1.893101762,20.848704,,"ins1510593/dN/dy, 19.6 GeV",derived from dN/dy/(0.5*Npart) using Npart
+27,K-,22.62347,2.05987152,23.732895,,"ins1510593/dN/dy, 27 GeV",derived from dN/dy/(0.5*Npart) using Npart
+39,K-,25.012439999999998,2.272369228,27.130105,,"ins1510593/dN/dy, 39 GeV",derived from dN/dy/(0.5*Npart) using Npart
+62.4,K-,32.4,2.3,35.813746,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+130,K-,42.7,2.8,,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+200,K-,49.5,6.2,56.308964,,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+3,Ks0,0.742,0.08030566605,1.938192,0.848647,ins2807679/Table2,point at y=-0.05
+3.2,Ks0,,,2.458511,1.271121,,
+3.5,Ks0,,,3.324183,2.076681,,
+3.9,Ks0,,,4.609700,3.414237,,
+4.5,Ks0,,,6.723159,5.738080,,
+5.2,Ks0,,,9.235260,8.447779,,
+7.7,Ks0,,,14.190080,13.267979,,
+3,Lambda,2.258,0.2705346558,2.886195,1.849417,ins2807679/Table1,point at y=-0.05
+3.2,Lambda,,,3.645884,2.505932,,
+3.5,Lambda,,,4.872067,3.624674,,
+3.9,Lambda,,,6.576541,5.267805,,
+4.5,Lambda,,,9.039377,7.783424,,
+5.2,Lambda,,,11.451693,10.410647,,
+7.7,Lambda,15.3,0.8273451517,14.793853,14.618534,ins1738953/Lambda dN/dy 7.7 GeV,
+11.5,Lambda,14.17,0.7840918314,13.754252,,ins1738953/Lambda dN/dy 11.5 GeV,
+19.6,Lambda,12.58,0.4617358552,12.676956,,ins1738953/Lambda dN/dy 19.6 GeV,
+27,Lambda,11.67,0.5115662225,11.766578,,ins1738953/Lambda dN/dy 27 GeV,
+39,Lambda,11.02,0.8605230967,10.646883,,ins1738953/Lambda dN/dy 39 GeV,
+62.4,Lambda,,,12.216119,,,
+200,Lambda,16.7,1.118033989,15.140155,,arXiv:nucl-ex/0606014/Table I,
+3,Lambda_bar,,,0.000002,0.000001,,
+3.2,Lambda_bar,,,0.000010,0.000006,,
+3.5,Lambda_bar,,,0.000072,0.000052,,
+3.9,Lambda_bar,,,0.000558,0.000470,,
+4.5,Lambda_bar,,,0.004983,0.004669,,
+5.2,Lambda_bar,,,0.026788,0.025811,,
+7.7,Lambda_bar,0.193,0.01992485885,0.212519,0.189891,ins1738953/AntiLambda dN/dy 7.7 GeV,
+11.5,Lambda_bar,0.659,0.04785394446,0.689161,,ins1738953/AntiLambda dN/dy 11.5 GeV,
+19.6,Lambda_bar,1.858,0.09940824915,1.934246,,ins1738953/AntiLambda dN/dy 19.6 GeV,
+27,Lambda_bar,2.75,0.1403566885,2.856048,,ins1738953/AntiLambda dN/dy 27 GeV,
+39,Lambda_bar,3.82,0.3601388621,3.908284,,ins1738953/AntiLambda dN/dy 39 GeV,
+62.4,Lambda_bar,,,6.317052,,,
+200,Lambda_bar,12.7,0.9219544457,11.829267,,arXiv:nucl-ex/0606014/Table I,
+3,Xi,0.0141,0.003564505576,0.032137,0.007302,ins1897327/Figure3(c),point at y=-0.1
+3.2,Xi,,,0.054851,0.015285,,
+3.5,Xi,,,0.105506,0.037503,,
+3.9,Xi,,,0.205730,0.093085,,
+4.5,Xi,,,0.415122,0.240522,,
+5.2,Xi,,,0.701036,0.487860,,
+7.7,Xi,1.19,0.1140175425,1.194271,1.113760,ins1738953/Xi- dN/dy 7.7 GeV,
+11.5,Xi,1.35,0.1118033989,1.371727,,ins1738953/Xi- dN/dy 11.5 GeV,
+19.6,Xi,1.62,0.1019803903,1.548143,,ins1738953/Xi- dN/dy 19.6 GeV,
+27,Xi,1.57,0.1104536102,1.509410,,ins1738953/Xi- dN/dy 27 GeV,
+39,Xi,1.54,0.1902629759,1.482998,,ins1738953/Xi- dN/dy 39 GeV,
+130,Xi,2.16,0.234,,,arXiv:nucl-ex/0307024/Table I,includes 10% pT-independent systematic per paper
+200,Xi,2.17,0.1992485885,2.353180,,arXiv:nucl-ex/0606014/Table I,
+3,Xi_bar,,,0.000001,0.000000,,
+3.2,Xi_bar,,,0.000004,0.000000,,
+3.5,Xi_bar,,,0.000028,0.000000,,
+3.9,Xi_bar,,,0.000197,0.000000,,
+4.5,Xi_bar,,,0.001596,0.000024,,
+5.2,Xi_bar,,,0.007858,0.000740,,
+7.7,Xi_bar,0.0657,0.008099382693,0.058436,0.040889,ins1738953/AntiXi+ dN/dy 7.7 GeV,
+11.5,Xi_bar,0.169,0.01456021978,0.161873,,ins1738953/AntiXi+ dN/dy 11.5 GeV,
+19.6,Xi_bar,0.421,0.03041381265,0.391982,,ins1738953/AntiXi+ dN/dy 19.6 GeV,
+27,Xi_bar,0.598,0.03847076812,0.559793,,ins1738953/AntiXi+ dN/dy 27 GeV,
+39,Xi_bar,0.78,0.1104536102,0.712695,,ins1738953/AntiXi+ dN/dy 39 GeV,
+130,Xi_bar,1.81,0.1978913844,,,arXiv:nucl-ex/0307024/Table I,includes 10% pT-independent systematic per paper
+200,Xi_bar,1.83,0.2061552813,1.974187,,arXiv:nucl-ex/0606014/Table I,
+3,phi,0.0157,0.005223112099,0.005778,0.005778,ins1897327/Figure3(b),point at y=-0.1
+3.2,phi,,,0.012847,0.012868,,
+3.5,phi,,,0.033942,0.034040,,
+3.9,phi,,,0.090888,0.091182,,
+4.5,phi,,,0.254500,0.255126,,
+5.2,phi,,,0.548435,0.549099,,
+7.7,phi,1.21,0.2184032967,1.343407,1.343407,ins1738953/Phi dN/dy 7.7 GeV,
+11.5,phi,1.72,0.2630589288,,,ins1738953/Phi dN/dy 11.5 GeV,
+19.6,phi,2.57,0.3522782991,,,ins1738953/Phi dN/dy 19.6 GeV,
+27,phi,3.01,0.4517742799,,,ins1738953/Phi dN/dy 27 GeV,
+39,phi,3.38,0.4809365863,,,ins1738953/Phi dN/dy 39 GeV,
+200,phi,7.7,0.9013878189,,,ins651461/Table 1,

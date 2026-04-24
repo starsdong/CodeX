@@ -1,0 +1,10 @@
+particle,png_file,pdf_file,x_range,y_scale,notes
+p,data/gc_sce_particle_figures/p_yield_models_2to10GeV.png,data/gc_sce_particle_figures/p_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+K+,data/gc_sce_particle_figures/K+_yield_models_2to10GeV.png,data/gc_sce_particle_figures/K+_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+K-,data/gc_sce_particle_figures/K-_yield_models_2to10GeV.png,data/gc_sce_particle_figures/K-_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+Ks0,data/gc_sce_particle_figures/Ks0_yield_models_2to10GeV.png,data/gc_sce_particle_figures/Ks0_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+Lambda,data/gc_sce_particle_figures/Lambda_yield_models_2to10GeV.png,data/gc_sce_particle_figures/Lambda_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+Lambda_bar,data/gc_sce_particle_figures/Lambda_bar_yield_models_2to10GeV.png,data/gc_sce_particle_figures/Lambda_bar_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+Xi,data/gc_sce_particle_figures/Xi_yield_models_2to10GeV.png,data/gc_sce_particle_figures/Xi_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+Xi_bar,data/gc_sce_particle_figures/Xi_bar_yield_models_2to10GeV.png,data/gc_sce_particle_figures/Xi_bar_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves
+phi,data/gc_sce_particle_figures/phi_yield_models_2to10GeV.png,data/gc_sce_particle_figures/phi_yield_models_2to10GeV.pdf,2-10 GeV,log auto,Measured data with GC effective-trace and SCE endpoint-interpolated curves

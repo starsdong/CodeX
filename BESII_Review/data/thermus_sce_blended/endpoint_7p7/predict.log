@@ -1,0 +1,14 @@
+WARNING: yield on line 2 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 3 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 4 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 5 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 6 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 7 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 8 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 9 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 10 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 11 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 12 of the input file is very probably null so it will be predicted !
+WARNING: yield on line 13 of the input file is very probably null so it will be predicted !
+Wrote SCE prediction summary: data/thermus_sce_blended/endpoint_7p7/prediction_summary.csv
+Wrote SCE prediction points: data/thermus_sce_blended/endpoint_7p7/prediction_points
