@@ -7,6 +7,7 @@ paper_id,particle,observable,energy_GeV,value,stat_err,sys_err,centrality,source
 310,phi,dN/dy at y~0,3.0,0.0157,0.0026,0.00453,0-10%,ins1897327/Figure3(b),point at y=-0.1
 207,K+,dN/dy,7.7,20.80071,0.06748,1.6869999999999998,max Npart row (most central),"ins1510593/dN/dy, 7.7 GeV",derived from dN/dy/(0.5*Npart) using Npart
 207,K-,dN/dy,7.7,7.69272,0.03374,0.62419,max Npart row (most central),"ins1510593/dN/dy, 7.7 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Ks0,dN/dy,7.7,12.67,0.12,0.44,max Npart row (most central),ins1738953/K0S dN/dy 7.7 GeV,
 237,Lambda,dN/dy,7.7,15.3,0.11,0.82,max Npart row (most central),ins1738953/Lambda dN/dy 7.7 GeV,
 237,Lambda_bar,dN/dy,7.7,0.193,0.006,0.019,max Npart row (most central),ins1738953/AntiLambda dN/dy 7.7 GeV,
 237,Omega,dN/dy,7.7,0.0271,0.0048,0.0043,max Npart row (most central),ins1738953/Omega- dN/dy 7.7 GeV,
@@ -23,6 +24,7 @@ paper_id,particle,observable,energy_GeV,value,stat_err,sys_err,centrality,source
 330,t,integral dN/dy,7.7,0.0231,0.0005,0.0031,0-10%,ins2152917/Figure1 triton integral dN/dy,
 207,K+,dN/dy,11.5,24.992979999999996,0.05073,2.51959,max Npart row (most central),"ins1510593/dN/dy, 11.5 GeV",derived from dN/dy/(0.5*Npart) using Npart
 207,K-,dN/dy,11.5,12.344299999999999,0.03382,1.23443,max Npart row (most central),"ins1510593/dN/dy, 11.5 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Ks0,dN/dy,11.5,15.93,0.12,0.58,max Npart row (most central),ins1738953/K0S dN/dy 11.5 GeV,
 237,Lambda,dN/dy,11.5,14.17,0.08,0.78,max Npart row (most central),ins1738953/Lambda dN/dy 11.5 GeV,
 237,Lambda_bar,dN/dy,11.5,0.659,0.009,0.047,max Npart row (most central),ins1738953/AntiLambda dN/dy 11.5 GeV,
 237,Omega,dN/dy,11.5,0.082,0.012,0.011,max Npart row (most central),ins1738953/Omega- dN/dy 11.5 GeV,
@@ -42,6 +44,7 @@ paper_id,particle,observable,energy_GeV,value,stat_err,sys_err,centrality,source
 330,t,integral dN/dy,14.5,0.00301,7e-05,0.0004,0-10%,ins2152917/Figure1 triton integral dN/dy,
 207,K+,dN/dy,19.6,29.5581,0.033800000000000004,2.9744,max Npart row (most central),"ins1510593/dN/dy, 19.6 GeV",derived from dN/dy/(0.5*Npart) using Npart
 207,K-,dN/dy,19.6,18.8266,0.033800000000000004,1.8928,max Npart row (most central),"ins1510593/dN/dy, 19.6 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Ks0,dN/dy,19.6,20.89,0.08,0.67,max Npart row (most central),ins1738953/K0S dN/dy 19.6 GeV,
 237,Lambda,dN/dy,19.6,12.58,0.04,0.46,max Npart row (most central),ins1738953/Lambda dN/dy 19.6 GeV,
 237,Lambda_bar,dN/dy,19.6,1.858,0.009,0.099,max Npart row (most central),ins1738953/AntiLambda dN/dy 19.6 GeV,
 237,Omega,dN/dy,19.6,0.155,0.01,0.02,max Npart row (most central),ins1738953/Omega- dN/dy 19.6 GeV,
@@ -58,6 +61,7 @@ paper_id,particle,observable,energy_GeV,value,stat_err,sys_err,centrality,source
 330,t,integral dN/dy,19.6,0.0017,4e-05,0.00013,0-10%,ins2152917/Figure1 triton integral dN/dy,
 207,K+,dN/dy,27.0,31.06865,0.017165,2.8150600000000003,max Npart row (most central),"ins1510593/dN/dy, 27 GeV",derived from dN/dy/(0.5*Npart) using Npart
 207,K-,dN/dy,27.0,22.62347,0.017165,2.0598,max Npart row (most central),"ins1510593/dN/dy, 27 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Ks0,dN/dy,27.0,23.24,0.09,0.7,max Npart row (most central),ins1738953/K0S dN/dy 27 GeV,
 237,Lambda,dN/dy,27.0,11.67,0.04,0.51,max Npart row (most central),ins1738953/Lambda dN/dy 27 GeV,
 237,Lambda_bar,dN/dy,27.0,2.75,0.01,0.14,max Npart row (most central),ins1738953/AntiLambda dN/dy 27 GeV,
 237,Omega,dN/dy,27.0,0.154,0.008,0.018,max Npart row (most central),ins1738953/Omega- dN/dy 27 GeV,
@@ -74,6 +78,7 @@ paper_id,particle,observable,energy_GeV,value,stat_err,sys_err,centrality,source
 330,t,integral dN/dy,27.0,0.000859,2.2e-05,7e-05,0-10%,ins2152917/Figure1 triton integral dN/dy,
 207,K+,dN/dy,39.0,31.966034999999998,0.017085,2.90445,max Npart row (most central),"ins1510593/dN/dy, 39 GeV",derived from dN/dy/(0.5*Npart) using Npart
 207,K-,dN/dy,39.0,25.012439999999998,0.017085,2.272305,max Npart row (most central),"ins1510593/dN/dy, 39 GeV",derived from dN/dy/(0.5*Npart) using Npart
+237,Ks0,dN/dy,39.0,24.9,0.1,1.7,max Npart row (most central),ins1738953/K0S dN/dy 39 GeV,
 237,Lambda,dN/dy,39.0,11.02,0.03,0.86,max Npart row (most central),ins1738953/Lambda dN/dy 39 GeV,
 237,Lambda_bar,dN/dy,39.0,3.82,0.01,0.36,max Npart row (most central),ins1738953/AntiLambda dN/dy 39 GeV,
 237,Omega,dN/dy,39.0,0.191,0.006,0.017,max Npart row (most central),ins1738953/Omega- dN/dy 39 GeV,
@@ -91,6 +96,7 @@ paper_id,particle,observable,energy_GeV,value,stat_err,sys_err,centrality,source
 330,t,integral dN/dy,54.4,0.0002941,3.2e-06,1.9e-05,0-10%,ins2152917/Figure1 triton integral dN/dy,
 34,K+,dN/dy,62.4,37.6,2.7,,0-5%,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
 34,K-,dN/dy,62.4,32.4,2.3,,0-5%,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+ins871561,Ks0,dN/dy,62.4,26.7,,0.6,0-5%,ins871561/Figure6 up,Direct STAR K0S yield from HEPData t12; RHIC points are centrality 0-5% per table description.
 ins871561,Lambda,dN/dy,62.4,15.576031,,2.306688,0-5%,ins871561/Figure9 (ratio-derived absolute yield),Derived via STAR Fig.9 ratios Lambda_bar/Pi- and Lambda_bar/Lambda (0-5%) with local pi- (0-5%); uncertainty propagated.
 ins871561,Lambda_bar,dN/dy,62.4,7.2522,,1.0400425,0-5%,ins871561/Figure9 (ratio-derived absolute yield),Derived from STAR Fig.9 ratio Lambda_bar/Pi- (0-5%) and local pi- (0-5%); uncertainty propagated in quadrature.
 ins871561,Xi,dN/dy,62.4,1.7397156,,0.30642213,0-5%,ins871561/Figure9 (ratio-derived absolute yield),Derived via STAR Fig.9 ratios Xi+/Pi- and Xi+/Xi- (0-5%) with local pi- (0-5%); uncertainty propagated.
@@ -112,6 +118,7 @@ ins871561,Xi_bar,dN/dy,62.4,1.1376,,0.18488204,0-5%,ins871561/Figure9 (ratio-der
 34,pi-,dN/dy,130.0,280.0,20.0,,0-6%,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
 34,K+,dN/dy,200.0,51.3,6.5,,0-5%,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
 34,K-,dN/dy,200.0,49.5,6.2,,0-5%,arXiv:0808.2041/Table VIII,table gives total uncertainty (stat+sys)
+ins871561,Ks0,dN/dy,200.0,38.3,,1.6,0-5%,ins871561/Figure6 up,Direct STAR K0S yield from HEPData t12; RHIC points are centrality 0-5% per table description.
 6014,Lambda,dN/dy,200.0,16.7,0.2,1.1,0-5%,arXiv:nucl-ex/0606014/Table I,
 6014,Lambda_bar,dN/dy,200.0,12.7,0.2,0.9,0-5%,arXiv:nucl-ex/0606014/Table I,
 6014,Omega_sum,dN/dy,200.0,0.53,0.04,0.04,0-5%,arXiv:nucl-ex/0606014/Table I,

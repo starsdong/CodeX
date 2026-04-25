@@ -12,7 +12,7 @@ This workflow mirrors the ThermalFIST setup, but runs fits with THERMUS and writ
 
 ## Inputs and Particle Set
 - Source data: `data/first_group_dn_dy_vs_energy.csv`
-- Fitted particles: `pi+, pi-, K+, K-, p, pbar, Lambda, Lambda_bar, Xi, Xi_bar`
+- Fitted particles: `pi+, pi-, K+, K-, p, pbar, Lambda, Lambda_bar, Xi, Xi_bar, phi`
 - Proton feeddown correction: `p -> p - BR*Lambda`, `pbar -> pbar - BR*Lambda_bar`, with `BR=0.639`
 
 ## Run

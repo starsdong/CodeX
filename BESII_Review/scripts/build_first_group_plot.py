@@ -72,6 +72,11 @@ def parse_errors(yitem):
     return stat, sys
 
 
+def paper_sort_key(value):
+    text = str(value)
+    return (0, int(text)) if text.isdigit() else (1, text)
+
+
 def group_map(table, qkey):
     out = {}
     arr = table.get('qualifiers', {}).get(qkey, [])
@@ -176,6 +181,7 @@ for e in [7.7, 11.5, 19.6, 27, 39]:
 
 # ID 237: dN/dy at max Npart (central)
 species_237 = {
+    'Ks0': 'K0S',
     'phi': 'Phi',
     'Lambda': 'Lambda',
     'Lambda_bar': 'AntiLambda',
@@ -445,6 +451,35 @@ rows.append({
     'note': f'point at y={xnear}',
 })
 
+# STAR PRC83 Fig. 6 up: direct K0S dN/dy points for central (0-5%) Au+Au
+# at 62.4 and 200 GeV, tabulated in HEPData table t12.
+rows.extend([
+    {
+        'paper_id': 'ins871561',
+        'particle': 'Ks0',
+        'observable': 'dN/dy',
+        'energy_GeV': 62.4,
+        'value': 26.7,
+        'stat_err': '',
+        'sys_err': 0.6,
+        'centrality': '0-5%',
+        'source': 'ins871561/Figure6 up',
+        'note': 'Direct STAR K0S yield from HEPData t12; RHIC points are centrality 0-5% per table description.',
+    },
+    {
+        'paper_id': 'ins871561',
+        'particle': 'Ks0',
+        'observable': 'dN/dy',
+        'energy_GeV': 200.0,
+        'value': 38.3,
+        'stat_err': '',
+        'sys_err': 1.6,
+        'centrality': '0-5%',
+        'source': 'ins871561/Figure6 up',
+        'note': 'Direct STAR K0S yield from HEPData t12; RHIC points are centrality 0-5% per table description.',
+    },
+])
+
 # ID 353: Lambda dN/dy at y closest to 0, central 0-10 (group 0)
 q353 = fetch_json('https://www.hepdata.net/download/table/ins2807679/Table%201/json')
 best = None
@@ -475,7 +510,7 @@ rows.append({
 
 # Save data
 rows = [r for r in rows if r.get('energy_GeV') is not None and r.get('value') is not None]
-rows.sort(key=lambda r: (int(r['paper_id']), r['energy_GeV']))
+rows.sort(key=lambda r: (paper_sort_key(r['paper_id']), r['energy_GeV']))
 
 out_csv = OUT_DIR / 'first_group_yield_vs_energy.csv'
 with out_csv.open('w', newline='', encoding='utf-8') as f:

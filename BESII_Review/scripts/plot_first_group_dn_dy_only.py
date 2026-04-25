@@ -11,6 +11,11 @@ out_png = Path('data/first_group_dn_dy_vs_energy.png')
 
 rows = list(csv.DictReader(in_csv.open(encoding='utf-8')))
 
+
+def paper_sort_key(value: str):
+    text = str(value)
+    return (0, int(text)) if text.isdigit() else (1, text)
+
 keep = []
 for r in rows:
     obs = (r.get('observable') or '').lower()
@@ -20,7 +25,7 @@ for r in rows:
         continue
     keep.append(r)
 
-keep.sort(key=lambda r: (int(r['paper_id']), float(r['energy_GeV'])))
+keep.sort(key=lambda r: (paper_sort_key(r['paper_id']), float(r['energy_GeV'])))
 
 with out_csv.open('w', newline='', encoding='utf-8') as f:
     w = csv.DictWriter(f, fieldnames=list(keep[0].keys()))

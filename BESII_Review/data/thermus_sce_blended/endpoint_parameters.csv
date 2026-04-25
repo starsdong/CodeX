@@ -1,3 +1,3 @@
 energy_GeV,T_MeV,muB_MeV,muQ_MeV,gammaS,Rc_fm,R_fm,dVdy_fm3,source,note
 3.000000,81.662316,751.420185,-22.904400,1.000000,3.688143,8.076258,2206.577381,3 GeV SCE fit endpoint,Exact 3 GeV SCE fit point with Rc and R extracted from data
-7.700000,145.927461,406.077367,-11.822091,1.000000,2.620211,5.737712,791.233826,7.7 GeV SCE endpoint with GC radius,"Exact 7.7 GeV endpoint with T and muB from the 7.7 GeV GC fit, R from the exact 7.7 GeV GC fit, and Rc/R fixed to the 3 GeV SCE ratio"
+7.700000,146.065652,407.065927,-11.881841,1.000000,2.609151,5.713493,781.256616,7.7 GeV SCE endpoint with GC radius,"Exact 7.7 GeV endpoint with T and muB from the 7.7 GeV GC fit, R from the exact 7.7 GeV GC fit, and Rc/R fixed to the 3 GeV SCE ratio"

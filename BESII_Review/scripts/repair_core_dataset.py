@@ -62,6 +62,11 @@ def group_map(table, qkey):
         out[int(g)] = (q.get('value') or '').strip().lower()
     return out
 
+
+def paper_sort_key(value):
+    text = str(value)
+    return (0, int(text)) if text.isdigit() else (1, text)
+
 rows = list(csv.DictReader(SRC.open(encoding='utf-8')))
 # rebuild IDs 207 and 237 from scratch
 rows = [r for r in rows if r['paper_id'] not in {'207', '237'}]
@@ -120,6 +125,7 @@ for e in [7.7, 11.5, 19.6, 27, 39]:
 
 # ID 237 full strange set
 species_237 = {
+    'Ks0': 'K0S',
     'phi': 'Phi',
     'Lambda': 'Lambda',
     'Lambda_bar': 'AntiLambda',
@@ -155,7 +161,7 @@ for e in [7.7, 11.5, 19.6, 27, 39]:
         })
         time.sleep(0.7)
 
-rows.sort(key=lambda r: (int(r['paper_id']), r['particle'], float(r['energy_GeV'])))
+rows.sort(key=lambda r: (paper_sort_key(r['paper_id']), r['particle'], float(r['energy_GeV'])))
 with SRC.open('w', newline='', encoding='utf-8') as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
     w.writeheader()

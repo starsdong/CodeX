@@ -61,6 +61,7 @@ rows = list(csv.DictReader(base.open(encoding='utf-8')))
 rows = [r for r in rows if r['paper_id'] != '237']
 
 species_237 = {
+    'Ks0': 'K0S',
     'phi': 'Phi',
     'Lambda': 'Lambda',
     'Lambda_bar': 'AntiLambda',
