@@ -1,0 +1,4 @@
+- A uniform THERMUS analysis is performed for STAR Au+Au hadron yields from 3 to 200 GeV.
+- Grand-canonical fits describe 7.7-200 GeV yields with a smooth freeze-out trajectory.
+- The 3 GeV data require strangeness-canonical treatment and give a much lower chemical freeze-out temperature.
+- Open-strangeness yields at 3 GeV show canonical suppression relative to a grand-canonical continuation.
