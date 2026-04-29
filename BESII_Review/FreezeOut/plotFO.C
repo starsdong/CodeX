@@ -13,6 +13,8 @@
 #include "TBox.h"
 #include "TSystem.h"
 
+#include <cmath>
+
 void plotFO()
 {
   style();
@@ -88,6 +90,7 @@ void plotFO()
   double et_sps[NSPS] = {5, 5, 5, 3, 5, 3, 3, 5, 5, 4, 3};
 
   const int NSTAR = 7;
+  double s_star[NSTAR] = {7.7, 11.5, 19.6, 27.0, 39.0, 62.4, 200.0};
   double mu_star[NSTAR] = {406, 297, 193, 151, 106, 72, 27};
   double t_star[NSTAR] = {146, 151, 158, 161, 162, 166, 166};
   double emu_star[NSTAR] = {14, 13, 10, 10, 12, 15, 12};
@@ -128,7 +131,7 @@ void plotFO()
   const int NTKIN = 9;
   const int NTKINSTAR = 8;
   const int NTKINALICE = 1;
-  double s_tkin[NTKIN] = {7.7, 11.5, 19.6, 27.0, 39.0, 62.0, 130.0, 200.0, 2760.0};
+  double s_tkin[NTKIN] = {7.7, 11.5, 19.6, 27.0, 39.0, 62.4, 130.0, 200.0, 2760.0};
   double mu_tkin[NTKIN];
   double t_tkin[NTKIN] = {116.0, 118.0, 113.0, 117.0, 117.0, 98.7, 96.5, 89.0, 90.0};
   double emu_tkin[NTKIN] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
@@ -140,8 +143,17 @@ void plotFO()
   double mu_tkin_alice[NTKINALICE], t_tkin_alice[NTKINALICE], emu_tkin_alice[NTKINALICE], et_tkin_alice[NTKINALICE];
   for (int i = 0; i < NTKINSTAR; ++i) {
     mu_tkin_star[i] = mu_tkin[i];
-    t_tkin_star[i] = t_tkin[i];
     emu_tkin_star[i] = emu_tkin[i];
+    // Use the STAR chemical-freezeout fit muB when a matching energy is listed.
+    // The 130 GeV kinetic point has no corresponding STAR chemical point here.
+    for (int j = 0; j < NSTAR; ++j) {
+      if (std::fabs(s_tkin[i] - s_star[j]) < 0.05) {
+        mu_tkin_star[i] = mu_star[j];
+        emu_tkin_star[i] = emu_star[j];
+        break;
+      }
+    }
+    t_tkin_star[i] = t_tkin[i];
     et_tkin_star[i] = et_tkin[i];
   }
   mu_tkin_alice[0] = mu_tkin[NTKIN - 1];
