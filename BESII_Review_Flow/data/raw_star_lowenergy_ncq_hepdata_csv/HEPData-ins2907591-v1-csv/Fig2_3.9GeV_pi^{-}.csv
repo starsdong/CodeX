@@ -1,0 +1,14 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t9
+#: name: Fig2_3.9GeV_$\pi^{-}$
+#: description: $p_{T}$ dependence of $v_{2}$ for $\pi^{-}$ in Au+Au collisions at 3.9 GeV
+#: data_file: v2pt_PiM_3.9.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.9
+#: $p_{T}(GeV/c)$,$v_{2}$ $\pi^{-}$ 3.9 GeV
+$p_{T}(GeV/c)$,$v_{2}$,stat +,stat -,sys +,sys -
+0.3,0.013313,0.000193,-0.000193,0.001904,-0.001904
+0.5,0.025283,0.000312,-0.000312,0.002875,-0.002875
+0.7,0.032341,0.000494,-0.000494,0.00424,-0.00424
+1.0,0.039063,0.000678,-0.000678,0.005191,-0.005191
+1.4,0.051379,0.001892,-0.001892,0.009337,-0.009337
+

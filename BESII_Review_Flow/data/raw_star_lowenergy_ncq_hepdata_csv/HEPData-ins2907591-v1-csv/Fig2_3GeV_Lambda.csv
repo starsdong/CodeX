@@ -1,0 +1,15 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t31
+#: name: Fig2_3GeV_$\Lambda$
+#: description: $p_{T}$ dependence of $v_{2}$ for $\Lambda$ in Au+Au collisions at 3 GeV
+#: data_file: v2pt_Lambda_3.0.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.0
+#: $p_{T}(GeV/c)$,$v_{2}$ $\Lambda$ 3.0 GeV
+$p_{T}(GeV/c)$,$v_{2}$,stat +,stat -,sys +,sys -
+0.5,-0.018612,0.00452,-0.00452,0.024608,-0.024608
+0.7,-0.018863,0.003183,-0.003183,0.008296,-0.008296
+0.9,-0.02042,0.003215,-0.003215,0.014903,-0.014903
+1.1,-0.010807,0.004067,-0.004067,0.035774,-0.035774
+1.4,-0.000425,0.005517,-0.005517,0.006116,-0.006116
+1.8,0.017864,0.015125,-0.015125,0.01309,-0.01309
+

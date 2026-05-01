@@ -1,0 +1,16 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t68
+#: name: Fig3_3.5GeV_$\Lambda$
+#: description: The number of constituent quarks $n_q$ scaled $v_2$ as a function of $n_q$ scaled transverse kinetic energy for $\Lambda$ at 3.5 GeV
+#: data_file: NCQ_Lambda_3.5.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.5
+#: $(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$ $\Lambda$ 3.5 GeV
+$(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$,stat +,stat -,sys +,sys -
+0.035639,-0.002376,0.001702,-0.001702,0.001357,-0.001357
+0.067139,0.000682,0.00101,-0.00101,0.000176,-0.000176
+0.105919,0.003273,0.000959,-0.000959,0.000329,-0.000329
+0.15036,0.006241,0.001114,-0.001114,0.000393,-0.000393
+0.224833,0.011553,0.001207,-0.001207,0.000673,-0.000673
+0.334013,0.01793,0.002738,-0.002738,0.001276,-0.001276
+0.465247,0.023203,0.007433,-0.007433,0.002024,-0.002024
+

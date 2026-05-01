@@ -1,0 +1,14 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t44
+#: name: Fig3_3.9GeV_$\pi^{-}$
+#: description: The number of constituent quarks $n_q$ scaled $v_2$ as a function of $n_q$ scaled transverse kinetic energy for $\pi^{-}$ at 3.9 GeV
+#: data_file: NCQ_PiM_3.9.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.9
+#: $(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$ $\pi^{-}$ 3.9 GeV
+$(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$,stat +,stat -,sys +,sys -
+0.095529,0.006656,9.7e-05,-9.7e-05,0.000952,-0.000952
+0.189615,0.012641,0.000156,-0.000156,0.001438,-0.001438
+0.286931,0.01617,0.000247,-0.000247,0.00212,-0.00212
+0.434876,0.019532,0.000339,-0.000339,0.002595,-0.002595
+0.633491,0.025689,0.000946,-0.000946,0.004668,-0.004668
+

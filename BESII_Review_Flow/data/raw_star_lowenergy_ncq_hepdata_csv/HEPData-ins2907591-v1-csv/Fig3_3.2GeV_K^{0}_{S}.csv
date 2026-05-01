@@ -1,0 +1,15 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t57
+#: name: Fig3_3.2GeV_$K^{0}_{S}$
+#: description: The number of constituent quarks $n_q$ scaled $v_2$ as a function of $n_q$ scaled transverse kinetic energy for $K^{0}_{S}$ at 3.2 GeV
+#: data_file: NCQ_K0S_3.2.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.2
+#: $(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$ $K^{0}_{S}$ 3.2 GeV
+$(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$,stat +,stat -,sys +,sys -
+0.041691,-0.001591,0.003377,-0.003377,0.0,-0.0
+0.103847,-0.001501,0.00283,-0.00283,5.7e-05,-5.7e-05
+0.180536,0.00506,0.002817,-0.002817,0.001362,-0.001362
+0.265297,0.004423,0.003612,-0.003612,0.000491,-0.000491
+0.354739,0.020507,0.005383,-0.005383,0.002869,-0.002869
+0.493968,0.033938,0.007676,-0.007676,0.004667,-0.004667
+

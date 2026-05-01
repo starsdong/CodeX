@@ -1,0 +1,14 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t8
+#: name: Fig2_3.5GeV_$\pi^{-}$
+#: description: $p_{T}$ dependence of $v_{2}$ for $\pi^{-}$ in Au+Au collisions at 3.5 GeV
+#: data_file: v2pt_PiM_3.5.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.5
+#: $p_{T}(GeV/c)$,$v_{2}$ $\pi^{-}$ 3.5 GeV
+$p_{T}(GeV/c)$,$v_{2}$,stat +,stat -,sys +,sys -
+0.3,0.005743,0.000173,-0.000173,0.000287,-0.000287
+0.5,0.014094,0.000292,-0.000292,0.000287,-0.000287
+0.7,0.017227,0.00048,-0.00048,0.000422,-0.000422
+1.0,0.019532,0.000688,-0.000688,0.000562,-0.000562
+1.4,0.029596,0.002079,-0.002079,0.001171,-0.001171
+

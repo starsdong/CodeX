@@ -1,0 +1,23 @@
+#: table_doi: 10.17182/hepdata.110656.v1/t28
+#: name: fig5_b $p$
+#: description: Collision energy dependence of (top panel) directed flow slope $dv_1/dy|_{y=0}$ for p, $\Lambda, \pi$(combined from $\pi^{\pm}$), K(combined from $K^{\pm}$ and $K_S^0$), $\phi$ and $\Xi^−$, and (bottom panel) elliptic flow $v_2$ for p, $\pi$(combined from $\pi^{\pm}$) in heavy- ion collisions. Collision centrality for all data from RHIC is 10-40%, except for 4.5 GeV where 10-30% is for $dv_1/dy|_{y=0}$ and 0-30% is for $v_2$. Statistical and systematic uncertainties are shown as bars and gray bands, respectively. Some uncertainties are smaller than the data points. The JAM and UrQMD results are shown as colored bands:golden, red and blue bands stand for JAM mean-field, UrQMD mean-field and UrQMD cascade mode, respectively. For clarity the x-axis value of the data points have been shifted.
+#: data_file: fig5_b_1.yaml
+#: keyword reactions: AuAu
+#: keyword cmenergies: 3.0
+#: keyword observables: elliptic flow
+#: Collision Energy $\sqrt{s_{NN}}$,$v_2$
+Collision Energy $\sqrt{s_{NN}}$,$v_2$ p,stat +,stat -,sys +,sys -
+2.4,-0.063,0.001,-0.001,0.001,-0.001
+2.696,-0.05102,0.00341,-0.00341,0,0
+3,-0.0188388,5.77365e-05,-5.77365e-05,0.0001,-0.0001
+3.32,-0.0051429,0.003,-0.003,0,0
+3.844,0.00928571,0.0035714,-0.0035714,0,0
+4.304,0.0142857,0.0046429,-0.0046429,0,0
+4.5,0.02831,0.006,-0.006,0,0
+5,0.0186567,0.00208955,-0.00208955,0,0
+7.7,0.0357,0.0009,-0.0009,0,0
+11.5,0.0402,0.0005,-0.0005,0,0
+14.5,0.0412,0.0005,-0.0005,0,0
+19.6,0.0412,0.0003,-0.0003,0,0
+27,0.0412,0.0002,-0.0002,0,0
+

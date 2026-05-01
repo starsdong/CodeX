@@ -1,0 +1,13 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t16
+#: name: Fig2_3GeV_$K^{-}$
+#: description: $p_{T}$ dependence of $v_{2}$ for $K^{-}$ in Au+Au collisions at 3 GeV
+#: data_file: v2pt_KM_3.0.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.0
+#: $p_{T}(GeV/c)$,$v_{2}$ $K^{-}$ 3.0 GeV
+$p_{T}(GeV/c)$,$v_{2}$,stat +,stat -,sys +,sys -
+0.429369,-0.020026,0.00491,-0.00491,0.001982,-0.001982
+0.696122,-0.013742,0.007047,-0.007047,0.005472,-0.005472
+0.953555,-0.01975,0.00865,-0.00865,0.008653,-0.008653
+1.33812,-0.053895,0.019621,-0.019621,0.008434,-0.008434
+

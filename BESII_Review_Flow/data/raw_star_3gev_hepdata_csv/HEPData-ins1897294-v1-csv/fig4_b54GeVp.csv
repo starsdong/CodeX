@@ -1,0 +1,24 @@
+#: table_doi: 10.17182/hepdata.110656.v1/t8
+#: name: fig4_b 54GeV p
+#: description: $v_2$ scaled by the number of constituent quarks, $v_2/n_q$ , as a function of scaled transverse kinetic energy ($(m_T − m_0)/n_q$) for pions, kaons and protons from Au+Au collisions in 10-40% centrality at $\sqrt{s_{NN}}$ = 3, 27, and 54.4 GeV for positive charged particles (left panel) and negative charged particles (right panel). Colored dashed lines represent the scaling fit to data in 7.7, 14.5, 27, 54.4, and 200 GeV Au+Au collisions from STAR experiment at RHIC [43–45]. Statistical and systematic uncertainties are shown as bars and gray bands, respectively. Some uncertainties are smaller than the data points.
+#: data_file: fig4_pm_54.yaml
+#: keyword reactions: AuAu
+#: keyword cmenergies: 3.0
+#: keyword observables: elliptic flow
+#: $(m_T - m_0)/n_q (GeV/c^2)$,$v_2/n_q$
+$(m_T - m_0)/n_q (GeV/c^2)$,$v_2/n_q$ $\bar{p}$ 54 GeV,stat +,stat -,sys +,sys -
+0.0207514,0.00127024,0.000122127,-0.000122127,0.00038242,-0.00038242
+0.0437896,0.00398137,4.63967e-05,-4.63967e-05,0.000115026,-0.000115026
+0.0780349,0.00956357,3.77143e-05,-3.77143e-05,0.000157319,-0.000157319
+0.120168,0.0172923,3.75517e-05,-3.75517e-05,0.000266339,-0.000266339
+0.167972,0.0257406,4.1731e-05,-4.1731e-05,0.000419943,-0.000419943
+0.219885,0.034092,4.89487e-05,-4.89487e-05,0.00058967,-0.00058967
+0.274809,0.041758,5.96577e-05,-5.96577e-05,0.00072608,-0.00072608
+0.331978,0.0483833,7.49117e-05,-7.49117e-05,0.000833363,-0.000833363
+0.390855,0.054066,0.000133926,-0.000133926,0.000904523,-0.000904523
+0.451064,0.0589063,0.000176775,-0.000176775,0.00093184,-0.00093184
+0.512337,0.062961,0.000235014,-0.000235014,0.00100926,-0.00100926
+0.574482,0.0661197,0.000305265,-0.000305265,0.00102662,-0.00102662
+0.637327,0.0691413,0.00040073,-0.00040073,0.000985287,-0.000985287
+0.700671,0.0704193,0.00053668,-0.00053668,0.00083558,-0.00083558
+

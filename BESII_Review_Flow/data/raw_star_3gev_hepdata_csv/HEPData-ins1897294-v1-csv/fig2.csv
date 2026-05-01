@@ -1,0 +1,55 @@
+#: table_doi: 10.17182/hepdata.110656.v1/t1
+#: name: fig2
+#: description: Event plane resolution as a function of collision centrality from Au+Au collisions at $\sqrt{s_{NN}}$=3 (a), 27 and 54.4 GeV (b). In case of the 3 GeV collisions, $\Psi_{1}$ is used to determine the event plane resolutions for the first and second harmonic coefficients shown as $R_{11}$ and $R_{12}$ in left panel. In the 27 and 54.4 GeV collisions, $\Psi_{2}$ is used to evaluate the second order event plane resolution, see right panel. In all cases, the statistic uncertainties are smaller than symbol sizes.
+#: data_file: fig2.yaml
+#: keyword reactions: AuAu
+#: keyword cmenergies: 3.0
+#: keyword observables: event plane resolution
+#: Collision Centrality (%),Event Plane Resolution
+Collision Centrality (%),Event Plane Resolution 3 GeV EPD $R_{11}$,stat +,stat -
+2.5,0.277282,0.000260332,-0.000260332
+7.5,0.449211,0.000193288,-0.000193288
+15,0.620534,0.000122853,-0.000122853
+25,0.726469,0.000135587,-0.000135587
+35,0.750364,0.000191174,-0.000191174
+45,0.717564,0.000282278,-0.000282278
+55,0.635928,0.000459643,-0.000459643
+65,0.52164,0.000791126,-0.000791126
+75,0.414801,0.0018976,-0.0018976
+
+#: Collision Centrality (%),Event Plane Resolution
+Collision Centrality (%),Event Plane Resolution 3 GeV  EPD $R_{12}$,stat +,stat -
+2.5,0.049776,0.000442758,-0.000442758
+7.5,0.134572,0.000198121,-0.000198121
+15,0.270056,9.39705e-05,-9.39705e-05
+25,0.38808,9.13341e-05,-9.13341e-05
+35,0.41955,0.000128177,-0.000128177
+45,0.376866,0.000203844,-0.000203844
+55,0.285307,0.000391157,-0.000391157
+65,0.184801,0.000859063,-0.000859063
+75,0.113904,0.00260752,-0.00260752
+
+#: Collision Centrality (%),Event Plane Resolution
+Collision Centrality (%),Event Plane Resolution 27 GeV TPC $R_{22}$,stat +,stat -
+2.5,0.303782,0.00030098,-0.00030098
+7.5,0.405797,0.000224461,-0.000224461
+15,0.483822,0.000127946,-0.000127946
+25,0.502118,0.000120392,-0.000120392
+35,0.457295,0.000133509,-0.000133509
+45,0.374751,0.000169434,-0.000169434
+55,0.278108,0.00023221,-0.00023221
+65,0.192041,0.000343062,-0.000343062
+75,0.140442,0.000523274,-0.000523274
+
+#: Collision Centrality (%),Event Plane Resolution
+Collision Centrality (%),Event Plane Resolution 54.4 GeV TPC $R_{22}$,stat +,stat -
+2.5,0.342342,0.000158133,-0.000158133
+7.5,0.450072,0.000117069,-0.000117069
+15,0.536674,6.68364e-05,-6.68364e-05
+25,0.557639,6.41927e-05,-6.41927e-05
+35,0.514429,7.15288e-05,-7.15288e-05
+45,0.429947,8.90135e-05,-8.90135e-05
+55,0.326348,0.000124906,-0.000124906
+65,0.228872,0.000189517,-0.000189517
+75,0.158641,0.000324819,-0.000324819
+

@@ -1,0 +1,16 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t69
+#: name: Fig3_3.9GeV_$\Lambda$
+#: description: The number of constituent quarks $n_q$ scaled $v_2$ as a function of $n_q$ scaled transverse kinetic energy for $\Lambda$ at 3.9 GeV
+#: data_file: NCQ_Lambda_3.9.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.9
+#: $(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$ $\Lambda$ 3.9 GeV
+$(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$,stat +,stat -,sys +,sys -
+0.035639,0.003242,0.003558,-0.003558,0.005367,-0.005367
+0.067139,0.005398,0.001586,-0.001586,0.002317,-0.002317
+0.105919,0.005856,0.00134,-0.00134,0.001624,-0.001624
+0.15036,0.011734,0.001421,-0.001421,0.001673,-0.001673
+0.224833,0.018044,0.001423,-0.001423,0.001937,-0.001937
+0.334013,0.030087,0.003019,-0.003019,0.003222,-0.003222
+0.465247,0.022355,0.007833,-0.007833,0.004517,-0.004517
+

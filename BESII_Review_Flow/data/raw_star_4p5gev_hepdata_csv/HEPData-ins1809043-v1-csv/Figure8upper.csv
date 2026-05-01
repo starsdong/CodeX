@@ -1,0 +1,16 @@
+#: table_doi: 10.17182/hepdata.95903.v1/t3
+#: name: Figure 8 upper
+#: description: Rapidity dependence of directed flow, v1(y), for negative pions with transverse momentum pT > 0.2 GeV/c and total momentum magnitude |p| < 1.6 GeV/c from events within 10-30% centrality. Here, the BBC-based Event Plane method is used. Plotted error bars are statistical only, and systematic errors are of comparable size.
+#: data_file: fig8_upper.yaml
+#: keyword reactions: AU AU --> X
+#: keyword cmenergies: 4.5
+#: Dataset,$\pi^-$
+$y$,$v_1$,stat +,stat -
+0.105,0.00184,0.003493,-0.003493
+0.305,-0.000844,0.002007,-0.002007
+0.505,-0.004511,0.002113,-0.002113
+0.705,-0.014383,0.002793,-0.002793
+0.905,-0.011445,0.003289,-0.003289
+1.105,-0.028414,0.004039,-0.004039
+1.305,-0.048148,0.010294,-0.010294
+

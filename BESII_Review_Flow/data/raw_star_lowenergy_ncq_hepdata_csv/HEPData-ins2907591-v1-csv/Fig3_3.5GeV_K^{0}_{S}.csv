@@ -1,0 +1,15 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t58
+#: name: Fig3_3.5GeV_$K^{0}_{S}$
+#: description: The number of constituent quarks $n_q$ scaled $v_2$ as a function of $n_q$ scaled transverse kinetic energy for $K^{0}_{S}$ at 3.5 GeV
+#: data_file: NCQ_K0S_3.5.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.5
+#: $(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$ $K^{0}_{S}$ 3.5 GeV
+$(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$,stat +,stat -,sys +,sys -
+0.041691,-0.005666,0.004063,-0.004063,0.003632,-0.003632
+0.103847,0.00572,0.003174,-0.003174,0.005306,-0.005306
+0.180536,0.003295,0.003131,-0.003131,0.009908,-0.009908
+0.265297,0.018767,0.003877,-0.003877,0.006843,-0.006843
+0.354739,0.029704,0.005508,-0.005508,0.008585,-0.008585
+0.493968,0.029205,0.007452,-0.007452,0.011647,-0.011647
+

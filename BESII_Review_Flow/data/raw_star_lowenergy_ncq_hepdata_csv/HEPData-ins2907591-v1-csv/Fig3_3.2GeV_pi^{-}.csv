@@ -1,0 +1,16 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t42
+#: name: Fig3_3.2GeV_$\pi^{-}$
+#: description: The number of constituent quarks $n_q$ scaled $v_2$ as a function of $n_q$ scaled transverse kinetic energy for $\pi^{-}$ at 3.2 GeV
+#: data_file: NCQ_PiM_3.2.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 3.2
+#: $(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$ $\pi^{-}$ 3.2 GeV
+$(m_T - m_0)/n_q (GeV/c^2)$,$v_{2}/n_{q}$,stat +,stat -,sys +,sys -
+0.095529,-0.0022,6.6e-05,-6.6e-05,7e-05,-7e-05
+0.189615,-0.001208,0.000122,-0.000122,9e-06,-9e-06
+0.286931,-0.001644,0.000211,-0.000211,0.00018,-0.00018
+0.385412,-0.003014,0.00037,-0.00037,0.00029,-0.00029
+0.484437,-0.002863,0.00067,-0.00067,0.000307,-0.000307
+0.583758,-0.002153,0.001256,-0.001256,0.000701,-0.000701
+0.68326,0.004167,0.002425,-0.002425,0.003038,-0.003038
+

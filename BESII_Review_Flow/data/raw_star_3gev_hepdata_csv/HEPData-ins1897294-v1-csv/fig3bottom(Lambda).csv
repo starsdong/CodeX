@@ -1,0 +1,14 @@
+#: table_doi: 10.17182/hepdata.110656.v1/t4
+#: name: fig3 bottom ($\Lambda$)
+#: description: Rapidity($y$) dependence of $v_1$ (top panels) and $v_2$ (bottom panels) of proton and $\Lambda$ baryons (left panels), pions (middle panels) and kaons (right panels) in 10-40% centrality for the $\sqrt{s_{NN}}$ = 3GeV Au+Au collisions. Statistical and systematic uncertainties are shown as bars and gray bands, respectively. Some uncertainties are smaller than the data points. The UrQMD and JAM results are shown as bands:golden, red and blue bands stand for JAM mean-field, UrQMD mean-field and UrQMD cascade mode, respectively. The value of the incompressibility $\kappa$ = 380 MeV is used in the mean-field option. More detailed model descriptions and data comparisons can be found in Supplemental Material.
+#: data_file: fig3_bottom_2.yaml
+#: keyword reactions: AuAu
+#: keyword cmenergies: 3.0
+#: keyword observables: elliptic flow
+#: Particle Rapidity $y$,$v_2$
+Particle Rapidity $y$,$v_2$ $\Lambda$,stat +,stat -,sys +,sys -
+-0.125,-0.0214724,0.00813735,-0.00813735,0.00494497,-0.00494497
+-0.375,-0.0229928,0.00493157,-0.00493157,0.00462298,-0.00462298
+-0.625,0.0035358,0.00534037,-0.00534037,0.00338904,-0.00338904
+-0.875,0.0221549,0.0130012,-0.0130012,0.0140915,-0.0140915
+

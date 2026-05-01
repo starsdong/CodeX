@@ -1,0 +1,46 @@
+#: table_doi: 10.17182/hepdata.95903.v1/t7
+#: name: Figure 11
+#: description: Beam energy dependence of the directed flow slope dv1=dy at midrapidity for baryons and mesons measured by STAR.
+#: data_file: fig11.yaml
+#: keyword reactions: AU AU --> X
+#: keyword cmenergies: 4.5
+#: Dataset,Lambda (STAR FXT)
+$\sqrt{s_{NN}}$,d$v_1$/d$y|_{y=0}$,stat +,stat -,syst +,syst -
+4.5,0.106,0.011,-0.011,0.01,-0.01
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+
+#: Dataset,p (STAR FXT)
+$\sqrt{s_{NN}}$,d$v_1$/d$y|_{y=0}$,stat +,stat -,syst +,syst -
+4.5,,0,0,0,0
+4.5,0.084,0.002,-0.002,0.01,-0.01
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+
+#: Dataset,K0S (STAR FXT)
+$\sqrt{s_{NN}}$,d$v_1$/d$y|_{y=0}$,stat +,stat -,syst +,syst -
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,-0.03,0.01,-0.01,0.017,-0.017
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+
+#: Dataset,$\pi^-$ (STAR FXT)
+$\sqrt{s_{NN}}$,d$v_1$/d$y|_{y=0}$,stat +,stat -,syst +,syst -
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,-0.005,0.004,-0.004,0.003,-0.003
+4.5,,0,0,0,0
+
+#: Dataset,$\pi^+$ (STAR FXT)
+$\sqrt{s_{NN}}$,d$v_1$/d$y|_{y=0}$,stat +,stat -,syst +,syst -
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,,0,0,0,0
+4.5,-0.024,0.004,-0.004,0.003,-0.003
+

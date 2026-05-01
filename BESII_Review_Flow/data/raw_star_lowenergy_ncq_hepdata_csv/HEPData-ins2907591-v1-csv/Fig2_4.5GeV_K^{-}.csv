@@ -1,0 +1,13 @@
+#: table_doi: 10.17182/hepdata.159489.v1/t20
+#: name: Fig2_4.5GeV_$K^{-}$
+#: description: $p_{T}$ dependence of $v_{2}$ for $K^{-}$ in Au+Au collisions at 4.5 GeV
+#: data_file: v2pt_KM_4.5.yaml
+#: keyword observables: elliptic flow
+#: keyword cmenergies: 4.5
+#: $p_{T}(GeV/c)$,$v_{2}$ $K^{-}$ 4.5 GeV
+$p_{T}(GeV/c)$,$v_{2}$,stat +,stat -,sys +,sys -
+0.4,0.007957,0.006116,-0.006116,0.0,-0.0
+0.6,0.021734,0.006129,-0.006129,0.002209,-0.002209
+0.8,0.034712,0.006699,-0.006699,0.003811,-0.003811
+1.0,0.055037,0.009359,-0.009359,0.010424,-0.010424
+

@@ -1,0 +1,684 @@
+%\RequirePackage{lineno}
+\documentclass[floatfix,twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prc,superscriptaddress]{revtex4} 
+\usepackage{graphicx}% Includex figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\newcommand{\nn}{\nonumber}
+\usepackage{color}
+\widowpenalty=10000
+\clubpenalty=10000
+\begin{document}
+%\linenumbers
+
+\title{Beam-Energy Dependence of Directed Flow of Protons, Antiprotons and Pions in Au+Au Collisions}
+
+\affiliation{AGH University of Science and Technology, Cracow, Poland}
+\affiliation{Argonne National Laboratory, Argonne, Illinois 60439, USA}
+\affiliation{University of Birmingham, Birmingham, United Kingdom}
+\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\affiliation{University of California, Berkeley, California 94720, USA}
+\affiliation{University of California, Davis, California 95616, USA}
+\affiliation{University of California, Los Angeles, California 90095, USA}
+\affiliation{Universidade Estadual de Campinas, Sao Paulo, Brazil}
+\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\affiliation{Cracow University of Technology, Cracow, Poland}
+\affiliation{Creighton University, Omaha, Nebraska 68178, USA}
+\affiliation{Czech Technical University in Prague, FNSPE, Prague, 115 19, Czech Republic}
+\affiliation{Nuclear Physics Institute AS CR, 250 68 \v{R}e\v{z}/Prague, Czech Republic}
+\affiliation{Frankfurt Institute for Advanced Studies FIAS, Germany}
+\affiliation{Institute of Physics, Bhubaneswar 751005, India}
+\affiliation{Indian Institute of Technology, Mumbai, India}
+\affiliation{Indiana University, Bloomington, Indiana 47408, USA}
+\affiliation{Alikhanov Institute for Theoretical and Experimental Physics, Moscow, Russia}
+\affiliation{University of Jammu, Jammu 180001, India}
+\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\affiliation{University of Kentucky, Lexington, Kentucky, 40506-0055, USA}
+\affiliation{Korea Institute of Science and Technology Information, Daejeon, Korea}
+\affiliation{Institute of Modern Physics, Lanzhou, China}
+\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\affiliation{Massachusetts Institute of Technology, Cambridge, Massachusetts 02139-4307, USA}
+\affiliation{Max-Planck-Institut f\"ur Physik, Munich, Germany}
+\affiliation{Michigan State University, East Lansing, Michigan 48824, USA}
+\affiliation{Moscow Engineering Physics Institute, Moscow Russia}
+\affiliation{National Institute of Science Education and Research, Bhubaneswar 751005, India}
+\affiliation{Ohio State University, Columbus, Ohio 43210, USA}
+\affiliation{Old Dominion University, Norfolk, Virginia 23529, USA}
+\affiliation{Institute of Nuclear Physics PAN, Cracow, Poland}
+\affiliation{Panjab University, Chandigarh 160014, India}
+\affiliation{Pennsylvania State University, University Park, Pennsylvania 16802, USA}
+\affiliation{Institute of High Energy Physics, Protvino, Russia}
+\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\affiliation{Pusan National University, Pusan, Republic of Korea}
+\affiliation{University of Rajasthan, Jaipur 302004, India}
+\affiliation{Rice University, Houston, Texas 77251, USA}
+\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\affiliation{Shandong University, Jinan, Shandong 250100, China}
+\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\affiliation{SUBATECH, Nantes, France}
+\affiliation{Temple University, Philadelphia, Pennsylvania 19122, USA}
+\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\affiliation{University of Texas, Austin, Texas 78712, USA}
+\affiliation{University of Houston, Houston, Texas 77204, USA}
+\affiliation{Tsinghua University, Beijing 100084, China}
+\affiliation{United States Naval Academy, Annapolis, Maryland, 21402, USA}
+\affiliation{Valparaiso University, Valparaiso, Indiana 46383, USA}
+\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\affiliation{University of Washington, Seattle, Washington 98195, USA}
+\affiliation{Wayne State University, Detroit, Michigan 48201, USA}
+\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\affiliation{University of Zagreb, Zagreb, HR-10002, Croatia}
+
+\author{L.~Adamczyk}\affiliation{AGH University of Science and Technology, Cracow, Poland}
+\author{J.~K.~Adkins}\affiliation{University of Kentucky, Lexington, Kentucky, 40506-0055, USA}
+\author{G.~Agakishiev}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{M.~M.~Aggarwal}\affiliation{Panjab University, Chandigarh 160014, India}
+\author{Z.~Ahammed}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{I.~Alekseev}\affiliation{Alikhanov Institute for Theoretical and Experimental Physics, Moscow, Russia}
+\author{J.~Alford}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{C.~D.~Anson}\affiliation{Ohio State University, Columbus, Ohio 43210, USA}
+\author{A.~Aparin}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{D.~Arkhipkin}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{E.~C.~Aschenauer}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{G.~S.~Averichev}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{A.~Banerjee}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{D.~R.~Beavis}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{R.~Bellwied}\affiliation{University of Houston, Houston, Texas 77204, USA}
+\author{A.~Bhasin}\affiliation{University of Jammu, Jammu 180001, India}
+\author{A.~K.~Bhati}\affiliation{Panjab University, Chandigarh 160014, India}
+\author{P.~Bhattarai}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{H.~Bichsel}\affiliation{University of Washington, Seattle, Washington 98195, USA}
+\author{J.~Bielcik}\affiliation{Czech Technical University in Prague, FNSPE, Prague, 115 19, Czech Republic}
+\author{J.~Bielcikova}\affiliation{Nuclear Physics Institute AS CR, 250 68 \v{R}e\v{z}/Prague, Czech Republic}
+\author{L.~C.~Bland}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{I.~G.~Bordyuzhin}\affiliation{Alikhanov Institute for Theoretical and Experimental Physics, Moscow, Russia}
+\author{W.~Borowski}\affiliation{SUBATECH, Nantes, France}
+\author{J.~Bouchet}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{A.~V.~Brandin}\affiliation{Moscow Engineering Physics Institute, Moscow Russia}
+\author{S.~G.~Brovko}\affiliation{University of California, Davis, California 95616, USA}
+\author{S.~B{\"u}ltmann}\affiliation{Old Dominion University, Norfolk, Virginia 23529, USA}
+\author{I.~Bunzarov}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{T.~P.~Burton}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{J.~Butterworth}\affiliation{Rice University, Houston, Texas 77251, USA}
+\author{H.~Caines}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{M.~Calder\'on~de~la~Barca~S\'anchez}\affiliation{University of California, Davis, California 95616, USA}
+\author{D.~Cebra}\affiliation{University of California, Davis, California 95616, USA}
+\author{R.~Cendejas}\affiliation{Pennsylvania State University, University Park, Pennsylvania 16802, USA}
+\author{M.~C.~Cervantes}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{P.~Chaloupka}\affiliation{Czech Technical University in Prague, FNSPE, Prague, 115 19, Czech Republic}
+\author{Z.~Chang}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{S.~Chattopadhyay}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{H.~F.~Chen}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{J.~H.~Chen}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{L.~Chen}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{J.~Cheng}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{M.~Cherney}\affiliation{Creighton University, Omaha, Nebraska 68178, USA}
+\author{A.~Chikanian}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{W.~Christie}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{J.~Chwastowski}\affiliation{Cracow University of Technology, Cracow, Poland}
+\author{M.~J.~M.~Codrington}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{G.~Contin}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{J.~G.~Cramer}\affiliation{University of Washington, Seattle, Washington 98195, USA}
+\author{H.~J.~Crawford}\affiliation{University of California, Berkeley, California 94720, USA}
+\author{X.~Cui}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{S.~Das}\affiliation{Institute of Physics, Bhubaneswar 751005, India}
+\author{A.~Davila~Leyva}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{L.~C.~De~Silva}\affiliation{Creighton University, Omaha, Nebraska 68178, USA}
+\author{R.~R.~Debbe}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{T.~G.~Dedovich}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{J.~Deng}\affiliation{Shandong University, Jinan, Shandong 250100, China}
+\author{A.~A.~Derevschikov}\affiliation{Institute of High Energy Physics, Protvino, Russia}
+\author{R.~Derradi~de~Souza}\affiliation{Universidade Estadual de Campinas, Sao Paulo, Brazil}
+\author{S.~Dhamija}\affiliation{Indiana University, Bloomington, Indiana 47408, USA}
+\author{B.~di~Ruzza}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{L.~Didenko}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{C.~Dilks}\affiliation{Pennsylvania State University, University Park, Pennsylvania 16802, USA}
+\author{F.~Ding}\affiliation{University of California, Davis, California 95616, USA}
+\author{P.~Djawotho}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{X.~Dong}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{J.~L.~Drachenberg}\affiliation{Valparaiso University, Valparaiso, Indiana 46383, USA}
+\author{J.~E.~Draper}\affiliation{University of California, Davis, California 95616, USA}
+\author{C.~M.~Du}\affiliation{Institute of Modern Physics, Lanzhou, China}
+\author{L.~E.~Dunkelberger}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{J.~C.~Dunlop}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{L.~G.~Efimov}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{J.~Engelage}\affiliation{University of California, Berkeley, California 94720, USA}
+\author{K.~S.~Engle}\affiliation{United States Naval Academy, Annapolis, Maryland, 21402, USA}
+\author{G.~Eppley}\affiliation{Rice University, Houston, Texas 77251, USA}
+\author{L.~Eun}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{O.~Evdokimov}\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\author{O.~Eyser}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{R.~Fatemi}\affiliation{University of Kentucky, Lexington, Kentucky, 40506-0055, USA}
+\author{S.~Fazio}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{J.~Fedorisin}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{P.~Filip}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{E.~Finch}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{Y.~Fisyak}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{C.~E.~Flores}\affiliation{University of California, Davis, California 95616, USA}
+\author{C.~A.~Gagliardi}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{D.~R.~Gangadharan}\affiliation{Ohio State University, Columbus, Ohio 43210, USA}
+\author{D.~ Garand}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{F.~Geurts}\affiliation{Rice University, Houston, Texas 77251, USA}
+\author{A.~Gibson}\affiliation{Valparaiso University, Valparaiso, Indiana 46383, USA}
+\author{M.~Girard}\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\author{S.~Gliske}\affiliation{Argonne National Laboratory, Argonne, Illinois 60439, USA}
+\author{L.~Greiner}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{D.~Grosnick}\affiliation{Valparaiso University, Valparaiso, Indiana 46383, USA}
+\author{D.~S.~Gunarathne}\affiliation{Temple University, Philadelphia, Pennsylvania 19122, USA}
+\author{Y.~Guo}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{A.~Gupta}\affiliation{University of Jammu, Jammu 180001, India}
+\author{S.~Gupta}\affiliation{University of Jammu, Jammu 180001, India}
+\author{W.~Guryn}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{B.~Haag}\affiliation{University of California, Davis, California 95616, USA}
+\author{A.~Hamed}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{L-X.~Han}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{R.~Haque}\affiliation{National Institute of Science Education and Research, Bhubaneswar 751005, India}
+\author{J.~W.~Harris}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{S.~Heppelmann}\affiliation{Pennsylvania State University, University Park, Pennsylvania 16802, USA}
+\author{A.~Hirsch}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{G.~W.~Hoffmann}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{D.~J.~Hofman}\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\author{S.~Horvat}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{B.~Huang}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{H.~Z.~Huang}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{X.~ Huang}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{P.~Huck}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{T.~J.~Humanic}\affiliation{Ohio State University, Columbus, Ohio 43210, USA}
+\author{G.~Igo}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{W.~W.~Jacobs}\affiliation{Indiana University, Bloomington, Indiana 47408, USA}
+\author{H.~Jang}\affiliation{Korea Institute of Science and Technology Information, Daejeon, Korea}
+\author{E.~G.~Judd}\affiliation{University of California, Berkeley, California 94720, USA}
+\author{S.~Kabana}\affiliation{SUBATECH, Nantes, France}
+\author{D.~Kalinkin}\affiliation{Alikhanov Institute for Theoretical and Experimental Physics, Moscow, Russia}
+\author{K.~Kang}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{K.~Kauder}\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\author{H.~W.~Ke}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{D.~Keane}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{A.~Kechechyan}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{A.~Kesich}\affiliation{University of California, Davis, California 95616, USA}
+\author{Z.~H.~Khan}\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\author{D.~P.~Kikola}\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\author{I.~Kisel}\affiliation{Frankfurt Institute for Advanced Studies FIAS, Germany}
+\author{A.~Kisiel}\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\author{D.~D.~Koetke}\affiliation{Valparaiso University, Valparaiso, Indiana 46383, USA}
+\author{T.~Kollegger}\affiliation{Frankfurt Institute for Advanced Studies FIAS, Germany}
+\author{J.~Konzer}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{I.~Koralt}\affiliation{Old Dominion University, Norfolk, Virginia 23529, USA}
+\author{L.~Kotchenda}\affiliation{Moscow Engineering Physics Institute, Moscow Russia}
+\author{A.~F.~Kraishan}\affiliation{Temple University, Philadelphia, Pennsylvania 19122, USA}
+\author{P.~Kravtsov}\affiliation{Moscow Engineering Physics Institute, Moscow Russia}
+\author{K.~Krueger}\affiliation{Argonne National Laboratory, Argonne, Illinois 60439, USA}
+\author{I.~Kulakov}\affiliation{Frankfurt Institute for Advanced Studies FIAS, Germany}
+\author{L.~Kumar}\affiliation{National Institute of Science Education and Research, Bhubaneswar 751005, India}
+\author{R.~A.~Kycia}\affiliation{Cracow University of Technology, Cracow, Poland}
+\author{M.~A.~C.~Lamont}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{J.~M.~Landgraf}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{K.~D.~ Landry}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{J.~Lauret}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{A.~Lebedev}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{R.~Lednicky}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{J.~H.~Lee}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{M.~J.~LeVine}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{C.~Li}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{W.~Li}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{X.~Li}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{X.~Li}\affiliation{Temple University, Philadelphia, Pennsylvania 19122, USA}
+\author{Y.~Li}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{Z.~M.~Li}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{M.~A.~Lisa}\affiliation{Ohio State University, Columbus, Ohio 43210, USA}
+\author{F.~Liu}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{T.~Ljubicic}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{W.~J.~Llope}\affiliation{Rice University, Houston, Texas 77251, USA}
+\author{M.~Lomnitz}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{R.~S.~Longacre}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{X.~Luo}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{G.~L.~Ma}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{Y.~G.~Ma}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{D.~M.~M.~D.~Madagodagettige~Don}\affiliation{Creighton University, Omaha, Nebraska 68178, USA}
+\author{D.~P.~Mahapatra}\affiliation{Institute of Physics, Bhubaneswar 751005, India}
+\author{R.~Majka}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{S.~Margetis}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{C.~Markert}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{H.~Masui}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{H.~S.~Matis}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{D.~McDonald}\affiliation{University of Houston, Houston, Texas 77204, USA}
+\author{T.~S.~McShane}\affiliation{Creighton University, Omaha, Nebraska 68178, USA}
+\author{N.~G.~Minaev}\affiliation{Institute of High Energy Physics, Protvino, Russia}
+\author{S.~Mioduszewski}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{B.~Mohanty}\affiliation{National Institute of Science Education and Research, Bhubaneswar 751005, India}
+\author{M.~M.~Mondal}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{D.~A.~Morozov}\affiliation{Institute of High Energy Physics, Protvino, Russia}
+\author{M.~K.~Mustafa}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{B.~K.~Nandi}\affiliation{Indian Institute of Technology, Mumbai, India}
+\author{Md.~Nasim}\affiliation{National Institute of Science Education and Research, Bhubaneswar 751005, India}
+\author{T.~K.~Nayak}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{J.~M.~Nelson}\affiliation{University of Birmingham, Birmingham, United Kingdom}
+\author{G.~Nigmatkulov}\affiliation{Moscow Engineering Physics Institute, Moscow Russia}
+\author{L.~V.~Nogach}\affiliation{Institute of High Energy Physics, Protvino, Russia}
+\author{S.~Y.~Noh}\affiliation{Korea Institute of Science and Technology Information, Daejeon, Korea}
+\author{J.~Novak}\affiliation{Michigan State University, East Lansing, Michigan 48824, USA}
+\author{S.~B.~Nurushev}\affiliation{Institute of High Energy Physics, Protvino, Russia}
+\author{G.~Odyniec}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{A.~Ogawa}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{K.~Oh}\affiliation{Pusan National University, Pusan, Republic of Korea}
+\author{A.~Ohlson}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{V.~Okorokov}\affiliation{Moscow Engineering Physics Institute, Moscow Russia}
+\author{E.~W.~Oldag}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{D.~L.~Olvitt~Jr.}\affiliation{Temple University, Philadelphia, Pennsylvania 19122, USA}
+\author{M.~Pachr}\affiliation{Czech Technical University in Prague, FNSPE, Prague, 115 19, Czech Republic}
+\author{B.~S.~Page}\affiliation{Indiana University, Bloomington, Indiana 47408, USA}
+\author{S.~K.~Pal}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{Y.~X.~Pan}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{Y.~Pandit}\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\author{Y.~Panebratsev}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{T.~Pawlak}\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\author{B.~Pawlik}\affiliation{Institute of Nuclear Physics PAN, Cracow, Poland}
+\author{H.~Pei}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{C.~Perkins}\affiliation{University of California, Berkeley, California 94720, USA}
+\author{W.~Peryt}\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\author{P.~ Pile}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{M.~Planinic}\affiliation{University of Zagreb, Zagreb, HR-10002, Croatia}
+\author{J.~Pluta}\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\author{N.~Poljak}\affiliation{University of Zagreb, Zagreb, HR-10002, Croatia}
+\author{J.~Porter}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{A.~M.~Poskanzer}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{N.~K.~Pruthi}\affiliation{Panjab University, Chandigarh 160014, India}
+\author{M.~Przybycien}\affiliation{AGH University of Science and Technology, Cracow, Poland}
+\author{P.~R.~Pujahari}\affiliation{Indian Institute of Technology, Mumbai, India}
+\author{J.~Putschke}\affiliation{Wayne State University, Detroit, Michigan 48201, USA}
+\author{H.~Qiu}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{A.~Quintero}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{S.~Ramachandran}\affiliation{University of Kentucky, Lexington, Kentucky, 40506-0055, USA}
+\author{R.~Raniwala}\affiliation{University of Rajasthan, Jaipur 302004, India}
+\author{S.~Raniwala}\affiliation{University of Rajasthan, Jaipur 302004, India}
+\author{R.~L.~Ray}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{C.~K.~Riley}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{H.~G.~Ritter}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{J.~B.~Roberts}\affiliation{Rice University, Houston, Texas 77251, USA}
+\author{O.~V.~Rogachevskiy}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{J.~L.~Romero}\affiliation{University of California, Davis, California 95616, USA}
+\author{J.~F.~Ross}\affiliation{Creighton University, Omaha, Nebraska 68178, USA}
+\author{A.~Roy}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{L.~Ruan}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{J.~Rusnak}\affiliation{Nuclear Physics Institute AS CR, 250 68 \v{R}e\v{z}/Prague, Czech Republic}
+\author{O.~Rusnakova}\affiliation{Czech Technical University in Prague, FNSPE, Prague, 115 19, Czech Republic}
+\author{N.~R.~Sahoo}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{P.~K.~Sahu}\affiliation{Institute of Physics, Bhubaneswar 751005, India}
+\author{I.~Sakrejda}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{S.~Salur}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{J.~Sandweiss}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{E.~Sangaline}\affiliation{University of California, Davis, California 95616, USA}
+\author{A.~ Sarkar}\affiliation{Indian Institute of Technology, Mumbai, India}
+\author{J.~Schambach}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{R.~P.~Scharenberg}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{A.~M.~Schmah}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{W.~B.~Schmidke}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{N.~Schmitz}\affiliation{Max-Planck-Institut f\"ur Physik, Munich, Germany}
+\author{J.~Seger}\affiliation{Creighton University, Omaha, Nebraska 68178, USA}
+\author{P.~Seyboth}\affiliation{Max-Planck-Institut f\"ur Physik, Munich, Germany}
+\author{N.~Shah}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{E.~Shahaliev}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{P.~V.~Shanmuganathan}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{M.~Shao}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{B.~Sharma}\affiliation{Panjab University, Chandigarh 160014, India}
+\author{W.~Q.~Shen}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{S.~S.~Shi}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{Q.~Y.~Shou}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{E.~P.~Sichtermann}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{R.~N.~Singaraju}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{M.~J.~Skoby}\affiliation{Indiana University, Bloomington, Indiana 47408, USA}
+\author{D.~Smirnov}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{N.~Smirnov}\affiliation{Yale University, New Haven, Connecticut 06520, USA}
+\author{D.~Solanki}\affiliation{University of Rajasthan, Jaipur 302004, India}
+\author{P.~Sorensen}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{H.~M.~Spinka}\affiliation{Argonne National Laboratory, Argonne, Illinois 60439, USA}
+\author{B.~Srivastava}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{T.~D.~S.~Stanislaus}\affiliation{Valparaiso University, Valparaiso, Indiana 46383, USA}
+\author{J.~R.~Stevens}\affiliation{Massachusetts Institute of Technology, Cambridge, Massachusetts 02139-4307, USA}
+\author{R.~Stock}\affiliation{Frankfurt Institute for Advanced Studies FIAS, Germany}
+\author{M.~Strikhanov}\affiliation{Moscow Engineering Physics Institute, Moscow Russia}
+\author{B.~Stringfellow}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{M.~Sumbera}\affiliation{Nuclear Physics Institute AS CR, 250 68 \v{R}e\v{z}/Prague, Czech Republic}
+\author{X.~Sun}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{X.~M.~Sun}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{Y.~Sun}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{Z.~Sun}\affiliation{Institute of Modern Physics, Lanzhou, China}
+\author{B.~Surrow}\affiliation{Temple University, Philadelphia, Pennsylvania 19122, USA}
+\author{D.~N.~Svirida}\affiliation{Alikhanov Institute for Theoretical and Experimental Physics, Moscow, Russia}
+\author{T.~J.~M.~Symons}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{M.~A.~Szelezniak}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{J.~Takahashi}\affiliation{Universidade Estadual de Campinas, Sao Paulo, Brazil}
+\author{A.~H.~Tang}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{Z.~Tang}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{T.~Tarnowsky}\affiliation{Michigan State University, East Lansing, Michigan 48824, USA}
+\author{J.~H.~Thomas}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{A.~R.~Timmins}\affiliation{University of Houston, Houston, Texas 77204, USA}
+\author{D.~Tlusty}\affiliation{Nuclear Physics Institute AS CR, 250 68 \v{R}e\v{z}/Prague, Czech Republic}
+\author{M.~Tokarev}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{S.~Trentalange}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{R.~E.~Tribble}\affiliation{Texas A\&M University, College Station, Texas 77843, USA}
+\author{P.~Tribedy}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{B.~A.~Trzeciak}\affiliation{Czech Technical University in Prague, FNSPE, Prague, 115 19, Czech Republic}
+\author{O.~D.~Tsai}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{J.~Turnau}\affiliation{Institute of Nuclear Physics PAN, Cracow, Poland}
+\author{T.~Ullrich}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{D.~G.~Underwood}\affiliation{Argonne National Laboratory, Argonne, Illinois 60439, USA}
+\author{G.~Van~Buren}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{G.~van~Nieuwenhuizen}\affiliation{Massachusetts Institute of Technology, Cambridge, Massachusetts 02139-4307, USA}
+\author{M.~Vandenbroucke}\affiliation{Temple University, Philadelphia, Pennsylvania 19122, USA}
+\author{J.~A.~Vanfossen,~Jr.}\affiliation{Kent State University, Kent, Ohio 44242, USA}
+\author{R.~Varma}\affiliation{Indian Institute of Technology, Mumbai, India}
+\author{G.~M.~S.~Vasconcelos}\affiliation{Universidade Estadual de Campinas, Sao Paulo, Brazil}
+\author{A.~N.~Vasiliev}\affiliation{Institute of High Energy Physics, Protvino, Russia}
+\author{R.~Vertesi}\affiliation{Nuclear Physics Institute AS CR, 250 68 \v{R}e\v{z}/Prague, Czech Republic}
+\author{F.~Videb{\ae}k}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{Y.~P.~Viyogi}\affiliation{Variable Energy Cyclotron Centre, Kolkata 700064, India}
+\author{S.~Vokal}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{A.~Vossen}\affiliation{Indiana University, Bloomington, Indiana 47408, USA}
+\author{M.~Wada}\affiliation{University of Texas, Austin, Texas 78712, USA}
+\author{F.~Wang}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{G.~Wang}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{H.~Wang}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{J.~S.~Wang}\affiliation{Institute of Modern Physics, Lanzhou, China}
+\author{X.~L.~Wang}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{Y.~Wang}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{Y.~Wang}\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\author{G.~Webb}\affiliation{University of Kentucky, Lexington, Kentucky, 40506-0055, USA}
+\author{J.~C.~Webb}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{G.~D.~Westfall}\affiliation{Michigan State University, East Lansing, Michigan 48824, USA}
+\author{H.~Wieman}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{S.~W.~Wissink}\affiliation{Indiana University, Bloomington, Indiana 47408, USA}
+\author{R.~Witt}\affiliation{United States Naval Academy, Annapolis, Maryland, 21402, USA}
+\author{Y.~F.~Wu}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{Z.~Xiao}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{W.~Xie}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{K.~Xin}\affiliation{Rice University, Houston, Texas 77251, USA}
+\author{H.~Xu}\affiliation{Institute of Modern Physics, Lanzhou, China}
+\author{J.~Xu}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{N.~Xu}\affiliation{Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA}
+\author{Q.~H.~Xu}\affiliation{Shandong University, Jinan, Shandong 250100, China}
+\author{Y.~Xu}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{Z.~Xu}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{W.~Yan}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{C.~Yang}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{Y.~Yang}\affiliation{Institute of Modern Physics, Lanzhou, China}
+\author{Y.~Yang}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{Z.~Ye}\affiliation{University of Illinois at Chicago, Chicago, Illinois 60607, USA}
+\author{P.~Yepes}\affiliation{Rice University, Houston, Texas 77251, USA}
+\author{L.~Yi}\affiliation{Purdue University, West Lafayette, Indiana 47907, USA}
+\author{K.~Yip}\affiliation{Brookhaven National Laboratory, Upton, New York 11973, USA}
+\author{I-K.~Yoo}\affiliation{Pusan National University, Pusan, Republic of Korea}
+\author{N.~Yu}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{Y.~Zawisza}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{H.~Zbroszczyk}\affiliation{Warsaw University of Technology, Warsaw, Poland}
+\author{W.~Zha}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{J.~B.~Zhang}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{J.~L.~Zhang}\affiliation{Shandong University, Jinan, Shandong 250100, China}
+\author{S.~Zhang}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{X.~P.~Zhang}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{Y.~Zhang}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{Z.~P.~Zhang}\affiliation{University of Science and Technology of China, Hefei 230026, China}
+\author{F.~Zhao}\affiliation{University of California, Los Angeles, California 90095, USA}
+\author{J.~Zhao}\affiliation{Central China Normal University (HZNU), Wuhan 430079, China}
+\author{C.~Zhong}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{X.~Zhu}\affiliation{Tsinghua University, Beijing 100084, China}
+\author{Y.~H.~Zhu}\affiliation{Shanghai Institute of Applied Physics, Shanghai 201800, China}
+\author{Y.~Zoulkarneeva}\affiliation{Joint Institute for Nuclear Research, Dubna, 141 980, Russia}
+\author{M.~Zyzak}\affiliation{Frankfurt Institute for Advanced Studies FIAS, Germany}
+
+\collaboration{STAR Collaboration}\noaffiliation
+
+\begin{abstract}
+Rapidity-odd directed flow ($v_1$) measurements for charged pions, protons and antiprotons near mid-rapidity ($y=0$) are reported in $\sqrt{s_{NN}} =$ 7.7, 11.5, 19.6, 27, 39, 62.4 and 200 GeV Au + Au collisions as recorded by the STAR detector at the Relativistic Heavy Ion Collider (RHIC).   At intermediate impact parameters, the proton and net-proton slope parameter $dv_1/dy|_{y=0}$ shows a minimum between 11.5 and 19.6 GeV. In addition, the net-proton $dv_1/dy|_{y=0}$ changes sign twice between 7.7 and 39 GeV. The proton and net-proton results qualitatively resemble predictions of a hydrodynamic model with a first-order phase transition from hadronic matter to deconfined matter, and differ from hadronic transport calculations.
+\end{abstract}
+
+\pacs{25.75.Ld, 25.75.Dw}
+\maketitle
+%\begin{linenumbers}
+
+%\realpagewiselinenumbers
+%\setlength\linenumbersep{0.10cm}
+% 0.10 is the correct number.
+
+Lattice QCD calculations indicate that the transition from hadronic matter to a Quark Gluon Plasma (QGP) \cite{whitepapers} phase in gold ion collisions at the full energy of the Relativistic Heavy Ion Collider ($\sqrt{s_{NN}} \sim 200$ GeV) is a smooth crossover \cite{lattice1}, whereas at progressively lower beam energies, there is an increasing possibility to explore a first-order transition between these phases~\cite{ejiri,kapusta}. At even lower beam energies (how low remains unknown), the excited nuclear matter is expected to remain in a hadronic phase throughout the interaction \cite{whitepapers}. In the scenario of nuclear collisions at the optimum beam energy for a first-order phase transition, various models have predicted characteristic azimuthal anisotropy signals \cite{Rischke,Csernai,Brachmann,Stoecker}.
+
+The first harmonic coefficient of the Fourier expansion of the final-state momentum-space azimuthal distribution relative to the reaction plane \cite{methods} is called directed flow $v_1$. The rapidity-even component $v_1^{\rm even}(y)$, attributed to event-by-event fluctuations in the initial state of the collisions, is unrelated to the reaction plane \cite{Luzum}. The $v_1^{\rm odd}(y)$ component is the traditional definition of $v_1$ as used for more than two decades \cite{Ollitrault1992,methods}, and is attributed to collective sidewards deflection of the particles. Both hydrodynamic \cite{Hydro} and nuclear transport \cite{urqmd} models indicate that $v_1(y)$ in the mid-rapidity region offers sensitivity to details of the expansion of the participant matter during the early collision stages \cite{prequilibrium,Heinz}. Hydrodynamic models predict a minimum in directed flow (e.g., a minimum in $dv_1/dy$) near mid-rapidity as a function of collision energy~\cite{Rischke,Stoecker}.  A three-fluid hydrodynamic calculation, with a first-order phase transition between hadronic matter and a quark gluon plasma, predicts a prominent minimum in directed flow of net baryons \cite{Stoecker2013} at a center-of-mass energy of about $\sqrt{s_{NN}} = 4$ GeV, and this minimum has been termed the ``softest point collapse"~\cite{Stoecker}.
+
+The established convention assigns a positive sign to $v_1$ for nucleons detected near beam rapidity on whichever side of mid-rapidity has been arbitrarily defined as positive rapidity \cite{E895,NA49_v1,v1-62,GangThesis}. Predictions of hydrodynamic and transport models include $dv_1/dy$ with negative sign near mid-rapidity (where pions dominate), and such phenomena have been given names like ``anti-flow" \cite{Brachmann}, ``third flow component" \cite{Csernai} and ``wiggle" \cite{Wiggle,Herrmann,Stoecker}.  It has been argued that these are possible phase transition signatures, especially if observed for baryons~\cite{Stoecker}.  However, it is also possible to explain some qualitative features of a single sign reversal in $dv_1/dy$ in a purely hadronic picture \cite{Wiggle,Aihong-v1Model}. These alternative explanations imply that emission from a tilted disk-shaped source is similar for both pions and protons; both should show directed flow in the same direction close to mid-rapidity, and in the opposite direction in the region where spectator matter breaks up~\cite{Bozek}. 
+
+We report measurements of directed flow in Au+Au collisions in the range $\sqrt{s_{NN}}=$ 7.7 to 200 GeV, based on data from STAR~\cite{starnim}, recorded in 2010 and 2011. The STAR Time Projection Chamber (TPC) \cite{startpc} performed charged particle tracking at mid-rapidity.  The centrality was determined from the number of charged particles in the pseudorapidity region $ |\eta|  < 0.5$.  Two Beam-Beam Counters~\cite{BBC,trigger} covering $3.3 < |\eta| < 5.0$ were used to reconstruct the first-harmonic event plane, as explained in Ref.~\cite{CuCuPaper}.  The BBC event-plane resolution is inadequate above 39 GeV, and therefore the STAR ZDC-SMD detectors were used at 62.4 and 200 GeV \cite{GangThesis,v1-62,v1-4systems,pidv1_200}.  
+
+The analyzed data sets at 7.7, 11.5, 19.6, 27, 39, 62.4 and 200 GeV contain 3.8, 10.6, 19, 39, 96, 50 and 250 million minimum-bias-trigger events, respectively.  We require the primary vertex position of each event along the beam direction, $V_z$, to lie within 30 cm of the center of the detector for beam energies 39, 62.4 and 200 GeV, 40 cm for 27 and 19.6 GeV, 50 cm for 11.5 GeV and 70 cm for 7.7 GeV. Use of the same narrow or wide $|V_z|$ cut at all energies negligibly changes $v_1$, but a wider cut reduces statistical errors at the two lowest energies. Tracks were required to have transverse momenta $ p_T > 0.2 $ GeV$/c$, have a distance of closest approach to the primary vertex of less than 3 cm, have at least 15 space points in the main TPC acceptance $(|\eta| < 1.0)$, and have a ratio of the number of measured space points to the maximum possible number of space points greater than 0.52.  This last requirement prevents track splitting from causing a single particle to be counted twice.  Protons and antiprotons with $p_T$ between 0.4 and 2.0 GeV/$c$ and $\pi^\pm$ with $p_T > 0.2$ GeV$/c$ and $p$ up to 1.6 GeV/$c$ were identified based on energy loss in the TPC, and time-of-flight information from the TOF detector \cite{TOF}.  Intermediate-centrality proton and antiproton results presented in this study have been weighted, within the indicated acceptance, to correct for $p_T$-dependent inefficiency; these corrections are small, and are comparable to statistical uncertainties. For other particles, the presented results are uncorrected.   
+
+Possible systematic uncertainties arising from non-flow, i.e., azimuthal correlations not related to the reaction plane orientation (arising from resonances, jets, strings, quantum statistics, and final-state interactions like Coulomb effects) are reduced due to the relatively large pseudorapidity gap between the STAR TPC and the BBC detectors~\cite{methods,CuCuPaper}. Directed flow measurements based on the BBC event plane, where the BBC east and west detectors ensure symmetry in rapidity acceptance, cancel biases from conservation of momentum in the basic correlation measurement, because the difference in $v_1$ between the rapidity hemispheres is used \cite{MomentumCons}. However, momentum conservation effects~\cite{MomentumCons} do contribute to systematic uncertainty in the event-plane resolution, and thereby in the resolution-corrected signal, at the level of less than 2\% \cite{simulations}.  A correction for weak decay feed-down is unnecessary for the particle species considered here and is neglected \cite{pidv1_200}.  The systematic uncertainty arising from particle misidentification and detector inefficiency is estimated by varying event and track cuts, and is $\sim 5$\%.  Simulations based on the UrQMD transport model \cite{urqmd} indicate that possible systematic effects due to the rapidity coverage of the event plane detectors is well within the total systematic uncertainty. The measured $v_1$ should be antisymmetric about mid-pseudorapidity within statistical uncertainties; previous studies suggest that the maximum forward-backward difference is a useful estimator of the systematic uncertainty~\cite{v1v2v4-200-long}.  Overall, total systematic uncertainties on $dv_1/dy$ are typically within 12\% in regions where this slope is not close to zero, and decrease slightly with increasing beam energy up to 39 GeV.  Specific point-by-point systematic errors are presented in the final two figures. 
+ 
+%%%%%%%%%%%%%% Fig. 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[scale=0.40]{fig1_new.eps}
+\caption{ Directed flow for protons and $\pi^-$ versus rapidity for central (0-10\%), intermediate-centrality (10-40\%) and peripheral (40-80\%) Au+Au collisions at $\sqrt{s_{NN}}$= 39, 27, 19.6, 11.5 and 7.7 GeV.  The plotted errors are statistical only, and systematic uncertainties are explained in the text. }
+\label{fig1}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In Fig.~\ref{fig1}, $v_1(y)$ for protons and $\pi^-$ is presented for three centralities at $7.7-39$ GeV. Directed flow from STAR at 62.4 and 200 GeV has already been published \cite{v1-4systems,pidv1_200}.  A new analysis of later experimental runs with improved statistics is included in Figs.~\ref{fig2} through \ref{fig4}, and is consistent with the earlier measurements.  All data points in Fig.~\ref{fig1} are antisymmetric about mid-rapidity, verifying cancellation of the momentum conservation effect discussed earlier \cite{MomentumCons}. In intermediate and peripheral collisions, slopes of $v_1(y)$ near mid-rapidity for pions and protons are negative for all energies, except for protons at 7.7 GeV.  The NA49 collaboration \cite{NA49_v1} likewise has reported negative slopes at mid-rapidity for pions and protons at 17.3 GeV, with larger errors.  Furthermore, STAR has previously reported negative slopes at mid-rapidity for pions and protons at higher beam energies \cite{v1-4systems,pidv1_200}. 
+
+These results cannot be explained by a baryon stopping picture~\cite{Wiggle}, which predicts a small slope for pions and an opposite slope for protons, contrary to the present observation of a large pion $v_1(y)$ slope that is not opposite to the proton $v_1(y)$ slope, except at 7.7 GeV.  Both protons and pions above 11.5 GeV have negative $dv_1/dy$ near mid-rapidity, which is consistent with predictions based on emission from a tilted source~\cite{Bozek}. Spectator shadowing also leads to negative $dv_1/dy$ for protons, with the most pronounced effect in peripheral collisions; however, its beam energy dependence has not been reported \cite{mimicQGP}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% FIG 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[scale=0.48]{fig2_new.eps}
+\caption{ Proton and antiproton $v_1(y)$ (left panels) and $\pi^\pm$ $v_1(y)$ (right panels) for intermediate-centrality (10-40\%) Au+Au collisions at 200, 62.4, 39, 27, 19.6, 11.5 and 7.7 GeV.  The plotted errors are statistical only. }
+\label{fig2}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In Fig.~\ref{fig2}, $v_1(y)$ for protons, antiprotons and $\pi^\pm$ are presented for 10-40\% centrality Au+Au collisions at all of the studied beam energies.  We observe a large percentage difference between proton and antiproton $v_1$ at all seven energies. $v_1(y)$ is close for $\pi^+$ and $\pi^-$ at the higher energies, with minor  differences at 11.5 and 7.7 GeV. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% FIG 3 %%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[scale=0.40]{fig3_new.eps}
+\caption{ Directed flow slope ($dv_1/dy$) near mid-rapidity versus beam energy for intermediate-centrality Au+Au collisions.  The slopes for protons, antiprotons and $\pi^\pm$ are reported, along with measurements by prior experiments \cite{E895,NA49_v1} with comparable but not identical cuts.  Statistical errors (bars) and systematic errors (shaded) are shown separately. }
+\label{fig3}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Figure~\ref{fig3} presents $v_1(y)$ slope near mid-rapidity for protons, antiprotons and $\pi^\pm$ versus beam energy.  The slope is the linear term $F$ in a cubic fit, where $v_1(y) = F y + F_3 y^3$.  Figure~\ref{fig4}(a) duplicates the antiproton data, and Fig.~\ref{fig4}(b) shows the proton data in more detail; in both cases, UrQMD hadronic transport model~\cite{urqmd,Petersen2006} predictions are overlaid.  The fitted $F$ values are stable when binning and the $y$ range are varied (plotted slopes at and below 39 GeV are based on $-0.5 < y < 0.5$), and the systematic errors plotted in Figs.~\ref{fig3} and \ref{fig4} include uncertainties arising from the choice of fitting criteria.  At 62.4 and 200 GeV, a linear-only fit over $-1 < y < 1$ was used, but the systematic error covers the range of slopes from a cubic fit.
+
+For intermediate-centrality collisions, the proton slope decreases with increasing energy and changes sign from positive to negative between 7.7 and 11.5 GeV, shows a minimum between 11.5 and 19.6 GeV, and remains small and negative up to 200 GeV, while the pion and antiproton slopes are negative at all measured energies. In contrast, there is no hint of the observed non-monotonic behavior for protons in the well-tested UrQMD model. Isse {\it et al.}, in a transport model study incorporating a momentum-dependent mean field, report qualitative reproduction \cite{JAM} of proton directed flow from E895 \cite{E895} and NA49 \cite{NA49_v1} (see Fig.~\ref{fig3}), but this model yields a positive $dv_1/dy$ at all beam energies studied ($\sqrt{s_{NN}}= 17.2$, 8.8 GeV and below).  
+
+The energy dependence of proton $dv_1/dy$ involves an interplay between the directed flow of protons associated with baryon number transported from the initial beam rapidity to the vicinity of mid-rapidity, and the directed flow of protons from particle-antiparticle pairs produced near mid-rapidity.  The importance of the second mechanism increases strongly with beam energy. A means to distinguish between the two mechanisms would thus be informative.  We define the slope $F_{{\rm net\mbox{-}}p}$ based on expressing the rapidity dependence of directed flow for all protons as $[v_1(y)]_p = r(y) [v_1(y)]_{\bar{p}} + [1-r(y)]\, [v_1(y)]_{{\rm net\mbox{-}}p}$, where $r(y)$ is the observed rapidity dependence of the ratio of antiprotons to protons at each beam energy.  Corrections of $r(y)$ for reconstruction inefficiency and backgrounds have a negligible effect on $F_{{\rm net\mbox{-}}p}$ and have not been applied.  An interpretation of $F_{{\rm net\mbox{-}}p}$ is suggested by our observation that $v_1(y)$ is very similar for $\pi^+$ and $\pi^-$ (see Fig.~\ref{fig2}) and for $K^+$ and $K^-$ \cite{LongPaperBESv1}. Thus, we propose the use of antiproton directed flow as a proxy for the directed flow of produced protons, and propose that the net-proton slope $F_{{\rm net\mbox{-}}p}$ brings us a step closer to isolating the contributions from transported initial-state baryonic matter, as well as closer to the net-baryon hydrodynamic calculation \cite{Stoecker, Stoecker2013}. Other final-state interaction effects, such as annihilation \cite{Fuqiang} and hadronic potentials \cite{AMPTpotentials}, complicate the simplified picture above. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% FIG 4 %%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[scale=0.40]{fig4_new.eps}
+\caption{ Directed flow slope ($dv_1/dy$) near mid-rapidity versus beam energy for intermediate-centrality Au+Au.  Panels (a), (b) and (c) report measurement for antiprotons, protons, and net protons, respectively, along with UrQMD calculations subject to the same cuts and fit conditions. Systematic uncertainties are shown as shaded bars. Dashed curves are a smooth fit to guide the eye. }
+\label{fig4}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Fig.~\ref{fig4}(c) reveals that the $v_1(y)$ slope for net protons is negligibly different from protons at 11.5 and 7.7 GeV, but then crosses zero between 27 GeV and 39 GeV, and remains positive up to 200 GeV.  UrQMD \cite{urqmd} again shows a monotonic trend, with a positive slope at all energies. The observed beam energy of the minimum in $v_1(y)$ slope for both protons and net-protons is higher than the energy of the minimum in the hydrodynamic prediction \cite{Px-v1}. Recent hydrodynamic calculations confirm this prediction, but yield larger $v_1$ magnitudes than observed \cite{Hybrid-v1}. A recent hybrid calculation, featuring Boltzmann transport with an intermediate hydrodynamic stage \cite{Hybrid2008}, does not show a minimum or a sign change in $dv_1/dy$ \cite{Hybrid-v1}.
+
+The beam energy region where we observe the minimum in $v_1(y)$ slope for all protons and net-protons coincides with a high degree of stopping \cite{stopping}. It is not far above the AGS/E895 energy region (lab energies of 2--8 $A$ GeV) where the spectator matter separates from the participants quickly enough so that its influence on the flow in the mid-rapidity zone decreases steeply as the energy is increased further \cite{Pawel,Aihong-v1Model}.  Nuclear transport models like UrQMD ought to clarify whether or not purely hadronic physics could account for the observed minimum, and for the double sign change in the case of net protons.  Further work towards a more complete theoretical understanding of the present observations is needed.  To better understand the possible role and relevance of stopping, measurements as a function of centrality would be helpful, but available event samples are too small for this purpose. We note that the observations in Fig.~\ref{fig4}(b) and (c) qualitatively resemble predicted signatures of a first-order phase transition between hadronic and deconfined matter ~\cite{Rischke,Brachmann,Csernai,Stoecker,Herrmann,Bozek}. 
+
+In summary, we report directed flow for charged pions, protons and antiprotons in $\sqrt{s_{NN}} =$ 7.7 - 200 GeV Au+Au collisions in the STAR detector at RHIC.  At intermediate centralities, $dv_1/dy$ near mid-rapidity for pions and antiprotons is negative at all measured energies, while the proton slope changes sign from positive to negative between 7.7 and 11.5 GeV, shows a minimum between 11.5 and 19.6 GeV, and remains small but negative up to 200 GeV. In the same centrality region, the net-proton $v_1(y)$ slope also shows a minimum between 11.5 and 19.6 GeV, and changes sign twice between 7.7 and 39 GeV. These findings are qualitatively different from the predictions of the UrQMD transport model, which exhibits a monotonic trend in the range $\sqrt{s_{NN}} = 7.7 - 200$ GeV.  The observed minimum for protons and net protons resembles the predicted ``softest point collapse" of flow and is a possible signature of a first-order phase transition between hadronic matter and a deconfined phase.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We thank H. Petersen, H. Steinheimer and H. St\"ocker for helpful discussions. We also thank the RHIC Operations Group and RCF at BNL, the NERSC Center at LBNL, the KISTI Center in Korea and the Open Science Grid consortium for providing resources and support. This work was supported in part by the Offices of NP and HEP within the U.S. DOE Office of Science, the U.S. NSF, CNRS/IN2P3, FAPESP CNPq of Brazil, Ministry of Ed. and Sci. of the Russian Federation, NNSFC, CAS, MoST and MoE of China, the Korean Research Foundation, GA and MSMT of the Czech Republic, FIAS of Germany, DAE, DST, and CSIR of India, National Science Centre of Poland, National Research Foundation (NRF-2012004024), Ministry of Sci., Ed. and Sports of the Rep. of Croatia, and RosAtom of Russia.
+
+\begin{thebibliography}{99}
+
+\bibitem{whitepapers}
+I.~Arsene {\it et al.}  (BRAHMS~Collaboration), Nucl. Phys. A {\bf 757}, 1   (2005);
+B.~B.~Back {\it et al.} (PHOBOS~Collaboration), Nucl. Phys. A {\bf 757}, 28  (2005);
+J.~Adams {\it et al.}   (STAR~Collaboration),   Nucl. Phys. A {\bf 757}, 102 (2005);
+K.~Adcox {\it et al.}   (PHENIX Collaboration), Nucl. Phys. A {\bf 757}, 184 (2005);
+S.~A.~Bass {\it et al., Hot \& Dense QCD Matter}, White Paper submitted to the 2012 Nuclear Science Advisory Committee.   
+
+\bibitem{lattice1} F. Karsch {\it et al.}, Nucl. Phys. B Proc. Suppl. {\bf 129}, 614 (2004); Y. Aoki, G. Endrodi, Z. Fodor, S. D. Katz and K. K. Szabo, Nature {\bf 443}, 675 (2006); M. Cheng {\it et al.}, Phys. Rev. D {\bf 79}, 074505 (2009) and references therein.
+
+\bibitem{ejiri} S. Ejiri, Phys. Rev. D {\bf 78}, 074507 (2008).
+
+\bibitem{kapusta} E. S. Bowman and J. I. Kapusta, Phys. Rev. C {\bf 79}, 015202 (2009).
+
+\bibitem{Rischke}
+D. H. Rischke {\it et al.}, Heavy Ion Phys. {\bf 1}, 309 (1995).  
+
+\bibitem{Csernai}
+L. P. Csernai and D. Rohrich, Phys. Lett. B {\bf 458}, 454 (1999).
+
+\bibitem{Brachmann}
+J. Brachmann {\it et al.}, Phys. Rev. C {\bf 61}, 024909 (2000).
+
+\bibitem{Stoecker}
+H. St\"ocker, Nucl. Phys. A {\bf 750}, 121 (2005).
+
+\bibitem{methods}
+A. M. Poskanzer  and S. A. Voloshin, Phys. Rev. C {\bf 58}, 1671 (1998).
+
+\bibitem{Luzum}
+D. Teaney and L. Yan, Phys. Rev. C {\bf 83}, 064904 (2011);
+M. Luzum and J. Y. Ollitrault, Phys. Rev. Lett. {\bf 106}, 102301 (2011).
+
+\bibitem{Ollitrault1992}
+J.-Y. Ollitrault, Phys. Rev. D {\bf 46}, 229 (1992).
+
+\bibitem{Hydro}
+U. W. Heinz, in {\it Relativistic Heavy Ion Physics}, Landolt-Boernstein New Series, Vol. I/23, ed. R. Stock (Springer Verlag, New York, 2010).  
+
+\bibitem{urqmd}  
+S. A. Bass {\it et al.}, Prog. Part. Nucl. Phys. {\bf 41}, 225 (1998);
+M. Bleicher {\it et al.}, J. Phys. G {\bf 25}, 1859 (1999).
+ 
+\bibitem{prequilibrium}
+H. Sorge, Phys. Rev. Lett. {\bf 78}, 2309 (1997).
+
+\bibitem{Heinz}
+P. Kolb and U. Heinz, nucl-th/0305084;
+P. Huovinen and P.V. Ruuskanen, Annu. Rev. Nucl. Part. Sci. {\bf 56}, 163 (2006).
+
+\bibitem{Stoecker2013}
+H. St\"ocker, private communication, 2013. 
+
+\bibitem{E895}
+H. Liu {\it et al.} (E895 Collaboration), 
+Phys. Rev. Lett. {\bf 84}, 5488 (2000).
+
+\bibitem{NA49_v1} 
+C. Alt {\it et al.} (NA49 Collaboration), Phys. Rev. C {\bf 68}, 034903 (2003).
+
+\bibitem{v1-62}
+J. Adams {\it et al.} (STAR Collaboration), Phys. Rev. C {\bf 73}, 034903 (2006).  
+   
+\bibitem{GangThesis}
+G. Wang, PhD thesis, Kent State University, 2005; https://drupal.star.bnl.gov/STAR/theses 
+
+\bibitem{Wiggle}
+R. J. M. Snellings, H. Sorge, S. A. Voloshin, F. Q. Wang and N. Xu, 
+Phys. Rev. Lett. {\bf 84}, 2803 (2000).
+
+\bibitem{Herrmann}
+   N.~Herrmann, J. P.~Wessels, and T.~Wienold,
+   Annu. Rev. Nucl. Part. Sci. {\bf 49}, 581 (1999).
+
+\bibitem{Aihong-v1Model}
+Y. Guo, F. Liu, and A. H. Tang, Phys. Rev. C {\bf 86}, 044901 (2012).  
+
+\bibitem{Bozek}
+P. Bozek and I. Wyskiel, Phys. Rev. C {\bf 81}, 054902 (2010).  
+
+\bibitem{starnim}
+        K.~H.~Ackermann {\it et al.},
+        Nucl. Instr. Meth. A {\bf 499}, 624 (2003).
+        
+\bibitem{startpc}
+        M. Anderson {\it et al.},
+        Nucl. Instr. Meth. A {\bf 499}, 659 (2003).
+
+\bibitem{BBC}
+C. A. Whitten (STAR Collaboration), AIP Conf. Proc. {\bf 980}, 390 (2008).
+%       The Beam-Beam Counter: A Local Polarimeter at STAR
+
+\bibitem{trigger} 
+               F.~S.~Bieser {\it et al.}, 
+               Nucl. Instr. Meth. A {\bf 499}, 766 (2003).
+
+\bibitem{CuCuPaper}
+G. Agakishiev {\it et al.} (STAR Collaboration), 
+Phys. Rev. C {\bf 85}, 014901 (2012).
+
+\bibitem{v1-4systems}
+B. I. Abelev {\it et al.} (STAR Collaboration), Phys. Rev. Lett. {\bf 101}, 252301 (2008).
+
+\bibitem{pidv1_200} 
+L. Adamczyk {\it et al.} (STAR Collaboration), Phys. Rev. Lett. {\bf 108}, 202301 (2012).
+ 
+\bibitem{TOF}
+B. Bonner {\it et al.}, Nucl. Instr. Meth. A {\bf 508}, 181 (2003).
+
+\bibitem{MomentumCons}  
+N. Borghini, P. M. Dinh, J.-Y. Ollitrault, A. M. Poskanzer, S. A. Voloshin, Phys. Rev. C {\bf 66} 014901 (2002).  
+
+\bibitem{simulations}
+This effect has been estimated using GENBOD \cite{GENBOD} and MEVSIM \cite{MEVSIM} event generators. 
+
+\bibitem{GENBOD}
+F. James, CERN Report 68-15 (1968).   
+
+\bibitem{MEVSIM}
+R. L. Ray, R. S. Longacre, arXiv:nucl-ex/0008009.  
+
+\bibitem{v1v2v4-200-long} 
+J. Adams {\it et al.} (STAR Collaboration), Phys. Rev. C {\bf 72}, 014904 (2005).  
+
+\bibitem{mimicQGP}
+L. V. Bravina {\it et al.}, Phys. Lett. B {\bf 470}, 27 (1999).
+
+\bibitem{Petersen2006}
+H. Petersen, Q. F. Li, X. L. Zhu and M. Bleicher, Phys. Rev. C {\bf 74}, 064908 (2006). 
+
+\bibitem{JAM}
+M. Isse, A. Ohnishi, N. Otuka, P. K. Sahu and Y. Nara, 
+Phys. Rev. C {\bf 72}, 064908 (2005). 
+
+\bibitem{LongPaperBESv1} 
+L. Adamczyk {\it et al.} (STAR Collaboration), 
+in preparation. %%%%(long paper on BES $v_1$).
+
+\bibitem{Fuqiang} 
+F. Wang, M. Nahrgang and M. Bleicher, Phys. Rev. C {\bf 85}, 031902 (2012). 
+
+\bibitem{AMPTpotentials}
+J. Xu, L.-W. Chen, C. M. Ko, and Z. W. Lin, Phys. Rev. C {\bf 85}, 041901 (2012).
+
+\bibitem{Px-v1}
+Ref.~\cite{Stoecker} predicts directed flow in terms of a variable $p_x$ where $v_1 = \langle p_x / p_T \rangle$.
+
+\bibitem{Hybrid-v1}
+J. Steinheimer, J. Auvinen, H. Petersen, M. Bleicher and H. St\"ocker, 
+arXiv:1402.7236.  
+
+\bibitem{Hybrid2008}
+H. Petersen, J. Steinheimer, G. Burau, M. Bleicher and H. St\"ocker,
+Phys. Rev. C {\bf 78}, 044901 (2008). 
+
+\bibitem{stopping}
+W. Busza and A. S. Goldhaber, Phys. Lett. {\bf 139B}, 235 (1984).  
+
+\bibitem{Pawel} 
+P. Chung {\it et al.} (E895 Collaboration), Phys. Rev. C {\bf 66}, 021901 (2002). 
+
+\end{thebibliography}
+
+%\end{linenumbers}
+
+\end{document}
+
+\bibitem{v2CuCu}
+B. I. Abelev {\it et al.} (STAR Collaboration), Phys. Rev. C {\bf 81}, 044902 (2010). 

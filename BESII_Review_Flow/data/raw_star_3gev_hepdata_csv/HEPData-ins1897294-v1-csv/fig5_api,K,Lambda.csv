@@ -1,0 +1,37 @@
+#: table_doi: 10.17182/hepdata.110656.v1/t24
+#: name: fig5_a $\pi, K, \Lambda$
+#: description: Collision energy dependence of (top panel) directed flow slope $dv_1/dy|_{y=0}$ for p, $\Lambda, \pi$(combined from $\pi^{\pm}$), K(combined from $K^{\pm}$ and $K_S^0$), $\phi$ and $\Xi^−$, and (bottom panel) elliptic flow $v_2$ for p, $\pi$(combined from $\pi^{\pm}$) in heavy- ion collisions. Collision centrality for all data from RHIC is 10-40%, except for 4.5 GeV where 10-30% is for $dv_1/dy|_{y=0}$ and 0-30% is for $v_2$. Statistical and systematic uncertainties are shown as bars and gray bands, respectively. Some uncertainties are smaller than the data points. The JAM and UrQMD results are shown as colored bands:golden, red and blue bands stand for JAM mean-field, UrQMD mean-field and UrQMD cascade mode, respectively. For clarity the x-axis value of the data points have been shifted.
+#: data_file: fig5_a_1.yaml
+#: keyword reactions: AuAu
+#: keyword cmenergies: 3.0
+#: keyword observables: directed flow
+#: Collision Energy $\sqrt{s_{NN}}$,$dv_1/dy|_{y=0}$
+Collision Energy $\sqrt{s_{NN}}$,$dv_1/dy|_{y=0}$ $\pi$,stat +,stat -,sys +,sys -
+3,0.00224173,0.000577195,-0.000577195,0.00332323,-0.00332323
+4.5,-0.0145,0.004,-0.004,0.003,-0.003
+7.7,-0.0217123,0.000592974,-0.000592974,0.00027665,-0.00027665
+11.5,-0.0231431,0.000461862,-0.000461862,0.00112548,-0.00112548
+14.5,-0.0185314,0.000404203,-0.000404203,0.00112577,-0.00112577
+19.6,-0.0161072,0.000307633,-0.000307633,8.68196e-05,-8.68196e-05
+27,-0.0132955,0.000276876,-0.000276876,0,0
+
+#: Collision Energy $\sqrt{s_{NN}}$,$dv_1/dy|_{y=0}$
+Collision Energy $\sqrt{s_{NN}}$,$dv_1/dy|_{y=0}$	$K$,stat +,stat -,sys +,sys -
+3,0.0667573,0.00633212,-0.00633212,0.00692095,-0.00692095
+4.5,-0.03,0.01,-0.01,0.017,-0.017
+7.7,-0.0108219,0.0024791,-0.0024791,0.00115862,-0.00115862
+11.5,-0.0148194,0.00136309,-0.00136309,0.00104136,-0.00104136
+14.5,-0.0141614,0.00156008,-0.00156008,0.00136911,-0.00136911
+19.6,-0.0142914,0.00119803,-0.00119803,0.000836266,-0.000836266
+27,-0.0122971,0.0010285,-0.0010285,0.00039991,-0.00039991
+
+#: Collision Energy $\sqrt{s_{NN}}$,$dv_1/dy|_{y=0}$
+Collision Energy $\sqrt{s_{NN}}$,$dv_1/dy|_{y=0}$	$\Lambda$,stat +,stat -,sys +,sys -
+3,0.310307,0.0158782,-0.0158782,0.0094081,-0.0094081
+4.5,0.079,0.011,-0.011,0.007,-0.007
+7.7,0.0219604,0.00277975,-0.00277975,0.00674509,-0.00674509
+11.5,0.00287503,0.00165445,-0.00165445,0.00366773,-0.00366773
+14.5,-0.00372834,0.0021826,-0.0021826,0.0032,-0.0032
+19.6,-0.00834844,0.00135021,-0.00135021,0.00316483,-0.00316483
+27,-0.00476024,0.00124446,-0.00124446,0.00158462,-0.00158462
+

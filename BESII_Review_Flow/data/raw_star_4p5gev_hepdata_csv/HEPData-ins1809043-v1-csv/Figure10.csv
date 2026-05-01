@@ -1,0 +1,16 @@
+#: table_doi: 10.17182/hepdata.95903.v1/t6
+#: name: Figure 10
+#: description: The rapidity dependence of the directed flow for the K0s using the TPC event plane for 10-30% centrality. Plotted error bars are statistical only, while systematic errors are +/- 0.017.
+#: data_file: fig10.yaml
+#: keyword reactions: AU AU --> X
+#: keyword cmenergies: 4.5
+#: Dataset,$K_s^0$
+$y$,$v_1$,stat +,stat -
+0.0435314,0.027244,0.021862,-0.021862
+0.220858,-0.0157854,0.016863,-0.016863
+0.394059,-0.0137116,0.0145427,-0.0145427
+0.628775,-0.013808,0.014209,-0.014209
+0.818954,0.00982296,0.0157836,-0.0157836
+1.01066,-0.000921952,0.021996,-0.021996
+1.1842,0.117879,0.0408789,-0.0408789
+
