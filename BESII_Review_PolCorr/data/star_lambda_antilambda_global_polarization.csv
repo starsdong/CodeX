@@ -1,0 +1,18 @@
+sqrt_snn_GeV,particle,centrality_percent,p_h_percent,stat_err_percent,sys_err_minus_percent,sys_err_plus_percent,alpha_lambda,source,source_doi,hepdata_doi,notes
+3.0,Lambda,20-50,4.90823,0.81389,0.15485,0.15485,0.732,STAR Phys. Rev. C 104 L061901,10.1103/PhysRevC.104.L061901,10.17182/hepdata.110658.v1/t3,Fixed-target 3 GeV integrated Lambda point.
+7.7,Lambda,20-50,1.80,0.60,0.18,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+7.7,AntiLambda,20-50,7.70,3.20,0.90,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+11.5,Lambda,20-50,1.19,0.35,0.18,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+11.5,AntiLambda,20-50,1.59,1.10,0.13,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+14.5,Lambda,20-50,1.17,0.40,0.27,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+14.5,AntiLambda,20-50,2.01,1.10,0.13,0.35,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+19.6,Lambda,20-50,0.9152,0.0503,0.0172,0.0172,0.732,STAR Phys. Rev. C 108 014910,10.1103/PhysRevC.108.014910,10.17182/hepdata.140936.v1/t2,High-statistics BES-II Lambda value.
+19.6,AntiLambda,20-50,0.8976,0.1170,0.0171,0.0171,0.732,STAR Phys. Rev. C 108 014910,10.1103/PhysRevC.108.014910,10.17182/hepdata.140936.v1/t2,High-statistics BES-II anti-Lambda value.
+27.0,Lambda,20-50,0.7168,0.0553,0.0143,0.0143,0.732,STAR Phys. Rev. C 108 014910,10.1103/PhysRevC.108.014910,10.17182/hepdata.140936.v1/t2,High-statistics BES-II Lambda value.
+27.0,AntiLambda,20-50,0.8257,0.1046,0.0163,0.0163,0.732,STAR Phys. Rev. C 108 014910,10.1103/PhysRevC.108.014910,10.17182/hepdata.140936.v1/t2,High-statistics BES-II anti-Lambda value.
+39.0,Lambda,20-50,0.45,0.40,0.18,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+39.0,AntiLambda,20-50,0.83,0.50,0.13,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,BES-I value rescaled to alpha_Lambda=0.732.
+62.4,Lambda,20-50,1.20,1.00,0.00,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,Earlier STAR value included in Nature/HEPData energy scan table.
+62.4,AntiLambda,20-50,1.50,1.40,0.00,0.00,0.732,STAR Nature 548 62,10.1038/nature23004,10.17182/hepdata.77494.v2/t2,Earlier STAR value included in Nature/HEPData energy scan table.
+200.0,Lambda,20-50,0.243,0.035,0.043,0.034,0.732,STAR Phys. Rev. C 98 014910,10.1103/PhysRevC.98.014910,10.17182/hepdata.99054.v2/t6,High-statistics 200 GeV Lambda value with PDG2020 alpha.
+200.0,AntiLambda,20-50,0.210,0.039,0.035,0.053,0.732,STAR Phys. Rev. C 98 014910,10.1103/PhysRevC.98.014910,10.17182/hepdata.99054.v2/t6,High-statistics 200 GeV anti-Lambda value with PDG2020 alpha.

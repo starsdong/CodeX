@@ -13,3 +13,5 @@ Notes:
 The plotted vertical uncertainties are statistical and systematic uncertainties added in quadrature. Asymmetric systematic uncertainties are kept in the CSV and propagated asymmetrically.
 
 `lambda_global_polarization_theory.csv` contains model curves digitized from the published figure images. HADES Fig. 3 uses `sqrt(sNN)-2mN` on the x-axis; the CSV stores the converted `sqrt_snn_GeV` values using `2mN = 1.876 GeV`.
+
+`star_lambda_antilambda_global_polarization.csv` is a compact STAR-only extraction of the selected Lambda and anti-Lambda points used for the comparison figure.
