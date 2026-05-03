@@ -1,0 +1,25 @@
+title = "RNC Soft Physics Group"
+description = "Local git-first mirror for the LBNL RNC Soft Physics Group Google Site."
+source_url = "https://sites.google.com/lbl.gov/rnc-softhadron/home"
+published_base_url = "https://sites.google.com/lbl.gov/rnc-softhadron"
+
+[[nav]]
+title = "Home"
+slug = "home"
+google_path = "/home"
+
+[[nav]]
+title = "Members"
+slug = "members"
+google_path = "/members"
+
+[[nav]]
+title = "Results"
+slug = "results"
+google_path = "/results"
+
+[[nav]]
+title = "Archive"
+slug = "archive"
+google_path = "/archive"
+

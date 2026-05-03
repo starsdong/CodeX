@@ -1,0 +1,28 @@
+{
+  "pages": {
+    "archive": {
+      "google_url": "https://sites.google.com/lbl.gov/rnc-softhadron/archive",
+      "output": "docs/archive.html",
+      "source": "content/pages/archive.md",
+      "source_sha256": "a93f8b7b3d8adea4af2e33e19c790ec4d8398600ce24f3c238ae6d664c099388"
+    },
+    "home": {
+      "google_url": "https://sites.google.com/lbl.gov/rnc-softhadron/home",
+      "output": "docs/home.html",
+      "source": "content/pages/home.md",
+      "source_sha256": "f345f1b9a82c593232e1d667100f368df7496dd3594cc4e2b87ea47b220fac73"
+    },
+    "members": {
+      "google_url": "https://sites.google.com/lbl.gov/rnc-softhadron/members",
+      "output": "docs/members.html",
+      "source": "content/pages/members.md",
+      "source_sha256": "61f2f322c90e76c419103aa80fecbb3f97db79374865f686476c07fe74d1dbf7"
+    },
+    "results": {
+      "google_url": "https://sites.google.com/lbl.gov/rnc-softhadron/results",
+      "output": "docs/results.html",
+      "source": "content/pages/results.md",
+      "source_sha256": "96262a852bd0507f25a79fc8036171010f1ece39934c6e60a98518574ebb1008"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+__pycache__/
+.DS_Store
+
+# Google Takeout exports can include drafts/private metadata. Review before moving
+# anything from these folders into tracked content.
+raw_takeout/
+remote_snapshots/
+

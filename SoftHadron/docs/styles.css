@@ -1,0 +1,165 @@
+:root {
+  color-scheme: light;
+  --ink: #17202a;
+  --muted: #5d6876;
+  --line: #d8dee8;
+  --surface: #ffffff;
+  --accent: #006b7f;
+  --accent-dark: #004f5f;
+  --soft: #eef6f7;
+  --page: #f7f9fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px clamp(18px, 4vw, 48px);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.brand {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.nav a {
+  border-radius: 6px;
+  color: var(--muted);
+  padding: 7px 10px;
+  text-decoration: none;
+}
+
+.nav a[aria-current="page"] {
+  background: var(--soft);
+  color: var(--accent-dark);
+  font-weight: 650;
+}
+
+.page {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 32px auto;
+  max-width: 980px;
+  padding: clamp(24px, 5vw, 56px);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 1.6em 0 0.55em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  border-top: 1px solid var(--line);
+  font-size: 1.55rem;
+  padding-top: 1.3em;
+}
+
+h3 {
+  font-size: 1.08rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+
+li {
+  margin-bottom: 0.45rem;
+}
+
+img {
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  margin: 0.5rem 0 0.75rem;
+  max-width: min(220px, 100%);
+}
+
+.calendar-embed {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 28px 0;
+  overflow: hidden;
+}
+
+.calendar-embed iframe {
+  border: 0;
+  display: block;
+  height: 420px;
+  width: 100%;
+}
+
+.site-footer {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 0 18px 36px;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .page {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    margin: 0 auto 28px;
+  }
+}
+
