@@ -2,7 +2,7 @@
 
 Selected Publications:
 
-- "Precision Measurement of Net-Proton-Number Fluctuations in Au+Au Collisions at RHIC", B.E. Aboona et al. (STAR Collaboration), [Phys. Rev. Lett. 135, 142301 (2025)](https://journals.aps.org/prl/abstract/10.1103/9l69-2d7p).
+- "Precision Measurement of Net-Proton-Number Fluctuations in Au+Au Collisions at RHIC", B.E. Aboona et al. (STAR Collaboration), [Phys. Rev. Lett. 135, 142301 (2025)](https://journals.aps.org/prl/abstract/10.1103/9l69-2d7p). - Collection of PRL Year 2025
 - "Onset of Constituent Quark Number Scaling in Heavy-Ion Collisions at RHIC", B.E. Aboona et al. (STAR Collaboration), [Phys. Rev. Lett. 135, 072301 (2025)](https://journals.aps.org/prl/abstract/10.1103/2qhx-cp79).
 - "Strangeness Production in sqrt(sNN) = 3 GeV Au+Au Collisions at RHIC", M.I. Abdulhamid et al. (STAR Collaboration), [J. of High Energy Physics 10, 139 (2024)](https://link.springer.com/article/10.1007/JHEP10%282024%29139).
 - "Measurements of charged-particle multiplicity dependence of higher-order net-proton cumulants in p+p collisions at sqrt(sNN) = 200 GeV from STAR at RHIC", M.I. Abdulhamid et al. (STAR Collaboration), [Phys. Lett. B 857, 138966 (2024)](https://www.sciencedirect.com/science/article/pii/S0370269324005240?via%3Dihub).

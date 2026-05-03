@@ -22,7 +22,7 @@
       "google_url": "https://sites.google.com/lbl.gov/rnc-softhadron/results",
       "output": "docs/results.html",
       "source": "content/pages/results.md",
-      "source_sha256": "96262a852bd0507f25a79fc8036171010f1ece39934c6e60a98518574ebb1008"
+      "source_sha256": "f24ab22ed3d4743fd3f2c097cc857ae6918e675e267fa893087317b2ad8e0120"
     }
   }
 }
