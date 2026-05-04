@@ -1,0 +1,2 @@
+energy_GeV,T_MeV,muB_MeV,muQ_MeV,gammaS,Rc_fm,R_fm,dVdy_fm3,prediction_file,ensemble,muQ_constraint_B2Q,interpolation_note
+3.000000,81.662316,751.420185,-22.865767,1.000000,4.000000,8.076258,2206.577381,/Users/starsdong/Work/CodeX/UrQMD/thermus_rc_scan_3gev/prediction_inputs/phi_kminus_points.txt,SCanonical,1.246835,"3 GeV BESII Review SCE fit parameters with Rc set to 4 fm"

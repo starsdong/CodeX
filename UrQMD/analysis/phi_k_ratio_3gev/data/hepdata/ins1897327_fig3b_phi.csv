@@ -1,0 +1,29 @@
+#: table_doi: 10.17182/hepdata.110657.v1/t10
+#: name: Data from Figure 3(b)
+#: description: Rapidity density distributions of $\phi$ meson (circles) $p_T$-integrated yields $dN/dy$ in 0--10\% (a), 10--40\% (b) and 40--60\% central (c) Au+Au collisions at ${\sqrt{s_{\mathrm{NN}}} = \mathrm{3\,GeV}}$. %The full symbols show the measured data, while the open ones are data reflected with respect to $y=0$ in the center-of-mass frame. Solid lines depict Gaussian function fits to the data points.
+#: data_file: gpc310_fig3_data_02.yaml
+#: keyword observables: DN/DY
+#: keyword reactions: AU AU --> PHI X | PHI --> K- K+ X
+#: keyword cmenergies: 3.0
+#: keyword phrases: Rapidity Dependence | Strangeness Production
+#: CENT,0-10 PCT
+Particle Rapidity $\phi$,$dN/d_{y}$,stat +,stat -,sys +,sys -
+-0.7,0.00533,0.000735,-0.000735,0.00114,-0.00114
+-0.5,0.0103,0.000743,-0.000743,0.0017,-0.0017
+-0.3,0.0143,0.0015,-0.0015,0.0029,-0.0029
+-0.1,0.0157,0.0026,-0.0026,0.00453,-0.00453
+
+#: CENT,10-40 PCT
+Particle Rapidity $\phi$,$dN/d_{y}$,stat +,stat -,sys +,sys -
+-0.7,0.00247,0.000266,-0.000266,0.000534,-0.000534
+-0.5,0.00414,0.000246,-0.000246,0.000796,-0.000796
+-0.3,0.00569,0.000587,-0.000587,0.0012,-0.0012
+-0.1,0.00631,0.000479,-0.000479,0.00179,-0.00179
+
+#: CENT,40-60 PCT
+Particle Rapidity $\phi$,$dN/d_{y}$,stat +,stat -,sys +,sys -
+-0.7,0.000695,0.000106,-0.000106,0.000173,-0.000173
+-0.5,0.00136,0.000186,-0.000186,0.000305,-0.000305
+-0.3,0.00194,0.000312,-0.000312,0.000502,-0.000502
+-0.1,0.0022,0.000418,-0.000418,0.000854,-0.000854
+
