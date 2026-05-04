@@ -325,9 +325,11 @@ def plot_dv1dy_low_energy_expanded() -> None:
         "proton": ("#1f77b4", "o"),
         "net-proton": ("#111111", "D"),
         "antiproton": ("#d62728", "s"),
+        "pi": ("#66a61e", "X"),
         "pi+": ("#2ca02c", "^"),
         "pi-": ("#9467bd", "v"),
-        "Lambda": ("#ff7f0e", "P"),
+        "K": ("#1f9ac9", "P"),
+        "Lambda": ("#ff7f0e", "*"),
         "K0S": ("#17becf", "X"),
     }
 
@@ -337,7 +339,7 @@ def plot_dv1dy_low_energy_expanded() -> None:
         if row["particle"] in styles:
             by_particle[row["particle"]].append(row)
 
-    for particle in ["proton", "net-proton", "antiproton", "pi+", "pi-", "Lambda", "K0S"]:
+    for particle in ["proton", "net-proton", "antiproton", "pi", "pi+", "pi-", "K", "K0S", "Lambda"]:
         subset = sorted(by_particle.get(particle, []), key=lambda item: fnum(item["sqrt_s_NN_GeV"]) or 0)
         if not subset:
             continue
@@ -394,7 +396,7 @@ def plot_dv1dy_low_energy_expanded() -> None:
 
 
 def plot_v2_low_energy_expanded() -> None:
-    rows = read_rows(DATA / "flow_v2_low_energy_expanded.csv")
+    rows = read_rows(DATA / "flow_v2_selected_vs_energy.csv")
     styles = {
         "FOPI": ("#1f77b4", "o"),
         "EOS/E895/E877": ("#8c564b", "P"),
@@ -402,8 +404,16 @@ def plot_v2_low_energy_expanded() -> None:
         "CERES": ("#ff7f0e", "s"),
         "NA49": ("#17becf", "X"),
         "STAR": ("#2ca02c", "^"),
-        "PHENIX": ("#d62728", "v"),
         "PHOBOS": ("#9467bd", "<"),
+    }
+    labels = {
+        "FOPI": "FOPI hadrons",
+        "EOS/E895/E877": "EOS/E895/E877 p",
+        "STAR FXT": "STAR FXT p",
+        "CERES": "CERES charged hadrons",
+        "NA49": "NA49 charged hadrons",
+        "STAR": "STAR charged hadrons",
+        "PHOBOS": "PHOBOS charged hadrons",
     }
 
     fig, ax = plt.subplots(figsize=(7.6, 5.1))
@@ -411,7 +421,7 @@ def plot_v2_low_energy_expanded() -> None:
     for row in rows:
         by_experiment[row["experiment"]].append(row)
 
-    for experiment in ["FOPI", "EOS/E895/E877", "STAR FXT", "CERES", "NA49", "STAR", "PHENIX", "PHOBOS"]:
+    for experiment in ["FOPI", "EOS/E895/E877", "STAR FXT", "CERES", "NA49", "STAR", "PHOBOS"]:
         subset = sorted(by_experiment.get(experiment, []), key=lambda item: fnum(item["sqrt_s_NN_GeV"]) or 0)
         if not subset:
             continue
@@ -429,19 +439,19 @@ def plot_v2_low_energy_expanded() -> None:
             elinewidth=1.0,
             capsize=2.4,
             markersize=5.6,
-            label=experiment,
+            label=labels[experiment],
         )
 
     ax.axhline(0, color="#4d4d4d", linewidth=0.9)
     setup_energy_axis(ax, include_sis=True)
     ax.set_ylabel(r"$v_2$")
     ax.set_ylim(-0.095, 0.085)
-    ax.set_title(r"Expanded elliptic-flow excitation function", pad=10)
+    ax.set_title(r"Selected elliptic-flow excitation function", pad=10)
     ax.legend(frameon=False, fontsize=8.3, ncol=2, loc="lower right")
     ax.text(
         0.03,
         0.95,
-        "Compiled from STAR FXT Fig. 14 HEPData; centrality/species differ across data sets",
+        "Selected hadron/proton series; STAR BES uses inclusive charged hadrons",
         transform=ax.transAxes,
         fontsize=8.2,
         color="#555555",

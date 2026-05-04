@@ -340,6 +340,57 @@ def build_dv1_low_energy_rows() -> list[dict[str, object]]:
             "notes": "STAR fixed-target 3 GeV proton directed-flow slope.",
         },
         {
+            "experiment": "STAR",
+            "collaboration": "STAR",
+            "system": "Au+Au",
+            "particle": "pi",
+            "centrality": "10-40%",
+            "sqrts": 3.0,
+            "value": 0.00224173,
+            "stat": 0.000577195,
+            "syst": 0.00332323,
+            "citation": "M. S. Abdallah et al. (STAR), Phys. Lett. B 827, 137003 (2022)",
+            "doi": "10.1016/j.physletb.2022.137003",
+            "data_source": "HEPData",
+            "data_doi": "10.17182/hepdata.110656.v1/t24",
+            "figure": "fig5_a $\\pi, K, \\Lambda$",
+            "notes": "STAR fixed-target 3 GeV combined-pion directed-flow slope.",
+        },
+        {
+            "experiment": "STAR",
+            "collaboration": "STAR",
+            "system": "Au+Au",
+            "particle": "K",
+            "centrality": "10-40%",
+            "sqrts": 3.0,
+            "value": 0.0667573,
+            "stat": 0.00633212,
+            "syst": 0.00692095,
+            "citation": "M. S. Abdallah et al. (STAR), Phys. Lett. B 827, 137003 (2022)",
+            "doi": "10.1016/j.physletb.2022.137003",
+            "data_source": "HEPData",
+            "data_doi": "10.17182/hepdata.110656.v1/t24",
+            "figure": "fig5_a $\\pi, K, \\Lambda$",
+            "notes": "STAR fixed-target 3 GeV combined-kaon directed-flow slope.",
+        },
+        {
+            "experiment": "STAR",
+            "collaboration": "STAR",
+            "system": "Au+Au",
+            "particle": "Lambda",
+            "centrality": "10-40%",
+            "sqrts": 3.0,
+            "value": 0.310307,
+            "stat": 0.0158782,
+            "syst": 0.0094081,
+            "citation": "M. S. Abdallah et al. (STAR), Phys. Lett. B 827, 137003 (2022)",
+            "doi": "10.1016/j.physletb.2022.137003",
+            "data_source": "HEPData",
+            "data_doi": "10.17182/hepdata.110656.v1/t24",
+            "figure": "fig5_a $\\pi, K, \\Lambda$",
+            "notes": "STAR fixed-target 3 GeV Lambda directed-flow slope.",
+        },
+        {
             "experiment": "STAR FXT",
             "collaboration": "STAR",
             "system": "Au+Au",
@@ -536,6 +587,70 @@ def build_v2_expanded_rows() -> list[dict[str, object]]:
     return rows
 
 
+def build_v2_selected_rows() -> list[dict[str, object]]:
+    """Selected v2 excitation function for the review two-panel figure."""
+
+    rows: list[dict[str, object]] = []
+
+    for row in build_v2_expanded_rows():
+        experiment = str(row["experiment"])
+        particle = str(row["particle"])
+        sqrts = float(row["sqrt_s_NN_GeV"])
+        keep = (
+            experiment in {"FOPI", "EOS/E895/E877", "CERES", "NA49", "PHOBOS"}
+            or (experiment == "STAR FXT" and particle == "proton")
+        )
+        if not keep:
+            continue
+
+        selected = dict(row)
+        selected["observable"] = "v2_selected_excitation"
+        if experiment == "STAR FXT" and particle == "proton" and abs(sqrts - 4.6) < 1e-6:
+            selected["sqrt_s_NN_GeV"] = 4.5
+            selected["notes"] = (
+                "STAR fixed-target proton point; plotted at the nominal 4.5 GeV collision energy "
+                "rather than the horizontally shifted 4.6 GeV value in the HEPData excitation-function table."
+            )
+        rows.append(selected)
+
+    rows.append(
+        {
+            "observable": "v2_selected_excitation",
+            "experiment": "STAR FXT",
+            "collaboration": "STAR",
+            "system": "Au+Au",
+            "particle": "proton",
+            "centrality": "10-40%",
+            "sqrt_s_NN_GeV": 3.0,
+            "beam_energy_A_GeV": "",
+            "value": -0.0188388,
+            "stat_err_plus": 5.77365e-05,
+            "stat_err_minus": 5.77365e-05,
+            "syst_err_plus": 0.0001,
+            "syst_err_minus": 0.0001,
+            "source_citation": "M. S. Abdallah et al. (STAR), Phys. Lett. B 827, 137003 (2022)",
+            "source_doi": "10.1016/j.physletb.2022.137003",
+            "data_source": "HEPData",
+            "data_source_doi": "10.17182/hepdata.110656.v1/t28",
+            "table_or_figure": "fig5_b $p$",
+            "extraction_method": "direct HEPData CSV",
+            "notes": "STAR fixed-target 3 GeV proton elliptic-flow point from the STAR 3 GeV excitation-function table.",
+        }
+    )
+
+    for row in build_star_bes_eta0_rows():
+        sqrts = float(row["sqrt_s_NN_GeV"])
+        if sqrts > 62.4:
+            continue
+        selected = dict(row)
+        selected["observable"] = "v2_selected_excitation"
+        selected["notes"] = str(selected["notes"]) + "; selected as the STAR BES charged-hadron series."
+        rows.append(selected)
+
+    rows.sort(key=lambda item: (str(item["experiment"]), float(item["sqrt_s_NN_GeV"]), str(item["particle"])))
+    return rows
+
+
 def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
     fieldnames = [
         "observable",
@@ -588,6 +703,7 @@ def main() -> None:
     write_csv(DATA / "flow_v2_cross_experiment_vs_energy.csv", build_v2_cross_experiment_rows())
     write_csv(DATA / "flow_v2_star_bes_eta0_vs_energy.csv", build_star_bes_eta0_rows())
     write_csv(DATA / "flow_v2_low_energy_expanded.csv", build_v2_expanded_rows())
+    write_csv(DATA / "flow_v2_selected_vs_energy.csv", build_v2_selected_rows())
 
 
 if __name__ == "__main__":

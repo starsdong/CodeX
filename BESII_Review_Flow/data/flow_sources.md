@@ -9,6 +9,7 @@ Compiled on 2026-04-29 for `dv1/dy` and `v2` vs. collision energy.
 - `flow_v2_cross_experiment_vs_energy.csv`: historical cross-experiment near-midrapidity `v2` excitation function, vector-digitized from the NA49 publication EPS source.
 - `flow_v2_star_bes_eta0_vs_energy.csv`: STAR charged-hadron `v2{EP}` near `eta=0`, 10-40% centrality, from STAR public data tables.
 - `flow_v2_low_energy_expanded.csv`: expanded `v2` excitation function with SIS/AGS/FXT/SPS/RHIC comparison points from the STAR fixed-target HEPData compilation.
+- `flow_v2_selected_vs_energy.csv`: selected `v2` excitation-function table used by the review two-panel ROOT macro. It keeps FOPI charged/Z=1 hadrons, EOS/E895/E877 protons, STAR FXT protons at 3.0 and nominal 4.5 GeV, CERES/NA49/PHOBOS charged hadrons, and STAR BES charged hadrons at 7.7-62.4 GeV.
 
 ## Primary Sources
 
@@ -48,7 +49,7 @@ Compiled on 2026-04-29 for `dv1/dy` and `v2` vs. collision energy.
   - STAR 3 GeV identified-particle flow:
     - M. S. Abdallah et al. (STAR), Phys. Lett. B 827, 137003 (2022), DOI: https://doi.org/10.1016/j.physletb.2022.137003
     - HEPData record: https://doi.org/10.17182/hepdata.110656
-    - Tables used: Fig. 5a proton `dv1/dy` and Fig. 5b proton/FOPI `v2` comparison tables.
+    - Tables used: Fig. 5a proton plus combined `pi`, `K`, and `Lambda` `dv1/dy`; Fig. 5b proton/FOPI `v2` comparison tables.
   - STAR fixed-target 4.5 GeV and the expanded `v2` excitation-function compilation:
     - M. S. Abdallah et al. (STAR), Phys. Rev. C 103, 034908 (2021), DOI: https://doi.org/10.1103/PhysRevC.103.034908
     - HEPData record: https://doi.org/10.17182/hepdata.95903
@@ -65,6 +66,7 @@ Compiled on 2026-04-29 for `dv1/dy` and `v2` vs. collision energy.
 - Low-energy `dv1/dy` additions are intentionally kept in a separate table because HADES/SIS18 and STAR fixed-target centralities/acceptances are not identical to the STAR BES-I 10-40% table.
 - The historical cross-experiment `v2` table is intended as a literature-excitation-function reproduction of NA49 Fig. 24. It mixes pion and charged-hadron measurements and uses near-midrapidity, mid-central selections that are similar but not identical across experiments.
 - The expanded `v2` table is direct HEPData from the STAR fixed-target Fig. 14 compilation. It is broader than the first-pass NA49-based table and includes FOPI SIS, EOS/E895/E877 AGS/Bevalac, STAR FXT, SPS, RHIC points. It should be treated as an excitation-function comparison, not a uniform-analysis data set.
+- The selected `v2` table is a cleaner plotting subset. The STAR 4.5 GeV proton point is plotted at the nominal collision energy even though the STAR Fig. 14 HEPData table lists it at 4.6 GeV for horizontal visual separation.
 - The STAR BES `v2` table is cleaner internally: charged hadrons, 10-40% centrality, near `eta=0`, mostly `0.2 < pT < 2.0 GeV/c`; the 200 GeV row from the older STAR public table uses `0.15 < pT < 2.0 GeV/c`.
 
 ## Rebuild

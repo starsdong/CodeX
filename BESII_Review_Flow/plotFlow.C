@@ -186,7 +186,7 @@ void plotFlow()
 
   std::vector<FlowPoint> dv1 = readFlowCSV("data/flow_dv1dy_vs_energy.csv");
   appendPoints(dv1, readFlowCSV("data/flow_dv1dy_low_energy_expanded.csv"));
-  std::vector<FlowPoint> v2 = readFlowCSV("data/flow_v2_low_energy_expanded.csv");
+  std::vector<FlowPoint> v2 = readFlowCSV("data/flow_v2_selected_vs_energy.csv");
 
   const double XMIN = 1.75;
   const double XMAX = 260.0;
@@ -213,12 +213,12 @@ void plotFlow()
   p1->Draw();
   p2->Draw();
 
-  const int NDV1 = 7;
-  const char *dv1Particle[NDV1] = {"proton", "net-proton", "antiproton", "pi+", "pi-", "Lambda", "K0S"};
-  const char *dv1Label[NDV1] = {"p", "net-p", "#bar{p}", "#pi^{+}", "#pi^{-}", "#Lambda", "K^{0}_{S}"};
-  const int dv1Color[NDV1] = {kBlue + 1, kBlack, kRed + 1, kGreen + 2, kViolet + 1, kOrange + 1, kCyan + 2};
-  const int dv1Marker[NDV1] = {20, 33, 21, 22, 23, 29, 34};
-  const int dv1OpenMarker[NDV1] = {24, 27, 25, 26, 32, 30, 28};
+  const int NDV1 = 9;
+  const char *dv1Particle[NDV1] = {"proton", "net-proton", "antiproton", "pi", "pi+", "pi-", "K", "K0S", "Lambda"};
+  const char *dv1Label[NDV1] = {"p", "net-p", "#bar{p}", "#pi", "#pi^{+}", "#pi^{-}", "K", "K^{0}_{S}", "#Lambda"};
+  const int dv1Color[NDV1] = {kBlue + 1, kBlack, kRed + 1, kSpring + 4, kGreen + 2, kViolet + 1, kAzure + 2, kCyan + 2, kOrange + 1};
+  const int dv1Marker[NDV1] = {20, 33, 21, 34, 22, 23, 47, 28, 29};
+  const int dv1OpenMarker[NDV1] = {24, 27, 25, 28, 26, 32, 46, 30, 30};
 
   p1->cd();
   drawFrame("h_dv1", XMIN, XMAX, DV1MIN, DV1MAX, "#sqrt{s_{NN}} (GeV)", "dv_{1}/dy |_{y=0}");
@@ -254,11 +254,11 @@ void plotFlow()
   legDv1->Draw();
   drawHistBox(XMIN, XMAX, DV1MIN, DV1MAX);
 
-  const int NV2 = 8;
-  const char *v2Experiment[NV2] = {"FOPI", "EOS/E895/E877", "STAR FXT", "CERES", "NA49", "STAR", "PHENIX", "PHOBOS"};
-  const char *v2Label[NV2] = {"FOPI", "EOS/E895/E877", "STAR FXT", "CERES", "NA49", "STAR", "PHENIX", "PHOBOS"};
-  const int v2Color[NV2] = {kBlue + 1, kOrange + 7, kBlack, kOrange + 1, kCyan + 2, kGreen + 2, kRed + 1, kViolet + 1};
-  const int v2Marker[NV2] = {20, 33, 25, 21, 34, 22, 23, 32};
+  const int NV2 = 7;
+  const char *v2Experiment[NV2] = {"FOPI", "EOS/E895/E877", "STAR FXT", "CERES", "NA49", "STAR", "PHOBOS"};
+  const char *v2Label[NV2] = {"FOPI h", "EOS/E895/E877 p", "STAR FXT p", "CERES h^{#pm}", "NA49 h^{#pm}", "STAR h^{#pm}", "PHOBOS h^{#pm}"};
+  const int v2Color[NV2] = {kBlue + 1, kOrange + 7, kBlack, kOrange + 1, kCyan + 2, kGreen + 2, kViolet + 1};
+  const int v2Marker[NV2] = {20, 33, 25, 21, 34, 22, 32};
 
   p2->cd();
   drawFrame("h_v2", XMIN, XMAX, V2MIN, V2MAX, "#sqrt{s_{NN}} (GeV)", "v_{2}");
@@ -275,8 +275,8 @@ void plotFlow()
       gV2[i]->Draw("P SAME");
     }
   }
-  drawText(2.02, 0.070, "(b) Elliptic flow", 42, 0.045);
-  drawText(2.02, 0.056, "centrality/species differ across data sets", 42, 0.030, 0, kGray + 2);
+  drawText(2.50, 0.070, "(b) Elliptic flow", 42, 0.045);
+  drawText(2.50, 0.056, "h^{#pm} where available; p for AGS/FXT", 42, 0.030, 0, kGray + 2);
 
   TLegend *legV2 = new TLegend(0.50, 0.16, 0.94, 0.48);
   legV2->SetFillStyle(4000);
