@@ -1,0 +1,442 @@
+energy_GeV,particle,data_yield,data_err,gc_model_yield,gc_model_err_low,gc_model_err_high,sce_blended_model_yield,sce_blended_model_err_low,sce_blended_model_err_high,data_source,model_source,note
+3,K-,0.0673,0.00718912206,,,,0.071110,0.0590003389,0.09150553612,ins1897327/Figure3(a),"THERMUS SCE fit, 3 GeV",point at y=-0.05
+3,Ks0,0.742,0.08030566605,,,,0.848648,0.7016394191,0.9593903037,ins2807679/Table2,"THERMUS SCE fit, 3 GeV",point at y=-0.05
+3,Lambda,2.258,0.2705346558,,,,1.849417,1.511956805,2.032668414,ins2807679/Table1,"THERMUS SCE fit, 3 GeV",point at y=-0.05
+3,Xi,0.0141,0.003564505576,,,,0.007302,0.008197374351,0.01821405974,ins1897327/Figure3(c),"THERMUS SCE fit, 3 GeV",point at y=-0.1
+3,phi,0.0157,0.005223112099,,,,0.005778,0.003770017526,0.006762771788,ins1897327/Figure3(b),"THERMUS SCE fit, 3 GeV",point at y=-0.1
+7.7,K+,20.80071,1.688349061,2.2020279782e+01,4.242520462,4.388144566,,,,"ins1510593/dN/dy, 7.7 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+7.7,K-,7.69272,0.6251012268,8.5840048692e+00,1.850827918,1.97969523,,,,"ins1510593/dN/dy, 7.7 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+7.7,Ks0,12.67,0.45607017,1.4946512318e+01,2.906450211,3.036005657,,,,ins1738953/K0S dN/dy 7.7 GeV,THERMUS GCE parametrized fit,
+7.7,Lambda,15.3,0.8273451517,1.5334006911e+01,3.577779942,3.828860858,,,,ins1738953/Lambda dN/dy 7.7 GeV,THERMUS GCE parametrized fit,
+7.7,Lambda_bar,0.193,0.01992485885,2.2510149011e-01,0.06330101775,0.072694673,,,,ins1738953/AntiLambda dN/dy 7.7 GeV,THERMUS GCE parametrized fit,
+7.7,Xi,1.19,0.1140175425,1.2412784808e+00,0.3223878964,0.3522385287,,,,ins1738953/Xi- dN/dy 7.7 GeV,THERMUS GCE parametrized fit,
+7.7,Xi_bar,0.0657,0.008099382693,6.1849392861e-02,0.01801615914,0.02061210192,,,,ins1738953/AntiXi+ dN/dy 7.7 GeV,THERMUS GCE parametrized fit,
+7.7,phi,1.21,0.2184032967,1.4032152425e+00,0.3019164545,0.322627148,,,,ins1738953/Phi dN/dy 7.7 GeV,THERMUS GCE parametrized fit,
+8.24063,K+,,,2.2165684374e+01,3.81366549,3.908018679,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.24063,K-,,,9.0179044379e+00,1.705152017,1.789497775,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.24063,Ks0,,,1.5225748029e+01,2.634079478,2.717782726,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.24063,Lambda,,,1.4630555980e+01,3.00859522,3.169077756,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.24063,Lambda_bar,,,2.6607876452e-01,0.06454330308,0.07163301412,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.24063,Xi,,,1.2281262679e+00,0.2792257487,0.2990661599,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.24063,Xi_bar,,,7.1137962075e-02,0.0179111184,0.01984637473,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.24063,phi,,,1.4744684089e+00,0.2783194252,0.2920018525,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,K+,,,2.2445076346e+01,3.589998655,3.677760167,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,K-,,,9.5419128239e+00,1.675557581,1.754802396,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,Ks0,,,1.5614424184e+01,2.518204139,2.597063067,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,Lambda,,,1.4097026237e+01,2.693688792,2.832555895,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,Lambda_bar,,,3.1620654364e-01,0.07124108422,0.07864052018,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,Xi,,,1.2265862466e+00,0.2581389137,0.2755275137,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,Xi_bar,,,8.2342575607e-02,0.01920195346,0.02115969506,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+8.81921,phi,,,1.5588960720e+00,0.2747633998,0.287837127,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,K+,,,2.2832595111e+01,3.488688779,3.589734174,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,K-,,,1.0145899786e+01,1.714817689,1.806467919,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,Ks0,,,1.6094927396e+01,2.494259223,2.58636266,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,Lambda,,,1.3691611655e+01,2.521322518,2.667254758,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,Lambda_bar,,,3.7657046494e-01,0.08255151691,0.09185431115,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,Xi,,,1.2338721721e+00,0.2498458787,0.2681491732,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,Xi_bar,,,9.5612682731e-02,0.02160025582,0.02397628345,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+9.43842,phi,,,1.6548908358e+00,0.2829825689,0.2983206182,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,K+,,,2.3306366727e+01,3.446733265,3.567364166,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,K-,,,1.0820656554e+01,1.784005266,1.893394204,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,Ks0,,,1.6652061551e+01,2.512000637,2.622873403,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,Lambda,,,1.3382498939e+01,2.413579375,2.574399782,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,Lambda_bar,,,4.4821169347e-01,0.09703420683,0.1090559897,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,Xi,,,1.2477586177e+00,0.2472491773,0.2675237115,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,Xi_bar,,,1.1107944295e-01,0.02470069709,0.02768327416,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.1011,phi,,,1.7609173935e+00,0.2959544992,0.3143944256,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,K+,,,2.3847629643e+01,3.425650493,3.563647736,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,K-,,,1.1557423227e+01,1.859132927,1.984248826,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,Ks0,,,1.7272385460e+01,2.540885601,2.668328075,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,Lambda,,,1.3145233268e+01,2.327777827,2.500062479,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,Lambda_bar,,,5.3206605829e-01,0.1134517763,0.1283570666,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,Xi,,,1.2664345212e+00,0.2462180173,0.2681712271,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,Xi_bar,,,1.2884447906e-01,0.02817496758,0.03178637616,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+10.8103,phi,,,1.8754717441e+00,0.3093546783,0.3305061453,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5,K+,24.992979999999996,2.520100653,2.4386082256e+01,3.407908356,3.555878256,,,,"ins1510593/dN/dy, 11.5 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+11.5,K-,12.344299999999999,1.234893201,1.2275769344e+01,1.922299019,2.056724081,,,,"ins1510593/dN/dy, 11.5 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+11.5,Ks0,15.93,0.5922837158,1.7882641233e+01,2.563806338,2.700939337,,,,ins1738953/K0S dN/dy 11.5 GeV,THERMUS GCE parametrized fit,
+11.5,Lambda,14.17,0.7840918314,1.2975541192e+01,2.25221394,2.4279564,,,,ins1738953/Lambda dN/dy 11.5 GeV,THERMUS GCE parametrized fit,
+11.5,Lambda_bar,0.659,0.04785394446,6.1979268661e-01,0.1293292329,0.1465843851,,,,ins1738953/AntiLambda dN/dy 11.5 GeV,THERMUS GCE parametrized fit,
+11.5,Xi,1.35,0.1118033989,1.2863678501e+00,0.2449488136,0.2676387547,,,,ins1738953/Xi- dN/dy 11.5 GeV,THERMUS GCE parametrized fit,
+11.5,Xi_bar,0.169,0.01456021978,1.4709278129e-01,0.03147399405,0.03557722955,,,,ins1738953/AntiXi+ dN/dy 11.5 GeV,THERMUS GCE parametrized fit,
+11.5,phi,1.72,0.2630589288,1.9860603520e+00,0.3200794872,0.3428229352,,,,ins1738953/Phi dN/dy 11.5 GeV,THERMUS GCE parametrized fit,
+11.5693,K+,,,2.4440283708e+01,3.405983325,3.554547114,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5693,K-,,,1.2347717956e+01,1.927988225,2.063003315,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5693,Ks0,,,1.7943904906e+01,2.565646637,2.70337984,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5693,Lambda,,,1.2960959418e+01,2.244754585,2.420434425,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5693,Lambda_bar,,,6.2891169741e-01,0.1308980839,0.1483563065,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5693,Xi,,,1.2884153386e+00,0.244781065,0.267494992,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5693,Xi_bar,,,1.4897179426e-01,0.03179646892,0.03594089817,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+11.5693,phi,,,1.9970794861e+00,0.321014886,0.3438588434,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,K+,,,2.5070489595e+01,3.380471828,3.531447646,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,K-,,,1.3183252917e+01,1.98581632,2.123726309,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,Ks0,,,1.8655832255e+01,2.580706387,2.721228903,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,Lambda,,,1.2815123820e+01,2.158127398,2.328715573,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,Lambda_bar,,,7.3932273382e-01,0.1487265438,0.1680891239,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,Xi,,,1.3124806063e+00,0.2422168107,0.2646500333,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,Xi_bar,,,1.7148175968e-01,0.03541587406,0.03992947486,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+12.3816,phi,,,2.1243013188e+00,0.3301207669,0.3534532457,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,K+,,,2.5726424179e+01,3.349127979,3.495086183,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,K-,,,1.4055975609e+01,2.032475422,2.166784484,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,Ks0,,,1.9398483854e+01,2.586316519,2.722733922,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,Lambda,,,1.2696548049e+01,2.067839098,2.22656883,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,Lambda_bar,,,8.6363760503e-01,0.1665080158,0.1869773954,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,Xi,,,1.3376338021e+00,0.2384749667,0.25974297,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,Xi_bar,,,1.9634863892e-01,0.0389440718,0.04363872493,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+13.251,phi,,,2.2557531976e+00,0.3366831626,0.3593960027,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,K+,,,2.6398149541e+01,3.316053786,3.451387853,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,K-,,,1.4958187559e+01,2.070760918,2.196408941,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,Ks0,,,2.0163271219e+01,2.586168746,2.713178861,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,Lambda,,,1.2596760215e+01,1.976725027,2.11930508,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,Lambda_bar,,,1.0019438311e+00,0.1840340017,0.2048099569,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,Xi,,,1.3630758875e+00,0.2338550185,0.2533504529,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,Xi_bar,,,2.2350157367e-01,0.04234620864,0.04704396748,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+14.1813,phi,,,2.3901344538e+00,0.3412314034,0.3624647333,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,K+,,,2.7077466645e+01,3.28739364,3.408726736,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,K-,,,1.5882662368e+01,2.10534536,2.219097323,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,Ks0,,,2.0942685040e+01,2.58587962,2.700165005,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,Lambda,,,1.2509459548e+01,1.888730621,2.013315655,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,Lambda_bar,,,1.1540774212e+00,0.2013402564,0.2217346143,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,Xi,,,1.3881826523e+00,0.2288279127,0.2462407226,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,Xi_bar,,,2.5282816874e-01,0.04564074212,0.05019798235,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+15.177,phi,,,2.5262517991e+00,0.3446242046,0.3638283461,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,K+,,,2.7757783347e+01,3.26985579,3.375929532,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,K-,,,1.6822763041e+01,2.141918028,2.242355699,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,Ks0,,,2.1730286407e+01,2.591846887,2.692026307,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,Lambda,,,1.2430092233e+01,1.807906612,1.914658973,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,Lambda_bar,,,1.3196369881e+00,0.2187212154,0.2382343692,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,Xi,,,1.4124852467e+00,0.2239239553,0.2392034435,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,Xi_bar,,,2.8418041476e-01,0.04889699758,0.05321796578,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+16.2426,phi,,,2.6630399183e+00,0.3479008437,0.3648327401,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,K+,,,2.8433974166e+01,3.269529541,3.360898627,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,K-,,,1.7772538203e+01,2.186338415,2.273658507,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,Ks0,,,2.2520684245e+01,2.610241381,2.696634746,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,Lambda,,,1.2355496912e+01,1.737769908,1.828311622,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,Lambda_bar,,,1.4980102798e+00,0.2367129774,0.2550756973,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,Xi,,,1.4356510963e+00,0.2196511022,0.2329453016,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,Xi_bar,,,3.1738222936e-01,0.05222708871,0.05626872685,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+17.383,phi,,,2.7995758186e+00,0.3521367245,0.3668252639,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,K+,,,2.9102323762e+01,3.29106098,3.369498566,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,K-,,,1.8726842769e+01,2.243853262,2.319437042,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,Ks0,,,2.3309565929e+01,2.646189433,2.720324631,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,Lambda,,,1.2283653616e+01,1.680907775,1.757713329,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,Lambda_bar,,,1.6884134372e+00,0.2560353528,0.2732093742,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,Xi,,,1.4574701841e+00,0.2164349109,0.2280172129,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,Xi_bar,,,3.5223867610e-01,0.05577126251,0.05953904645,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+18.6035,phi,,,2.9350950349e+00,0.3583068303,0.3709825257,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.6,K+,29.5581,2.974592039,2.9609311681e+01,3.324162857,3.394333749,,,,"ins1510593/dN/dy, 19.6 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+19.6,K-,18.8266,1.893101762,1.9460999835e+01,2.299478695,2.367472346,,,,"ins1510593/dN/dy, 19.6 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+19.6,Ks0,20.89,0.6747592163,2.3913031232e+01,2.687946994,2.75418942,,,,ins1738953/K0S dN/dy 19.6 GeV,THERMUS GCE parametrized fit,
+19.6,Lambda,12.58,0.4617358552,1.2229531322e+01,1.647118022,1.715289916,,,,ins1738953/Lambda dN/dy 19.6 GeV,THERMUS GCE parametrized fit,
+19.6,Lambda_bar,1.858,0.09940824915,1.8424370354e+00,0.272298398,0.2886628229,,,,ins1738953/AntiLambda dN/dy 19.6 GeV,THERMUS GCE parametrized fit,
+19.6,Xi,1.62,0.1019803903,1.4732609848e+00,0.2148702142,0.2253633589,,,,ins1738953/Xi- dN/dy 19.6 GeV,THERMUS GCE parametrized fit,
+19.6,Xi_bar,0.421,0.03041381265,3.8003847648e-01,0.05873436058,0.06232055439,,,,ins1738953/AntiXi+ dN/dy 19.6 GeV,THERMUS GCE parametrized fit,
+19.6,phi,2.57,0.3522782991,3.0382248912e+00,0.3648415779,0.3762119825,,,,ins1738953/Phi dN/dy 19.6 GeV,THERMUS GCE parametrized fit,
+19.9097,K+,,,2.9760309573e+01,3.336995614,3.405005814,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.9097,K-,,,1.9681338665e+01,2.318333048,2.384330923,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.9097,Ks0,,,2.4093591370e+01,2.70303971,2.7672123,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.9097,Lambda,,,1.2213403866e+01,1.638690471,1.704605211,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.9097,Lambda_bar,,,1.8899301511e+00,0.2774833895,0.2936361217,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.9097,Xi,,,1.4778333855e+00,0.2145688527,0.2247755665,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.9097,Xi_bar,,,3.8854407253e-01,0.05967562101,0.06321466585,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+19.9097,phi,,,3.0689872524e+00,0.3671495733,0.3781761565,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,K+,,,3.0406510489e+01,3.407671142,3.468046582,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,K-,,,2.0632538867e+01,2.411856613,2.470785779,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,Ks0,,,2.4870369926e+01,2.782082328,2.838934799,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,Lambda,,,1.2144272006e+01,1.611228417,1.66910061,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,Lambda_bar,,,2.1015574231e+00,0.3017983856,0.3172577497,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,Xi,,,1.4967181007e+00,0.2141926923,0.2233737461,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,Xi_bar,,,4.2609066884e-01,0.06406861855,0.06745209172,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+21.3076,phi,,,3.2007978921e+00,0.3790857163,0.3888930371,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,K+,,,3.1040444077e+01,3.501454023,3.556883912,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,K-,,,2.1577783648e+01,2.52463274,2.579012995,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,Ks0,,,2.5638369632e+01,2.882625298,2.934763842,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,Lambda,,,1.2076286858e+01,1.597507671,1.649931385,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,Lambda_bar,,,2.3222486540e+00,0.3295464876,0.3447445535,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,Xi,,,1.5141711562e+00,0.2152947922,0.2237787343,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,Xi_bar,,,4.6467603417e-01,0.06904101808,0.07235797444,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+22.8036,phi,,,3.3302187795e+00,0.394197178,0.4032194546,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,K+,,,3.1662431391e+01,3.615170954,3.668161143,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,K-,,,2.2515207533e+01,2.655205709,2.707426402,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,Ks0,,,2.6396835442e+01,3.002327428,3.052206651,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,Lambda,,,1.2009842307e+01,1.595658332,1.644899295,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,Lambda_bar,,,2.5509537916e+00,0.3610348503,0.3764667149,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,Xi,,,1.5302938594e+00,0.2177351754,0.2258171865,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,Xi_bar,,,5.0410932329e-01,0.07463372047,0.07798129518,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+24.4047,phi,,,3.4570771706e+00,0.4122614444,0.4209117548,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,K+,,,3.2273465199e+01,3.74484,3.797564751,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,K-,,,2.3443686204e+01,2.80100107,2.853176011,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,Ks0,,,2.7145699439e+01,3.137858307,3.187628189,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,Lambda,,,1.1945585258e+01,1.603365737,1.651312962,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,Lambda_bar,,,2.7866544908e+00,0.3962993822,0.41248315,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,Xi,,,1.5452286878e+00,0.2212914266,0.2292257274,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,Xi_bar,,,5.4421623563e-01,0.08083862831,0.08431520345,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+26.1182,phi,,,3.5813222098e+00,0.4328485403,0.4414929398,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27,K+,31.06865,2.815112332,3.2568909647e+01,3.81278663,3.866102976,,,,"ins1510593/dN/dy, 27 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+27,K-,22.62347,2.05987152,2.3894600560e+01,2.876916141,2.929770192,,,,"ins1510593/dN/dy, 27 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+27,Ks0,23.24,0.7057619995,2.7508777267e+01,3.208782775,3.259211133,,,,ins1738953/K0S dN/dy 27 GeV,THERMUS GCE parametrized fit,
+27,Lambda,11.67,0.5115662225,1.1915171758e+01,1.609874891,1.657779551,,,,ins1738953/Lambda dN/dy 27 GeV,THERMUS GCE parametrized fit,
+27,Lambda_bar,2.75,0.1403566885,2.9042489532e+00,0.4148760411,0.4316189686,,,,ins1738953/AntiLambda dN/dy 27 GeV,THERMUS GCE parametrized fit,
+27,Xi,1.57,0.1104536102,1.5521543194e+00,0.2233584058,0.2313022041,,,,ins1738953/Xi- dN/dy 27 GeV,THERMUS GCE parametrized fit,
+27,Xi_bar,0.598,0.03847076812,5.6404012258e-01,0.084084063,0.08765938623,,,,ins1738953/AntiXi+ dN/dy 27 GeV,THERMUS GCE parametrized fit,
+27,phi,3.01,0.4517742799,3.6411799053e+00,0.4436764391,0.4524387755,,,,ins1738953/Phi dN/dy 27 GeV,THERMUS GCE parametrized fit,
+27.952,K+,,,3.2875054673e+01,3.886152725,3.940511715,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27.952,K-,,,2.4362748407e+01,2.958786717,3.012772714,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27.952,Ks0,,,2.7885462529e+01,3.285391024,3.336930319,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27.952,Lambda,,,1.1884312726e+01,1.61819439,1.666405125,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27.952,Lambda_bar,,,3.0283910829e+00,0.4351331703,0.4525897936,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27.952,Xi,,,1.5591459284e+00,0.2256998143,0.2337035337,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27.952,Xi_bar,,,5.8484217380e-01,0.08760591265,0.09130826474,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+27.952,phi,,,3.7030065495e+00,0.4554091806,0.4643676821,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,K+,,,3.3469148328e+01,4.034995899,4.092625089,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,K-,,,2.5272527598e+01,3.125182519,3.182582185,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,Ks0,,,2.8617133613e+01,3.441129894,3.496051723,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,Lambda,,,1.1826915262e+01,1.637885429,1.687621839,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,Lambda_bar,,,3.2752871103e+00,0.477156109,0.4963930049,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,Xi,,,1.5722353545e+00,0.2306967419,0.2389528919,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,Xi_bar,,,6.2585489532e-01,0.09485788415,0.09887889285,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+29.9145,phi,,,3.8222745424e+00,0.479368274,0.4889149286,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,K+,,,3.4058060501e+01,4.187764959,4.24998412,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,K-,,,2.6173705907e+01,3.29701254,3.359135291,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,Ks0,,,2.9342166707e+01,3.60164768,3.661255372,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,Lambda,,,1.1774330752e+01,1.66052762,1.712771997,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,Lambda_bar,,,3.5265697302e+00,0.5218895746,0.5433816691,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,Xi,,,1.5846989191e+00,0.236046353,0.2447040257,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,Xi_bar,,,6.6714643915e-01,0.1025029759,0.1069285895,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+32.0149,phi,,,3.9393503458e+00,0.5041892276,0.5145466728,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,K+,,,3.4644260097e+01,4.341390053,4.409364085,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,K-,,,2.7067345241e+01,3.471417837,3.539401464,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,Ks0,,,3.0062275947e+01,3.763956399,3.829384933,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,Lambda,,,1.1727463020e+01,1.684585596,1.74011797,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,Lambda_bar,,,3.7815671909e+00,0.5688080589,0.5929997351,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,Xi,,,1.5967384493e+00,0.2415500827,0.250732582,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,Xi_bar,,,7.0863079502e-01,0.1104449185,0.1153547912,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+34.2627,phi,,,4.0545093431e+00,0.5293965478,0.5407550266,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,K+,,,3.5230414360e+01,4.493472768,4.568167976,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,K-,,,2.7954903991e+01,3.646022843,3.720806466,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,Ks0,,,3.0779465214e+01,3.925654585,3.997837486,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,Lambda,,,1.1687195668e+01,1.708928714,1.768337463,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,Lambda_bar,,,4.0397259670e+00,0.6173938012,0.6446870832,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,Xi,,,1.6085559562e+00,0.2470553715,0.2568602818,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,Xi_bar,,,7.5024554826e-01,0.1185922701,0.1240577471,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+36.6683,phi,,,4.1680785442e+00,0.5546022078,0.5671163805,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39,K+,31.966034999999998,2.90450025,3.5765276361e+01,4.628872094,4.710294736,,,,"ins1510593/dN/dy, 39 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+39,K-,25.012439999999998,2.272369228,2.8757507358e+01,3.803288892,3.884863545,,,,"ins1510593/dN/dy, 39 GeV",THERMUS GCE parametrized fit,derived from dN/dy/(0.5*Npart) using Npart
+39,Ks0,24.9,1.702938637,3.1430399043e+01,4.070536572,4.149456308,,,,ins1738953/K0S dN/dy 39 GeV,THERMUS GCE parametrized fit,
+39,Lambda,11.02,0.8605230967,1.1657047189e+01,1.730652412,1.793939507,,,,ins1738953/Lambda dN/dy 39 GeV,THERMUS GCE parametrized fit,
+39,Lambda_bar,3.82,0.3601388621,4.2766450112e+00,0.6625817159,0.6929969326,,,,ins1738953/AntiLambda dN/dy 39 GeV,THERMUS GCE parametrized fit,
+39,Xi,1.54,0.1902629759,1.6192670266e+00,0.2519682066,0.2624017815,,,,ins1738953/Xi- dN/dy 39 GeV,THERMUS GCE parametrized fit,
+39,Xi_bar,0.78,0.1104536102,7.8813294194e-01,0.1261044335,0.1321280565,,,,ins1738953/AntiXi+ dN/dy 39 GeV,THERMUS GCE parametrized fit,
+39,phi,3.38,0.4809365863,4.2701898101e+00,0.5772540029,0.5909183926,,,,ins1738953/Phi dN/dy 39 GeV,THERMUS GCE parametrized fit,
+39.2428,K+,,,3.5819328123e+01,4.642321921,4.724447267,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39.2428,K-,,,2.8838170866e+01,3.81900792,3.901291834,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39.2428,Ks0,,,3.1495966432e+01,4.084977048,4.164599662,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39.2428,Lambda,,,1.1654371750e+01,1.732803073,1.796494658,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39.2428,Lambda_bar,,,4.3006127856e+00,0.667173558,0.6979175056,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39.2428,Xi,,,1.6203494788e+00,0.2524558259,0.2629553407,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39.2428,Xi_bar,,,7.9195086080e-01,0.1268644298,0.1329467542,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+39.2428,phi,,,4.2804250662e+00,0.5795147946,0.5932991568,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,K+,,,3.6413814688e+01,4.78674233,4.876883684,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,K-,,,2.9719143483e+01,3.988977142,4.07932966,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,Ks0,,,3.2214117612e+01,4.240622225,4.328241889,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,Lambda,,,1.1629759229e+01,1.755731456,1.823988684,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,Lambda_bar,,,4.5639034678e+00,0.7177245076,0.7522231526,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,Xi,,,1.6323071264e+00,0.2576809145,0.2689287072,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,Xi_bar,,,8.3372623304e-01,0.1351920334,0.1419438717,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+41.9981,phi,,,4.3919369298e+00,0.6039177671,0.6190630665,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,K+,,,3.7016685679e+01,4.926117117,5.024737311,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,K-,,,3.0599995686e+01,4.155039241,4.253903631,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,Ks0,,,3.2936342058e+01,4.391829152,4.487879685,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,Lambda,,,1.1614054742e+01,1.777494203,1.850496322,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,Lambda_bar,,,4.8293805847e+00,0.7686979598,0.8072102203,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,Xi,,,1.6446063993e+00,0.262695016,0.2747286715,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,Xi_bar,,,8.7556917234e-01,0.1435205116,0.1509860474,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+44.9469,phi,,,4.5030176511e+00,0.6276778862,0.644253078,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,K+,,,3.7630797568e+01,5.060336518,5.167764844,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,K-,,,3.1483095583e+01,4.316768485,4.424459488,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,Ks0,,,3.3665179846e+01,4.538320233,4.643105958,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,Lambda,,,1.1607907007e+01,1.798076161,1.875913745,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,Lambda_bar,,,5.0969371770e+00,0.8198271756,0.8625664219,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,Xi,,,1.6574166209e+00,0.2674916342,0.2803345752,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,Xi_bar,,,9.1749512743e-01,0.1518108403,0.1600258176,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+48.1027,phi,,,4.6140886160e+00,0.6507366023,0.6687891752,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,K+,,,3.8258906608e+01,5.189720456,5.306232699,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,K-,,,3.2370864898e+01,4.474151784,4.590924457,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,Ks0,,,3.4403148679e+01,4.680235227,4.794004563,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,Lambda,,,1.1611881267e+01,1.817613635,1.900324014,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,Lambda_bar,,,5.3665524756e+00,0.8709263802,0.9180706917,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,Xi,,,1.6708931629e+00,0.2720867949,0.285753122,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,Xi_bar,,,9.5953254748e-01,0.1600387084,0.1690323628,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+51.48,phi,,,4.7255684181e+00,0.6730992343,0.6926657518,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,K+,,,3.8903823356e+01,5.31508767,5.440750414,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,K-,,,3.3265889746e+01,4.62765609,4.753579517,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,Ks0,,,3.5152873113e+01,4.818196046,4.941003837,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,Lambda,,,1.1626515310e+01,1.83639231,1.92393006,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,Lambda_bar,,,5.6383073522e+00,0.9219074714,0.9735830205,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,Xi,,,1.6851849233e+00,0.2765193138,0.291009824,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,Xi_bar,,,1.0017252658e+00,0.1681969347,0.1779892147,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+55.0945,phi,,,4.8378893714e+00,0.6948422113,0.7159309281,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,K+,,,3.9568204036e+01,5.43757333,5.57250103,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,K-,,,3.4170725107e+01,4.778082826,4.913255443,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,Ks0,,,3.5916887690e+01,4.95314496,5.085084164,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,Lambda,,,1.1652264094e+01,1.854777459,1.947090379,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,Lambda_bar,,,5.9123476982e+00,0.9727611771,1.029073895,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,Xi,,,1.7004259102e+00,0.2808411942,0.2961540331,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,Xi_bar,,,1.0441257143e+00,0.1762916372,0.1868988162,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+58.9628,phi,,,4.9514694584e+00,0.7160897859,0.7387116198,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+62.4,K+,37.6,2.7,4.0139812986e+01,5.538823407,5.681464175,,,,arXiv:0808.2041/Table VIII,THERMUS GCE parametrized fit,table gives total uncertainty (stat+sys)
+62.4,K-,32.4,2.3,3.4935699938e+01,4.902266598,5.045138364,,,,arXiv:0808.2041/Table VIII,THERMUS GCE parametrized fit,table gives total uncertainty (stat+sys)
+62.4,Ks0,26.7,0.6,3.6567665793e+01,5.064552495,5.20408506,,,,ins871561/Figure6 up,THERMUS GCE parametrized fit,Direct STAR K0S yield from HEPData t12; RHIC points are centrality 0-5% per table description.
+62.4,Lambda,15.576031,2.306688,1.1682596198e+01,1.870177022,1.966399952,,,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS GCE parametrized fit,Derived via STAR Fig.9 ratios Lambda_bar/Pi- and Lambda_bar/Lambda (0-5%) with local pi- (0-5%); uncertainty propagated.
+62.4,Lambda_bar,7.2522,1.0400425,6.1430839222e+00,1.015194569,1.075430196,,,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS GCE parametrized fit,Derived from STAR Fig.9 ratio Lambda_bar/Pi- (0-5%) and local pi- (0-5%); uncertainty propagated in quadrature.
+62.4,Xi,1.7397156,0.30642213,1.7139722783e+00,0.2844163,0.3004080614,,,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS GCE parametrized fit,Derived via STAR Fig.9 ratios Xi+/Pi- and Xi+/Xi- (0-5%) with local pi- (0-5%); uncertainty propagated.
+62.4,Xi_bar,1.1376,0.18488204,1.0797350323e+00,0.183018934,0.1943137421,,,,ins871561/Figure9 (ratio-derived absolute yield),THERMUS GCE parametrized fit,Derived from STAR Fig.9 ratio Xi+/Pi- (0-5%) and local pi- (0-5%); uncertainty propagated in quadrature.
+62.4,phi,,,5.0475801215e+00,0.7335913049,0.7574869212,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,K+,,,4.0254732316e+01,5.5588273,5.702983537,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,K-,,,3.5088035938e+01,4.926741891,5.071126866,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,Ks0,,,3.6697794204e+01,5.086525521,5.227549465,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,Lambda,,,1.1689563341e+01,1.873254857,1.970240305,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,Lambda_bar,,,6.1889026200e+00,1.023585967,1.084600392,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,Xi,,,1.7167442231e+00,0.2851235552,0.3012483227,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,Xi_bar,,,1.0867979867e+00,0.1843468404,0.1957779798,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+63.1026,phi,,,5.0667332592e+00,0.7370368341,0.7611826639,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,K+,,,4.0966013917e+01,5.680910851,5.834249176,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,K-,,,3.6020489448e+01,5.075371478,5.228915665,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,Ks0,,,3.7498157877e+01,5.220191803,5.370241439,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,Lambda,,,1.1738803460e+01,1.892391949,1.993935019,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,Lambda_bar,,,6.4682617038e+00,1.074578495,1.140334735,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,Xi,,,1.7342580301e+00,0.2894512015,0.3063744002,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,Xi_bar,,,1.1298138034e+00,0.1924024336,0.204662348,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+67.5331,phi,,,5.1840971697e+00,0.7579357346,0.7835931181,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,K+,,,4.1704617236e+01,5.806336165,5.968711267,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,K-,,,3.6970780339e+01,5.226178126,5.388736498,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,Ks0,,,3.8320539424e+01,5.356446499,5.515370072,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,Lambda,,,1.1800348557e+01,1.912839471,2.018794712,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,Lambda_bar,,,6.7507733680e+00,1.126040345,1.196544186,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,Xi,,,1.7530783471e+00,0.2939228727,0.3116254546,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,Xi_bar,,,1.1732521944e+00,0.2005149722,0.213602625,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+72.2747,phi,,,5.3039735141e+00,0.7791003124,0.806243285,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,K+,,,4.2473124895e+01,5.938162811,6.10931616,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,K-,,,3.7941665185e+01,5.381928239,5.553248787,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,Ks0,,,3.9167536887e+01,5.498132132,5.66567085,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,Lambda,,,1.1874556349e+01,1.93535174,2.045539329,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,Lambda_bar,,,7.0368462256e+00,1.178395153,1.253614155,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,Xi,,,1.7733119903e+00,0.2986542483,0.3171110323,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,Xi_bar,,,1.2171998050e+00,0.2087603309,0.2226682233,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+77.3492,phi,,,5.4267762268e+00,0.800917554,0.8295045165,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,K+,,,4.3274037314e+01,6.079916605,6.259532094,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,K-,,,3.8935865931e+01,5.545882898,5.725654862,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,Ks0,,,4.0041691636e+01,5.648558953,5.824397803,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,Lambda,,,1.1961753197e+01,1.960759639,2.074981095,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,Lambda_bar,,,7.3269261237e+00,1.232178515,1.312049793,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,Xi,,,1.7950578686e+00,0.3037739984,0.3229560329,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,Xi_bar,,,1.2617470101e+00,0.2172317074,0.2319472593,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+82.78,phi,,,5.5529076129e+00,0.8238372141,0.8538178979,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,K+,,,4.4109874743e+01,6.235678996,6.423345109,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,K-,,,3.9956153992e+01,5.721883594,5.909702147,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,Ks0,,,4.0945579020e+01,5.811590047,5.995322073,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,Lambda,,,1.2062269015e+01,1.989994851,2.108020202,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,Lambda_bar,,,7.6215072179e+00,1.288055741,1.372477256,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,Xi,,,1.8184123463e+00,0.3094274527,0.329300065,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,Xi_bar,,,1.3069899737e+00,0.2260424771,0.2415465481,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+88.5921,phi,,,5.6827711794e+00,0.8483834954,0.8796937092,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,K+,,,4.4983180631e+01,6.410090568,6.605267235,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,K-,,,4.1005346908e+01,5.914360666,6.109696212,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,Ks0,,,4.1881808354e+01,5.991646776,6.182741971,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,Lambda,,,1.2176438970e+01,2.024089061,2.145648896,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,Lambda_bar,,,7.9211267532e+00,1.34682505,1.435649382,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,Xi,,,1.8434696321e+00,0.3157765047,0.336298133,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,Xi_bar,,,1.3530298603e+00,0.2353265507,0.2515924278,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+94.8123,phi,,,5.8167715714e+00,0.8751557052,0.9077132166,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,K+,,,4.5896519772e+01,6.608329374,6.81030586,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,K-,,,4.2086300963e+01,6.12831916,6.330477009,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,Ks0,,,4.2853018399e+01,6.193691128,6.391456307,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,Lambda,,,1.2304605738e+01,2.06417447,2.188947159,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,Lambda_bar,,,8.2263599313e+00,1.409420839,1.502444996,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,Xi,,,1.8703222828e+00,0.3229998501,0.3441200367,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,Xi_bar,,,1.3999721166e+00,0.2452388635,0.2622305484,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+101.469,phi,,,5.9553141686e+00,0.904826973,0.938525695,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,K+,,,4.6852462539e+01,6.836045093,7.044011155,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,K-,,,4.3201891849e+01,6.369280932,6.577464851,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,Ks0,,,4.3861860244e+01,6.423165326,6.626809974,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,Lambda,,,1.2447115885e+01,2.11147195,2.23910099,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,Lambda_bar,,,8.5378119552e+00,1.476907335,1.573882354,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,Xi,,,1.8990608042e+00,0.3312912608,0.3529531948,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,Xi_bar,,,1.4479252565e+00,0.2559542595,0.2736281009,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+108.594,phi,,,6.0988027434e+00,0.9381369463,0.9728557417,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,K+,,,4.7853635792e+01,7.099350299,7.312389709,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,K-,,,4.4355058338e+01,6.643277509,6.856582582,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,Ks0,,,4.4911043376e+01,6.685984298,6.89461394,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,Lambda,,,1.2604337028e+01,2.16730037,2.297386774,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,Lambda_bar,,,8.8561245017e+00,1.550485156,1.651109659,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,Xi,,,1.9297764928e+00,0.340861155,0.3630003385,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,Xi_bar,,,1.4970021392e+00,0.2676686727,0.2859722004,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+116.218,phi,,,6.2476463702e+00,0.9758926669,1.01149352,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,K+,,,4.8902711004e+01,7.404627482,7.62175414,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,K-,,,4.5548787595e+01,6.956669641,7.174117497,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,Ks0,,,4.6003322698e+01,6.988353915,7.201005029,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,Lambda,,,1.2776652870e+01,2.233039733,2.365154601,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,Lambda_bar,,,9.1819677292e+00,1.631464716,1.735393546,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,Xi,,,1.9625607905e+00,0.3519311108,0.3744773343,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,Xi_bar,,,1.5473187237e+00,0.2805947945,0.2994681948,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+124.378,phi,,,6.4022573805e+00,1.018945636,1.055278855,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+130,K+,46.3,3,,,,,,,arXiv:0808.2041/Table VIII,,table gives total uncertainty (stat+sys)
+130,K-,42.7,2.8,,,,,,,arXiv:0808.2041/Table VIII,,table gives total uncertainty (stat+sys)
+130,Xi,2.16,0.234,,,,,,,arXiv:nucl-ex/0307024/Table I,,includes 10% pT-independent systematic per paper
+130,Xi_bar,1.81,0.1978913844,,,,,,,arXiv:nucl-ex/0307024/Table I,,includes 10% pT-independent systematic per paper
+133.111,K+,,,5.0002512236e+01,7.758616685,7.978699029,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+133.111,K-,,,4.6786213700e+01,7.31622194,7.53669101,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+133.111,Ks0,,,4.7141599122e+01,7.336850616,7.552419788,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+133.111,Lambda,,,1.2964494401e+01,2.310163957,2.443827269,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+133.111,Lambda_bar,,,9.5160603693e+00,1.721286456,1.82811512,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+133.111,Xi,,,1.9975103279e+00,0.3647388805,0.3876128957,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+133.111,Xi_bar,,,1.5989976464e+00,0.2949656458,0.3143390804,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+133.111,phi,,,6.5630660732e+00,1.06820426,1.105098292,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,K+,,,5.1155850498e+01,8.168110072,8.390045631,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,K-,,,4.8070461589e+01,7.728811285,7.951200852,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,Ks0,,,4.8328762844e+01,7.738130904,7.955539933,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,Lambda,,,1.3168294310e+01,2.400176018,2.534902211,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,Lambda_bar,,,9.8591333697e+00,1.821470512,1.93076857,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,Xi,,,2.0347200397e+00,0.379528556,0.4026490533,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,Xi_bar,,,1.6521621689e+00,0.3110263852,0.3308255531,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+142.456,phi,,,6.7304986198e+00,1.124595587,1.161879773,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,K+,,,5.2365687997e+01,8.639938808,8.862674324,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,K-,,,4.9404798859e+01,8.201402152,8.424654125,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,Ks0,,,4.9567847288e+01,8.19891358,8.417129812,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,Lambda,,,1.3388531905e+01,2.504614604,2.639918051,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,Lambda_bar,,,1.0211960592e+01,1.933614913,2.044932212,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,Xi,,,2.0742902874e+00,0.3965515207,0.4198360137,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,Xi_bar,,,1.7069415159e+00,0.3290343078,0.3491814025,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+152.459,phi,,,6.9049990658e+00,1.189063737,1.226571066,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,K+,,,5.3635170588e+01,9.181003003,9.403434547,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,K-,,,5.0792666027e+01,8.741061824,8.964070508,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,Ks0,,,5.0862059634e+01,8.726002081,8.943945726,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,Lambda,,,1.3625740042e+01,2.625061615,2.760441713,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,Lambda_bar,,,1.0575363130e+01,2.059394488,2.172252557,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,Xi,,,2.1163281004e+00,0.4160673824,0.4394301933,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,Xi_bar,,,1.7634716787e+00,0.3492588452,0.3696711975,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+163.163,phi,,,7.0870336529e+00,1.262572181,1.300127899,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,K+,,,5.4967456383e+01,9.798025122,10.01922322,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,K-,,,5.2237516398e+01,9.354716736,9.576542353,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,Ks0,,,5.2214619330e+01,9.326045945,9.542803716,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,Lambda,,,1.3880461110e+01,2.763083504,2.898081293,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,Lambda_bar,,,1.0950174219e+01,2.200508841,2.314446858,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,Xi,,,2.1609405563e+00,0.4383347909,0.4616958512,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,Xi_bar,,,1.8218896053e+00,0.3719731297,0.3925708069,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+174.619,phi,,,7.2770684571e+00,1.346070312,1.383521338,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,K+,,,5.6365938400e+01,10.49776946,10.71692295,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,K-,,,5.3743021926e+01,10.04934663,10.26916601,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,Ks0,,,5.3628966801e+01,10.00574239,10.22051601,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,Lambda,,,1.4153302887e+01,2.920278531,3.05447175,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,Lambda_bar,,,1.1337281535e+01,2.358710673,2.473286193,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,Xi,,,2.2082434988e+00,0.4636183454,0.486902799,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,Xi_bar,,,1.8823404403e+00,0.397458837,0.4181648389,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+186.879,phi,,,7.4755986679e+00,1.440519087,1.477728244,,,,,THERMUS GCE parametrized fit,model-only point from smooth parametrized GCE trace
+200,K+,51.3,6.5,5.7834169405e+01,11.2869604,11.50338624,,,,arXiv:0808.2041/Table VIII,THERMUS GCE parametrized fit,table gives total uncertainty (stat+sys)
+200,K-,49.5,6.2,5.5313006648e+01,10.83189951,11.0490174,,,,arXiv:0808.2041/Table VIII,THERMUS GCE parametrized fit,table gives total uncertainty (stat+sys)
+200,Ks0,38.3,1.6,5.5108694409e+01,10.7717549,10.98387133,,,,ins871561/Figure6 up,THERMUS GCE parametrized fit,Direct STAR K0S yield from HEPData t12; RHIC points are centrality 0-5% per table description.
+200,Lambda,16.7,1.118033989,1.4444919886e+01,3.09824961,3.231263374,,,,arXiv:nucl-ex/0606014/Table I,THERMUS GCE parametrized fit,
+200,Lambda_bar,12.7,0.9219544457,1.1737611907e+01,2.535777841,2.650579365,,,,arXiv:nucl-ex/0606014/Table I,THERMUS GCE parametrized fit,
+200,Xi,2.17,0.1992485885,2.2583588904e+00,0.4921841198,0.5153243184,,,,arXiv:nucl-ex/0606014/Table I,THERMUS GCE parametrized fit,
+200,Xi_bar,1.83,0.2061552813,1.9449749741e+00,0.4260015938,0.4467440557,,,,arXiv:nucl-ex/0606014/Table I,THERMUS GCE parametrized fit,
+200,phi,7.7,0.9013878189,7.6831391684e+00,1.546877794,1.583726423,,,,ins651461/Table 1,THERMUS GCE parametrized fit,

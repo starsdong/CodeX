@@ -11,9 +11,8 @@ from matplotlib.lines import Line2D
 MEASURED_CSV = Path("data/strange_hadron_yields_vs_energy.csv")
 CANONICAL_MEASURED_CSV = Path("data/first_group_dn_dy_vs_energy.csv")
 THERMUS_DIR = Path("data/thermus_fit_points")
-THERMUS_GC_EFFECTIVE_DIR = Path("data/thermus_gc_from_sce_effective/prediction_points")
 THERMUS_GC_FIT_DIR = Path("data/thermus_fit_predictions_full/prediction_points")
-THERMUS_SCE_BLEND_CSV = Path("data/thermus_sce_blended/strange_hadron_yields_with_sce.csv")
+THERMUS_SCE_3GEV_POINTS = Path("data/thermus_sce_3gev/fit_points/sqrts_3GeV_points.csv")
 OUT_CSV = Path("data/strange_hadron_yields_with_thermus.csv")
 OUT_PNG = Path("data/strange_hadron_yields_with_thermus.png")
 OUT_PDF = Path("data/strange_hadron_yields_with_thermus.pdf")
@@ -31,6 +30,8 @@ STYLE = {
 }
 THERMUS_PARTICLES = {"K+", "K-", "Ks0", "Lambda", "Lambda_bar", "Xi", "Xi_bar", "phi"}
 CURVE_MIN_ENERGY = {"Lambda_bar": 7.7, "Xi_bar": 7.7}
+GCE_MIN_ENERGY = 7.7
+SCE_BAR_HALF_WIDTH = 0.15
 
 
 def to_float(text):
@@ -137,10 +138,10 @@ def attach_thermus_prediction_points(merged, path, column, model_source):
             merged[key]["model_source"] = model_source
 
 
-def attach_sce_csv(merged, path, column, model_source):
+def attach_sce_fit_points(merged, path, column, model_source):
     with path.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            particle = normalize_particle(row["particle"])
+            particle = normalize_particle(row["particle_name"])
             if particle not in THERMUS_PARTICLES:
                 continue
             energy = float(row["energy_GeV"])
@@ -153,11 +154,11 @@ def attach_sce_csv(merged, path, column, model_source):
                     "data_err": row.get("data_err", ""),
                     "gc_effective_model_yield": "",
                     "sce_blended_model_yield": "",
-                    "data_source": row.get("data_source", ""),
+                    "data_source": str(path),
                     "model_source": "",
-                    "note": row.get("note", "model-only point"),
+                    "note": "THERMUS SCE fit point",
                 }
-            merged[key][column] = row["sce_model_yield"]
+            merged[key][column] = row["model_yield"]
             merged[key]["model_source"] = model_source
 
 
@@ -205,33 +206,44 @@ def make_plot(rows):
                 label=particle,
             )
 
-        model_specs = [
-            ("gc_effective_model_yield", "-"),
-            ("sce_blended_model_yield", "-."),
+        min_energy = max(GCE_MIN_ENERGY, CURVE_MIN_ENERGY.get(particle, GCE_MIN_ENERGY))
+        gce_pts = [
+            r for r in pts if r["gc_effective_model_yield"] and float(r["energy_GeV"]) >= min_energy
         ]
-        for field, linestyle in model_specs:
-            min_energy = CURVE_MIN_ENERGY.get(particle, 0.0)
-            model_pts = [r for r in pts if r[field] and float(r["energy_GeV"]) >= min_energy]
-            if len(model_pts) >= 2:
-                ax.plot(
-                    [float(r["energy_GeV"]) for r in model_pts],
-                    [float(r[field]) for r in model_pts],
-                    linestyle,
-                    lw=1.6,
-                    color=style["color"],
-                    alpha=0.95,
-                )
-            elif len(model_pts) == 1:
-                ax.plot(
-                    [float(model_pts[0]["energy_GeV"])],
-                    [float(model_pts[0][field])],
-                    marker="_",
-                    ms=10,
-                    mew=1.8,
-                    linestyle="none",
-                    color=style["color"],
-                    alpha=0.95,
-                )
+        if len(gce_pts) >= 2:
+            ax.plot(
+                [float(r["energy_GeV"]) for r in gce_pts],
+                [float(r["gc_effective_model_yield"]) for r in gce_pts],
+                "-",
+                lw=1.6,
+                color=style["color"],
+                alpha=0.95,
+            )
+        elif len(gce_pts) == 1:
+            ax.plot(
+                [float(gce_pts[0]["energy_GeV"])],
+                [float(gce_pts[0]["gc_effective_model_yield"])],
+                marker="_",
+                ms=10,
+                mew=1.8,
+                linestyle="none",
+                color=style["color"],
+                alpha=0.95,
+            )
+
+        sce_pts = [
+            r for r in pts if r["sce_blended_model_yield"] and abs(float(r["energy_GeV"]) - 3.0) < 1.0e-6
+        ]
+        for r in sce_pts:
+            energy = float(r["energy_GeV"])
+            ax.hlines(
+                float(r["sce_blended_model_yield"]),
+                energy - SCE_BAR_HALF_WIDTH,
+                energy + SCE_BAR_HALF_WIDTH,
+                colors=style["color"],
+                lw=2.2,
+                alpha=0.95,
+            )
 
     ax.set_xscale("log")
     ax.set_yscale("log")
@@ -249,8 +261,8 @@ def make_plot(rows):
     ]
     style_handles = [
         Line2D([0], [0], marker="o", color="black", lw=0, markersize=5, label="Measured yield"),
-        Line2D([0], [0], color="black", lw=1.6, ls="-", label="THERMUS GC (effective trace)"),
-        Line2D([0], [0], color="black", lw=1.6, ls="-.", label="THERMUS SCE (endpoint-interpolated)"),
+        Line2D([0], [0], color="black", lw=1.6, ls="-", label="THERMUS GCE, 7.7-200 GeV"),
+        Line2D([0], [0], color="black", lw=2.2, marker="_", ls="none", markersize=10, label="THERMUS SCE fit, 3 GeV"),
     ]
     leg1 = ax.legend(handles=particle_handles, fontsize=9, ncol=2, loc="lower right", title="Particle")
     ax.add_artist(leg1)
@@ -264,11 +276,9 @@ def make_plot(rows):
 
 def main():
     merged = load_measured_rows()
-    for path in sorted(THERMUS_GC_EFFECTIVE_DIR.glob("sqrts_*GeV_points.csv")):
-        attach_thermus_prediction_points(merged, path, "gc_effective_model_yield", "THERMUS GC effective trace")
     for path in sorted(THERMUS_GC_FIT_DIR.glob("sqrts_*GeV_points.csv")):
-        attach_thermus_fit_points(merged, path, "gc_effective_model_yield", "THERMUS GC fit")
-    attach_sce_csv(merged, THERMUS_SCE_BLEND_CSV, "sce_blended_model_yield", "THERMUS SCE endpoint-interpolated")
+        attach_thermus_fit_points(merged, path, "gc_effective_model_yield", "THERMUS GCE fit")
+    attach_sce_fit_points(merged, THERMUS_SCE_3GEV_POINTS, "sce_blended_model_yield", "THERMUS SCE fit, 3 GeV")
 
     rows = sorted(
         merged.values(),

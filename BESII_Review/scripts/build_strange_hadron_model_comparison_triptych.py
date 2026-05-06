@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a comparison of measured yields with THERMUS GC and retained SCE curves."""
+"""Build a comparison of measured yields with GCE curves and 3 GeV SCE bars."""
 
 from __future__ import annotations
 
@@ -15,9 +15,8 @@ from matplotlib.lines import Line2D
 
 RAW_CSV = Path("data/first_group_dn_dy_vs_energy.csv")
 STRANGE_MERGED_CSV = Path("data/strange_hadron_yields_with_thermus.csv")
-GC_LOW_DIR = Path("data/thermus_gc_from_sce_effective/prediction_points")
 GC_FIT_DIR = Path("data/thermus_fit_predictions_full/prediction_points")
-SCE_BLEND_DIR = Path("data/thermus_sce_blended/prediction_points")
+SCE_3GEV_POINTS = Path("data/thermus_sce_3gev/fit_points/sqrts_3GeV_points.csv")
 
 OUT_PNG = Path("data/strange_hadron_model_comparison_triptych.png")
 OUT_PDF = Path("data/strange_hadron_model_comparison_triptych.pdf")
@@ -52,6 +51,8 @@ STYLE = {
     "phi": {"marker": "*", "color": "black"},
 }
 CURVE_MIN_ENERGY = {"pbar": 7.7, "Lambda_bar": 7.7, "Xi_bar": 7.7}
+GCE_MIN_ENERGY = 7.7
+SCE_BAR_HALF_WIDTH = 0.15
 
 
 def to_float(text: str | None) -> float | None:
@@ -166,7 +167,28 @@ def attach_prediction_rows(merged: dict[tuple[float, str], dict[str, str]], mode
                 merged[key][column] = row.get("model_yield", "")
 
 
-def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], title: str, model_field: str, line_style: str) -> None:
+def attach_model_file(merged: dict[tuple[float, str], dict[str, str]], path: Path, column: str) -> None:
+    with path.open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            particle = normalize_particle(row["particle_name"])
+            if particle is None:
+                continue
+            key = (float(row["energy_GeV"]), particle)
+            if key not in merged:
+                merged[key] = {
+                    "energy_GeV": f"{key[0]:g}",
+                    "particle": particle,
+                    "data_yield": row.get("data_yield", ""),
+                    "data_err": row.get("data_err", ""),
+                    "data_source": str(path),
+                    "gc_model_yield": "",
+                    "sce_blended_yield": "",
+                    "note": "model-only point",
+                }
+            merged[key][column] = row.get("model_yield", "")
+
+
+def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], title: str) -> None:
     for particle in PARTICLE_ORDER:
         pts = [r for r in rows if r["particle"] == particle]
         if not pts:
@@ -189,26 +211,38 @@ def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], title: str, model_field
                 alpha=0.95,
             )
 
-        min_energy = CURVE_MIN_ENERGY.get(particle, 0.0)
-        model_pts = [r for r in pts if r[model_field] and float(r["energy_GeV"]) >= min_energy]
-        if len(model_pts) >= 2:
+        min_energy = max(GCE_MIN_ENERGY, CURVE_MIN_ENERGY.get(particle, GCE_MIN_ENERGY))
+        gce_pts = [r for r in pts if r["gc_model_yield"] and float(r["energy_GeV"]) >= min_energy]
+        if len(gce_pts) >= 2:
             ax.plot(
-                [float(r["energy_GeV"]) for r in model_pts],
-                [float(r[model_field]) for r in model_pts],
-                line_style,
+                [float(r["energy_GeV"]) for r in gce_pts],
+                [float(r["gc_model_yield"]) for r in gce_pts],
+                "-",
                 lw=1.7,
                 color=style["color"],
                 alpha=0.95,
             )
-        elif len(model_pts) == 1:
+        elif len(gce_pts) == 1:
             ax.plot(
-                [float(model_pts[0]["energy_GeV"])],
-                [float(model_pts[0][model_field])],
+                [float(gce_pts[0]["energy_GeV"])],
+                [float(gce_pts[0]["gc_model_yield"])],
                 marker="_",
                 ms=10,
                 mew=1.7,
                 linestyle="none",
                 color=style["color"],
+            )
+
+        sce_pts = [r for r in pts if r["sce_blended_yield"] and abs(float(r["energy_GeV"]) - 3.0) < 1.0e-6]
+        for r in sce_pts:
+            energy = float(r["energy_GeV"])
+            ax.hlines(
+                float(r["sce_blended_yield"]),
+                energy - SCE_BAR_HALF_WIDTH,
+                energy + SCE_BAR_HALF_WIDTH,
+                colors=style["color"],
+                lw=2.2,
+                alpha=0.95,
             )
 
     ax.set_xscale("log")
@@ -222,31 +256,17 @@ def draw_panel(ax: plt.Axes, rows: list[dict[str, str]], title: str, model_field
 
 def main() -> None:
     merged = load_measured_rows()
-    attach_prediction_rows(merged, GC_LOW_DIR, "gc_model_yield")
     attach_fit_point_rows(merged, GC_FIT_DIR, "gc_model_yield")
-    attach_prediction_rows(merged, SCE_BLEND_DIR, "sce_blended_yield")
+    attach_model_file(merged, SCE_3GEV_POINTS, "sce_blended_yield")
 
     rows = sorted(
         merged.values(),
         key=lambda r: (float(r["energy_GeV"]), PARTICLE_ORDER.index(r["particle"])),
     )
 
-    fig, axes = plt.subplots(1, 2, figsize=(11.4, 6.1), sharey=True)
-    draw_panel(
-        axes[0],
-        rows,
-        "Measured + THERMUS GC\n(using effective SCE trace)",
-        "gc_model_yield",
-        "-",
-    )
-    draw_panel(
-        axes[1],
-        rows,
-        "Measured + THERMUS SCE\n(endpoint-interpolated 3.0 to 7.7 GeV)",
-        "sce_blended_yield",
-        "-.",
-    )
-    axes[0].set_ylabel(r"$dN/dy$")
+    fig, ax = plt.subplots(figsize=(9.2, 6.1))
+    draw_panel(ax, rows, "Measured yields with THERMUS GCE curves and 3 GeV SCE bars")
+    ax.set_ylabel(r"$dN/dy$")
 
     particle_handles = [
         Line2D([0], [0], marker=STYLE[p]["marker"], color=STYLE[p]["color"], lw=0, markersize=6, label=p)
@@ -254,14 +274,14 @@ def main() -> None:
     ]
     model_handles = [
         Line2D([0], [0], marker="o", color="black", lw=0, markersize=5, label="Measured yield"),
-        Line2D([0], [0], color="black", lw=1.7, ls="-", label="THERMUS GC (effective trace)"),
+        Line2D([0], [0], color="black", lw=1.7, ls="-", label="THERMUS GCE, 7.7-200 GeV"),
         Line2D(
-            [0], [0], color="black", lw=1.7, ls="-.",
-            label="THERMUS SCE endpoint-interpolated"
+            [0], [0], color="black", lw=2.2, marker="_", ls="none", markersize=10,
+            label="THERMUS SCE fit, 3 GeV"
         ),
     ]
 
-    leg_particles = axes[0].legend(
+    leg_particles = ax.legend(
         handles=particle_handles,
         loc="upper left",
         fontsize=8,
@@ -270,8 +290,8 @@ def main() -> None:
         title="Particle",
         title_fontsize=9,
     )
-    axes[0].add_artist(leg_particles)
-    axes[1].legend(
+    ax.add_artist(leg_particles)
+    ax.legend(
         handles=model_handles,
         loc="lower right",
         fontsize=8,

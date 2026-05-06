@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Overlay measured yields with retained GC and low-energy SCE THERMUS calculations."""
+"""Overlay measured yields with high-energy GCE curves and 3 GeV SCE bars."""
 
 from __future__ import annotations
 
@@ -15,9 +15,8 @@ from matplotlib.lines import Line2D
 
 MEASURED_CSV = Path("data/strange_hadron_yields_vs_energy.csv")
 RAW_MEASURED_CSV = Path("data/first_group_dn_dy_vs_energy.csv")
-GC_LOW_DIR = Path("data/thermus_gc_from_sce_effective/prediction_points")
 GC_FIT_FULL_DIR = Path("data/thermus_fit_predictions_full/prediction_points")
-SCE_BLEND_CSV = Path("data/thermus_sce_blended/strange_hadron_yields_with_sce.csv")
+SCE_3GEV_POINTS = Path("data/thermus_sce_3gev/fit_points/sqrts_3GeV_points.csv")
 OUT_CSV = Path("data/strange_hadron_yields_gc_sce_overlay.csv")
 OUT_PNG = Path("data/strange_hadron_yields_gc_sce_overlay.png")
 OUT_PDF = Path("data/strange_hadron_yields_gc_sce_overlay.pdf")
@@ -39,6 +38,8 @@ STYLE = {
     "Xi_bar": {"marker": "X", "color": "tab:pink"},
     "phi": {"marker": "*", "color": "tab:brown"},
 }
+GCE_MIN_ENERGY = 7.7
+SCE_BAR_HALF_WIDTH = 0.15
 
 
 def empty_row(energy: float, particle: str) -> dict[str, str]:
@@ -109,22 +110,21 @@ def load_zoom_measured() -> dict[tuple[float, str], dict[str, str]]:
     return rows
 
 
-def attach_model(
+def attach_sce_fit_points(
     rows: dict[tuple[float, str], dict[str, str]],
     path: Path,
     column: str,
-    model_field: str,
     allowed_particles: set[str],
 ) -> None:
     with path.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            particle = row["particle"]
+            particle = row["particle_name"]
             if particle not in allowed_particles:
                 continue
             key = (float(row["energy_GeV"]), particle)
             if key not in rows:
                 rows[key] = empty_row(key[0], particle)
-            rows[key][column] = row[model_field]
+            rows[key][column] = row["model_yield"]
 
 
 def attach_prediction_rows(
@@ -197,7 +197,7 @@ def make_plot(
                 capsize=2,
             )
 
-        min_energy = curve_min_energy_by_particle.get(particle, 0.0)
+        min_energy = max(GCE_MIN_ENERGY, curve_min_energy_by_particle.get(particle, GCE_MIN_ENERGY))
         gc_pts = [r for r in pts if r["gc_model_yield"] and float(r["energy_GeV"]) >= min_energy]
         if len(gc_pts) >= 2:
             ax.plot(
@@ -207,17 +207,29 @@ def make_plot(
                 lw=1.8,
                 color=style["color"],
             )
-
-        sce_blended_pts = [
-            r for r in pts if r["sce_blended_model_yield"] and float(r["energy_GeV"]) >= min_energy
-        ]
-        if len(sce_blended_pts) >= 2:
+        elif len(gc_pts) == 1:
             ax.plot(
-                [float(r["energy_GeV"]) for r in sce_blended_pts],
-                [float(r["sce_blended_model_yield"]) for r in sce_blended_pts],
-                "-.",
-                lw=1.8,
+                [float(gc_pts[0]["energy_GeV"])],
+                [float(gc_pts[0]["gc_model_yield"])],
+                marker="_",
+                ms=10,
+                mew=1.8,
+                linestyle="none",
                 color=style["color"],
+            )
+
+        sce_fit_pts = [
+            r for r in pts if r["sce_blended_model_yield"] and abs(float(r["energy_GeV"]) - 3.0) < 1.0e-6
+        ]
+        for r in sce_fit_pts:
+            energy = float(r["energy_GeV"])
+            ax.hlines(
+                float(r["sce_blended_model_yield"]),
+                energy - SCE_BAR_HALF_WIDTH,
+                energy + SCE_BAR_HALF_WIDTH,
+                colors=style["color"],
+                lw=2.2,
+                alpha=0.95,
             )
 
     ax.set_xscale("log")
@@ -238,8 +250,8 @@ def make_plot(
     ]
     model_handles = [
         Line2D([0], [0], marker="o", color="black", lw=0, markersize=5, label="Measured yield"),
-        Line2D([0], [0], color="black", lw=1.8, ls="-", label="THERMUS GC (effective trace)"),
-        Line2D([0], [0], color="black", lw=1.8, ls="-.", label="THERMUS SCE (endpoint-interpolated)"),
+        Line2D([0], [0], color="black", lw=1.8, ls="-", label="THERMUS GCE, 7.7-200 GeV"),
+        Line2D([0], [0], color="black", lw=2.2, marker="_", ls="none", markersize=10, label="THERMUS SCE fit, 3 GeV"),
     ]
     leg1 = ax.legend(handles=particle_handles, fontsize=9, ncol=2, loc="lower right", title="Particle")
     ax.add_artist(leg1)
@@ -253,9 +265,8 @@ def make_plot(
 
 def main() -> None:
     rows = load_measured()
-    attach_prediction_rows(rows, GC_LOW_DIR, "gc_model_yield", set(FULL_PARTICLE_ORDER))
     attach_prediction_rows(rows, GC_FIT_FULL_DIR, "gc_model_yield", set(FULL_PARTICLE_ORDER))
-    attach_model(rows, SCE_BLEND_CSV, "sce_blended_model_yield", "sce_model_yield", set(FULL_PARTICLE_ORDER))
+    attach_sce_fit_points(rows, SCE_3GEV_POINTS, "sce_blended_model_yield", set(FULL_PARTICLE_ORDER))
     ordered = sorted(
         rows.values(),
         key=lambda r: (float(r["energy_GeV"]), FULL_PARTICLE_ORDER.index(r["particle"])),
@@ -263,13 +274,11 @@ def main() -> None:
     write_csv(ordered)
 
     zoom_rows = load_zoom_measured()
-    attach_prediction_rows(zoom_rows, GC_LOW_DIR, "gc_model_yield", set(ZOOM_PARTICLE_ORDER))
     attach_prediction_rows(zoom_rows, GC_FIT_FULL_DIR, "gc_model_yield", set(ZOOM_PARTICLE_ORDER))
-    attach_model(
+    attach_sce_fit_points(
         zoom_rows,
-        SCE_BLEND_CSV,
+        SCE_3GEV_POINTS,
         "sce_blended_model_yield",
-        "sce_model_yield",
         set(ZOOM_PARTICLE_ORDER),
     )
     zoom_ordered = sorted(
@@ -283,7 +292,7 @@ def main() -> None:
         OUT_PNG,
         OUT_PDF,
         ylim=(3.0e-3, 1.0e3),
-        title="Strange-Hadron Yields: Measured, GC Effective Trace, and SCE",
+        title="Strange-Hadron Yields: Measured and THERMUS",
         curve_min_energy_by_particle={"pbar": 7.7, "Lambda_bar": 7.7, "Xi_bar": 7.7},
     )
     make_plot(
@@ -293,7 +302,7 @@ def main() -> None:
         ZOOM_OUT_PDF,
         xlim=(2.0, 10.0),
         ylim=(1.0e-3, 1.0e2),
-        title="Low-Energy Identified-Hadron Yields: Measured, GC Effective Trace, and SCE",
+        title="Low-Energy Identified-Hadron Yields: Measured and THERMUS",
     )
     print(f"wrote {OUT_CSV}")
     print(f"wrote {OUT_PNG}")

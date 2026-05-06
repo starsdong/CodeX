@@ -1,11 +1,15 @@
 #include "TAxis.h"
 #include "TCanvas.h"
 #include "TGraph.h"
+#include "TGraphAsymmErrors.h"
 #include "TGraphErrors.h"
 #include "TH1D.h"
 #include "TLegend.h"
 #include "TLine.h"
 #include "TLatex.h"
+#include "TBox.h"
+#include "TObject.h"
+#include "TPad.h"
 #include "TROOT.h"
 #include "TStyle.h"
 #include "TSystem.h"
@@ -33,8 +37,12 @@ struct Series {
   std::vector<double> data_ey;
   std::vector<double> gce_x;
   std::vector<double> gce_y;
+  std::vector<double> gce_ey_low;
+  std::vector<double> gce_ey_high;
   std::vector<double> sce_x;
   std::vector<double> sce_y;
+  std::vector<double> sce_ey_low;
+  std::vector<double> sce_ey_high;
 };
 
 const std::vector<std::string> kParticles = {
@@ -106,6 +114,36 @@ bool knownParticle(const std::string &particle)
   return std::find(kParticles.begin(), kParticles.end(), particle) != kParticles.end();
 }
 
+std::string displayLabel(const std::string &particle)
+{
+  if (particle == "K+") return "K^{+}";
+  if (particle == "K-") return "K^{-}";
+  if (particle == "Ks0") return "K^{0}_{S}";
+  if (particle == "Lambda") return "#Lambda";
+  if (particle == "Lambda_bar") return "#bar{#Lambda}";
+  if (particle == "Xi") return "#Xi^{-}";
+  if (particle == "Xi_bar") return "#bar{#Xi}^{+}";
+  if (particle == "phi") return "#phi";
+  return particle;
+}
+
+double displayEnergy(double energy, const std::string &particle)
+{
+  if (std::fabs(energy - 3.0) > 1.0e-6) return energy;
+  static const std::map<std::string, double> offsets = {
+      {"K+", 0.88},
+      {"K-", 0.92},
+      {"Ks0", 0.96},
+      {"Lambda", 1.00},
+      {"Lambda_bar", 1.04},
+      {"Xi", 1.01},
+      {"Xi_bar", 1.12},
+      {"phi", 1.04},
+  };
+  const auto it = offsets.find(particle);
+  return energy * (it == offsets.end() ? 1.0 : it->second);
+}
+
 void sortPairs(std::vector<double> &x, std::vector<double> &y)
 {
   std::vector<std::pair<double, double>> points;
@@ -135,6 +173,28 @@ void sortTriples(std::vector<double> &x, std::vector<double> &y, std::vector<dou
     x[i] = points[i].x;
     y[i] = points[i].y;
     ey[i] = points[i].ey;
+  }
+}
+
+void sortModelBand(std::vector<double> &x, std::vector<double> &y, std::vector<double> &ey_low,
+                   std::vector<double> &ey_high)
+{
+  struct Point {
+    double x;
+    double y;
+    double ey_low;
+    double ey_high;
+  };
+  std::vector<Point> points;
+  for (std::size_t i = 0; i < x.size(); ++i) {
+    points.push_back({x[i], y[i], ey_low[i], ey_high[i]});
+  }
+  std::sort(points.begin(), points.end(), [](const Point &a, const Point &b) { return a.x < b.x; });
+  for (std::size_t i = 0; i < points.size(); ++i) {
+    x[i] = points[i].x;
+    y[i] = points[i].y;
+    ey_low[i] = points[i].ey_low;
+    ey_high[i] = points[i].ey_high;
   }
 }
 
@@ -176,7 +236,6 @@ void applyFreezeOutStyle()
   gStyle->SetTitleFont(42, "X");
   gStyle->SetTitleFont(42, "Y");
 
-  gStyle->SetPalette(1);
   gStyle->SetMarkerSize(1.8);
   gStyle->SetMarkerStyle(20);
   gStyle->SetLegendFillColor(10);
@@ -204,6 +263,37 @@ void drawText(double x, double y, const char *text, double size = 0.034)
   latex->Draw("same");
 }
 
+void drawNdcText(double x, double y, const char *text, double size = 0.034)
+{
+  TLatex *latex = new TLatex(x, y, text);
+  latex->SetNDC();
+  latex->SetTextFont(42);
+  latex->SetTextSize(size);
+  latex->Draw("same");
+}
+
+void drawLogXLabels(double xmin, double xmax)
+{
+  const double ticks[] = {3.0, 5.0, 10.0, 30.0, 100.0, 200.0};
+  const char *labels[] = {"3", "5", "10", "30", "100", "200"};
+  const double left = gPad->GetLeftMargin();
+  const double right = 1.0 - gPad->GetRightMargin();
+  const double log_min = std::log10(xmin);
+  const double log_max = std::log10(xmax);
+  const double label_y = std::max(0.035, gPad->GetBottomMargin() - 0.028);
+
+  TLatex text;
+  text.SetNDC(kTRUE);
+  text.SetTextFont(42);
+  text.SetTextSize(0.045);
+  text.SetTextAlign(22);
+  for (int i = 0; i < 6; ++i) {
+    const double frac = (std::log10(ticks[i]) - log_min) / (log_max - log_min);
+    const double xndc = left + frac * (right - left);
+    text.DrawLatex(xndc, label_y, labels[i]);
+  }
+}
+
 TGraphErrors *makeDataGraph(const Series &series, const ParticleStyle &style)
 {
   if (series.data_x.empty()) return nullptr;
@@ -215,7 +305,7 @@ TGraphErrors *makeDataGraph(const Series &series, const ParticleStyle &style)
       ex.data(),
       const_cast<double *>(series.data_ey.data()));
   graph->SetMarkerStyle(style.marker);
-  graph->SetMarkerSize(style.size);
+  graph->SetMarkerSize(style.size * 1.2);
   graph->SetMarkerColor(style.color);
   graph->SetLineColor(style.color);
   graph->SetLineWidth(2);
@@ -235,6 +325,31 @@ TGraph *makeLineGraph(const Series &series, const ParticleStyle &style)
   return graph;
 }
 
+TGraphAsymmErrors *makeBandGraph(const Series &series, const ParticleStyle &style)
+{
+  if (series.gce_x.empty()) return nullptr;
+  double max_err = 0.0;
+  for (std::size_t i = 0; i < series.gce_x.size(); ++i) {
+    max_err = std::max(max_err, std::max(series.gce_ey_low[i], series.gce_ey_high[i]));
+  }
+  if (max_err <= 0.0) return nullptr;
+
+  std::vector<double> ex_low(series.gce_x.size(), 0.0);
+  std::vector<double> ex_high(series.gce_x.size(), 0.0);
+  TGraphAsymmErrors *graph = new TGraphAsymmErrors(
+      static_cast<int>(series.gce_x.size()),
+      const_cast<double *>(series.gce_x.data()),
+      const_cast<double *>(series.gce_y.data()),
+      ex_low.data(),
+      ex_high.data(),
+      const_cast<double *>(series.gce_ey_low.data()),
+      const_cast<double *>(series.gce_ey_high.data()));
+  graph->SetFillColorAlpha(style.color, 0.18);
+  graph->SetLineColor(style.color);
+  graph->SetLineWidth(0);
+  return graph;
+}
+
 void loadRows(const TString &input_path, std::map<std::string, Series> &rows)
 {
   std::ifstream input(input_path.Data());
@@ -250,8 +365,12 @@ void loadRows(const TString &input_path, std::map<std::string, Series> &rows)
   const int i_particle = findColumn(header, {"particle"});
   const int i_data = findColumn(header, {"data_yield"});
   const int i_err = findColumn(header, {"data_err"});
-  const int i_gce = findColumn(header, {"gc_effective_model_yield", "gc_model_yield"});
+  const int i_gce = findColumn(header, {"gc_effective_model_yield", "gc_model_yield", "gce_param_model_yield"});
+  const int i_gce_err_low = findColumn(header, {"gc_model_err_low", "gce_param_model_err_low"});
+  const int i_gce_err_high = findColumn(header, {"gc_model_err_high", "gce_param_model_err_high"});
   const int i_sce = findColumn(header, {"sce_blended_model_yield", "sce_blended_yield"});
+  const int i_sce_err_low = findColumn(header, {"sce_blended_model_err_low", "sce_model_err_low"});
+  const int i_sce_err_high = findColumn(header, {"sce_blended_model_err_high", "sce_model_err_high"});
 
   while (std::getline(input, line)) {
     if (line.empty()) continue;
@@ -267,30 +386,42 @@ void loadRows(const TString &input_path, std::map<std::string, Series> &rows)
     if (parseDouble(fieldAt(fields, i_data), value) && value > 0.0) {
       double err = 0.0;
       parseDouble(fieldAt(fields, i_err), err);
-      series.data_x.push_back(energy);
+      series.data_x.push_back(displayEnergy(energy, particle));
       series.data_y.push_back(value);
       series.data_ey.push_back(err);
     }
     if (energy >= 7.7 && parseDouble(fieldAt(fields, i_gce), value) && value > 0.0) {
+      double err_low = 0.0;
+      double err_high = 0.0;
+      parseDouble(fieldAt(fields, i_gce_err_low), err_low);
+      parseDouble(fieldAt(fields, i_gce_err_high), err_high);
       series.gce_x.push_back(energy);
       series.gce_y.push_back(value);
+      series.gce_ey_low.push_back(std::max(0.0, err_low));
+      series.gce_ey_high.push_back(std::max(0.0, err_high));
     }
     if (std::fabs(energy - 3.0) < 1.0e-6 && parseDouble(fieldAt(fields, i_sce), value) && value > 0.0) {
-      series.sce_x.push_back(energy);
+      double err_low = 0.0;
+      double err_high = 0.0;
+      parseDouble(fieldAt(fields, i_sce_err_low), err_low);
+      parseDouble(fieldAt(fields, i_sce_err_high), err_high);
+      series.sce_x.push_back(displayEnergy(energy, particle));
       series.sce_y.push_back(value);
+      series.sce_ey_low.push_back(std::max(0.0, err_low));
+      series.sce_ey_high.push_back(std::max(0.0, err_high));
     }
   }
 
   for (auto &entry : rows) {
     sortTriples(entry.second.data_x, entry.second.data_y, entry.second.data_ey);
-    sortPairs(entry.second.gce_x, entry.second.gce_y);
-    sortPairs(entry.second.sce_x, entry.second.sce_y);
+    sortModelBand(entry.second.gce_x, entry.second.gce_y, entry.second.gce_ey_low, entry.second.gce_ey_high);
+    sortModelBand(entry.second.sce_x, entry.second.sce_y, entry.second.sce_ey_low, entry.second.sce_ey_high);
   }
 }
 
 }  // namespace
 
-void plot_strange_hadron_yields_root()
+void plot_strange_hadron_yields_root(const char *variant = "exact")
 {
   applyFreezeOutStyle();
 
@@ -300,9 +431,15 @@ void plot_strange_hadron_yields_root()
   }
   const TString script_dir = gSystem->DirName(macro_path);
   const TString repo_dir = gSystem->DirName(script_dir);
-  const TString input_path = repo_dir + "/data/strange_hadron_yields_with_thermus.csv";
+  const TString variant_text = variant ? variant : "exact";
+  const bool use_parametrized = variant_text.Contains("param");
+  const TString input_path = use_parametrized
+      ? repo_dir + "/data/strange_hadron_yields_parametrized_thermus.csv"
+      : repo_dir + "/data/strange_hadron_yields_with_thermus.csv";
   const TString out_pdf = repo_dir + "/data/strange_hadron_yields_root_style.pdf";
   const TString out_png = repo_dir + "/data/strange_hadron_yields_root_style.png";
+  const TString param_out_pdf = repo_dir + "/data/strange_hadron_yields_parametrized_thermus_root_style.pdf";
+  const TString param_out_png = repo_dir + "/data/strange_hadron_yields_parametrized_thermus_root_style.png";
 
   std::map<std::string, Series> rows;
   loadRows(input_path, rows);
@@ -312,15 +449,15 @@ void plot_strange_hadron_yields_root()
   }
 
   const double xmin = 2.5;
-  const double xmax = 250.0;
+  const double xmax = 300.0;
   const double ymin = 3.0e-3;
   const double ymax = 1.0e3;
 
-  TCanvas *canvas = new TCanvas("cStrangeHadronYields", "", 900, 700);
+  TCanvas *canvas = new TCanvas("cStrangeHadronYields", "", 904, 928);
   canvas->SetLeftMargin(0.13);
-  canvas->SetBottomMargin(0.13);
-  canvas->SetRightMargin(0.03);
+  canvas->SetRightMargin(0.04);
   canvas->SetTopMargin(0.03);
+  canvas->SetBottomMargin(0.13);
   canvas->SetLogx(1);
   canvas->SetLogy(1);
   canvas->Draw();
@@ -330,19 +467,33 @@ void plot_strange_hadron_yields_root()
   frame->SetMaximum(ymax);
   frame->GetXaxis()->CenterTitle();
   frame->GetXaxis()->SetTitle("#sqrt{s_{NN}} (GeV)");
-  frame->GetXaxis()->SetLabelSize(0.045);
+  frame->GetXaxis()->SetMoreLogLabels(kTRUE);
+  frame->GetXaxis()->SetNoExponent(kTRUE);
+  frame->GetXaxis()->SetLabelSize(0.0);
   frame->GetXaxis()->SetTickLength(0.03);
-  frame->GetXaxis()->SetTitleOffset(1.1);
+  frame->GetXaxis()->SetTitleOffset(1.05);
   frame->GetXaxis()->SetTitleSize(0.055);
   frame->GetYaxis()->CenterTitle();
   frame->GetYaxis()->SetTitle("dN/dy");
-  frame->GetYaxis()->SetTitleOffset(1.0);
-  frame->GetYaxis()->SetTitleSize(0.06);
-  frame->GetYaxis()->SetLabelSize(0.045);
+  frame->GetYaxis()->SetTitleOffset(1.05);
+  frame->GetYaxis()->SetTitleSize(0.057);
+  frame->GetYaxis()->SetLabelSize(0.043);
   frame->Draw();
 
   std::vector<TGraph *> model_graphs;
+  std::vector<TGraphAsymmErrors *> model_bands;
   std::vector<TGraphErrors *> data_graphs;
+
+  for (const std::string &particle : kParticles) {
+    const auto row_it = rows.find(particle);
+    if (row_it == rows.end()) continue;
+    const ParticleStyle style = kStyle.at(particle);
+    TGraphAsymmErrors *band = makeBandGraph(row_it->second, style);
+    if (band) {
+      model_bands.push_back(band);
+      band->Draw("3 SAME");
+    }
+  }
 
   for (const std::string &particle : kParticles) {
     const auto row_it = rows.find(particle);
@@ -362,9 +513,19 @@ void plot_strange_hadron_yields_root()
     for (std::size_t i = 0; i < row_it->second.sce_x.size(); ++i) {
       const double x = row_it->second.sce_x[i];
       const double y = row_it->second.sce_y[i];
-      TLine *line = new TLine(x * 0.93, y, x * 1.07, y);
+      const double ey_low = row_it->second.sce_ey_low[i];
+      const double ey_high = row_it->second.sce_ey_high[i];
+      const double y_low = std::max(ymin * 1.03, y - ey_low);
+      const double y_high = std::max(y_low * 1.01, y + ey_high);
+      const double half_width = 0.12;
+      TBox *band = new TBox(x - half_width, y_low, x + half_width, y_high);
+      band->SetFillColorAlpha(style.color, 0.18);
+      band->SetLineColor(style.color);
+      band->SetLineWidth(1);
+      band->Draw("same");
+      TLine *line = new TLine(x - half_width, y, x + half_width, y);
       line->SetLineColor(style.color);
-      line->SetLineWidth(3);
+      line->SetLineWidth(4);
       line->Draw("same");
     }
   }
@@ -380,56 +541,68 @@ void plot_strange_hadron_yields_root()
     }
   }
 
-  drawText(23.0, 580.0, "STAR Au+Au, 0-5%", 0.034);
-  drawText(23.0, 360.0, "Strange-hadron yields", 0.034);
+  drawNdcText(0.18, 0.91, "STAR Au+Au 0-5%", 0.043);
 
-  TLegend *leg_particles = new TLegend(0.15, 0.74, 0.45, 0.93);
-  leg_particles->SetFillStyle(4000);
-  leg_particles->SetBorderSize(0);
-  leg_particles->SetTextSize(0.03);
-  leg_particles->SetNColumns(2);
-  leg_particles->SetHeader("Particle", "C");
-  for (const std::string &particle : kParticles) {
-    const ParticleStyle style = kStyle.at(particle);
-    TGraphErrors *dummy = new TGraphErrors();
-    dummy->SetMarkerStyle(style.marker);
-    dummy->SetMarkerSize(style.size * 0.9);
-    dummy->SetMarkerColor(style.color);
-    dummy->SetLineColor(style.color);
-    leg_particles->AddEntry(dummy, particle.c_str(), "p");
-  }
-  leg_particles->Draw();
-
-  TGraphErrors *dummy_data = new TGraphErrors();
-  dummy_data->SetMarkerStyle(20);
-  dummy_data->SetMarkerSize(1.3);
-  dummy_data->SetMarkerColor(kBlack);
-  dummy_data->SetLineColor(kBlack);
+  TLegend *leg_model = new TLegend(0.62, 0.83, 0.96, 0.95);
+  leg_model->SetFillStyle(4000);
+  leg_model->SetBorderSize(0);
+  leg_model->SetTextSize(0.025);
 
   TGraph *dummy_gce = new TGraph();
   dummy_gce->SetLineColor(kBlack);
   dummy_gce->SetLineWidth(2);
+  leg_model->AddEntry(dummy_gce, "THERMUS", "l");
 
-  TLine *dummy_sce = new TLine();
-  dummy_sce->SetLineColor(kBlack);
-  dummy_sce->SetLineWidth(3);
-
-  TLegend *leg_model = new TLegend(0.52, 0.15, 0.92, 0.31);
-  leg_model->SetFillStyle(4000);
-  leg_model->SetBorderSize(0);
-  leg_model->SetTextSize(0.03);
-  leg_model->SetHeader("Model", "C");
-  leg_model->AddEntry(dummy_data, "Measured yield", "p");
-  leg_model->AddEntry(dummy_gce, "THERMUS GCE, 7.7-200 GeV", "l");
-  leg_model->AddEntry(dummy_sce, "THERMUS SCE fit, 3 GeV", "l");
+  leg_model->AddEntry((TObject *)0, "GCE #pm1#sigma, 7.7-200 GeV", "");
+  leg_model->AddEntry((TObject *)0, "SCE #pm1#sigma, 3 GeV", "");
   leg_model->Draw();
 
+//  drawNdcText(0.65, 0.36, "Data", 0.022);
+  TLegend *leg_data_left = new TLegend(0.68, 0.17, 0.79, 0.37);
+  TLegend *leg_data_right = new TLegend(0.80, 0.17, 0.94, 0.37);
+  for (TLegend *legend : {leg_data_left, leg_data_right}) {
+    legend->SetFillStyle(4000);
+    legend->SetBorderSize(0);
+    legend->SetTextSize(0.030);
+  }
+  const std::vector<std::string> left_data_order = {"K+", "Ks0", "K-", "phi"};
+  const std::vector<std::string> right_data_order = {"Lambda", "Xi", "Lambda_bar", "Xi_bar"};
+  for (const std::string &particle : left_data_order) {
+    const ParticleStyle style = kStyle.at(particle);
+    TGraphErrors *dummy = new TGraphErrors();
+    dummy->SetMarkerStyle(style.marker);
+    dummy->SetMarkerSize(style.size * 0.75);
+    dummy->SetMarkerColor(style.color);
+    dummy->SetLineColor(style.color);
+    leg_data_left->AddEntry(dummy, displayLabel(particle).c_str(), "p");
+  }
+  for (const std::string &particle : right_data_order) {
+    const ParticleStyle style = kStyle.at(particle);
+    TGraphErrors *dummy = new TGraphErrors();
+    dummy->SetMarkerStyle(style.marker);
+    dummy->SetMarkerSize(style.size * 0.75);
+    dummy->SetMarkerColor(style.color);
+    dummy->SetLineColor(style.color);
+    leg_data_right->AddEntry(dummy, displayLabel(particle).c_str(), "p");
+  }
+  leg_data_left->Draw();
+  leg_data_right->Draw();
+
   drawFrameBox(xmin, xmax, ymin, ymax);
+  drawLogXLabels(xmin, xmax);
 
   canvas->Update();
   canvas->SaveAs(out_pdf);
   canvas->SaveAs(out_png);
+  if (use_parametrized) {
+    canvas->SaveAs(param_out_pdf);
+    canvas->SaveAs(param_out_png);
+  }
 
   std::cout << "wrote " << out_pdf << std::endl;
   std::cout << "wrote " << out_png << std::endl;
+  if (use_parametrized) {
+    std::cout << "wrote " << param_out_pdf << std::endl;
+    std::cout << "wrote " << param_out_png << std::endl;
+  }
 }
