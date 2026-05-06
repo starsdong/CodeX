@@ -11,9 +11,53 @@
 #include "draw.C+"
 #include "style.C+"
 #include "TBox.h"
+#include "TGraph.h"
 #include "TSystem.h"
 
 #include <cmath>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+TGraph *loadVovchenkoFreezeoutLine(const char *name)
+{
+  const char *paths[] = {
+    "../data/vovchenko/Id-HRG-FrzLineEN-0.951000-StrNeutr.dat",
+    "data/vovchenko/Id-HRG-FrzLineEN-0.951000-StrNeutr.dat"
+  };
+
+  std::vector<double> mu_b;
+  std::vector<double> temperature;
+  for (const char *path : paths) {
+    std::ifstream input(path);
+    if (!input.is_open()) {
+      continue;
+    }
+
+    std::string line;
+    while (std::getline(input, line)) {
+      std::istringstream row(line);
+      double mu = 0.0;
+      double temp = 0.0;
+      if (row >> mu >> temp) {
+        mu_b.push_back(mu);
+        temperature.push_back(temp);
+      }
+    }
+    break;
+  }
+
+  TGraph *graph = mu_b.empty()
+    ? new TGraph()
+    : new TGraph(static_cast<Int_t>(mu_b.size()), mu_b.data(), temperature.data());
+  graph->SetName(name);
+  if (mu_b.empty()) {
+    std::cerr << "Warning: Vovchenko freezeout line data were not found." << std::endl;
+  }
+  return graph;
+}
 
 void plotFO()
 {
@@ -190,6 +234,7 @@ void plotFO()
   TGraphErrors *g_cp_ref = new TGraphErrors(NCPREF, mu_cp_ref, t_cp_ref, emu_cp_ref, et_cp_ref);
   TGraph *g_cp_func = new TGraph(NCPFUNC, mu_cp_func, t_cp_func);
   TGraph *g_cp_holo = new TGraph(NCPHOLO, mu_cp_holo, t_cp_holo);
+  TGraph *g_vovchenko = loadVovchenkoFreezeoutLine("g_vovchenko");
 
   TGraphErrors *glog_fopi = new TGraphErrors(NFOPI, mu_fopi, t_fopi, emu_fopi, et_fopi);
   TGraphErrors *glog_hades = new TGraphErrors(NHADES, mu_hades, t_hades, emu_hades, et_hades);
@@ -206,6 +251,7 @@ void plotFO()
   TGraphErrors *glog_cp_ref = new TGraphErrors(NCPREF, mu_cp_ref, t_cp_ref, emu_cp_ref, et_cp_ref);
   TGraph *glog_cp_func = new TGraph(NCPFUNC, mu_cp_func, t_cp_func);
   TGraph *glog_cp_holo = new TGraph(NCPHOLO, mu_cp_holo, t_cp_holo);
+  TGraph *glog_vovchenko = loadVovchenkoFreezeoutLine("glog_vovchenko");
 
   TBox *box_lmr[NLMR];
   TBox *box_imr[NIMR];
@@ -275,6 +321,7 @@ void plotFO()
   g_cp_ref->SetMarkerStyle(20); g_cp_ref->SetMarkerSize(2.0); g_cp_ref->SetMarkerColor(kBlack);      g_cp_ref->SetLineColor(kBlack);
   g_cp_func->SetMarkerStyle(20); g_cp_func->SetMarkerSize(2.0); g_cp_func->SetMarkerColor(kBlack);   g_cp_func->SetLineColor(kBlack);
   g_cp_holo->SetMarkerStyle(20); g_cp_holo->SetMarkerSize(2.0); g_cp_holo->SetMarkerColor(kBlack);   g_cp_holo->SetLineColor(kBlack);
+  g_vovchenko->SetLineWidth(2); g_vovchenko->SetLineStyle(7); g_vovchenko->SetLineColor(kGreen + 3);
   glog_fopi->SetMarkerStyle(33);  glog_fopi->SetMarkerSize(2.6); glog_fopi->SetMarkerColor(kRed + 1);     glog_fopi->SetLineColor(kRed + 1);
   glog_hades->SetMarkerStyle(33); glog_hades->SetMarkerSize(2.6); glog_hades->SetMarkerColor(kRed + 1);    glog_hades->SetLineColor(kRed + 1);
   glog_ags->SetMarkerStyle(33);   glog_ags->SetMarkerSize(2.6); glog_ags->SetMarkerColor(kRed + 1);      glog_ags->SetLineColor(kRed + 1);
@@ -290,6 +337,7 @@ void plotFO()
   glog_cp_ref->SetMarkerStyle(20); glog_cp_ref->SetMarkerSize(2.0); glog_cp_ref->SetMarkerColor(kBlack);  glog_cp_ref->SetLineColor(kBlack);
   glog_cp_func->SetMarkerStyle(20); glog_cp_func->SetMarkerSize(2.0); glog_cp_func->SetMarkerColor(kBlack); glog_cp_func->SetLineColor(kBlack);
   glog_cp_holo->SetMarkerStyle(20); glog_cp_holo->SetMarkerSize(2.0); glog_cp_holo->SetMarkerColor(kBlack); glog_cp_holo->SetLineColor(kBlack);
+  glog_vovchenko->SetLineWidth(2); glog_vovchenko->SetLineStyle(7); glog_vovchenko->SetLineColor(kGreen + 3);
 
 
   TCanvas *c1 = new TCanvas("c1", "", 900, 700);
@@ -315,6 +363,7 @@ void plotFO()
   for (int im = 0; im < NM; im++) {
     grLog[im]->Draw("c same");
   }
+  glog_vovchenko->Draw("L SAME");
 
   glog_fopi->Draw("P SAME");
   glog_hades->Draw("P SAME");
@@ -334,15 +383,16 @@ void plotFO()
   glog_cp_func->Draw("P SAME");
   glog_cp_holo->Draw("P SAME");
 
-  drawText(550, 315, "Chemical", 42, 0.028);
-  drawText(550, 300, "Freezeout", 42, 0.028);
+  drawText(420, 315, "Chemical", 42, 0.028);
+  drawText(420, 300, "Freezeout", 42, 0.028);
   
-  TLegend *legCurve = new TLegend(0.74, 0.84, 0.90, 0.94);
+  TLegend *legCurve = new TLegend(0.66, 0.83, 0.90, 0.96);
   legCurve->SetFillStyle(4000);
   legCurve->SetBorderSize(0);
   legCurve->SetTextSize(0.03);
   legCurve->AddEntry(gr[0], Label[0], "l");
   legCurve->AddEntry(gr[1], Label[1], "l");
+  legCurve->AddEntry(g_vovchenko, "Vovchenko 2024", "l");
   legCurve->Draw();
 
   TLegend *legData1 = new TLegend(0.67, 0.56, 0.68, 0.82);
@@ -404,6 +454,7 @@ void plotFO()
   for (int im = 0; im < NM; im++) {
     gr[im]->Draw("c same");
   }
+  g_vovchenko->Draw("L SAME");
 
   g_fopi->Draw("P SAME");
   g_hades->Draw("P SAME");
@@ -423,15 +474,16 @@ void plotFO()
   g_cp_func->Draw("P SAME");
   g_cp_holo->Draw("P SAME");
 
-  drawText(550, 315, "Chemical", 42, 0.028);
-  drawText(550, 300, "Freezeout", 42, 0.028);
+  drawText(420, 315, "Chemical", 42, 0.028);
+  drawText(420, 300, "Freezeout", 42, 0.028);
   
-  TLegend *legCurve2 = new TLegend(0.74, 0.84, 0.90, 0.94);
+  TLegend *legCurve2 = new TLegend(0.66, 0.83, 0.90, 0.96);
   legCurve2->SetFillStyle(4000);
   legCurve2->SetBorderSize(0);
   legCurve2->SetTextSize(0.03);
   legCurve2->AddEntry(gr[0], Label[0], "l");
   legCurve2->AddEntry(gr[1], Label[1], "l");
+  legCurve2->AddEntry(g_vovchenko, "Vovchenko 2024", "l");
   legCurve2->Draw();
 
   TLegend *legData3 = new TLegend(0.67, 0.56, 0.68, 0.82);
