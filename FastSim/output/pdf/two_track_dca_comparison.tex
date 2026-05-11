@@ -85,12 +85,22 @@ The ratio $|D^{\mathrm{cross}}_{xy}|/|D^{\mathrm{FS}}_{xy}|$ had median 0.91.
 Its 5--95\% interval was 0.087--6.64, with a 99\% value of 32.7. The large
 upper tail appears when the FastSim denominator is close to zero.
 
-\section*{Interpretation}
+\section*{Contrast: DCA vs. DCAsP}
 
-For resolution-width comparisons, the two definitions may look broadly similar
-because both are controlled by the same PCA and angular scales. For event-by-event
-comparisons, DCA cuts, or tail studies, the difference can be substantial. A few
-$10^{-3}$ cm is typical in the default toy sample, while the tail reaches a few
-$10^{-2}$ cm.
+In the related FastSim check, the comparison was between DCA and DCAsP. That is
+a different situation: both observables use the same closest-point residual
+$\boldsymbol{\rho}$, and only the sign convention changes. Therefore their
+absolute magnitudes are identical event-by-event,
+\[
+  |D^{\mathrm{DCA}}_{xy}| = |D^{\mathrm{DCAsP}}_{xy}|,\qquad
+  |D^{\mathrm{DCA}}_{z}| = |D^{\mathrm{DCAsP}}_{z}|.
+\]
+A fresh 20,000-event check with the current code gave 55,629 selected pairs,
+zero maximum absolute-magnitude difference in both XY and Z, identical RMS
+values, and sign agreement of 0.499. Thus the DCA/DCAsP resolution plots are
+expected to be numerically very close; the cross-product projection above is
+not in that sign-only category. The projection and FastSim definitions may have
+similar width scales, but their pair-by-pair differences can reach a few
+$10^{-2}$ cm in the default toy sample.
 
 \end{document}
