@@ -1,0 +1,96 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.65in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+
+\begin{document}
+
+\begin{center}
+{\Large Two-Track DCA$_{xy}$ Comparison}\\[0.25em]
+{\small FastSim closest-point residual vs. cross-product projection}
+\end{center}
+
+\section*{Definitions}
+
+For track PCA positions $\mathbf{r}_i$, $\mathbf{r}_j$ and momentum directions
+$\mathbf{u} = \mathbf{p}_i / |\mathbf{p}_i|$,
+$\mathbf{v} = \mathbf{p}_j / |\mathbf{p}_j|$, define
+\[
+  \mathbf{n} = \frac{\mathbf{u} \times \mathbf{v}}
+                    {|\mathbf{u} \times \mathbf{v}|},
+  \qquad
+  \Delta\mathbf{r} = \mathbf{r}_j - \mathbf{r}_i .
+\]
+
+The cross-product method discussed here is
+\[
+  D^{\mathrm{cross}}_{xy}
+    = \mathbf{n}\cdot(\Delta x,\Delta y,0).
+\]
+This is a projection of the transverse PCA separation onto the normal vector
+of the two track directions.
+
+The current FastSim method first solves the two closest points
+$\mathbf{c}_i$ and $\mathbf{c}_j$ on the full 3D track lines, then computes
+\[
+  \boldsymbol{\rho} = \mathbf{c}_i - \mathbf{c}_j,
+  \qquad
+  D^{\mathrm{FS}}_{xy}
+    = s\,\sqrt{\rho_x^2+\rho_y^2},
+\]
+where the sign $s$ is set from
+\[
+  s = \mathrm{sign}\left[
+    \left((\mathbf{p}_{T,i}+\mathbf{p}_{T,j})
+    \times(\mathbf{r}_{i}-\mathbf{r}_{j})\right)_z
+  \right].
+\]
+
+\section*{Main Result}
+
+These are not the same observable. The FastSim value is the transverse
+magnitude of the closest-point residual. The cross-product value is a
+normal-vector projection after forcing the PCA separation's $z$ component
+to zero. They can have similar overall scale, but they are not related by a
+single event-by-event scale factor.
+
+Signed values should not be compared directly without first harmonizing the
+sign convention. The table below compares absolute magnitudes.
+
+\section*{Numerical Check}
+
+The following check used the default FastSim configuration, seed 20260509,
+20,000 generated events, and 12,919 selected Si-Si pairs. All distances are
+in cm.
+
+\begin{center}
+\begin{tabular}{lrrrrrr}
+\toprule
+Quantity & Median & 68\% & 90\% & 95\% & 99\% & Max \\
+\midrule
+$|D^{\mathrm{FS}}_{xy}|$       & 0.00500 & 0.00819 & 0.01683 & 0.02260 & 0.03636 & 0.08340 \\
+$|D^{\mathrm{cross}}_{xy}|$    & 0.00419 & 0.00710 & 0.01578 & 0.02174 & 0.03611 & 0.08151 \\
+$\left||D^{\mathrm{cross}}_{xy}|-|D^{\mathrm{FS}}_{xy}|\right|$
+                                  & 0.00240 & 0.00400 & 0.00844 & 0.01159 & 0.01925 & 0.03683 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The ratio $|D^{\mathrm{cross}}_{xy}|/|D^{\mathrm{FS}}_{xy}|$ had median 0.91.
+Its 5--95\% interval was 0.087--6.64, with a 99\% value of 32.7. The large
+upper tail appears when the FastSim denominator is close to zero.
+
+\section*{Interpretation}
+
+For resolution-width comparisons, the two definitions may look broadly similar
+because both are controlled by the same PCA and angular scales. For event-by-event
+comparisons, DCA cuts, or tail studies, the difference can be substantial. A few
+$10^{-3}$ cm is typical in the default toy sample, while the tail reaches a few
+$10^{-2}$ cm.
+
+\end{document}
