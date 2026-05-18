@@ -23,6 +23,14 @@ void Xsec_pp()
   float XeSTARu[] = {296};
   float XeSTARd[] = {362};
 
+  // STAR d+Au open charm total cross section per NN interaction at 200 GeV.
+  // Combined D0 + electron fit from PRL 94, 062301 (2005):
+  // sigma_ccbar^NN = 1.4 +/- 0.2(stat) +/- 0.4(syst) mb.
+  float sSTARdAu[] = {200.*1.06};
+  float XSTARdAu[] = {1400.};
+  float XeSTARdAud[] = {447.};
+  float XeSTARdAuu[] = {447.};
+
   // data point of PHENIX
   float sPHENIX[] = {130, 205.};
   float XPHENIX[] = {424.7, 709.};
@@ -97,6 +105,16 @@ void Xsec_pp()
   float XALICE[] = {4800, 8500};
   float XeALICEu[] = {2902, 5137};
   float XeALICEd[] = {1585, 2512};
+
+  // Combined LHC total ccbar cross section at 5.02 TeV.
+  // C. Bierlich et al., Eur. Phys. J. Plus 139, 593 (2024):
+  // sigma_ccbar = 8.34 +/- 0.22(stat) +/- 0.37(syst)
+  //               +0.36/-0.46(extr) +0.68/-0.00(Omega_c) mb.
+  // Total uncertainties are added in quadrature and converted to microbarn.
+  float sLHCCombCharm[] = {5020.};
+  float XLHCCombCharm[] = {8340.};
+  float XeLHCCombCharmu[] = {880.};
+  float XeLHCCombCharmd[] = {630.};
 
   // ATLAS
   float sATLAS[] = {7000*1.03};
@@ -239,11 +257,33 @@ void Xsec_pp()
     xc[i] = xc[i]*ra[i];
   }
 
+  // NLO total bbar cross section digitized from Fig. 3 of R. Vogt, EPJ ST 155 (2008).
+  const Int_t nVogtBbar = 16;
+  float sVogtBbar[nVogtBbar] = {30., 40., 50., 60., 70., 100., 130., 200., 500., 1000., 2000., 2760., 5020., 7000., 13000., 14000.};
+  float xVogtBbar[nVogtBbar] = {0.0027852, 0.013192, 0.035895, 0.072232, 0.12716, 0.37670, 0.76838, 2.0515, 11.159, 30.555, 71.322, 101.67, 190.39, 263.99, 461.56, 490.30};
+  float xVogtBbarLow[nVogtBbar] = {0.001, 0.0055968, 0.016775, 0.035534, 0.065039, 0.20635, 0.43905, 1.2556, 7.2598, 19.886, 46.981, 65.732, 115.08, 152.87, 241.45, 252.57};
+  float xVogtBbarHigh[nVogtBbar] = {0.0062702, 0.026183, 0.066989, 0.12948, 0.22315, 0.63076, 1.2644, 3.3129, 17.578, 48.735, 116.58, 167.88, 316.79, 442.48, 789.28, 841.69};
+
+  // NLO total ccbar cross section digitized from Fig. 2 of the same paper.
+  const Int_t nVogtCbar = 16;
+  float sVogtCbar[nVogtCbar] = {20., 30., 40., 60., 70., 100., 130., 200., 500., 1000., 2000., 2760., 5020., 7000., 13000., 14000.};
+  float xVogtCbar[nVogtCbar] = {5.0764, 15.908, 29.765, 63.089, 85.151, 136.31, 191.42, 304.24, 671.25, 1073.1, 1611.5, 1877.6, 2499.1, 2881.1, 3724.1, 3827.4};
+  float xVogtCbarLow[nVogtCbar] = {0.70724, 3.4843, 7.8799, 19.487, 26.956, 45.24, 63.79, 91.85, 141.65, 175.72, 220.44, 247.68, 315.8, 355.7, 414.54, 418.27};
+  float xVogtCbarHigh[nVogtCbar] = {24.517, 66.99, 118.1, 244.38, 323.73, 544.87, 779.05, 1312.2, 3302.3, 5744.1, 9044.4, 10731., 14567., 16954., 20150., 20150.};
+
+  // NNLO total ccbar cross section digitized from Fig. 15 of Yang et al., EPJ C 86 (2026).
+  const Int_t nYangCbar = 10;
+  float sYangCbar[nYangCbar] = {650., 700., 900., 1000., 2000., 5000., 7000., 10000., 13000., 14000.};
+  float xYangCbar[nYangCbar] = {1132.8, 1201.2, 1475.0, 1587.2, 2710.9, 5283.6, 6632.2, 8448.0, 10073.6, 10526.7};
+  float xYangCbarLow[nYangCbar] = {698.2, 740.3, 882.8, 936.1, 1496.8, 2575.3, 3070.9, 3661.8, 4240.2, 4366.4};
+  float xYangCbarHigh[nYangCbar] = {1475.0, 1587.2, 1977.8, 2159.7, 3883.0, 7623.7, 10373.5, 13909.5, 15872.2, 18379.4};
+
    const Int_t charmColor = kBlue+2;
    const Int_t bottomColor = kMagenta+2;
+   const Int_t yangColor = kGreen+2;
    const Int_t lowEnergyMarker = 24;   // below RHIC
    const Int_t rhicMarker = 20;        // RHIC
-   const Int_t highEnergyMarker = 26;  // above RHIC
+   const Int_t highEnergyMarker = 24;  // above RHIC
    const Int_t starColor = kRed+1;
    const Int_t phenixColor = kBlue+1;
    const Int_t starMarker = 29;
@@ -261,8 +301,8 @@ void Xsec_pp()
    c1->SetFrameFillColor(0);
    c1->SetFrameBorderMode(0);
    c1->SetFrameBorderMode(0);
-   c1->SetLeftMargin(0.15);
-   c1->SetBottomMargin(0.16);
+   c1->SetLeftMargin(0.14);
+   c1->SetBottomMargin(0.17);
    c1->SetTopMargin(0.03);
    c1->SetRightMargin(0.03);
    c1->SetLogx();
@@ -282,7 +322,7 @@ void Xsec_pp()
    d0->GetXaxis()->SetNdivisions(201);
    d0->GetXaxis()->CenterTitle();
    d0->GetXaxis()->SetTitle("Collision Energy #sqrt{s} (GeV)");
-   d0->GetXaxis()->SetTitleOffset(1.12);
+   d0->GetXaxis()->SetTitleOffset(1.22);
    d0->GetXaxis()->SetTitleSize(0.052);
    d0->GetXaxis()->SetLabelOffset(999.);
    d0->GetXaxis()->SetLabelSize(0.0001);
@@ -290,7 +330,7 @@ void Xsec_pp()
    d0->GetXaxis()->SetLabelFont(42);
    d0->GetYaxis()->SetNdivisions(402);
    d0->GetYaxis()->SetTitle("#sigma_{Q#bar{Q}}^{NN} (#mub)");
-   d0->GetYaxis()->SetTitleOffset(1.15);
+   d0->GetYaxis()->SetTitleOffset(1.03);
    d0->GetYaxis()->SetTitleSize(0.052);
    d0->GetYaxis()->SetLabelOffset(999.);
    d0->GetYaxis()->SetLabelSize(0.0001);
@@ -313,7 +353,7 @@ void Xsec_pp()
    l4->Draw("same");
 
    for(int i=-3;i<=4;i++) {
-     TLatex *tex = new TLatex(8.4, pow(10,i), Form("10^{%d}",i));
+     TLatex *tex = new TLatex(9.1, pow(10,i), Form("10^{%d}",i));
      tex->SetTextFont(42);
      tex->SetTextAlign(32);
      tex->SetTextSize(0.040);
@@ -324,7 +364,9 @@ void Xsec_pp()
      double xpos = pow(10,i);
      if(i==1) xpos = 14.;
      if(i==4) xpos = 8500.;
-     TLatex *tex = new TLatex(xpos, yy1*2.5,  Form("10^{%d}",i));
+     double xndc = gPad->GetLeftMargin() + (log10(xpos)-log10(xx1))/(log10(xx2)-log10(xx1))*(1.-gPad->GetLeftMargin()-gPad->GetRightMargin());
+     TLatex *tex = new TLatex(xndc, 0.135,  Form("10^{%d}",i));
+     tex->SetNDC();
      tex->SetTextFont(42);
      tex->SetTextAlign(22);
      tex->SetTextSize(0.040);
@@ -351,7 +393,7 @@ void Xsec_pp()
   //  gr2->SetFillColor(7);
   gr2->SetLineStyle(2);
   gr2->SetLineWidth(2);
-  gr2->Draw("c");
+  //  gr2->Draw("c");
   TGraph *gr1 = new TGraph(10, s1, x1);
   //  gr1->SetFillColor(10);
   gr1->SetLineColor(2);
@@ -381,7 +423,7 @@ void Xsec_pp()
   gr6->SetLineColor(2);
   gr6->SetLineStyle(4);
   gr6->SetLineWidth(2);
-  gr6->Draw("c");
+  //  gr6->Draw("c");
   /*
   TGraph *gr7 = new TGraph(13, s7, x7);
   gr7->SetLineColor(2);
@@ -411,7 +453,61 @@ void Xsec_pp()
   grr7->SetLineColor(1);
   grr7->SetLineStyle(1);
   grr7->SetLineWidth(2);
-  grr7->Draw("c");
+  //  grr7->Draw("c");
+
+  float sVogtCbarErr[nVogtCbar], xVogtCbarErrLow[nVogtCbar], xVogtCbarErrHigh[nVogtCbar];
+  for(int i=0;i<nVogtCbar;i++) {
+    sVogtCbarErr[i] = 0.;
+    xVogtCbarErrLow[i] = xVogtCbar[i] - xVogtCbarLow[i];
+    xVogtCbarErrHigh[i] = xVogtCbarHigh[i] - xVogtCbar[i];
+  }
+  TGraphAsymmErrors *grVogtCbarBand = new TGraphAsymmErrors(nVogtCbar, sVogtCbar, xVogtCbar, sVogtCbarErr, sVogtCbarErr, xVogtCbarErrLow, xVogtCbarErrHigh);
+  grVogtCbarBand->SetFillColorAlpha(charmColor, 0.20);
+  grVogtCbarBand->SetLineColor(charmColor);
+  grVogtCbarBand->SetLineWidth(1);
+  grVogtCbarBand->Draw("3");
+
+  TGraph *grVogtCbar = new TGraph(nVogtCbar, sVogtCbar, xVogtCbar);
+  grVogtCbar->SetLineColor(charmColor);
+  grVogtCbar->SetLineStyle(1);
+  grVogtCbar->SetLineWidth(2);
+  grVogtCbar->Draw("l");
+
+  float sVogtBbarErr[nVogtBbar], xVogtBbarErrLow[nVogtBbar], xVogtBbarErrHigh[nVogtBbar];
+  for(int i=0;i<nVogtBbar;i++) {
+    sVogtBbarErr[i] = 0.;
+    xVogtBbarErrLow[i] = xVogtBbar[i] - xVogtBbarLow[i];
+    xVogtBbarErrHigh[i] = xVogtBbarHigh[i] - xVogtBbar[i];
+  }
+  TGraphAsymmErrors *grVogtBbarBand = new TGraphAsymmErrors(nVogtBbar, sVogtBbar, xVogtBbar, sVogtBbarErr, sVogtBbarErr, xVogtBbarErrLow, xVogtBbarErrHigh);
+  grVogtBbarBand->SetFillColorAlpha(bottomColor, 0.20);
+  grVogtBbarBand->SetLineColor(bottomColor);
+  grVogtBbarBand->SetLineWidth(1);
+  grVogtBbarBand->Draw("3");
+
+  TGraph *grVogtBbar = new TGraph(nVogtBbar, sVogtBbar, xVogtBbar);
+  grVogtBbar->SetLineColor(bottomColor);
+  grVogtBbar->SetLineStyle(1);
+  grVogtBbar->SetLineWidth(2);
+  grVogtBbar->Draw("l");
+
+  float sYangCbarErr[nYangCbar], xYangCbarErrLow[nYangCbar], xYangCbarErrHigh[nYangCbar];
+  for(int i=0;i<nYangCbar;i++) {
+    sYangCbarErr[i] = 0.;
+    xYangCbarErrLow[i] = xYangCbar[i] - xYangCbarLow[i];
+    xYangCbarErrHigh[i] = xYangCbarHigh[i] - xYangCbar[i];
+  }
+  TGraphAsymmErrors *grYangCbarBand = new TGraphAsymmErrors(nYangCbar, sYangCbar, xYangCbar, sYangCbarErr, sYangCbarErr, xYangCbarErrLow, xYangCbarErrHigh);
+  grYangCbarBand->SetFillColorAlpha(yangColor, 0.18);
+  grYangCbarBand->SetLineColor(yangColor);
+  grYangCbarBand->SetLineWidth(1);
+  grYangCbarBand->Draw("3");
+
+  TGraph *grYangCbar = new TGraph(nYangCbar, sYangCbar, xYangCbar);
+  grYangCbar->SetLineColor(yangColor);
+  grYangCbar->SetLineStyle(1);
+  grYangCbar->SetLineWidth(2);
+  grYangCbar->Draw("l");
 
   // FONLL
   TGraph *gra = new TGraph(7, sa, xa);
@@ -542,6 +638,14 @@ void Xsec_pp()
   grstar1->SetLineColor(starColor);
   grstar1->SetLineWidth(2);
   grstar1->Draw("p");
+
+  TGraphAsymmErrors *grstar_dAu = new TGraphAsymmErrors(1, sSTARdAu, XSTARdAu, sedata, sedata, XeSTARdAud, XeSTARdAuu);
+  grstar_dAu->SetMarkerSize(2.5);
+  grstar_dAu->SetMarkerStyle(starMarker);
+  grstar_dAu->SetMarkerColor(starColor);
+  grstar_dAu->SetLineColor(starColor);
+  grstar_dAu->SetLineWidth(2);
+  grstar_dAu->Draw("p");
   
   //  LHC
   TGraphAsymmErrors *gralice = new TGraphAsymmErrors(2, sALICE, XALICE, 0, 0, XeALICEd, XeALICEu);
@@ -551,6 +655,14 @@ void Xsec_pp()
   gralice->SetLineColor(charmColor);
   gralice->SetLineWidth(2);
   gralice->Draw("p");
+
+  TGraphAsymmErrors *grLHCCombCharm = new TGraphAsymmErrors(1, sLHCCombCharm, XLHCCombCharm, 0, 0, XeLHCCombCharmd, XeLHCCombCharmu);
+  grLHCCombCharm->SetMarkerSize(1.8);
+  grLHCCombCharm->SetMarkerStyle(highEnergyMarker);
+  grLHCCombCharm->SetMarkerColor(charmColor);
+  grLHCCombCharm->SetLineColor(charmColor);
+  grLHCCombCharm->SetLineWidth(2);
+  grLHCCombCharm->Draw("p");
   
   TGraphAsymmErrors *gratlas = new TGraphAsymmErrors(1, sATLAS, XATLAS, 0, 0, XeATLASd, XeATLASu);
   gratlas->SetMarkerSize(1.8);
@@ -634,16 +746,6 @@ void Xsec_pp()
   // tex2->SetTextSize(0.045);
   // tex2->Draw("same");
 
-  TGraph *legCharmLow = new TGraph();
-  legCharmLow->SetMarkerStyle(lowEnergyMarker);
-  legCharmLow->SetMarkerColor(charmColor);
-  legCharmLow->SetLineColor(charmColor);
-  legCharmLow->SetMarkerSize(1.7);
-  TGraph *legBottomLow = new TGraph();
-  legBottomLow->SetMarkerStyle(lowEnergyMarker);
-  legBottomLow->SetMarkerColor(bottomColor);
-  legBottomLow->SetLineColor(bottomColor);
-  legBottomLow->SetMarkerSize(1.7);
   TGraph *legCharmRHIC = new TGraph();
   legCharmRHIC->SetMarkerStyle(starMarker);
   legCharmRHIC->SetMarkerColor(starColor);
@@ -654,31 +756,19 @@ void Xsec_pp()
   legBottomRHIC->SetMarkerColor(phenixColor);
   legBottomRHIC->SetLineColor(phenixColor);
   legBottomRHIC->SetMarkerSize(1.7);
-  TGraph *legCharmHigh = new TGraph();
-  legCharmHigh->SetMarkerStyle(highEnergyMarker);
-  legCharmHigh->SetMarkerColor(charmColor);
-  legCharmHigh->SetLineColor(charmColor);
-  legCharmHigh->SetMarkerSize(1.7);
-  TGraph *legBottomHigh = new TGraph();
-  legBottomHigh->SetMarkerStyle(highEnergyMarker);
-  legBottomHigh->SetMarkerColor(bottomColor);
-  legBottomHigh->SetLineColor(bottomColor);
-  legBottomHigh->SetMarkerSize(1.7);
 
-  TLegend *leg1 = new TLegend(0.50, 0.25, 0.96, 0.47);
+  TLegend *leg1 = new TLegend(0.54, 0.24, 0.965, 0.47);
   leg1->SetFillColor(10);
   leg1->SetLineStyle(4000);
   leg1->SetLineColor(10);
   leg1->SetLineWidth(0.);
   leg1->SetTextFont(42);
-  leg1->SetTextSize(0.030);
-  leg1->SetNColumns(2);
-  leg1->AddEntry(legCharmLow, "  c#bar{c}: below RHIC","p");
-  leg1->AddEntry(legBottomLow, "  b#bar{b}: below RHIC","p");
+  leg1->SetTextSize(0.032);
   leg1->AddEntry(legCharmRHIC, "  STAR","p");
   leg1->AddEntry(legBottomRHIC, "  PHENIX","p");
-  leg1->AddEntry(legCharmHigh, "  c#bar{c}: above RHIC","p");
-  leg1->AddEntry(legBottomHigh, "  b#bar{b}: above RHIC","p");
+  leg1->AddEntry(grVogtCbarBand, "  NLO pQCD c#bar{c} (Vogt)", "f");
+  leg1->AddEntry(grVogtBbarBand, "  NLO pQCD b#bar{b} (Vogt)", "f");
+  leg1->AddEntry(grYangCbarBand, "  NNLO c#bar{c} (Yang et al.)", "f");
   leg1->Draw();
   
 
@@ -688,22 +778,13 @@ void Xsec_pp()
   gr10->SetLineStyle(4);
   gr10->SetLineWidth(2);
 
-  TLegend *leg2 = new TLegend(0.50, 0.78, 0.94, 0.94);
-  leg2->SetFillColor(10);
-  leg2->SetLineStyle(4000);
-  leg2->SetLineColor(10);
-  leg2->SetLineWidth(0.);
-  leg2->SetTextFont(12);
-  leg2->SetTextSize(0.038);
+/*
   //  leg->AddEntry(fitfun, " (   s )^{n} (n=1.9#pm0.2) ", "l");
 //   leg->AddEntry(gr1, " MSEL=4 CTEQ5M1", "l");
 //   leg->AddEntry(gr2, " MSEL=1 CTEQ5M1", "l");
 //   leg->AddEntry(gr8, " NLO CTEQ #mu=2m m=1.2", "l");
   //  leg->AddEntry(gr2, " PYTHIA II", "l");
-  leg2->AddEntry(grr7, " NLO pQCD (#mu_{R}=m_{c})", "l");
-  leg2->AddEntry(gr6, " NLO pQCD (#mu_{R}=2m_{c})", "l");
-  leg2->AddEntry(gr2, " PYTHIA", "l");
-  leg2->Draw();
+*/
 
 /*   TLine *l1 = new TLine(620, 45, 750, 45); */
 /*   l1->SetLineWidth(1); */
