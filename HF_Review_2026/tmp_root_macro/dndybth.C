@@ -77,7 +77,7 @@ void dndybth()
 
   // PHENIX PRL 103, 082002, HEPData Table 2:
   // d sigma_bbbar/dy(y=0) = 0.92 +0.34/-0.31 (stat) +0.39/-0.36 (syst) microbarn.
-  double xEH[1] = {0.0};
+  double xEH[1] = {0.05};
   double yEH[1] = {0.92};
   double eEHLow[1] = {0.31};
   double eEHHigh[1] = {0.34};
@@ -119,14 +119,14 @@ void dndybth()
   d0->SetMaximum(yy2);
   d0->GetXaxis()->SetNdivisions(506);
   d0->GetXaxis()->CenterTitle();
-  d0->GetXaxis()->SetTitle("y_{b}");
+  d0->GetXaxis()->SetTitle("Rapidity y");
   d0->GetXaxis()->SetTitleOffset(1.03);
   d0->GetXaxis()->SetTitleSize(0.070);
   d0->GetXaxis()->SetLabelSize(0.050);
   d0->GetXaxis()->SetTitleFont(42);
   d0->GetXaxis()->SetLabelFont(42);
   d0->GetYaxis()->SetNdivisions(505);
-  d0->GetYaxis()->SetTitle("d#sigma_{b#bar{b}}/dy_{b} (#mub)");
+  d0->GetYaxis()->SetTitle("d#sigma_{b#bar{b}}/dy (#mub)");
   d0->GetYaxis()->SetTitleOffset(1.02);
   d0->GetYaxis()->SetTitleSize(0.060);
   d0->GetYaxis()->SetLabelSize(0.050);
@@ -167,8 +167,8 @@ void dndybth()
   TGraphErrors *grDie = new TGraphErrors(1, xDie, yDie, ex0, eDie);
   grDie->SetMarkerStyle(21);
   grDie->SetMarkerSize(2.0);
-  grDie->SetMarkerColor(kRed);
-  grDie->SetLineColor(kRed);
+  grDie->SetMarkerColor(kBlue+1);
+  grDie->SetLineColor(kBlue+1);
   grDie->SetLineWidth(2);
   grDie->Draw("p");
 
@@ -196,25 +196,25 @@ void dndybth()
   grDimu->SetLineWidth(2);
   grDimu->Draw("p");
 
-  TLatex *tex1 = new TLatex(0.18, 0.87, "PHENIX");
+  TLatex *tex1 = new TLatex(0.18, 0.88, "PHENIX");
   tex1->SetNDC();
   tex1->SetTextFont(42);
-  tex1->SetTextSize(0.055);
+  tex1->SetTextSize(0.05);
   tex1->Draw("same");
 
-  TLatex *tex2 = new TLatex(0.62, 0.87, "p+p  #sqrt{s} = 200 GeV");
+  TLatex *tex2 = new TLatex(0.66, 0.88, "p+p #sqrt{s} = 200 GeV");
   tex2->SetNDC();
   tex2->SetTextFont(42);
   tex2->SetTextSize(0.046);
   tex2->Draw("same");
 
-  TLegend *leg = new TLegend(0.18, 0.50, 0.48, 0.84);
+  TLegend *leg = new TLegend(0.18, 0.56, 0.48, 0.86);
   leg->SetFillColor(10);
   leg->SetLineStyle(4000);
   leg->SetLineColor(10);
   leg->SetLineWidth(0.);
   leg->SetTextFont(42);
-  leg->SetTextSize(0.035);
+  leg->SetTextSize(0.032);
   leg->AddEntry(grDie, "  Dielectrons", "p");
   leg->AddEntry(grEH, "  e-h correlations", "p");
   leg->AddEntry(grJpsi, "  B #rightarrow J/#psi", "p");

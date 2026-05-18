@@ -46,7 +46,7 @@ void charm_rapidity_plot()
   double yHigh[nCurve] = {0.0280, 0.0512, 0.0801, 0.1113, 0.1375, 0.1551, 0.1614, 0.1551, 0.1375, 0.1113, 0.0801, 0.0512, 0.0280};
 
   double ex0[2] = {0., 0.};
-  double yStarX[1] = {0.0};
+  double yStarX[1] = {-0.05};
   // STAR PRL 94, 062301: d sigma_ccbar/dy(y=0) = 0.30 +/- 0.04 +/- 0.09 mb.
   double yStar[1] = {0.300};
   double yStarErr[1] = {0.0985};
@@ -58,7 +58,7 @@ void charm_rapidity_plot()
   double yStarNewErrLow[1] = {0.0742};
   double yStarNewErrHigh[1] = {0.0597};
 
-  double yPhenixSingleEX[1] = {0.0};
+  double yPhenixSingleEX[1] = {0.05};
   // PHENIX PRL 97, 252002, HEPData Table 2:
   // d sigma_ccbar/dy = 123 +/- 12(stat) +/- 45(syst) microbarn at |y| < 0.35.
   double yPhenixSingleE[1] = {0.123};
@@ -141,26 +141,26 @@ void charm_rapidity_plot()
   grCentral->Draw("c");
 
   TGraphErrors *grStar = new TGraphErrors(1, yStarX, yStar, ex0, yStarErr);
-  grStar->SetMarkerStyle(21);
-  grStar->SetMarkerSize(1.8);
-  grStar->SetMarkerColor(kBlue+1);
-  grStar->SetLineColor(kBlue+1);
+  grStar->SetMarkerStyle(30);
+  grStar->SetMarkerSize(1.9);
+  grStar->SetMarkerColor(kRed);
+  grStar->SetLineColor(kRed);
   grStar->SetLineWidth(2);
   grStar->Draw("p");
 
   TGraphAsymmErrors *grStarNew = new TGraphAsymmErrors(1, yStarNewX, yStarNew, ex0, ex0, yStarNewErrLow, yStarNewErrHigh);
-  grStarNew->SetMarkerStyle(25);
-  grStarNew->SetMarkerSize(1.9);
-  grStarNew->SetMarkerColor(kAzure+2);
-  grStarNew->SetLineColor(kAzure+2);
+  grStarNew->SetMarkerStyle(29);
+  grStarNew->SetMarkerSize(2.2);
+  grStarNew->SetMarkerColor(kRed);
+  grStarNew->SetLineColor(kRed);
   grStarNew->SetLineWidth(2);
   grStarNew->Draw("p");
 
   TGraphErrors *grPhenixSingleE = new TGraphErrors(1, yPhenixSingleEX, yPhenixSingleE, ex0, yPhenixSingleEErr);
-  grPhenixSingleE->SetMarkerStyle(20);
-  grPhenixSingleE->SetMarkerSize(1.9);
-  grPhenixSingleE->SetMarkerColor(kRed);
-  grPhenixSingleE->SetLineColor(kRed);
+  grPhenixSingleE->SetMarkerStyle(21);
+  grPhenixSingleE->SetMarkerSize(1.8);
+  grPhenixSingleE->SetMarkerColor(kBlue+1);
+  grPhenixSingleE->SetLineColor(kBlue+1);
   grPhenixSingleE->SetLineWidth(2);
   grPhenixSingleE->Draw("p");
 
@@ -186,7 +186,7 @@ void charm_rapidity_plot()
   tex->SetTextSize(0.046);
   tex->Draw("same");
 
-  TLegend *leg = new TLegend(0.50, 0.62, 0.965, 0.91);
+  TLegend *leg = new TLegend(0.65, 0.70, 0.965, 0.94);
   leg->SetFillColor(10);
   leg->SetLineStyle(4000);
   leg->SetLineColor(10);
@@ -194,7 +194,7 @@ void charm_rapidity_plot()
   leg->SetTextFont(42);
   leg->SetTextSize(0.030);
   leg->AddEntry(grBand, "  FONLL band", "f");
-  leg->AddEntry(grCentral, "  FONLL central", "l");
+//  leg->AddEntry(grCentral, "  FONLL central", "l");
   leg->AddEntry(grHigh, "  FONLL upper/lower", "l");
   leg->AddEntry(grStar, "  STAR D^{0}+e", "p");
   leg->AddEntry(grStarNew, "  STAR D^{0},D^{*}", "p");
