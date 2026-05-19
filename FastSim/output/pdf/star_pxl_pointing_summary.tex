@@ -1,0 +1,112 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.35em,topsep=0.3em}
+\sisetup{detect-all}
+
+\definecolor{accent}{RGB}{0,114,178}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{STAR PXL Single-Track Pointing Resolution Estimate}}\\[0.3em]
+{\color{accent}\rule{0.92\linewidth}{0.8pt}}
+\end{center}
+
+\textbf{Detector inputs}
+\begin{itemize}
+  \item Two pixel layers at radii
+  \[
+    r_1=\SI{2.8}{cm}, \qquad r_2=\SI{8.0}{cm}.
+  \]
+  \item Pixel pitch: \(\SI{20.7}{\micro m}\times\SI{20.7}{\micro m}\), so the single-hit resolution is
+  \[
+    \sigma_{\rm hit}=\frac{20.7}{\sqrt{12}}=\SI{5.98}{\micro m}.
+  \]
+  \item Pixel material: \(0.52\%\,X_0\) per layer.
+  \item Beam pipe: \(r_{\rm BP}=\SI{2.0}{cm}\), material \(0.24\%\,X_0\).
+\end{itemize}
+
+\textbf{Hit-resolution limit}
+\begin{itemize}
+  \item For a straight track \(y(r)=a+br\), the intercept at the collision point is
+  \[
+    a = \frac{r_2 y_1-r_1 y_2}{r_2-r_1}.
+  \]
+  \item Propagating the two independent hit errors gives
+  \[
+    \sigma_{a,{\rm hit}}
+    =
+    \sigma_{\rm hit}
+    \sqrt{
+      \left(\frac{r_2}{r_2-r_1}\right)^2+
+      \left(\frac{r_1}{r_2-r_1}\right)^2
+    }
+    =
+    \SI{9.74}{\micro m}.
+  \]
+\end{itemize}
+
+\textbf{Multiple-scattering term}
+\begin{itemize}
+  \item Using the Highland approximation for \(\beta\simeq 1\),
+  \[
+    \theta_0
+    \simeq
+    \frac{13.6~{\rm MeV}}{p}
+    \sqrt{\frac{x}{X_0}}
+    \left[1+0.038\ln\left(\frac{x}{X_0}\right)\right].
+  \]
+  \item The beam pipe contributes
+  \[
+    \SI{2.0}{cm}\times\frac{0.5135~{\rm mrad}}{p}
+    =
+    \frac{\SI{10.27}{\micro m\,GeV}/c}{p}.
+  \]
+  \item The first PXL layer contributes
+  \[
+    \SI{2.8}{cm}\times\frac{0.7847~{\rm mrad}}{p}
+    =
+    \frac{\SI{21.97}{\micro m\,GeV}/c}{p}.
+  \]
+  \item The outer PXL layer is the last measured point in this two-hit estimate, so its post-hit scattering does not affect the fitted pointing.
+\end{itemize}
+
+\textbf{Final fast estimate}
+\[
+  \sigma_{\rm point}(p)
+  \simeq
+  \sqrt{
+    (\SI{9.74}{\micro m})^2
+    +
+    \left(\frac{\SI{24.25}{\micro m\,GeV}/c}{p}\right)^2
+  },
+  \qquad p~{\rm in~GeV}/c.
+\]
+
+\begin{center}
+\begin{tabular}{@{}S[table-format=2.1] S[table-format=3.1]@{}}
+\toprule
+{\(p\) [GeV/\(c\)]} & {\(\sigma_{\rm point}\) [\(\si{\micro m}\)]} \\
+\midrule
+0.2 & 121.7 \\
+0.5 & 49.5 \\
+1.0 & 26.1 \\
+2.0 & 15.6 \\
+5.0 & 10.9 \\
+10.0 & 10.0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+This estimate is for central tracks and uses the same resolution in \(r\phi\) and \(z\).
+
+\end{document}
